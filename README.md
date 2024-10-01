@@ -1,6 +1,11 @@
-# Vergleichende Untersuchung von GraphQL und REST
 
-Dieses Repository enthält den Code und die Ergebnisse meiner Bachelorthesis zum Thema: "Vergleichende Untersuchung von GraphQL und REST, hinsichtlich Anpassungsfähigkeit und Leistungsfähigkeit".
+
+![alt text](https://github.com/D4rkm4n215/Bachelorthesis/blob/main/Expose/img/GraphQL_REST_Illustration.jpeg)
+
+
+
+
+Dieses Repository enthält den Code und die Ergebnisse meiner Bachelorthesis zum Thema: "Vergleichende Untersuchung von GraphQL und REST im Kontext relationaler und graphbasierter Datenbanken, hinsichtlich Anpassungs- und Leistungsfähigkeit".
 
 
 ## Inhalt
