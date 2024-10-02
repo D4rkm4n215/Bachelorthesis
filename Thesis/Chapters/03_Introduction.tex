@@ -1,0 +1,30 @@
+\chapter{Einleitung} % (fold)
+\pagenumbering{arabic}
+\label{sec:einleitung}
+
+\section{Motivation} % (fold)
+\label{sec:motivation}
+In der modernen Softwareentwicklung spielen APIs (Application Programming Interfaces) eine entscheidende Rolle bei der Integration und Kommunikation zwischen verschiedenen Diensten und Anwendungen. Traditionell wurde REST (Representational State Transfer) als Standard für die Erstellung und Nutzung von APIs verwendet. Mit der Einführung und zunehmenden Verbreitung von GraphQL, einer Abfragesprache für APIs, die von Facebook entwickelt wurde, stehen Entwickler nun vor der Wahl zwischen diesen beiden Ansätzen. Die Wahl zwischen REST und GraphQL hat signifikante Auswirkungen auf die Entwicklung und den Betrieb der Anwendung. Unternehmen
+müssen eine fundierte Entscheidung treffen, welche Technologie besser zu ihren Anforderungen, im Hinblick auf Leistungsfähigkeit und Anpassungsfähigkeit, passt.
+
+% section motivation (end)
+
+\section{Forschungsfragen} % (fold)
+\label{sec:forschungsfragen}
+Nachfolgend sollen die Forschungsfragen vorgestellt werden, die aus der Motivation abgeleitet wurden. Diese dienen als Grundlage der Forschung für diese Thesis.
+\begin{itemize}
+	\item \textbf{FF-1: Wie unterscheiden sich GraphQL und REST hinsichtlich der Anfrage- und Antwortzeiten unter verschiedenen Lastbedingungen und Anfragenkomplexitäten ?}  Diese Frage zielt darauf ab, die Performance beider Systeme unter variablen Bedingungen zu vergleichen. Beispielsweise könnte untersucht werden, wie schnell eine API auf eine einfache Datenabfrage reagiert, im Vergleich zu einer komplexeren, die mehrere Abhängigkeiten involviert. Diese Untersuchung könnte Einblicke in die Effizienz der beiden Technologien bieten und somit als Entscheidungshilfe für Entwickler dienen, die die beste Lösung für ihre spezifischen Bedürfnisse auswählen möchten.
+	\item \textbf{FF-2: Inwiefern bieten GraphQL und REST unterschiedliche Möglichkeiten zur Abfrageanpassung?} Diese Frage beleuchtet die Flexibilität beider Systeme in Bezug auf die Individualisierung von Datenabfragen. Während REST traditionell durch feste Endpunkte gekennzeichnet ist, die jeweils eine bestimmte Datenstruktur zurückgeben, bietet GraphQL eine dynamischere Herangehensweise. Mit GraphQL können Clients genau die Daten anfordern, die sie benötigen, und keine zusätzlichen Informationen, was zu effizienteren Datenübertragungen führen kann. 
+
+Diese Fähigkeit, Anfragen präzise anzupassen, könnte die Effizienz und Benutzerfreundlichkeit von Webanwendungen erheblich beeinflussen.
+\end{itemize}
+% section forschungsfragen (end)
+
+\section{Vorgehensweise} % (fold)
+\label{sec:vorgehensweise}
+
+Für die Untersuchung werden sowohl theoretische Analysen als auch empirische Experimente durchgeführt. Im Rahmen der theoretischen Analyse erfolgt eine umfassende Literaturrecherche und die Analyse bestehender Studien zur Leistungsfähigkeit und Anpassungsfähigkeit von REST und GraphQL. Die empirischen Experimente umfassen die Implementierung von Beispiel-APIs mit beiden Technologien sowie die Durchführung von Leistungs- und Flexibilitätstests. Die Leistungstests konzentrieren sich auf das Messen der Latenz, des Durchsatzes und der Ressourcenauslastung bei verschiedenen Abfrageszenarien. Die Flexibilitätstests bewerten die Anpassungsfähigkeit der APIs an wechselnde Anforderungen und Schemaänderungen.
+
+
+% section vorgehensweise (end)
+% chapter einleitung (end)

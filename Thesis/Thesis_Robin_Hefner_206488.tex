@@ -1,0 +1,95 @@
+%
+%  Thesis Vorlage für die Hochschule Heilbronn
+%
+%  Created by Prof. Dr. Detlef Stern on 2010-08-14.
+%  Updated by Valentin Weber on 2020-10-05.
+%  Copyright (c) 2020 . All rights reserved.
+%
+\documentclass[12pt,toc=bib,toc=listof]{scrreprt}
+\usepackage[ngerman]{babel} 
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{setspace}
+\usepackage{geometry}
+\usepackage{cite}
+\usepackage[authoryear]{natbib}
+\usepackage{chngcntr}
+\counterwithout{footnote}{chapter}
+\counterwithout{figure}{chapter}
+
+\usepackage{hyperref}
+\hypersetup{
+  ,colorlinks=true
+  ,linkcolor=black
+  ,citecolor=black
+  ,filecolor=black
+  ,urlcolor=black
+  }
+
+\newcommand{\thesis}{Bachelorthesis}
+\newcommand{\hhnsubject}{Angewandte Informatik}
+\newcommand{\hhnsubjectnum}{SPO1a}
+\newcommand{\hhnlecturer}{Prof. Dr. Fankhauser}
+
+\newcommand{\reprttopic}{Vergleichende Untersuchung von GraphQL und REST im Kontext relationaler und graphbasierter Datenbanken, hinsichtlich Anpassungs- und Leistungsfähigkeit}
+\newcommand{\reprtstudentname}{Robin Hefner}
+\newcommand{\reprtstudentid}{206488}
+\urldef{\reprtstudentmail}\url{rohefner@stud.hs-heilbronn.de}
+
+\usepackage{ifpdf}
+\ifpdf
+\usepackage[pdftex]{graphicx}
+\else
+\usepackage{graphicx}
+\fi
+
+\usepackage[headsepline]{scrlayer-scrpage}
+\pagestyle{scrheadings}
+\clearscrheadfoot
+\ihead{\reprttopic}
+\ohead{\pagemark}
+\renewcommand*{\chapterpagestyle}{scrheadings}
+\renewcommand*{\chapterheadstartvskip}{}
+
+% Deckblatt Definitionen (begin)
+\titlehead{\flushright\includegraphics{./Illustrations/hhn.png}}
+\subject{{\thesis \\\hhnsubject{} (\hhnsubjectnum{})}}
+\title{\reprttopic}
+\author{\reprtstudentname\footnote{\reprtstudentid, \reprtstudentmail}}
+%% Datum nie auf einen festen Wert setzen
+\publishers{Eingereicht bei \hhnlecturer}
+% Deckblatt Definitionen (end)
+
+\begin{document}
+\pagenumbering{Roman} 
+\selectlanguage{ngerman}
+\maketitle
+\newpage
+\newgeometry{left=30mm, top=25mm, right=15mm, bottom=25mm}
+\tableofcontents
+\newpage
+\include{Chapters/01_List_of_abbreviations}
+
+\newpage
+\listoffigures
+\newpage
+
+\include{Chapters/02_Abstract}
+
+\onehalfspacing
+
+% report (begin)
+
+\include{Chapters/03_Introduction}
+\include{Chapters/04_Fundamentals}
+\include{Chapters/05_Implementation}
+\include{Chapters/06_Methodology}
+\include{Chapters/07_Result}
+\include{Chapters/08_Discussion}
+\include{Chapters/09_Conclusion}
+
+\bibliographystyle{dcu}
+\bibliography{literatur}
+
+\end{document}
