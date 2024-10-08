@@ -1,13 +1,12 @@
 \chapter{Grundlagen} % (fold)
 \label{sec:grundlagen}
-Die folgenden Abschnitte sollen die theoretischen Grundlagen vermitteln, die notwendig sind, um das Thema dieser Thesis zu betrachten. Die Konzepte, die hier beschrieben werden sind API-Grundlagen, REST und GraphQL.
-\section{API Grundlagen} % (fold)
+Die folgenden Abschnitte sollen die theoretischen Grundlagen vermitteln, die notwendig sind, um das Thema dieser Thesis zu betrachten. Die Konzepte, die hier beschrieben werden sind APIs, wie REST und GraphQL, als auch relationale und Graph Datenbanken.
+\section{API} % (fold)
 \label{sec:apigrundlagen}
 Nachfolgend werden die Grundlagen von APIs thematisiert. Hierbei werden die grundlegenden Definitionen im Zusammenhang mit APIs und die verschiedenen Typen vorgestellt.
 \subsection{Grundlegende Definition von API} % (fold)
 \label{sec:grundlegendedefinitionvonapi}
-Der Begriff \glqq API\grqq{}  steht für \glqq Application Programming InterfaceI\grqq{}. Eine API bezeichnet eine Schnittstelle, welche Entwicklern den Zugriff auf Daten und Informationen ermöglicht. Bekannte Beispiele für häufig genutzte APIs sind die Twitter- und Facebook-APIs. Diese sind für Entwickler zugänglich und ermöglichen die Interaktion mit der Software von Twitter und Facebook. Zudem ermöglichen APIs die Kommunikation zwischen Anwendungen. Sie bieten den Anwendungen einen Weg, miteinander über das Netzwerk, überwiegend das Internet, in einer gemeinsamen Sprache zu kommunizieren. \citep{apistrategyguide}
-\newpage
+Der Begriff \glqq API\grqq{}  steht für \glqq Application Programming Interface\grqq{}. Eine API bezeichnet eine Schnittstelle, welche Entwicklern den Zugriff auf Daten und Informationen ermöglicht. Bekannte Beispiele für häufig genutzte APIs sind die Twitter- und Facebook-APIs. Diese sind für Entwickler zugänglich und ermöglichen die Interaktion mit der Software von Twitter und Facebook. Zudem ermöglichen APIs die Kommunikation zwischen Anwendungen. Sie bieten den Anwendungen einen Weg, miteinander über das Netzwerk, überwiegend das Internet, in einer gemeinsamen Sprache zu kommunizieren. \citep{apistrategyguide}
 %subsection grundlegendedefinitionvonapi (end)
 \subsection{API Typen} % (fold)
 \label{sec:apitypen}
@@ -16,7 +15,6 @@ APIs können anhand von Verfügbarkeit, Anwendungszweck oder der Spezifikation i
 \subsubsection{API Typen nach Verfügbarkeit} % (fold)
 \label{sec:apitypenverfuegbarkeit}
 Im Bezug auf Verfügbarkeit können APIs public (öffentlich), privat oder für Partner bereitgestellt werden. 
-\citep{apimindset}
 \begin{figure}[h!]
 	\centering
 	\includegraphics[scale=0.225]{Illustrations/apitypes.jpg}
@@ -24,9 +22,9 @@ Im Bezug auf Verfügbarkeit können APIs public (öffentlich), privat oder für 
 \end{figure}
 
 \begin{itemize}
-	\item \textbf{Public APIs:} Öffentliche APIs sind für jeden Entwickler bzw. jegliche Dritte verfügbar. Eine Public API erhöht die Markenbekanntheit und kann bei Monetarisierung zusätzliche Einkommensmöglichkeiten bieten. \citep{apimindset}
-	\item \textbf{Privat APIs:} Dieser Typ ermöglicht firmeninternen Entwicklern die Nutzung der API zu Integration interner Produkte, Systemen oder Apps. Zudem können bei der Entwicklung von neuen Systemen bestehende Ressourcen genutzt werden. Hierbei entsteht eine erhebliche Kostenersparnis und es besteht eine größere Flexibilität. \citep{apimindset}
-	\item \textbf{Partner APIs:} Partner APIs bilden den Schnitt aus privaten und öffentlichen APIs. Sie sind dazu bestimmt die Entwicklung von Anwendungen zwischen Unternehmen zu unterstützen. Die Unternehmen haben dabei eine hohe Nutzerkontrolle.\citep{apimindset}
+	\item \textbf{Public APIs:} Öffentliche APIs sind für jeden Entwickler bzw. jegliche Dritte verfügbar. Eine öffentliche API kann zu einer Steigerung der Markenbekanntheit beitragen und eröffnet bei einer Monetarisierung zusätzliche Einnahmequellen.\citep{apistrategyguide}
+	\item \textbf{Privat APIs:} Dieser Typ erlaubt es Entwicklern, die innerhalb einer Firma tätig sind, die API zu nutzen, um interne Produkte, Systeme oder Apps zu integrieren. Des Weiteren können bei der Entwicklung neuer Systeme bereits vorhandene Ressourcen verwendet werden. Dadurch lassen sich die Kosten erheblich reduzieren und es entsteht eine größere Flexibilität. \citep{apistrategyguide}
+	\item \textbf{Partner APIs:} Partner-APIs stellen eine Art Schnittstelle zwischen privaten und öffentlichen APIs dar. Ihr Zweck besteht darin, die Entwicklung von Unternehmensanwendungen zu fördern. Die Unternehmen haben dabei eine hohe Nutzerkontrolle.\citep{apistrategyguide}
 \end{itemize}
 %subsubsection apitypenverfuegbarkeit (end)
 
@@ -50,12 +48,12 @@ Das Ziel der Spezifikation von APIs ist die Kommunikation zwischen verschiedenen
 
 \begin{itemize}
 
-	\item \textbf{Remote Procedure Call (RPC)} stellt eine einfache und zugleich die älteste Form von Application Programming Interfaces dar. Ihr Zweck besteht in der Initiierung von Prozeduren auf anderen Systemen. Zu diesem Zweck übermittelt eine Anwendung eine oder mehrere Nachrichten an eine andere Anwendung, um eine Prozedur zu starten. Im Anschluss daran sendet die empfangende Anwendung dem Sender eine oder mehrere Nachrichten zurück, sobald die Prozedur abgeschlossen ist. 
-	\citep{TUM}
+	\item \textbf{Remote Procedure Call (RPC)} stellt eine einfache und zugleich die älteste Form von Application Programming Interfaces dar. Ihr Zweck besteht in der Initiierung von Prozeduren auf unterschiedlichen Computern über das Netzwerk hinweg. Zu diesem Zweck übermittelt eine Anwendung eine oder mehrere Nachrichten an eine andere Anwendung, um eine Prozedur zu starten. Im Anschluss daran sendet die empfangende Anwendung dem Sender eine oder mehrere Nachrichten zurück, sobald die Prozedur abgeschlossen ist. Obwohl es konzeptionell einfach und leicht zu implementieren ist, gibt es eine Menge verschiedener und subtile Probleme, die zu unterschiedlichen RPC-Implementierungen führen.
+	\citep{RPC}
 
-	\item \textbf{Simple Object Access Protocol (SOAP)} wurde von Microsoft entwickelt und stellt ein leichtgewichtiges Protokoll für den Austausch von Informationen in einer dezentralen, verteilten Umgebung dar. SOAP basiert auf XML und besteht aus einem Umschlag, der den Rahmen für die Beschreibung des Inhalts einer Nachricht und ihrer Verarbeitung definiert, einer Reihe von Kodierungsregeln zur Darstellung von anwendungsdefinierten Datentypen sowie einer Konvention zur Darstellung von Remote-Prozeduraufrufen und Antworten. SOAP wird in erster Linie eingesetzt, um eine sichere Übertragung von Daten zu gewährleisten, und findet insbesondere bei Unternehmen, die Zahlungsgateways, Identitätsmanagementlösungen und Finanzdienstleistungen anbieten, Verwendung.
-	\citep{TUM}
-\newpage
+	\item \textbf{Simple Object Access Protocol (SOAP)} stellt ein leichtgewichtiges Protokoll für den Austausch von Informationen in einer dezentralen, verteilten Umgebung dar. Es handelt sich um ein XML-basiertes Protokoll, welches aus drei Teilen besteht: einem Umschlag, welcher einen Rahmen für die Beschreibung des Inhalts einer Nachricht sowie ihrer Verarbeitung definiert, einer Reihe von Kodierungsregeln für die Darstellung von Instanzen anwendungsdefinierter Datentypen sowie einer Konvention für die Darstellung von Remote-Prozeduraufrufen und Antworten. SOAP kann potenziell in Kombination mit einer Vielzahl von anderen Protokollen verwendet werden.
+	\citep{SOAP}
+
 	\item \textbf{Representational State Transfer (REST)} wurde erstmals im Jahr 2000 in einer Dissertation von Roy Fielding beschrieben. Hierbei handelt es sich um einen Software-Architekturstil für APIs. REST basiert auf einer Ressourcenorientierung, bei der jede Entität als Ressource betrachtet und durch eine eindeutige Uniform Resource Locator (URL) identifiziert wird. Die Architektur basiert auf sechs grundlegenden Beschränkungen, darunter die Client-Server-Architektur, bei der Client und Server unabhängig voneinander agieren. Ein wesentliches Charakteristikum von REST ist die Zustandslosigkeit, d. h. jede Anfrage beinhaltet sämtliche für die Verarbeitung erforderlichen Informationen, wodurch die Interaktion zwischen Client und Server vereinfacht wird. Die Umsetzung der CRUD-Operationen (Create, Read, Update, Delete) erfolgt durch die HTTP-Methoden (POST, GET, PUT, DELETE). REST nutzt das in HTTP integrierte Caching, um die Antwortzeiten und die Leistung zu optimieren. Dabei besteht die Möglichkeit, Serverantworten als cachefähig oder nicht cachefähig zu kennzeichnen. Des Weiteren ist eine einheitliche Schnittstelle zu nennen, welche die Interaktionen zwischen unterschiedlichen Geräten und Anwendungen erleichtert und sichtbar macht. Darüber hinaus erfordert REST ein mehrschichtiges System, bei dem jede Komponente lediglich mit der unmittelbar vorgelagerten Schicht interagiert. Die Bereitstellung von ausführbarem Code durch den Server ist optional. RESTful APIs, die diesen Prinzipien folgen, nutzen HTTP-Anfragen, um Ressourcen effizient zu bearbeiten. \citep{Fielding2000}  \citep{graphqlreplacerest}
 
 	\item \textbf{GraphQL} wurde 2012 von Facebook für den internen Gebrauch entwickelt. Im Jahr 2015 erfolgte die Veröffentlichung als Open-Source-Projekt für die Allgemeinheit. Das Kernkonzept von GraphQL basiert auf client-getriebenen Abfragen, bei denen der Client die Struktur der Daten präzise definiert und nur die erforderlichen Daten erhält. Dies resultiert in einer Reduktion von Datenübertragungen und ermöglicht effizientere Netzwerkaufrufe. Die hierarchische Struktur der Abfragen, welche die Graph-Struktur widerspiegelt, erlaubt eine intuitive Datenmodellierung. Die starke Typisierung in GraphQL wird durch ein Schema definiert, welches die Typen der Daten spezifiziert. Dadurch wird eine bessere Validierung und Dokumentation ermöglicht. Im Gegensatz zu REST, bei dem für verschiedene Operationen mehrere Endpunkte erforderlich sind, verwendet GraphQL lediglich einen einzigen Endpunkt für alle API-Abfragen.  \citep{graphqlreplacerest}
@@ -66,15 +64,28 @@ Das Ziel der Spezifikation von APIs ist die Kommunikation zwischen verschiedenen
 
 % section apigrundlagen (end)
 
-\newpage
-\section{Datenbank Grundlagen} % (fold)
+\section{Datenbank} % (fold)
 \label{sec:datenbankGrundlagen}
 Im Folgenden werden die Grundlagen von Datenbanken behandelt. Es werden grundlegende Definitionen im Zusammenhang mit Datenbanken und die verschiedenen Arten von Datenbanken vorgestellt.
-\subsection{Definition Datenbank} % (fold)
+\subsection{Definition Datenbank und Datenbank Management System} % (fold)
 \label{sec:definitiondatenbank}
+Eine Datenbank stellt eine Sammlung von Daten und Informationen dar, welche für einen einfachen Zugriff gespeichert und organisiert werden. Dies umfasst sowohl die Verwaltung als auch die Aktualisierung der Daten. Die in der Datenbank gespeicherten Daten können nach Bedarf hinzugefügt, gelöscht oder geändert werden. Die Funktionsweise von Datenbanksystemen basiert auf der Abfrage von Informationen oder Daten, woraufhin entsprechende Anwendungen ausgeführt werden. DBMS bezeichnet eine Systemsoftware, die für die Erstellung und Verwaltung von Datenbanken eingesetzt wird. Zu den Funktionalitäten zählen die Erstellung von Berichten, die Kontrolle von Lese- und Schreibvorgängen sowie die Durchführung einer Nutzungsanalyse. Das DBMS fungiert als Schnittstelle zwischen den Endnutzern und der Datenbank, um die Organisation und Manipulation von Daten zu erleichtern. Die Kernfunktionen des DBMS umfassen die Verwaltung von Daten, des Datenbankschemas, welches die logische Struktur der Datenbank definiert, sowie der Datenbank-Engine, welche das Abrufen, Aktualisieren und Sperren von Daten ermöglicht. Diese drei wesentlichen Elemente dienen der Bereitstellung standardisierter Verwaltungsverfahren, der Gleichzeitigkeit, der Wiederherstellung, der Sicherheit und der Datenintegrität. \citep{9677042}
+
 %subsubsection definitiondatenbank (end)
 
-\subsection{Datenbanktypen} % (fold)
+\subsection{Datenbank Modelle} % (fold)
+Datenbanken können in SQL und NoSQL (Not Only SQL) Datenbanken unterteilt werden. Eine relationale Datenbank stellt eine SQL Datenbank dar, eine Graph Datenbank eine NoSQL Datenbank. Im Folgenden werden beide Vertreter der Technologien vorgestellt.
+\subsubsection{Relationale Datenbanken} % (fold)
+\label{sec:relationaleDatenbanken}
+Ein Relationales Datenbank Model hat eine strikte Struktur, welche mitthilfe von Tabellen realisiert wird. Dies hat zur Folge, dass die Struktur, in der die Daten gespeichert werden sollen vor der Speicherung in der Datenbank bekannt sein müssen. Falls Werte nicht vorkammen werden diese auf null gesetzt. \citep{relationalDatabase}
+%subsubsection relationaleDatenbanken (end)
+
+\subsubsection{Graph Datenbanken} % (fold)
+\label{sec:graphDatenbanken}
+
+
+%subsubsection graphDatenbanken (end)
+
 \label{sec:datenbanktypen}
 %subsubsection datenbanktypen (end)
 
