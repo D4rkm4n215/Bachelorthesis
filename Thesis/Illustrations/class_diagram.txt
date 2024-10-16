@@ -1,0 +1,28 @@
+classDiagram
+    direction LR
+    Person "1"--"*" Project
+    Project "1" -- "*" Issue
+    Person "1"-- "*"Issue
+
+class Person {
+    + ID
+    + Name
+    + Mail
+}
+
+class Project{
+    + ID
+    + Owner
+    + Name
+    + createdAt 
+}
+
+class Issue{
+    + ID
+    + Creator
+    + Project
+    + Title
+    + createdAt
+    + state
+    + stateReason
+}

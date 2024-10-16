@@ -4,30 +4,13 @@ Die folgenden Abschnitte sollen die theoretischen Grundlagen vermitteln, die not
 \section{API} % (fold)
 \label{sec:apigrundlagen}
 Nachfolgend werden die Grundlagen von APIs thematisiert. Hierbei werden die grundlegenden Definitionen im Zusammenhang mit APIs und die verschiedenen Typen vorgestellt.
-\subsection{Grundlegende Definition von API} % (fold)
+\subsection{Definition API} % (fold)
 \label{sec:grundlegendedefinitionvonapi}
 Der Begriff \glqq API\grqq{}  steht für \glqq Application Programming Interface\grqq{}. Eine API bezeichnet eine Schnittstelle, welche Entwicklern den Zugriff auf Daten und Informationen ermöglicht. Bekannte Beispiele für häufig genutzte APIs sind die Twitter- und Facebook-APIs. Diese sind für Entwickler zugänglich und ermöglichen die Interaktion mit der Software von Twitter und Facebook. Zudem ermöglichen APIs die Kommunikation zwischen Anwendungen. Sie bieten den Anwendungen einen Weg, miteinander über das Netzwerk, überwiegend das Internet, in einer gemeinsamen Sprache zu kommunizieren. \citep{apistrategyguide}
 %subsection grundlegendedefinitionvonapi (end)
 \subsection{API Typen} % (fold)
 \label{sec:apitypen}
 APIs können anhand von Verfügbarkeit, Anwendungszweck oder der Spezifikation in verschiedene Typen eingeteilt werden.
-
-\subsubsection{API Typen nach Verfügbarkeit} % (fold)
-\label{sec:apitypenverfuegbarkeit}
-Im Bezug auf Verfügbarkeit können APIs public (öffentlich), privat oder für Partner bereitgestellt werden. 
-\begin{figure}[h!]
-	\centering
-	\includegraphics[scale=0.225]{Illustrations/apitypes.jpg}
-	\caption{API Typen nach Verfügbarkeit \citep{graficapitypes}}
-\end{figure}
-
-\begin{itemize}
-	\item \textbf{Public APIs:} Öffentliche APIs sind für jeden Entwickler bzw. jegliche Dritte verfügbar. Eine öffentliche API kann zu einer Steigerung der Markenbekanntheit beitragen und eröffnet bei einer Monetarisierung zusätzliche Einnahmequellen.\citep{apistrategyguide}
-	\item \textbf{Privat APIs:} Dieser Typ erlaubt es Entwicklern, die innerhalb einer Firma tätig sind, die API zu nutzen, um interne Produkte, Systeme oder Apps zu integrieren. Des Weiteren können bei der Entwicklung neuer Systeme bereits vorhandene Ressourcen verwendet werden. Dadurch lassen sich die Kosten erheblich reduzieren und es entsteht eine größere Flexibilität. \citep{apistrategyguide}
-	\item \textbf{Partner APIs:} Partner-APIs stellen eine Art Schnittstelle zwischen privaten und öffentlichen APIs dar. Ihr Zweck besteht darin, die Entwicklung von Unternehmensanwendungen zu fördern. Die Unternehmen haben dabei eine hohe Nutzerkontrolle.\citep{apistrategyguide}
-\end{itemize}
-%subsubsection apitypenverfuegbarkeit (end)
-
 \subsubsection{API Typen nach Anwendungszweck} % (fold)
 \label{sec:apitypenanwendungszweck}
 \begin{itemize}
@@ -42,6 +25,22 @@ Im Bezug auf Verfügbarkeit können APIs public (öffentlich), privat oder für 
 \end{itemize}
 %subsubsection apitypenanwendungszweck (end)
 
+\subsubsection{API Typen nach Verfügbarkeit} % (fold)
+\label{sec:apitypenverfuegbarkeit}
+Im Bezug auf Verfügbarkeit können APIs public (öffentlich), privat oder für Partner bereitgestellt werden. 
+\begin{figure}[h!]
+	\centering
+	\includegraphics[scale=0.3]{Illustrations/apitypes.jpg}
+	\caption{API Typen nach Verfügbarkeit}
+\end{figure}
+
+\begin{itemize}
+	\item \textbf{Public APIs:} Öffentliche APIs sind für jeden Entwickler bzw. jegliche Dritte verfügbar. Eine öffentliche API kann zu einer Steigerung der Markenbekanntheit beitragen und eröffnet bei einer Monetarisierung zusätzliche Einnahmequellen.\citep{apistrategyguide}
+	\item \textbf{Partner APIs:} Partner-APIs stellen eine Art Schnittstelle zwischen privaten und öffentlichen APIs dar. Ihr Zweck besteht darin, die Entwicklung von Unternehmensanwendungen zu fördern. Die Unternehmen haben dabei eine hohe Nutzerkontrolle.\citep{apistrategyguide}
+	\item \textbf{Private APIs:} Dieser Typ erlaubt es Entwicklern, die innerhalb einer Firma tätig sind, die API zu nutzen, um interne Produkte, Systeme oder Apps zu integrieren. Des Weiteren können bei der Entwicklung neuer Systeme bereits vorhandene Ressourcen verwendet werden. Dadurch lassen sich die Kosten erheblich reduzieren und es entsteht eine größere Flexibilität. \citep{apistrategyguide}
+\end{itemize}
+%subsubsection apitypenverfuegbarkeit (end)
+\newpage
 \subsubsection{API Typen nach Spezifikation/Protokoll} % (fold)
 \label{sec:apitypenspezifikation}
 Das Ziel der Spezifikation von APIs ist die Kommunikation zwischen verschiedenen Services zu standardisieren
@@ -75,14 +74,15 @@ Eine Datenbank stellt eine Sammlung von Daten und Informationen dar, welche für
 
 \subsection{Datenbank Modelle} % (fold)
 Datenbanken können in SQL und NoSQL (Not Only SQL) Datenbanken unterteilt werden. Eine relationale Datenbank stellt eine SQL Datenbank dar, eine Graph Datenbank eine NoSQL Datenbank. Im Folgenden werden beide Vertreter der Technologien vorgestellt.
-\subsubsection{Relationale Datenbanken} % (fold)
+\subsubsection{Relationale Datenbank} % (fold)
 \label{sec:relationaleDatenbanken}
-Ein Relationales Datenbank Model hat eine strikte Struktur, welche mitthilfe von Tabellen realisiert wird. Dies hat zur Folge, dass die Struktur, in der die Daten gespeichert werden sollen vor der Speicherung in der Datenbank bekannt sein müssen. Falls Werte nicht vorkammen werden diese auf null gesetzt. \citep{relationalDatabase}
+Relationale Datenbanken basieren auf dem von E. F. Codd eingeführten relationalen Modell. Es verwendet relationale Algebra und Tupel-Relationen und speichert Daten in tabellarischer Form, wobei Zeilen als Tupel und Spalten als Attribute bezeichent werden. Dies hat zur Folge, dass die Struktur, in der die Daten gespeichert werden sollen vor der Speicherung in der Datenbank bekannt sein müssen. Falls Werte nicht vorkammen werden diese auf null gesetzt. Die Tabellen sind durch Primär- und Fremdschlüssel miteinander verknüpft. Diese Art von Datenbanken sind einfach zu entwerfen und umzusetzen und zeichnen sich durch Benutzerfreundlichkeit, Konsistenz und Flexibilität aus. Diese Datenbanken eignen sich besonders für normalisierte Daten und solche, die Transaktionsintegrität erfordern.
+ \citep{relationalDatabase}  \citep{9677042}
 %subsubsection relationaleDatenbanken (end)
-
 \subsubsection{Graph Datenbanken} % (fold)
 \label{sec:graphDatenbanken}
-
+Graphdatenbanken basieren auf dem Konzept der Graphentheorie, die Daten in Form von Graphen schemafreien Weise speichern. Eine Graphdatenbank ist eine Sammlung von Knoten und Kanten, wobei die Knoten Entitäten oder Objekte darstellen und die Kanten die Beziehungen zwischen den Knoten darstellen. Der Graph  enthält auch Informationen über die Eigenschaften der mit den Knoten verbundenen Objekte. Graphdatenbanken bieten eine effiziente Datenspeicherung speziell für semistrukturierte Daten. Die Formulierung von Abfragen als Traversale in Graphen-Datenbanken sind sie schneller als relationale Datenbanken. Graphdatenbanken befolgen ACID-Bedingungen und bieten Rollback-Unterstützung, die die Konsistenz der Informationen Informationen garantiert.
+\citep{9677042}
 
 %subsubsection graphDatenbanken (end)
 
