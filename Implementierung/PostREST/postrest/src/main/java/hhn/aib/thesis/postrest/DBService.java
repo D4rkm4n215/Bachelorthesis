@@ -94,7 +94,7 @@ public class DBService {
         }
     }
 
-    public List<Person> getPersonWithAtleastOneProjectAndOneIssue() {
+    public List<Person> getPersonWithAtLeastOneProjectAndOneIssue() {
         List<Person> persons = new ArrayList<Person>();
             try(PreparedStatement ps = con.prepareStatement(GET_PERSON_WITH_ONE_OR_MORE_PROJETCS_AND_ISSUES)){
                 ResultSet rs = ps.executeQuery();

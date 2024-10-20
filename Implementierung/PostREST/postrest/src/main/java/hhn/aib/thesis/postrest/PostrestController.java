@@ -36,7 +36,7 @@ public class PostrestController {
 
     @GetMapping("/personOneProjectAndIssue")
     public List<Person> person() {
-        return db.getPersonWithAtleastOneProjectAndOneIssue();
+        return db.getPersonWithAtLeastOneProjectAndOneIssue();
     }
 
 
