@@ -5,6 +5,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.sql.SQLException;
+import java.util.List;
 
 @RestController
 public class PostrestController {
@@ -18,15 +19,27 @@ public class PostrestController {
         }
     }
 
-
-    @GetMapping("/hello")
-    public String hello(@RequestParam(value = "name", defaultValue = "World") String name) {
-        return String.format("Hello %s!", name);
-    }
-
-
     @GetMapping("/person")
     public Person person(@RequestParam(value = "id") long id) {
         return db.getPerson(id);
     }
+
+    @GetMapping("/issue")
+    public Issue issue(@RequestParam(value = "id") long id) {
+        return db.getIssue(id);
+    }
+
+    @GetMapping("/project")
+    public Project project(@RequestParam(value = "id") long id) {
+        return db.getProject(id);
+    }
+
+    @GetMapping("/personOneProjectAndIssue")
+    public List<Person> person() {
+        return db.getPersonWithAtleastOneProjectAndOneIssue();
+    }
+
+
+
+
 }

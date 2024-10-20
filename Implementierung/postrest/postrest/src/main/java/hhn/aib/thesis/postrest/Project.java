@@ -1,12 +1,17 @@
 package hhn.aib.thesis.postrest;
 
-import java.time.LocalDateTime;
+import java.util.Date;
 
 public class Project {
     long id;
     String name;
-    String description;
-    LocalDateTime creationDate;
+    Date createdAt;
+
+    public Project(DBService db,long prid, String name, Date createdAt) {
+        setId(prid);
+        setName(name);
+        setcreatedAt(createdAt);
+    }
 
     public long getId() {
         return id;
@@ -24,19 +29,11 @@ public class Project {
         this.name = name;
     }
 
-    public String getDescription() {
-        return description;
+    public Date getcreatedAt() {
+        return createdAt;
     }
 
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
-    public LocalDateTime getCreationDate() {
-        return creationDate;
-    }
-
-    public void setCreationDate(LocalDateTime creationDate) {
-        this.creationDate = creationDate;
+    public void setcreatedAt(Date createdAt) {
+        this.createdAt = createdAt;
     }
 }

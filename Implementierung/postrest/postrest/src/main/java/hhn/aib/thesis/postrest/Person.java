@@ -5,7 +5,7 @@ public class Person{
     String name;
     String email;
 
-    public Person(DBService dbService, long pid, String name, String email) {
+    public Person(DBService db, long pid, String name, String email) {
         setId(pid);
         setName(name);
         setEmail(email);

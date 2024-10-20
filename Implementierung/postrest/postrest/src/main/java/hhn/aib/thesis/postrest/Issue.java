@@ -1,14 +1,23 @@
 package hhn.aib.thesis.postrest;
 
+import java.sql.Date;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 public class Issue {
     long id;
     String title;
-    String description;
-    LocalDateTime createdAt;
+    Date createdAt;
     String state;
     String stateReason;
+
+    public Issue(DBService db, long iid , String title, Date createdAt, String state, String stateReason ) {
+        setId(iid);
+        setTitle(title);
+        setCreatedAt(createdAt);
+        setState(state);
+        setStateReason(stateReason);
+    }
 
     public long getId() {
         return id;
@@ -26,19 +35,11 @@ public class Issue {
         this.title = title;
     }
 
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
-    public LocalDateTime getCreatedAt() {
+    public Date getCreatedAt() {
         return createdAt;
     }
 
-    public void setCreatedAt(LocalDateTime createdAt) {
+    public void setCreatedAt(Date createdAt) {
         this.createdAt = createdAt;
     }
 
