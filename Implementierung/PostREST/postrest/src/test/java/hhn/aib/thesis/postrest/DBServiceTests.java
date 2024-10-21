@@ -46,10 +46,4 @@ class DBServiceTests {
 		assertEquals(project.id,rand);
 	}
 
-	@Test
-	public void testGetPersonWithAtLeastOneProjectAndOneIssue() {
-		List<Person>personList = db.getPersonWithAtLeastOneProjectAndOneIssue();
-		assertNotNull(personList);
-	}
-
 }

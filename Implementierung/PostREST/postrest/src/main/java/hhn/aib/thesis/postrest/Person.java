@@ -2,12 +2,14 @@ package hhn.aib.thesis.postrest;
 
 public class Person{
     long id;
-    String name;
+    String firstname;
+    String lastname;
     String email;
 
-    public Person(DBService db, long pid, String name, String email) {
+    public Person(DBService db, long pid, String firstname, String lastname, String email) {
         setId(pid);
-        setName(name);
+        setFirstname(firstname);
+        setLastname(lastname);
         setEmail(email);
     }
 
@@ -19,12 +21,20 @@ public class Person{
         this.id = id;
     }
 
-    public String getName() {
-        return name;
+    public String getLastname() {
+        return lastname;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setLastname(String lastname) {
+        this.lastname = lastname;
+    }
+
+    public String getFirstname() {
+        return firstname;
+    }
+
+    public void setFirstname(String firstname) {
+        this.firstname = firstname;
     }
 
     public String getEmail() {

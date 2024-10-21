@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/postrest.iml" filepath="$PROJECT_DIR$/.idea/postrest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/PostREST.iml" filepath="$PROJECT_DIR$/.idea/PostREST.iml" />
+      <module fileurl="file://$PROJECT_DIR$/postrest/postrest.iml" filepath="$PROJECT_DIR$/postrest/postrest.iml" />
     </modules>
   </component>
 </project>

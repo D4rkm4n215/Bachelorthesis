@@ -2,6 +2,7 @@ package hhn.aib.thesis.postrest;
 
 import java.sql.*;
 import java.util.ArrayList;
+import java.sql.Date;
 import java.util.List;
 
 public class DBService {
@@ -16,9 +17,17 @@ public class DBService {
     private static final String GET_PATIENT_BY_ID = "SELECT * FROM person WHERE pid = ?";
     private static final String GET_ISSUE_BY_ID = "SELECT * FROM issue WHERE iid = ?";
     private static final String GET_PROJECT_BY_ID = "SELECT * FROM project WHERE prid = ?";
-    private static final String GET_PERSON_WITH_ONE_OR_MORE_PROJETCS_AND_ISSUES = "SELECT p.PID, p.Name, p.Email " +
-            "FROM Person p JOIN Project pr ON p.PID = pr.PID JOIN Issue i ON pr.PrID = i.PrID " +
-            "GROUP BY p.PID, p.Name, p.Email HAVING COUNT(DISTINCT pr.PrID) >= 1 AND COUNT(i.IID) >= 2;";
+
+    private static final String GET_PERSON_WITH_Closed_ISSUE_AND_PROJECT_CREATED_BEFORE =
+            "SELECT p.PID, p.Firstname, p.Lastname, p.Email " +
+                    "FROM Person p " +
+                    "JOIN Person_Issue pi ON p.PID = pi.PID " +
+                    "JOIN Issue i ON pi.iid = i.iid " +
+                    "JOIN person_project pp ON p.pid = pp.pid " +
+                    "JOIN project pr ON pp.prid = pr.prid " +
+                    "WHERE i.State = 'Closed' " +
+                    "AND pr.CreatedAt < ?";
+
 
     public DBService() throws SQLException {
         try {
@@ -37,7 +46,8 @@ public class DBService {
                 if(rs.next()){
                     return new Person(this,
                             rs.getLong("pid"),
-                            rs.getString("name"),
+                            rs.getString("firstname"),
+                            rs.getString("lastname"),
                             rs.getString("email"));
                 } else {
                     return null;
@@ -58,7 +68,7 @@ public class DBService {
                 if(rs.next()){
                     return new Issue(this,
                             rs.getLong("iid"),
-                            rs.getString("titel"),
+                            rs.getString("title"),
                             rs.getDate("createdat"),
                             rs.getString("state"),
                             rs.getString("statereason"));
@@ -81,7 +91,7 @@ public class DBService {
                 if(rs.next()){
                     return new Project(this,
                             rs.getLong("prid"),
-                            rs.getString("name"),
+                            rs.getString("title"),
                             rs.getDate("createdat"));
                 } else {
                     return null;
@@ -94,20 +104,22 @@ public class DBService {
         }
     }
 
-    public List<Person> getPersonWithAtLeastOneProjectAndOneIssue() {
+    public List<Person> getPersonWithClosedIssueAndProjectCreatedBefore(Date date) {
         List<Person> persons = new ArrayList<Person>();
-            try(PreparedStatement ps = con.prepareStatement(GET_PERSON_WITH_ONE_OR_MORE_PROJETCS_AND_ISSUES)){
-                ResultSet rs = ps.executeQuery();
-                while (rs.next()) {
-                    Person p =  new Person(this,
-                            rs.getLong("pid"),
-                            rs.getString("name"),
-                            rs.getString("email"));
-                    persons.add(p);
-                } return persons;
-            }catch (SQLException e){
-                throw new RuntimeException(e);
-            }
+        try(PreparedStatement ps = con.prepareStatement(GET_PERSON_WITH_Closed_ISSUE_AND_PROJECT_CREATED_BEFORE)){
+            ps.setDate(1,date);
+            ResultSet rs = ps.executeQuery();
+            while (rs.next()) {
+                Person p =  new Person(this,
+                        rs.getLong("pid"),
+                        rs.getString("firstname"),
+                        rs.getString("lastname"),
+                        rs.getString("email"));
+                persons.add(p);
+            } return persons;
+        }catch (SQLException e){
+            throw new RuntimeException(e);
+        }
     }
 
 

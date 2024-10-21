@@ -5,6 +5,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.sql.SQLException;
+import java.sql.Date;
 import java.util.List;
 
 @RestController
@@ -34,9 +35,9 @@ public class PostrestController {
         return db.getProject(id);
     }
 
-    @GetMapping("/personOneProjectAndIssue")
-    public List<Person> person() {
-        return db.getPersonWithAtLeastOneProjectAndOneIssue();
+    @GetMapping("/personClosedIssueProjectCreatedBefore")
+    public List<Person> person(@RequestParam(value = "date") Date date) {
+        return db.getPersonWithClosedIssueAndProjectCreatedBefore(date);
     }
 
 
