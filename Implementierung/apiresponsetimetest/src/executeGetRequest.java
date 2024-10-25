@@ -12,12 +12,14 @@ public class executeGetRequest {
     public executeGetRequest() {
         //runGetRequestPerson();
         executeGetRequestPersonClosedIssueProjectCreatedBefore();
+        //executeGetRequestIssueByPersonIDAndProjectIDAndState();
     }
 
     private void runGetRequestPerson() {
         try {
             for (int i = 0; i <= RUNS; i++){
-                executeGetRequestPerson();
+                //executeGetRequestPerson();
+                executeGetRequestIssueByPersonIDAndProjectIDAndState();
                 Thread.sleep(500);
             }
         } catch (Exception e){
@@ -62,6 +64,37 @@ public class executeGetRequest {
         long endTime;
         try{
             URL url = new URL(TARGETURL + "personClosedIssueProjectCreatedBefore?date=2024-05-01");
+            HttpURLConnection con = (HttpURLConnection) url.openConnection();
+            con.setRequestMethod("GET");
+            con.setRequestProperty("Accept", "application/json");
+            con.setUseCaches(false);
+
+            startTime = System.currentTimeMillis();
+            InputStream is = con.getInputStream();
+            endTime = System.currentTimeMillis();
+
+            BufferedReader rd = new BufferedReader(new InputStreamReader(is));
+
+           /* String line;
+            StringBuilder response = new StringBuilder();
+            while ((line = rd.readLine()) != null) {
+                response.append(line);
+            }
+            rd.close();
+            System.out.println(response.toString() + " Response Time = " + (endTime - startTime + " ms"));
+
+            */
+            System.out.println(" Response Time = " + (endTime - startTime + " ms"));
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+    }
+
+    private void executeGetRequestIssueByPersonIDAndProjectIDAndState() {
+        long startTime;
+        long endTime;
+        try{
+            URL url = new URL(TARGETURL + (new Random().nextInt(1000-1)+1) + "/" + (new Random().nextInt(1000-1)+1) + "/Issue/Closed");
             HttpURLConnection con = (HttpURLConnection) url.openConnection();
             con.setRequestMethod("GET");
             con.setRequestProperty("Accept", "application/json");

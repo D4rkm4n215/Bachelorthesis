@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.sql.Date;
 import java.util.List;
 
-public class DBService {
+public class DBService implements IDBService{
 
     private static final String URL = "jdbc:postgresql://localhost:5432/bachelorthesis";
     private static final String USER = "postgres";
@@ -18,7 +18,7 @@ public class DBService {
     private static final String GET_ISSUE_BY_ID = "SELECT * FROM issue WHERE iid = ?";
     private static final String GET_PROJECT_BY_ID = "SELECT * FROM project WHERE prid = ?";
 
-    private static final String GET_PERSON_WITH_Closed_ISSUE_AND_PROJECT_CREATED_BEFORE =
+    private static final String GET_PERSON_WITH_CLOSED_ISSUE_AND_PROJECT_CREATED_BEFORE =
             "SELECT p.PID, p.Firstname, p.Lastname, p.Email " +
                     "FROM Person p " +
                     "JOIN Person_Issue pi ON p.PID = pi.PID " +
@@ -28,6 +28,14 @@ public class DBService {
                     "WHERE i.State = 'Closed' " +
                     "AND pr.CreatedAt < ?";
 
+    private static final String GET_ISSUE_BY_PID_PRID_STATE ="SELECT * " +
+            "FROM person p, person_project pp, project pr, issue i " +
+            "Where p.pid = pp.pid " +
+            "and pp.prid = pr.prid " +
+            "and pr.prid = i.prid " +
+            "and p.pid = ? " +
+            "and pr.prid = ? " +
+            "and i.state = 'Open'";
 
     public DBService() throws SQLException {
         try {
@@ -104,9 +112,33 @@ public class DBService {
         }
     }
 
+    public List<Issue> getIssueByPersonenIdAndProjectIDAndState(long pid, long prid) {
+        if(pid > 0 && prid > 0){
+            List<Issue> issues = new ArrayList<>();
+            try(PreparedStatement ps = con.prepareStatement(GET_ISSUE_BY_PID_PRID_STATE)){
+                ps.setLong(1,pid);
+                ps.setLong(2,prid);
+                ResultSet rs = ps.executeQuery();
+                while (rs.next()) {
+                    Issue i =  new Issue(this,
+                            rs.getLong("iid"),
+                            rs.getString("title"),
+                            rs.getDate("createdat"),
+                            rs.getString("state"),
+                            rs.getString("stateReason"));
+                    issues.add(i);
+                }return issues;
+            }catch (SQLException e){
+                throw new RuntimeException(e);
+            }
+        } else {
+            throw new AssertionError();
+        }
+    }
+
     public List<Person> getPersonWithClosedIssueAndProjectCreatedBefore(Date date) {
         List<Person> persons = new ArrayList<Person>();
-        try(PreparedStatement ps = con.prepareStatement(GET_PERSON_WITH_Closed_ISSUE_AND_PROJECT_CREATED_BEFORE)){
+        try(PreparedStatement ps = con.prepareStatement(GET_PERSON_WITH_CLOSED_ISSUE_AND_PROJECT_CREATED_BEFORE)){
             ps.setDate(1,date);
             ResultSet rs = ps.executeQuery();
             while (rs.next()) {
@@ -121,8 +153,6 @@ public class DBService {
             throw new RuntimeException(e);
         }
     }
-
-
 
     public void close() {
         if (con != null) {

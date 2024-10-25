@@ -1,6 +1,7 @@
 package hhn.aib.thesis.postrest;
 
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -35,12 +36,14 @@ public class PostrestController {
         return db.getProject(id);
     }
 
-    @GetMapping("/personClosedIssueProjectCreatedBefore")
+    @GetMapping("/api/personClosedIssueProjectCreatedBefore")
     public List<Person> person(@RequestParam(value = "date") Date date) {
         return db.getPersonWithClosedIssueAndProjectCreatedBefore(date);
     }
 
-
-
+    @GetMapping("/api/persons/{pid}/projects/{prid}/issues/open")
+    public List<Issue> issue(@PathVariable(value = "pid") long pid, @PathVariable(value = "prid") long prid){
+        return db.getIssueByPersonenIdAndProjectIDAndState(pid,prid);
+    }
 
 }
