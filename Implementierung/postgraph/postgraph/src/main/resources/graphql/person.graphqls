@@ -1,0 +1,11 @@
+
+type Person{
+    pid : ID!
+    firstname : String
+    lastname : String
+    email : String
+}
+
+extend type Query{
+    getAllPersons: [Person]
+}

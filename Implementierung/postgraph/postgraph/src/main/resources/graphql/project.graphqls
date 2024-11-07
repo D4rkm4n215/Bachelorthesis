@@ -1,0 +1,10 @@
+
+
+type Project{
+    prid: ID!
+    title : String!
+}
+
+type Query{
+    getAllProjects: [Project]
+}

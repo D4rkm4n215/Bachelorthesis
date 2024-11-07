@@ -1,0 +1,11 @@
+
+type Issue{
+    iid : ID!
+    title : String
+    state : String
+    stateReason : String
+}
+
+extend type Query{
+    getAllIssues : [Issue]
+}
