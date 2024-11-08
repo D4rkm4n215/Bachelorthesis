@@ -1,5 +1,9 @@
 package hhn.aib.thesis.postrest;
 
+import hhn.aib.thesis.postrest.model.Issue;
+import hhn.aib.thesis.postrest.model.Person;
+import hhn.aib.thesis.postrest.model.Project;
+
 import java.sql.*;
 import java.util.ArrayList;
 import java.sql.Date;

@@ -1,5 +1,8 @@
 package hhn.aib.thesis.postrest;
 
+import hhn.aib.thesis.postrest.model.Issue;
+import hhn.aib.thesis.postrest.model.Person;
+import hhn.aib.thesis.postrest.model.Project;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestParam;

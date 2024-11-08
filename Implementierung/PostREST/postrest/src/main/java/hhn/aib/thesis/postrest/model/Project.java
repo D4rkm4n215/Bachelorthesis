@@ -1,13 +1,18 @@
-package hhn.aib.thesis.postrest;
+package hhn.aib.thesis.postrest.model;
+
+import hhn.aib.thesis.postrest.DBService;
 
 import java.util.Date;
+import java.util.Set;
 
 public class Project {
     long id;
     String name;
     Date createdAt;
+    private Set<Person> people;
+    private Set<Issue> issues;
 
-    public Project(DBService db,long prid, String name, Date createdAt) {
+    public Project(DBService db, long prid, String name, Date createdAt) {
         setId(prid);
         setName(name);
         setcreatedAt(createdAt);

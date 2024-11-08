@@ -1,10 +1,12 @@
 package hhn.aib.thesis.postrest;
 
+import hhn.aib.thesis.postrest.model.Issue;
+import hhn.aib.thesis.postrest.model.Person;
+import hhn.aib.thesis.postrest.model.Project;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import java.sql.SQLException;
-import java.util.List;
 import java.util.Random;
 
 import static org.junit.jupiter.api.Assertions.*;

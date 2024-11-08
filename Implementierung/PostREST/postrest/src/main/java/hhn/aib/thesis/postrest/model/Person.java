@@ -1,4 +1,6 @@
-package hhn.aib.thesis.postrest;
+package hhn.aib.thesis.postrest.model;
+
+import hhn.aib.thesis.postrest.DBService;
 
 public class Person{
     long id;

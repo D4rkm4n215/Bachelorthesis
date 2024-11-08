@@ -1,8 +1,9 @@
-package hhn.aib.thesis.postrest;
+package hhn.aib.thesis.postrest.model;
+
+import hhn.aib.thesis.postrest.DBService;
 
 import java.sql.Date;
-import java.time.LocalDate;
-import java.time.LocalDateTime;
+import java.util.Set;
 
 public class Issue {
     long id;
@@ -10,6 +11,8 @@ public class Issue {
     Date createdAt;
     String state;
     String stateReason;
+    private Set<Person> assignees;
+    private Project project;
 
     public Issue(DBService db, long iid , String title, Date createdAt, String state, String stateReason ) {
         setId(iid);
