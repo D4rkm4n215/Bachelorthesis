@@ -3,6 +3,7 @@ package hhn.aib.thesis.postgraph.model;
 import jakarta.persistence.*;
 
 import java.util.Date;
+import java.util.Set;
 
 
 @Entity
@@ -17,6 +18,19 @@ public class Project {
 
     @Column(name = "createdat")
     private Date createdAt;
+
+    @ManyToMany
+    @JoinTable(
+            name = "person_project",
+            joinColumns = @JoinColumn(name = "prid"),
+            inverseJoinColumns = @JoinColumn(name = "pid")
+    )
+    private Set<Person> people;
+
+    @OneToMany(mappedBy = "project")
+    private Set<Issue> issues;
+
+
 
     public Project() {}
 
@@ -47,5 +61,21 @@ public class Project {
 
     public void setCreatedAt(Date createdAt) {
         this.createdAt = createdAt;
+    }
+
+    public Set<Person> getPeople() {
+        return people;
+    }
+
+    public void setPeople(Set<Person> people) {
+        this.people = people;
+    }
+
+    public Set<Issue> getIssues() {
+        return issues;
+    }
+
+    public void setIssues(Set<Issue> issues) {
+        this.issues = issues;
     }
 }

@@ -4,8 +4,10 @@ type Person{
     firstname : String
     lastname : String
     email : String
+    projects : [Project]
+    issues : [Issue]
 }
 
 extend type Query{
-    getAllPersons: [Person]
+    persons: [Person]
 }

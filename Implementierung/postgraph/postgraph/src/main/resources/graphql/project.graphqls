@@ -3,8 +3,10 @@
 type Project{
     prid: ID!
     title : String!
+    people : [Person]
+    issues : [Issue]
 }
 
 type Query{
-    getAllProjects: [Project]
+    projects: [Project]
 }

@@ -13,8 +13,11 @@ import org.springframework.stereotype.Component;
 @Component
 public class Query implements GraphQLQueryResolver {
 
+    @Autowired
     private ProjectRepository projectRepository;
+    @Autowired
     private PersonRepository personRepository;
+    @Autowired
     private IssueRepository issueRepository;
 
     @Autowired
@@ -24,15 +27,19 @@ public class Query implements GraphQLQueryResolver {
         this.issueRepository = issueRepository;
     }
 
-    public Iterable<Project> getAllProjects() {
+    public Iterable<Project> getProjects() {
         return projectRepository.findAll();
     }
 
-    public Iterable<Person> getAllPersons() {
+    public Iterable<Person> getPersons() {
         return personRepository.findAll();
     }
 
-    public Iterable<Issue> getAllIssues() {
+    public Iterable<Issue> getIssues() {
         return issueRepository.findAll();
+    }
+
+    public Issue getIssue(Long id) {
+        return issueRepository.findById(id).orElse(null);
     }
 }

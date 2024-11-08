@@ -2,6 +2,8 @@ package hhn.aib.thesis.postgraph.model;
 
 import jakarta.persistence.*;
 
+import java.util.Set;
+
 @Entity
 public class Person {
     @Id
@@ -16,6 +18,12 @@ public class Person {
 
     @Column(name = "email")
     private String email;
+
+    @ManyToMany(mappedBy = "people")
+    private Set<Project> projects;
+
+    @ManyToMany(mappedBy = "assignees")
+    private Set<Issue> issues;
 
     public Person() {}
 
@@ -55,5 +63,21 @@ public class Person {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public Set<Project> getProjects() {
+        return projects;
+    }
+
+    public void setProjects(Set<Project> projects) {
+        this.projects = projects;
+    }
+
+    public Set<Issue> getIssues() {
+        return issues;
+    }
+
+    public void setIssues(Set<Issue> issues) {
+        this.issues = issues;
     }
 }
