@@ -3,6 +3,8 @@ package hhn.aib.thesis.postrest;
 import hhn.aib.thesis.postrest.model.Issue;
 import hhn.aib.thesis.postrest.model.Person;
 import hhn.aib.thesis.postrest.model.Project;
+import org.springframework.web.client.DefaultResponseErrorHandler;
+import org.springframework.web.client.RestTemplate;
 
 import java.sql.*;
 import java.util.ArrayList;
@@ -19,18 +21,6 @@ public class DBService implements IDBService{
 
 
     private static final String GET_PATIENT_BY_ID = "SELECT * FROM person WHERE pid = ?";
-    private static final String GET_ISSUE_BY_ID = "SELECT * FROM issue WHERE iid = ?";
-    private static final String GET_PROJECT_BY_ID = "SELECT * FROM project WHERE prid = ?";
-
-    private static final String GET_PERSON_WITH_CLOSED_ISSUE_AND_PROJECT_CREATED_BEFORE =
-            "SELECT p.PID, p.Firstname, p.Lastname, p.Email " +
-                    "FROM Person p " +
-                    "JOIN Person_Issue pi ON p.PID = pi.PID " +
-                    "JOIN Issue i ON pi.iid = i.iid " +
-                    "JOIN person_project pp ON p.pid = pp.pid " +
-                    "JOIN project pr ON pp.prid = pr.prid " +
-                    "WHERE i.State = 'Closed' " +
-                    "AND pr.CreatedAt < ?";
 
     private static final String GET_ISSUE_BY_PID_PRID_STATE ="SELECT * " +
             "FROM person p, person_project pp, project pr, issue i " +
@@ -40,6 +30,11 @@ public class DBService implements IDBService{
             "and p.pid = ? " +
             "and pr.prid = ? " +
             "and i.state = 'Open'";
+
+    private static final String POST_ISSUE="INSERT INTO issue" +
+            " VALUES (?,?,?,?,?,?)";
+    private static final String POST_PERSON_ISSUE="INSERT INTO person_issue VALUES (?,?,?)";
+
 
     public DBService() throws SQLException {
         try {
@@ -61,50 +56,6 @@ public class DBService implements IDBService{
                             rs.getString("firstname"),
                             rs.getString("lastname"),
                             rs.getString("email"));
-                } else {
-                    return null;
-                }
-            }catch (SQLException e){
-                throw new RuntimeException(e);
-            }
-        } else {
-            throw new AssertionError();
-        }
-    }
-
-    public Issue getIssue(long id) {
-        if(id > 0){
-            try(PreparedStatement ps = con.prepareStatement(GET_ISSUE_BY_ID)){
-                ps.setLong(1,id);
-                ResultSet rs = ps.executeQuery();
-                if(rs.next()){
-                    return new Issue(this,
-                            rs.getLong("iid"),
-                            rs.getString("title"),
-                            rs.getDate("createdat"),
-                            rs.getString("state"),
-                            rs.getString("statereason"));
-                } else {
-                    return null;
-                }
-            }catch (SQLException e){
-                throw new RuntimeException(e);
-            }
-        } else {
-            throw new AssertionError();
-        }
-    }
-
-    public Project getProject(long id) {
-        if(id > 0){
-            try(PreparedStatement ps = con.prepareStatement(GET_PROJECT_BY_ID)){
-                ps.setLong(1,id);
-                ResultSet rs = ps.executeQuery();
-                if(rs.next()){
-                    return new Project(this,
-                            rs.getLong("prid"),
-                            rs.getString("title"),
-                            rs.getDate("createdat"));
                 } else {
                     return null;
                 }
@@ -140,21 +91,31 @@ public class DBService implements IDBService{
         }
     }
 
-    public List<Person> getPersonWithClosedIssueAndProjectCreatedBefore(Date date) {
-        List<Person> persons = new ArrayList<Person>();
-        try(PreparedStatement ps = con.prepareStatement(GET_PERSON_WITH_CLOSED_ISSUE_AND_PROJECT_CREATED_BEFORE)){
-            ps.setDate(1,date);
-            ResultSet rs = ps.executeQuery();
-            while (rs.next()) {
-                Person p =  new Person(this,
-                        rs.getLong("pid"),
-                        rs.getString("firstname"),
-                        rs.getString("lastname"),
-                        rs.getString("email"));
-                persons.add(p);
-            } return persons;
-        }catch (SQLException e){
-            throw new RuntimeException(e);
+
+
+    public Issue postIssue(long pid,long prid,Issue issue) {
+        if(issue != null){
+            try(PreparedStatement ps = con.prepareStatement(POST_ISSUE)){
+                ps.setLong(1,issue.getId());
+                ps.setString(2,issue.getTitle());
+                ps.setDate(3,issue.getCreatedAt());
+                ps.setString(4,issue.getState());
+                ps.setString(5,issue.getStateReason());
+                ps.setLong(6,prid);
+                ps.executeUpdate();
+                try(PreparedStatement pst = con.prepareStatement(POST_PERSON_ISSUE)){
+                    pst.setLong(1,pid);
+                    pst.setLong(2,issue.getId());
+                    pst.setString(3,"null");
+                    pst.executeUpdate();
+                }
+                return issue;
+            }catch (SQLException e){
+                throw new RuntimeException(e);
+            }
+
+        }else {
+            throw new AssertionError();
         }
     }
 

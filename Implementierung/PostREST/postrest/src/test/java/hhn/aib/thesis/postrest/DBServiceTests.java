@@ -29,23 +29,9 @@ class DBServiceTests {
 		long rand = (new Random().nextLong(100-1)+1);
 		Person person = db.getPerson(rand);
         assertNotNull(person);
-		assertEquals(person.id,rand);
+		assertEquals(person.getId(),rand);
 	}
 
-	@Test
-	public void testGetIssue() {
-		long rand = (new Random().nextLong(200-1)+1);
-		Issue issue = db.getIssue(rand);
-		assertNotNull(issue);
-		assertEquals(issue.id,rand);
-	}
 
-	@Test
-	public void testGetProject() {
-		long rand = (new Random().nextLong(200-1)+1);
-		Project project = db.getProject(rand);
-		assertNotNull(project);
-		assertEquals(project.id,rand);
-	}
 
 }

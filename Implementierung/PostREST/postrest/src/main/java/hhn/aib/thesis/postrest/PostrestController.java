@@ -3,10 +3,8 @@ package hhn.aib.thesis.postrest;
 import hhn.aib.thesis.postrest.model.Issue;
 import hhn.aib.thesis.postrest.model.Person;
 import hhn.aib.thesis.postrest.model.Project;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.StreamingHttpOutputMessage;
+import org.springframework.web.bind.annotation.*;
 
 import java.sql.SQLException;
 import java.sql.Date;
@@ -24,29 +22,19 @@ public class PostrestController {
         }
     }
 
-    @GetMapping("/person")
+    @GetMapping("/api/person")
     public Person person(@RequestParam(value = "id") long id) {
         return db.getPerson(id);
-    }
-
-    @GetMapping("/issue")
-    public Issue issue(@RequestParam(value = "id") long id) {
-        return db.getIssue(id);
-    }
-
-    @GetMapping("/project")
-    public Project project(@RequestParam(value = "id") long id) {
-        return db.getProject(id);
-    }
-
-    @GetMapping("/api/personClosedIssueProjectCreatedBefore")
-    public List<Person> person(@RequestParam(value = "date") Date date) {
-        return db.getPersonWithClosedIssueAndProjectCreatedBefore(date);
     }
 
     @GetMapping("/api/persons/{pid}/projects/{prid}/issues/open")
     public List<Issue> issue(@PathVariable(value = "pid") long pid, @PathVariable(value = "prid") long prid){
         return db.getIssueByPersonenIdAndProjectIDAndState(pid,prid);
+    }
+
+    @PostMapping("/api/persons/{pid}/projects/{prid}/issues")
+    public Issue issue(@PathVariable(value = "pid") long pid, @PathVariable(value = "prid") long prid, @RequestBody Issue issue){
+        return db.postIssue(pid,prid,issue);
     }
 
 }
