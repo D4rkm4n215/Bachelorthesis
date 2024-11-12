@@ -10,4 +10,5 @@ import java.util.List;
 public interface IssueRepository extends JpaRepository<Issue, Long> {
     List<Issue> findByAssigneesContains(Person person);
     List<Issue> findByProject(Project project);
+    List<Issue> findByStateAndProject(String state, Project project);
 }

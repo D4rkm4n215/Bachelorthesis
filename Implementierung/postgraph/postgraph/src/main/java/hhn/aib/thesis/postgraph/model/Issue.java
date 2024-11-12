@@ -2,6 +2,8 @@ package hhn.aib.thesis.postgraph.model;
 
 import jakarta.persistence.*;
 
+import java.time.LocalDate;
+import java.util.Date;
 import java.util.Set;
 
 @Entity
@@ -13,10 +15,13 @@ public class Issue {
     @Column(name = "title")
     private String title;
 
+    @Column(name = "createdat")
+    private Date createdAt;
+
     @Column(name = "state")
     private String state;
 
-    @Column(name = "stateReason")
+    @Column(name = "statereason")
     private String stateReason;
 
     @ManyToMany
@@ -38,6 +43,11 @@ public class Issue {
         this.stateReason = stateReason;
         this.assignees = assignees;
         this.project = project;
+    }
+
+    @PrePersist
+    protected void onCreate() {
+        this.createdAt = new Date();
     }
 
     public long getIid() {
@@ -86,5 +96,13 @@ public class Issue {
 
     public void setTitle(String title) {
         this.title = title;
+    }
+
+    public Date getCreatedAt() {
+        return createdAt;
+    }
+
+    public void setCreatedAt(Date createdAt) {
+        this.createdAt = createdAt;
     }
 }

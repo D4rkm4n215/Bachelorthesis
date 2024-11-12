@@ -24,6 +24,8 @@ public class PersonResolver implements GraphQLResolver<Person> {
         return projectRepository.findByPeopleContains(person);
     }
 
+    public Project getProject(Person person, long id) {return projectRepository.findById(id).orElse(null);}
+
     public List<Issue> getIssues(Person person) {
         return issueRepository.findByAssigneesContains(person);
     }

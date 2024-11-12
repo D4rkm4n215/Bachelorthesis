@@ -39,6 +39,11 @@ public class Project {
         this.createdAt = createdAt;
     }
 
+    @PrePersist
+    protected void onCreate() {
+        this.createdAt = new Date();
+    }
+
     public long getPrid() {
         return prid;
     }

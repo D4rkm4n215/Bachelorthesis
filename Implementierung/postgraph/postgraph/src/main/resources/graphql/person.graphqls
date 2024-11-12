@@ -5,9 +5,11 @@ type Person{
     lastname : String
     email : String
     projects : [Project]
+    project(id: ID!): Project
     issues : [Issue]
 }
 
 extend type Query{
     persons: [Person]
+    person(id:ID!): Person
 }

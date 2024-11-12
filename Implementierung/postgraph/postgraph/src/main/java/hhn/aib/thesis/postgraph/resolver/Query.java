@@ -42,4 +42,8 @@ public class Query implements GraphQLQueryResolver {
     public Issue getIssue(Long id) {
         return issueRepository.findById(id).orElse(null);
     }
+
+    public Person getPerson(Long id) {return personRepository.findById(id).orElse(null);}
+
+    public Project getProject(Long id) {return projectRepository.findById(id).orElse(null);}
 }
