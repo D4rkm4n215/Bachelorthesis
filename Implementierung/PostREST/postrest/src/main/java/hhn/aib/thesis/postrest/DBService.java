@@ -3,6 +3,11 @@ package hhn.aib.thesis.postrest;
 import hhn.aib.thesis.postrest.model.Issue;
 import hhn.aib.thesis.postrest.model.Person;
 import hhn.aib.thesis.postrest.model.Project;
+import hhn.aib.thesis.postrest.persistance.IssueRepository;
+import hhn.aib.thesis.postrest.persistance.PersonRepository;
+import hhn.aib.thesis.postrest.persistance.ProjectRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 import org.springframework.web.client.DefaultResponseErrorHandler;
 import org.springframework.web.client.RestTemplate;
 
@@ -11,12 +16,29 @@ import java.util.ArrayList;
 import java.sql.Date;
 import java.util.List;
 
+@Component
 public class DBService implements IDBService{
 
+    @Autowired
+    private ProjectRepository projectRepository;
+    @Autowired
+    private PersonRepository personRepository;
+    @Autowired
+    private IssueRepository issueRepository;
+
+    @Autowired
+    public DBService(ProjectRepository projectRepository, PersonRepository personRepository, IssueRepository issueRepository){
+        this.projectRepository = projectRepository;
+        this.personRepository = personRepository;
+        this.issueRepository = issueRepository;
+    }
+
+/*
     private static final String URL = "jdbc:postgresql://localhost:5432/bachelorthesis";
     private static final String USER = "postgres";
     private static final String PASSWORD = "1234";
     private final Connection con;
+
 
 
 
@@ -44,29 +66,21 @@ public class DBService implements IDBService{
             throw new SQLException(e);
         }
     }
-
+*/
     public Person getPerson(long id) {
-        if(id > 0){
-            try(PreparedStatement ps = con.prepareStatement(GET_PATIENT_BY_ID)){
-                ps.setLong(1,id);
-                ResultSet rs = ps.executeQuery();
-                if(rs.next()){
-                    return new Person(this,
-                            rs.getLong("pid"),
-                            rs.getString("firstname"),
-                            rs.getString("lastname"),
-                            rs.getString("email"));
-                } else {
-                    return null;
-                }
-            }catch (SQLException e){
-                throw new RuntimeException(e);
-            }
-        } else {
-            throw new AssertionError();
-        }
+        return personRepository.findById(id).orElse(null);
     }
 
+    @Override
+    public List<Issue> getIssueByPersonenIdAndProjectIDAndState(long pid, long prid) {
+        return List.of();
+    }
+
+    @Override
+    public Issue postIssue(long pid, long prid, Issue issue) {
+        return null;
+    }
+/*
     public List<Issue> getIssueByPersonenIdAndProjectIDAndState(long pid, long prid) {
         if(pid > 0 && prid > 0){
             List<Issue> issues = new ArrayList<>();
@@ -128,4 +142,5 @@ public class DBService implements IDBService{
             }
         }
     }
+ */
 }

@@ -1,34 +1,47 @@
 package hhn.aib.thesis.postrest.model;
 
-import hhn.aib.thesis.postrest.DBService;
+import jakarta.persistence.*;
 
+import java.util.Set;
+
+@Entity
 public class Person{
-    long id;
-    String firstname;
-    String lastname;
-    String email;
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private long pid;
 
-    public Person(DBService db, long pid, String firstname, String lastname, String email) {
-        setId(pid);
-        setFirstname(firstname);
-        setLastname(lastname);
-        setEmail(email);
-    }
+    @Column(name = "firstname")
+    private String firstname;
 
-    public long getId() {
-        return id;
-    }
+    @Column(name = "lastname")
+    private String lastname;
 
-    public void setId(long id) {
-        this.id = id;
-    }
+    @Column(name = "email")
+    private String email;
 
-    public String getLastname() {
-        return lastname;
-    }
+    @ManyToMany(mappedBy = "people")
+    private Set<Project> projects;
 
-    public void setLastname(String lastname) {
+    @ManyToOne
+    private Project project;
+
+    @ManyToMany(mappedBy = "assignees")
+    private Set<Issue> issues;
+
+    public Person() {}
+
+    public Person(String firstname, String lastname, String email) {
+        this.firstname = firstname;
         this.lastname = lastname;
+        this.email = email;
+    }
+
+    public long getPid() {
+        return pid;
+    }
+
+    public void setPid(long pid) {
+        this.pid = pid;
     }
 
     public String getFirstname() {
@@ -39,11 +52,39 @@ public class Person{
         this.firstname = firstname;
     }
 
+    public String getLastname() {
+        return lastname;
+    }
+
+    public void setLastname(String lastname) {
+        this.lastname = lastname;
+    }
+
     public String getEmail() {
         return email;
     }
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public Set<Project> getProjects() {
+        return projects;
+    }
+
+    public void setProjects(Set<Project> projects) {
+        this.projects = projects;
+    }
+
+    public Project getProject() {return project;}
+
+    public void setProject(Project project) {this.project = project;}
+
+    public Set<Issue> getIssues() {
+        return issues;
+    }
+
+    public void setIssues(Set<Issue> issues) {
+        this.issues = issues;
     }
 }

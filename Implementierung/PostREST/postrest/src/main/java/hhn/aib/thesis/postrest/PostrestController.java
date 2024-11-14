@@ -3,6 +3,7 @@ package hhn.aib.thesis.postrest;
 import hhn.aib.thesis.postrest.model.Issue;
 import hhn.aib.thesis.postrest.model.Person;
 import hhn.aib.thesis.postrest.model.Project;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.StreamingHttpOutputMessage;
 import org.springframework.web.bind.annotation.*;
 
@@ -12,14 +13,12 @@ import java.util.List;
 
 @RestController
 public class PostrestController {
+
+    @Autowired
     private static DBService db;
 
-    public PostrestController() {
-        try {
-            db = new DBService();
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
-        }
+    public PostrestController(DBService db) {
+        this.db = db;
     }
 
     @GetMapping("/api/person")

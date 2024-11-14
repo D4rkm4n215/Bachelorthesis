@@ -1,44 +1,86 @@
 package hhn.aib.thesis.postrest.model;
 
-import hhn.aib.thesis.postrest.DBService;
+import jakarta.persistence.*;
 
 import java.util.Date;
 import java.util.Set;
 
+
+@Entity
 public class Project {
-    long id;
-    String name;
-    Date createdAt;
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private long prid;
+
+    @Column(name = "title")
+    private String title;
+
+    @Column(name = "createdat")
+    private Date createdAt;
+
+    @ManyToMany
+    @JoinTable(
+            name = "person_project",
+            joinColumns = @JoinColumn(name = "prid"),
+            inverseJoinColumns = @JoinColumn(name = "pid")
+    )
     private Set<Person> people;
+
+    @OneToMany(mappedBy = "project")
     private Set<Issue> issues;
 
-    public Project(DBService db, long prid, String name, Date createdAt) {
-        setId(prid);
-        setName(name);
-        setcreatedAt(createdAt);
+
+
+    public Project() {}
+
+    public Project(String title, Date createdAt) {
+        this.title = title;
+        this.createdAt = createdAt;
     }
 
-    public long getId() {
-        return id;
+    @PrePersist
+    protected void onCreate() {
+        this.createdAt = new Date();
     }
 
-    public void setId(long id) {
-        this.id = id;
+    public long getPrid() {
+        return prid;
     }
 
-    public String getName() {
-        return name;
+    public void setPrid(long id) {
+        this.prid = id;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public String getTitle() {
+        return title;
     }
 
-    public Date getcreatedAt() {
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public Date getCreatedAt() {
         return createdAt;
     }
 
-    public void setcreatedAt(Date createdAt) {
+    public void setCreatedAt(Date createdAt) {
         this.createdAt = createdAt;
+    }
+
+    public Set<Person> getPeople() {
+        return people;
+    }
+
+    public void setPeople(Set<Person> people) {
+        this.people = people;
+    }
+
+    public Set<Issue> getIssues() {
+        return issues;
+    }
+
+    public void setIssues(Set<Issue> issues) {
+        this.issues = issues;
     }
 }
