@@ -21,7 +21,7 @@ public class DBCreator{
         try (Connection conn = createConnection(jdbcUrl, user, password)) {
             if (conn != null && !conn.isClosed()) {
 
-                try (FileReader fr = new FileReader("postrest/src/main/resources/schema.sql");
+                try (FileReader fr = new FileReader("src/main/resources/schema.sql");
                      BufferedReader br = new BufferedReader(fr)) {
 
                     String zeile = "";
