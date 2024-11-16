@@ -71,9 +71,13 @@ public class DBService implements IDBService{
         return personRepository.findById(id).orElse(null);
     }
 
+    public List<Person> getPerson() {
+        return personRepository.findAll();
+    }
+
     @Override
     public List<Issue> getIssueByPersonenIdAndProjectIDAndState(long pid, long prid) {
-        return List.of();
+        return issueRepository.findOpenIssuesByAssigneesAndProject(pid, prid);
     }
 
     @Override

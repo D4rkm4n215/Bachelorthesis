@@ -1,5 +1,7 @@
 package hhn.aib.thesis.postrest.model;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 
 import java.util.Date;
@@ -25,9 +27,11 @@ public class Project {
             joinColumns = @JoinColumn(name = "prid"),
             inverseJoinColumns = @JoinColumn(name = "pid")
     )
+    @JsonBackReference
     private Set<Person> people;
 
     @OneToMany(mappedBy = "project")
+    @JsonManagedReference
     private Set<Issue> issues;
 
 

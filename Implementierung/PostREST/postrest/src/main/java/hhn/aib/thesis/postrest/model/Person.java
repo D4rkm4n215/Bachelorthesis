@@ -1,5 +1,8 @@
 package hhn.aib.thesis.postrest.model;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 
 import java.util.Set;
@@ -20,12 +23,15 @@ public class Person{
     private String email;
 
     @ManyToMany(mappedBy = "people")
+    @JsonManagedReference
     private Set<Project> projects;
 
     @ManyToOne
+    @JsonBackReference
     private Project project;
 
     @ManyToMany(mappedBy = "assignees")
+    @JsonManagedReference
     private Set<Issue> issues;
 
     public Person() {}

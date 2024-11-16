@@ -21,9 +21,14 @@ public class PostrestController {
         this.db = db;
     }
 
-    @GetMapping("/api/person")
-    public Person person(@RequestParam(value = "id") long id) {
+    @GetMapping("/api/person/{pid}")
+    public Person person(@PathVariable(value = "pid") long id) {
         return db.getPerson(id);
+    }
+
+    @GetMapping("/api/person")
+    public List<Person> person() {
+        return db.getPerson();
     }
 
     @GetMapping("/api/persons/{pid}/projects/{prid}/issues/open")
