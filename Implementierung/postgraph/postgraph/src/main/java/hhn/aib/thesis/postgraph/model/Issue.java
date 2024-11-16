@@ -9,7 +9,6 @@ import java.util.Set;
 @Entity
 public class Issue {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
     private long iid;
 
     @Column(name = "title")

@@ -10,7 +10,6 @@ import java.util.Set;
 public class Project {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
     private long prid;
 
     @Column(name = "title")

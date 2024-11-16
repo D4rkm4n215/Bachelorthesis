@@ -29,6 +29,8 @@ public class Mutation implements GraphQLMutationResolver {
                 .orElseThrow(() -> new RuntimeException("Project not found"));
 
         Issue issue = new Issue();
+        issue.setIid(issueRepository.getNextId());
+        issue.setCreatedAt(input.getCreatedAt());
         issue.setTitle(input.getTitle());
         issue.setState(input.getState());
         issue.setStateReason(input.getStateReason());
