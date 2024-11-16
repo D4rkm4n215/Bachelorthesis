@@ -1,30 +1,19 @@
-package hhn.aib.thesis.postrest;
+package hhn.aib.thesis.postrest.DTO;
 
-import java.sql.Date;
-import java.time.LocalDate;
-import java.time.LocalDateTime;
+import java.util.Date;
 
-public class Issue {
-    long id;
-    String title;
-    Date createdAt;
-    String state;
-    String stateReason;
+public class IssueDTO {
 
-    public Issue(DBService db, long iid , String title, Date createdAt, String state, String stateReason ) {
-        setId(iid);
-        setTitle(title);
-        setCreatedAt(createdAt);
-        setState(state);
-        setStateReason(stateReason);
-    }
+    private String title;
+    private Date createdAt;
+    private String state;
+    private String stateReason;
 
-    public long getId() {
-        return id;
-    }
-
-    public void setId(long id) {
-        this.id = id;
+    public IssueDTO(String title, Date createdAt, String state, String stateReason) {
+        this.title = title;
+        this.createdAt = createdAt;
+        this.state = state;
+        this.stateReason = stateReason;
     }
 
     public String getTitle() {
