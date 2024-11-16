@@ -9,7 +9,6 @@ import java.util.Set;
 public class Issue {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
     private long iid;
 
     @Column(name = "title")
@@ -23,6 +22,7 @@ public class Issue {
 
     @Column(name = "statereason")
     private String stateReason;
+
 
     @ManyToMany
     @JoinTable(

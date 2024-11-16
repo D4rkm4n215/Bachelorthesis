@@ -1,7 +1,6 @@
 package hhn.aib.thesis.postrest.model;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 
@@ -10,7 +9,6 @@ import java.util.Set;
 @Entity
 public class Person{
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
     private long pid;
 
     @Column(name = "firstname")

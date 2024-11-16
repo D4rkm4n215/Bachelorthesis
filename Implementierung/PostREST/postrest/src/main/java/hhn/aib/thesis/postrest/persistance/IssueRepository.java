@@ -12,6 +12,7 @@ import java.util.List;
 @Repository
 public interface IssueRepository extends JpaRepository<Issue,Long>{
 
+
     @Query("SELECT i FROM Issue i " +
             "JOIN i.project pr " +
             "JOIN pr.people pp " +
@@ -20,4 +21,8 @@ public interface IssueRepository extends JpaRepository<Issue,Long>{
             "AND i.state = 'Open'")
     List<Issue> findOpenIssuesByAssigneesAndProject(@Param("pid") long pid,
                                                  @Param("prid") long prid);
+
+    @Query(value = "SELECT nextval('issue_iid_seq')", nativeQuery = true)
+    Long getNextId();
+
 }

@@ -12,7 +12,6 @@ import java.util.Set;
 public class Project {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
     private long prid;
 
     @Column(name = "title")
@@ -30,7 +29,7 @@ public class Project {
     @JsonBackReference
     private Set<Person> people;
 
-    @OneToMany(mappedBy = "project")
+    @OneToMany(mappedBy = "project", cascade = CascadeType.ALL)
     @JsonManagedReference
     private Set<Issue> issues;
 
