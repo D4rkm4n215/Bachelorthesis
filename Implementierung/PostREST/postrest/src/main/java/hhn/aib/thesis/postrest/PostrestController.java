@@ -1,49 +1,41 @@
 package hhn.aib.thesis.postrest;
 
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import hhn.aib.thesis.postrest.DTO.IssueDTO;
+import hhn.aib.thesis.postrest.model.Issue;
+import hhn.aib.thesis.postrest.model.Person;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
 
-import java.sql.SQLException;
-import java.sql.Date;
 import java.util.List;
 
 @RestController
 public class PostrestController {
+
+    @Autowired
     private static DBService db;
 
-    public PostrestController() {
-        try {
-            db = new DBService();
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
-        }
+    public PostrestController(DBService db) {
+        this.db = db;
     }
 
-    @GetMapping("/person")
-    public Person person(@RequestParam(value = "id") long id) {
+    @GetMapping("/api/person/{pid}")
+    public Person person(@PathVariable(value = "pid") long id) {
         return db.getPerson(id);
     }
 
-    @GetMapping("/issue")
-    public Issue issue(@RequestParam(value = "id") long id) {
-        return db.getIssue(id);
-    }
-
-    @GetMapping("/project")
-    public Project project(@RequestParam(value = "id") long id) {
-        return db.getProject(id);
-    }
-
-    @GetMapping("/api/personClosedIssueProjectCreatedBefore")
-    public List<Person> person(@RequestParam(value = "date") Date date) {
-        return db.getPersonWithClosedIssueAndProjectCreatedBefore(date);
+    @GetMapping("/api/person")
+    public List<Person> person() {
+        return db.getPerson();
     }
 
     @GetMapping("/api/persons/{pid}/projects/{prid}/issues/open")
     public List<Issue> issue(@PathVariable(value = "pid") long pid, @PathVariable(value = "prid") long prid){
         return db.getIssueByPersonenIdAndProjectIDAndState(pid,prid);
+    }
+
+    @PostMapping("/api/persons/{pid}/projects/{prid}/issues")
+    public Issue issue(@PathVariable(value = "pid") long pid, @PathVariable(value = "prid") long prid, @RequestBody IssueDTO issue){
+        return db.postIssue(pid,prid,issue);
     }
 
 }
