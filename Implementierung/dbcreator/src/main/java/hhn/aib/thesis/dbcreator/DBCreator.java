@@ -1,4 +1,4 @@
-package hhn.aib.thesis.postrest;
+package hhn.aib.thesis.dbcreator;
 
 import java.io.*;
 import java.sql.Connection;

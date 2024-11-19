@@ -1,4 +1,4 @@
-package hhn.aib.thesis.postrest;
+package hhn.aib.thesis.dbcreator;
 
 import com.opencsv.exceptions.CsvValidationException;
 import org.neo4j.driver.*;
@@ -12,6 +12,7 @@ public class GraphDBCreator {
     private static final String dbUri = "neo4j://localhost";
     private static final String dbUser = "neo4j";
     private static final String dbPassword = "12345678";
+    private static final String csvFilePath ="src/main/resources/mockdata.csv";
     private final Driver driver;
 
     public GraphDBCreator(String dbUri, String dbUser, String dbPassword) {
@@ -24,7 +25,7 @@ public class GraphDBCreator {
 
     public void importData(String csvFilePath) {
         try (Session session = driver.session()) {
-            try (CSVReader reader = new CSVReader(new FileReader("src/main/resources/mockdata.csv"))) {
+            try (CSVReader reader = new CSVReader(new FileReader(csvFilePath))) {
                 String[] header = reader.readNext(); // Spaltennamen überspringen
                 String[] row;
 
@@ -80,7 +81,6 @@ public class GraphDBCreator {
 
 
     public static void main(String... args) {
-        String csvFilePath = "path/to/Mockdata.csv"; // Pfad zur hochgeladenen Datei
 
         GraphDBCreator importer = new GraphDBCreator(dbUri,dbUser,dbPassword);
 
