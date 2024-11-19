@@ -64,8 +64,8 @@ public class GraphDBCreator {
                         // Issue-Knoten erstellen und mit Projekt und Person verknüpfen
                         tx.run("MERGE (i:Issue {ID: $issueId, title: $title, createdAt: $createdAt, state: $state, stateReason: $stateReason}) " +
                                         "WITH i " +
-                                        "MATCH (creator:Person {ID: $creatorId}), (pr:Project {ID: $projectId}) " +
-                                        "MERGE (creator)-[:CREATED]->(i) " +
+                                        "MATCH (creator:Person {ID: $creatorId})" +
+                                        "MATCH (pr:Project {ID: $projectId})" +
                                         "MERGE (i)-[:BELONGS_TO]->(pr)",
                                 Values.parameters("issueId", issueId, "title", issueTitle, "createdAt", issueCreatedAt,
                                         "state", issueState, "stateReason", issueStateReason,
