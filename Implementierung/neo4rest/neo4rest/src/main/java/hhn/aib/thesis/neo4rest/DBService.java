@@ -60,7 +60,7 @@ public class DBService implements IDBService {
         issue.setCreatedAt(i.getCreatedAt());
         issue.setState(i.getState());
         issue.setStateReason(i.getStateReason());
-        issue.setProject((List<Project>) project);
+        issue.setProjects(project);
 
         issueRepository.save(issue);
 

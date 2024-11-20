@@ -42,7 +42,7 @@
   "keyToString": {
     "Application.GraphDBCreator.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "main",
+    "git-widget-placeholder": "3-rest-api-mit-neo4j-implementieren",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "C:/Users/Robin/Documents/Bachelorthesis/Bachelorthesis/Implementierung/neo4rest",
     "node.js.detected.package.eslint": "true",
@@ -103,6 +103,7 @@
       <updated>1732022911401</updated>
       <workItem from="1732022912426" duration="685000" />
       <workItem from="1732036574458" duration="1708000" />
+      <workItem from="1732129410684" duration="5000" />
     </task>
     <servers />
   </component>

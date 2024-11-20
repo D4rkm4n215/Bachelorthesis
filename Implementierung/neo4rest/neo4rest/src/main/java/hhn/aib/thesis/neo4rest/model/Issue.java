@@ -19,7 +19,8 @@ public class Issue {
     private String stateReason;
 
     @Relationship(type = "BELONGS_TO", direction = Relationship.Direction.OUTGOING)
-    private List<Project> project;
+    private Project projects;
+
     
 
     public long getIid() {
@@ -62,12 +63,11 @@ public class Issue {
         this.stateReason = stateReason;
     }
 
-    public List<Project> getProject() {
-        return project;
+    public Project getProjects() {
+        return projects;
     }
 
-    public void setProject(List<Project> project) {
-        this.project = project;
+    public void setProjects(Project projects) {
+        this.projects = projects;
     }
-
 }
