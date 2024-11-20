@@ -42,7 +42,7 @@ public class GraphDBCreator {
                     String projectCreatedAt = row[6];
 
                     // Issue-Daten
-                    String issueId = row[7];
+                    String iid = row[7];
                     String issueTitle = row[8];
                     String issueCreatedAt = row[9];
                     String issueState = row[10];
@@ -51,26 +51,46 @@ public class GraphDBCreator {
                     // Cypher-Abfragen
                     session.writeTransaction(tx -> {
                         // Person-Knoten erstellen
-                        tx.run("MERGE (p:Person {ID: $pid, firstname: $firstname, lastname: $lastname, email: $email})",
+                        tx.run("MERGE (p:Person {pid: $pid})" +
+                                        "SET p.firstname = $firstname, p.lastname = $lastname, p.email = $email",
                                 Values.parameters("pid", pid, "firstname", firstname, "lastname", lastname, "email", email));
 
                         // Projekt-Knoten erstellen und mit Person verknüpfen
-                        tx.run("MERGE (pr:Project {ID: $prid, title: $title, createdAt: $createdAt}) " +
-                                        "WITH pr " +
-                                        "MATCH (owner:Person {ID: $pid}) " +
-                                        "MERGE (owner)-[:OWNS]->(pr)",
+                        tx.run("MERGE (pr:Project {prid: $prid})" +
+                                        "SET pr.title = $title, pr.createdAt = $createdAt",
                                 Values.parameters("prid", prid, "title", projectTitle, "createdAt", projectCreatedAt, "pid", pid));
 
                         // Issue-Knoten erstellen und mit Projekt und Person verknüpfen
-                        tx.run("MERGE (i:Issue {ID: $iid, title: $title, createdAt: $createdAt, state: $state, stateReason: $stateReason}) " +
-                                        "WITH i " +
-                                        "MATCH (creator:Person {ID: $pid})" +
-                                        "MATCH (pr:Project {ID: $prid})" +
-                                        "MERGE (i)-[:BELONGS_TO]->(pr)"+
-                                        "MERGE (creator)-[:CREATED]->(i)",
-                                Values.parameters("iid", issueId, "title", issueTitle, "createdAt", issueCreatedAt,
+                        tx.run("MERGE (i:Issue {iid: $iid})" +
+                                        "SET i.title = $title, i.createdAt = $createdAt, i.state = $state, i.stateReason = $stateReason",
+                                Values.parameters("iid", iid, "title", issueTitle, "createdAt", issueCreatedAt,
                                         "state", issueState, "stateReason", issueStateReason,
                                         "pid", pid, "prid", prid));
+
+                        Result result1 = tx.run("MATCH (p:Person {pid: $pid}), (pr:Project {prid: $prid}) " +
+                                        "MERGE (p)-[:OWNS]->(pr)" +
+                                        "RETURN p,pr",
+                                Values.parameters("pid", pid, "prid", prid));
+                        if (!result1.hasNext()) {
+                            System.err.println("Beziehung zwischen Person " + pid + " und Projekt " + prid + " konnte nicht erstellt werden.");
+                        }
+
+                        Result result2 = tx.run("MATCH (p:Person {pid: $pid}), (i:Issue {iid: $iid}) " +
+                                        "MERGE (p)-[:CREATED]->(i)" +
+                                        "RETURN p,i",
+                                Values.parameters("pid", pid, "iid", iid));
+                        if (!result2.hasNext()) {
+                            System.err.println("Beziehung zwischen Person " + pid + " und Issue " + iid + " konnte nicht erstellt werden.");
+                        }
+
+                        Result result3 = tx.run("MATCH (i:Issue {iid: $iid}), (pr:Project {prid: $prid}) " +
+                                        "MERGE (i)-[:BELONGS_TO]->(pr)" +
+                                        "RETURN i,pr",
+                                Values.parameters("iid", iid, "prid", prid));
+                        if (!result3.hasNext()) {
+                            System.err.println("Beziehung zwischen Issue " + iid + " und Projekt " + prid + " konnte nicht erstellt werden.");
+                        }
+
                         return null;
                     });
                 }
