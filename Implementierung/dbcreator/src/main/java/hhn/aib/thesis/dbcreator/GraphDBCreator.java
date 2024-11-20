@@ -31,13 +31,13 @@ public class GraphDBCreator {
 
                 while ((row = reader.readNext()) != null) {
                     // Personen-Daten
-                    String personId = row[0];
-                    String firstName = row[1];
-                    String lastName = row[2];
+                    String pid = row[0];
+                    String firstname = row[1];
+                    String lastname = row[2];
                     String email = row[3];
 
                     // Projekt-Daten
-                    String projectId = row[4];
+                    String prid = row[4];
                     String projectTitle = row[5];
                     String projectCreatedAt = row[6];
 
@@ -51,25 +51,26 @@ public class GraphDBCreator {
                     // Cypher-Abfragen
                     session.writeTransaction(tx -> {
                         // Person-Knoten erstellen
-                        tx.run("MERGE (p:Person {ID: $id, firstName: $firstName, lastName: $lastName, email: $email})",
-                                Values.parameters("id", personId, "firstName", firstName, "lastName", lastName, "email", email));
+                        tx.run("MERGE (p:Person {ID: $pid, firstname: $firstname, lastname: $lastname, email: $email})",
+                                Values.parameters("pid", pid, "firstname", firstname, "lastname", lastname, "email", email));
 
                         // Projekt-Knoten erstellen und mit Person verknüpfen
-                        tx.run("MERGE (pr:Project {ID: $projectId, title: $title, createdAt: $createdAt}) " +
+                        tx.run("MERGE (pr:Project {ID: $prid, title: $title, createdAt: $createdAt}) " +
                                         "WITH pr " +
-                                        "MATCH (owner:Person {ID: $ownerId}) " +
+                                        "MATCH (owner:Person {ID: $pid}) " +
                                         "MERGE (owner)-[:OWNS]->(pr)",
-                                Values.parameters("projectId", projectId, "title", projectTitle, "createdAt", projectCreatedAt, "ownerId", personId));
+                                Values.parameters("prid", prid, "title", projectTitle, "createdAt", projectCreatedAt, "pid", pid));
 
                         // Issue-Knoten erstellen und mit Projekt und Person verknüpfen
-                        tx.run("MERGE (i:Issue {ID: $issueId, title: $title, createdAt: $createdAt, state: $state, stateReason: $stateReason}) " +
+                        tx.run("MERGE (i:Issue {ID: $iid, title: $title, createdAt: $createdAt, state: $state, stateReason: $stateReason}) " +
                                         "WITH i " +
-                                        "MATCH (creator:Person {ID: $creatorId})" +
-                                        "MATCH (pr:Project {ID: $projectId})" +
-                                        "MERGE (i)-[:BELONGS_TO]->(pr)",
-                                Values.parameters("issueId", issueId, "title", issueTitle, "createdAt", issueCreatedAt,
+                                        "MATCH (creator:Person {ID: $pid})" +
+                                        "MATCH (pr:Project {ID: $prid})" +
+                                        "MERGE (i)-[:BELONGS_TO]->(pr)"+
+                                        "MERGE (creator)-[:CREATED]->(i)",
+                                Values.parameters("iid", issueId, "title", issueTitle, "createdAt", issueCreatedAt,
                                         "state", issueState, "stateReason", issueStateReason,
-                                        "creatorId", personId, "projectId", projectId));
+                                        "pid", pid, "prid", prid));
                         return null;
                     });
                 }
