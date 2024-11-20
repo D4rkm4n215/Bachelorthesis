@@ -5,6 +5,8 @@ import org.springframework.data.neo4j.core.schema.Id;
 import org.springframework.data.neo4j.core.schema.Node;
 import org.springframework.data.neo4j.core.schema.Relationship;
 
+import java.util.List;
+
 @Node
 public class Person {
 
@@ -15,14 +17,15 @@ public class Person {
 
     private String firstname;
 
-
     private String lastname;
-
 
     private String email;
 
     @Relationship(type = "OWNS", direction = Relationship.Direction.OUTGOING)
-    private Project project;
+    private List<Project> project;
+
+    @Relationship(type = "CREATED", direction = Relationship.Direction.OUTGOING)
+    private List<Issue> Issue;
 
 
     public long getPid() {
@@ -55,5 +58,21 @@ public class Person {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public List<Project> getProject() {
+        return project;
+    }
+
+    public void setProject(List<Project> project) {
+        this.project = project;
+    }
+
+    public List<Issue> getIssue() {
+        return Issue;
+    }
+
+    public void setIssue(List<Issue> issue) {
+        Issue = issue;
     }
 }

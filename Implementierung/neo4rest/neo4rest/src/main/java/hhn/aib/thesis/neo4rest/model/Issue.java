@@ -1,10 +1,8 @@
 package hhn.aib.thesis.neo4rest.model;
-import com.fasterxml.jackson.annotation.JsonFormat;
 import org.springframework.data.neo4j.core.schema.Id;
 import org.springframework.data.neo4j.core.schema.Node;
 import org.springframework.data.neo4j.core.schema.Relationship;
 
-import java.util.Date;
 import java.util.List;
 
 @Node
@@ -14,7 +12,6 @@ public class Issue {
 
     private String title;
 
-
     private String createdAt;
 
     private String state;
@@ -23,9 +20,6 @@ public class Issue {
 
     @Relationship(type = "BELONGS_TO", direction = Relationship.Direction.OUTGOING)
     private List<Project> project;
-
-    @Relationship(type = "CREATED", direction = Relationship.Direction.OUTGOING)
-    private List<Issue> Issue;
     
 
     public long getIid() {
@@ -67,4 +61,13 @@ public class Issue {
     public void setStateReason(String stateReason) {
         this.stateReason = stateReason;
     }
+
+    public List<Project> getProject() {
+        return project;
+    }
+
+    public void setProject(List<Project> project) {
+        this.project = project;
+    }
+
 }
