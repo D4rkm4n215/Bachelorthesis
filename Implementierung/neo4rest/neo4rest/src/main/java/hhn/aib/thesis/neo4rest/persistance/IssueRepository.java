@@ -9,11 +9,8 @@ import org.springframework.data.repository.query.Param;
 import java.util.List;
 
 public interface IssueRepository extends Neo4jRepository<Issue,Long> {
-    @Query("MATCH (i:Issue)-[:BELONGS_TO]->(pr:Project)<-[:OWNS]-(pp:Person) " +
-            "WHERE pp.ID = $pid " +
-            "AND pr.ID = $prid " +
-            "AND i.state = 'Open' " +
+    @Query("MATCH (i:Issue {state:'Open'})-[:BELONGS_TO]->(pr:Project {prid: $prid})<-[:OWNS]-(pp:Person {pid: $pid}) " +
             "RETURN i")
-    List<Issue> findOpenIssuesByAssigneesAndProject(@Param("pid") long pid,
-                                                    @Param("prid") long prid);
+    List<Issue> findOpenIssuesByAssigneesAndProject(String pid, String prid);
+
 }

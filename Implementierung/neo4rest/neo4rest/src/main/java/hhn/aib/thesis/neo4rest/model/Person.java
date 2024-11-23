@@ -1,19 +1,19 @@
 package hhn.aib.thesis.neo4rest.model;
 
+import org.springframework.data.annotation.Id;
+import org.springframework.data.annotation.Transient;
 import org.springframework.data.neo4j.core.schema.GeneratedValue;
-import org.springframework.data.neo4j.core.schema.Id;
 import org.springframework.data.neo4j.core.schema.Node;
 import org.springframework.data.neo4j.core.schema.Relationship;
 
 import java.util.List;
 
-@Node
+@Node("Person")
 public class Person {
-
     @Id
-    @GeneratedValue
-    private long pid;
+    private long identity;
 
+    private String pid;
 
     private String firstname;
 
@@ -29,11 +29,11 @@ public class Person {
 
 
     public long getPid() {
-        return pid;
+        return Long.parseLong(pid);
     }
 
     public void setPid(long pid) {
-        this.pid = pid;
+        this.pid = String.valueOf(pid);
     }
 
     public String getFirstname() {

@@ -32,30 +32,28 @@ public class DBService implements IDBService {
 
     @Override
     public Person getPerson(long id) {
-        return personRepository.findById(id).orElse(null);
+        return personRepository.findByPid(String.valueOf(id));
     }
 
     @Override
     public List<Person> getPerson() {
-        return (List<Person>) personRepository.findAll();
+        return personRepository.findAll();
     }
 
     @Override
     public List<Issue> getIssueByPersonenIdAndProjectIDAndState(long pid, long prid) {
-        return issueRepository.findOpenIssuesByAssigneesAndProject(pid, prid);
+        return issueRepository.findOpenIssuesByAssigneesAndProject(String.valueOf(pid), String.valueOf(prid));
     }
 
     @Override
     public Issue postIssue(long pid, long prid, Issue i) {
-        // Person aus der DB holen
-        Person person = personRepository.findById(pid).orElseThrow(() -> new RuntimeException("Person nicht gefunden"));
-        Set<Person> personSet = new HashSet<>();
-        personSet.add(person);
-        Project project = projectRepository.findById(prid)
-                .orElseThrow(() -> new RuntimeException("Project nicht gefunden"));
+
+        Project project = projectRepository.findByPrid(String.valueOf(prid));
+
 
 
         Issue issue = new Issue();
+        issue.setIid(i.getIid());
         issue.setTitle(i.getTitle());
         issue.setCreatedAt(i.getCreatedAt());
         issue.setState(i.getState());

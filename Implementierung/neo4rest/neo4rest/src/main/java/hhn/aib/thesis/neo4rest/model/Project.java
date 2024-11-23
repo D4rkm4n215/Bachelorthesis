@@ -1,25 +1,27 @@
 package hhn.aib.thesis.neo4rest.model;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
+import org.springframework.data.annotation.Id;
 import org.springframework.data.neo4j.core.schema.*;
 
 import java.util.Date;
 @Node
 public class Project {
     @Id
-    @GeneratedValue
-    private long prid;
+    private long identity;
+
+    private String prid;
 
     private String title;
 
     private String createdAt;
 
     public long getPrid() {
-        return prid;
+        return Long.parseLong(prid);
     }
 
     public void setPrid(long prid) {
-        this.prid = prid;
+        this.prid = String.valueOf(prid);
     }
 
     public String getTitle() {

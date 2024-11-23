@@ -1,5 +1,5 @@
 package hhn.aib.thesis.neo4rest.model;
-import org.springframework.data.neo4j.core.schema.Id;
+import org.springframework.data.annotation.Id;
 import org.springframework.data.neo4j.core.schema.Node;
 import org.springframework.data.neo4j.core.schema.Relationship;
 
@@ -8,7 +8,9 @@ import java.util.List;
 @Node
 public class Issue {
     @Id
-    private long iid;
+    private long identity;
+
+    private String iid;
 
     private String title;
 
@@ -24,11 +26,11 @@ public class Issue {
     
 
     public long getIid() {
-        return iid;
+        return Long.parseLong(iid);
     }
 
     public void setIid(long iid) {
-        this.iid = iid;
+        this.iid = String.valueOf(iid);
     }
 
     public String getTitle() {
