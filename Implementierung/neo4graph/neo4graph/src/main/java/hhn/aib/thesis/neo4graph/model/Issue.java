@@ -12,22 +12,15 @@ import java.util.Set;
 public class Issue {
 
     @Id
-    private long identity;
-
     private String iid;
-
 
     private String title;
 
-
     private Date createdAt;
-
 
     private String state;
 
-
     private String stateReason;
-
 
     @Relationship(type = "BELONGS_TO", direction = Relationship.Direction.OUTGOING)
     private Project project;
@@ -35,17 +28,13 @@ public class Issue {
     @Relationship(type = "CREATED", direction = Relationship.Direction.INCOMING)
     private Set<Person> assignees;
 
-    @PrePersist
-    protected void onCreate() {
-        this.createdAt = new Date();
+
+    public String getIid() {
+        return iid;
     }
 
-    public long getIid() {
-        return Long.parseLong(iid);
-    }
-
-    public void setIid(long iid) {
-        this.iid = String.valueOf(iid);
+    public void setIid(String iid) {
+        this.iid = iid;
     }
 
     public Project getProject() {

@@ -14,19 +14,20 @@ import java.util.List;
 @Component
 public class PersonResolver implements GraphQLResolver<Person> {
 
-    @Autowired
-    private ProjectRepository projectRepository;
+    private final ProjectRepository projectRepository;
 
-    @Autowired
-    private IssueRepository issueRepository;
+    private final IssueRepository issueRepository;
 
-    public List<Project> getProjects(Person person) {
+    public PersonResolver(ProjectRepository projectRepository, IssueRepository issueRepository) {
+        this.projectRepository = projectRepository;
+        this.issueRepository = issueRepository;
+    }
+
+    public List<Project> projects(Person person){
         return projectRepository.findByPeopleContains(person);
     }
 
-    public Project getProject(Person person, long id) {return projectRepository.findById(id).orElse(null);}
-
-    public List<Issue> getIssues(Person person) {
+    public List<Issue> issues(Person person){
         return issueRepository.findByAssigneesContains(person);
     }
 }

@@ -9,8 +9,6 @@ import java.util.List;
 @Node
 public class Person {
     @Id
-    private long identity;
-
     private String pid;
 
     private String firstname;
@@ -25,13 +23,12 @@ public class Person {
     @Relationship(type = "CREATED", direction = Relationship.Direction.OUTGOING)
     private List<Issue> issues;
 
-
-    public long getPid() {
-        return Long.parseLong(pid);
+    public String getPid() {
+        return pid;
     }
 
-    public void setPid(long pid) {
-        this.pid = String.valueOf(pid);
+    public void setPid(String pid) {
+        this.pid = pid;
     }
 
     public String getFirstname() {

@@ -8,46 +8,52 @@ import hhn.aib.thesis.neo4graph.persistance.IssueRepository;
 import hhn.aib.thesis.neo4graph.persistance.PersonRepository;
 import hhn.aib.thesis.neo4graph.persistance.ProjectRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
+import org.springframework.graphql.data.method.annotation.Argument;
+import org.springframework.graphql.data.method.annotation.QueryMapping;
+import org.springframework.stereotype.Controller;
 
-@Component
+@Controller
 public class Query implements GraphQLQueryResolver {
 
-    @Autowired
-    private ProjectRepository projectRepository;
-    @Autowired
-    private PersonRepository personRepository;
-    @Autowired
-    private IssueRepository issueRepository;
+    private final PersonRepository personRepository;
 
-    @Autowired
-    public Query(ProjectRepository projectRepository, PersonRepository personRepository, IssueRepository issueRepository) {
-        this.projectRepository = projectRepository;
+    private final ProjectRepository projectRepository;
+
+    private final IssueRepository issueRepository;
+
+    public Query(PersonRepository personRepository, ProjectRepository projectRepository, IssueRepository issueRepository) {
         this.personRepository = personRepository;
+        this.projectRepository = projectRepository;
         this.issueRepository = issueRepository;
     }
 
-    public Iterable<Project> getProjects() {
-        return projectRepository.findAll();
-    }
-
-    public Iterable<Person> getPersons() {
+    @QueryMapping
+    public Iterable<Person> persons() {
         return personRepository.findAll();
     }
 
-    public Iterable<Issue> getIssues() {
+    @QueryMapping
+    public Person person(@Argument String pid) {
+        return personRepository.findByPid(pid);
+    }
+
+    @QueryMapping
+    public Iterable<Project> projects() {
+        return projectRepository.findAll();
+    }
+
+    @QueryMapping
+    public Project project(@Argument String prid) {
+        return projectRepository.findByPrid(prid);
+    }
+
+    @QueryMapping
+    public Iterable<Issue> issues() {
         return issueRepository.findAll();
     }
 
-    public Issue getIssue(Long id) {
-        return issueRepository.findById(id).orElse(null);
-    }
-
-    public Person getPerson(Long id) {
-        return personRepository.findById(id).orElse(null);
-    }
-
-    public Project getProject(Long id) {
-        return projectRepository.findById(id).orElse(null);
+    @QueryMapping
+    public Issue issue(@Argument String iid) {
+        return issueRepository.findByIid(iid);
     }
 }

@@ -11,8 +11,6 @@ import java.util.Set;
 @Node
 public class Project {
     @Id
-    private long identity;
-
     private String prid;
 
     private String title;
@@ -25,17 +23,8 @@ public class Project {
     @Relationship(type = "BELONGS_TO", direction = Relationship.Direction.INCOMING)
     private Set<Issue> issues;
 
-    @PrePersist
-    protected void onCreate() {
-        this.createdAt = new Date();
-    }
-
-    public long getPrid() {
-        return Long.parseLong(prid);
-    }
-
-    public void setPrid(long prid) {
-        this.prid = String.valueOf(prid);
+    public String getPrid() {
+        return prid;
     }
 
     public String getTitle() {
@@ -52,14 +41,6 @@ public class Project {
 
     public void setCreatedAt(Date createdAt) {
         this.createdAt = createdAt;
-    }
-
-    public long getIdentity() {
-        return identity;
-    }
-
-    public void setIdentity(long identity) {
-        this.identity = identity;
     }
 
     public void setPrid(String prid) {

@@ -1,0 +1,33 @@
+type Person{
+    pid : ID!
+    firstname : String
+    lastname : String
+    email : String
+}
+
+type Project{
+    prid: ID!
+    title : String!
+    createdAt : String
+    people : [Person]
+}
+
+type Issue{
+    iid : ID!
+    title : String
+    createdAt : String
+    state : String
+    stateReason : String
+    assignees : [Person]
+    project : Project
+}
+
+type Query{
+    persons: [Person]
+    person(pid:String): Person
+    projects: [Project]
+    project(prid:String) : Project
+    issues : [Issue]
+    issue(iid: String): Issue
+
+}
