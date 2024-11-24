@@ -60,12 +60,12 @@ public class GraphDBCreator {
 
                         // Projekt-Knoten erstellen und mit Person verknüpfen
                         tx.run("MERGE (pr:Project {prid: $prid})" +
-                                        "SET pr.title = $title, pr.createdAt = datetime($createdAt)",
+                                        "SET pr.title = $title, pr.createdAt = $createdAt",
                                 Values.parameters("prid", prid, "title", projectTitle, "createdAt", projectCreatedAt, "pid", pid));
 
                         // Issue-Knoten erstellen und mit Projekt und Person verknüpfen
                         tx.run("MERGE (i:Issue {iid: $iid})" +
-                                        "SET i.title = $title, i.createdAt = datetime($createdAt), i.state = $state, i.stateReason = $stateReason",
+                                        "SET i.title = $title, i.createdAt = $createdAt, i.state = $state, i.stateReason = $stateReason",
                                 Values.parameters("iid", iid, "title", issueTitle, "createdAt", issueCreatedAt,
                                         "state", issueState, "stateReason", issueStateReason,
                                         "pid", pid, "prid", prid));

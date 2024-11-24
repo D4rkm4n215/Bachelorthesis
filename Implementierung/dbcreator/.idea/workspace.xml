@@ -5,7 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ed484308-cf0a-4c9d-b97b-a998155250e5" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/hhn/aib/thesis/dbcreator/GraphDBCreator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hhn/aib/thesis/dbcreator/GraphDBCreator.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -41,21 +40,21 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.GraphDBCreator.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "14-neo4j-umstellen-auf-localdatetime",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/Robin/Documents/Bachelorthesis/Bachelorthesis/Implementierung/dbcreator",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.GraphDBCreator.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;14-neo4j-umstellen-auf-localdatetime&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Robin/Documents/Bachelorthesis/Bachelorthesis/Implementierung/dbcreator&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Robin\Documents\Bachelorthesis\Bachelorthesis\Implementierung\dbcreator\src\main\resources" />
@@ -109,6 +108,7 @@
       <workItem from="1732129410684" duration="5000" />
       <workItem from="1732132831017" duration="7000" />
       <workItem from="1732475249565" duration="660000" />
+      <workItem from="1732477145158" duration="80000" />
     </task>
     <servers />
   </component>
