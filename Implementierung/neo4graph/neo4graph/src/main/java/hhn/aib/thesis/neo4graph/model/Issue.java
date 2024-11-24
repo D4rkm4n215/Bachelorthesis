@@ -5,6 +5,7 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.neo4j.core.schema.Node;
 import org.springframework.data.neo4j.core.schema.Relationship;
 
+import java.time.LocalDateTime;
 import java.util.Date;
 import java.util.Set;
 
@@ -16,7 +17,7 @@ public class Issue {
 
     private String title;
 
-    private Date createdAt;
+    private LocalDateTime createdAt;
 
     private String state;
 
@@ -77,11 +78,11 @@ public class Issue {
         this.title = title;
     }
 
-    public Date getCreatedAt() {
+    public LocalDateTime getCreatedAt() {
         return createdAt;
     }
 
-    public void setCreatedAt(Date createdAt) {
+    public void setCreatedAt(LocalDateTime createdAt) {
         this.createdAt = createdAt;
     }
 }

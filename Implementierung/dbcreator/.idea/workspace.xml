@@ -4,7 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ed484308-cf0a-4c9d-b97b-a998155250e5" name="Changes" comment="" />
+    <list default="true" id="ed484308-cf0a-4c9d-b97b-a998155250e5" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../neo4graph/neo4graph/src/main/java/hhn/aib/thesis/neo4graph/model/Issue.java" beforeDir="false" afterPath="$PROJECT_DIR$/../neo4graph/neo4graph/src/main/java/hhn/aib/thesis/neo4graph/model/Issue.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../neo4graph/neo4graph/src/main/java/hhn/aib/thesis/neo4graph/model/Project.java" beforeDir="false" afterPath="$PROJECT_DIR$/../neo4graph/neo4graph/src/main/java/hhn/aib/thesis/neo4graph/model/Project.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../neo4graph/neo4graph/src/main/java/hhn/aib/thesis/neo4graph/resolver/ProjectResolver.java" beforeDir="false" afterPath="$PROJECT_DIR$/../neo4graph/neo4graph/src/main/java/hhn/aib/thesis/neo4graph/resolver/ProjectResolver.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -42,9 +47,9 @@
   &quot;keyToString&quot;: {
     &quot;Application.GraphDBCreator.executor&quot;: &quot;Run&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;3-rest-api-mit-neo4j-implementieren&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;2-graphql-mit-neo4j-implementieren&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/Robin/Documents/Bachelorthesis/Bachelorthesis/Implementierung/neo4rest&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Robin/Documents/Bachelorthesis/Bachelorthesis/Implementierung/dbcreator&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -105,6 +110,8 @@
       <workItem from="1732036574458" duration="1708000" />
       <workItem from="1732129410684" duration="5000" />
       <workItem from="1732132831017" duration="7000" />
+      <workItem from="1732475249565" duration="977000" />
+      <workItem from="1732477259066" duration="7000" />
     </task>
     <servers />
   </component>

@@ -3,6 +3,8 @@ type Person{
     firstname : String
     lastname : String
     email : String
+    projects : [Project]
+    issues : [Issue]
 }
 
 type Project{
@@ -10,6 +12,7 @@ type Project{
     title : String!
     createdAt : String
     people : [Person]
+    issues : [Issue]
 }
 
 type Issue{
@@ -21,6 +24,15 @@ type Issue{
     assignees : [Person]
     project : Project
 }
+input IssueInput {
+    title: String!
+    createdAt : String
+    state : String
+    stateReason : String
+    pid : String
+    prid: String
+
+}
 
 type Query{
     persons: [Person]
@@ -30,4 +42,8 @@ type Query{
     issues : [Issue]
     issue(iid: String): Issue
 
+}
+
+type Mutation {
+    createIssue(input: IssueInput): Issue
 }

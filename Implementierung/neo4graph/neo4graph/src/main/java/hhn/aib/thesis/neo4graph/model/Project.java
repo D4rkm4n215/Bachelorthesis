@@ -5,6 +5,8 @@ import jakarta.persistence.PrePersist;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.neo4j.core.schema.*;
 
+import java.time.LocalDateTime;
+import java.time.OffsetDateTime;
 import java.util.Date;
 import java.util.Set;
 
@@ -15,7 +17,7 @@ public class Project {
 
     private String title;
 
-    private Date createdAt;
+    private LocalDateTime createdAt;
 
     @Relationship(type = "OWNS", direction = Relationship.Direction.INCOMING)
     private Set<Person> people;
@@ -35,11 +37,11 @@ public class Project {
         this.title = title;
     }
 
-    public Date getCreatedAt() {
+    public LocalDateTime getCreatedAt() {
         return createdAt;
     }
 
-    public void setCreatedAt(Date createdAt) {
+    public void setCreatedAt(LocalDateTime createdAt) {
         this.createdAt = createdAt;
     }
 

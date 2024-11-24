@@ -11,11 +11,11 @@ import java.util.List;
 
 public interface PersonRepository extends Neo4jRepository<Person,String> {
 
-    @Query("MATCH (i:Issue)<-[s:CREATED]-(p:Person {pid: $pid})-[r:OWNS]->(pr:Project) RETURN i,s,p,r,pr")
+    @Query("MATCH (i:Issue)<-[s:CREATED]-(p:Person {pid: $pid})-[r:OWNS]->(pr:Project) RETURN p")
     Person findByPid(String pid);
 
     @NotNull
-    @Query("MATCH (i:Issue)<-[s:CREATED]-(p:Person)-[r:OWNS]->(pr:Project) RETURN i,s,p,r,pr")
+    @Query("MATCH (i:Issue)<-[s:CREATED]-(p:Person)-[r:OWNS]->(pr:Project) RETURN p")
     List<Person> findAll();
 
     List<Person> findByProjectsContains(Project projekt);

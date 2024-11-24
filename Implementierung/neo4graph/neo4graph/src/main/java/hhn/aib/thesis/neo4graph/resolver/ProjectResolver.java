@@ -8,8 +8,6 @@ import hhn.aib.thesis.neo4graph.persistance.IssueRepository;
 import hhn.aib.thesis.neo4graph.persistance.PersonRepository;
 import org.springframework.stereotype.Component;
 
-import java.text.SimpleDateFormat;
-import java.util.Date;
 import java.util.List;
 
 @Component
