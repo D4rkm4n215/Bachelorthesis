@@ -1,0 +1,49 @@
+type Person{
+    pid : ID!
+    firstname : String
+    lastname : String
+    email : String
+    projects : [Project]
+    issues : [Issue]
+}
+
+type Project{
+    prid: ID!
+    title : String!
+    createdAt : String
+    people : [Person]
+    issues : [Issue]
+}
+
+type Issue{
+    iid : ID!
+    title : String
+    createdAt : String
+    state : String
+    stateReason : String
+    assignees : [Person]
+    project : Project
+}
+input IssueInput {
+    title: String!
+    createdAt : String
+    state : String
+    stateReason : String
+    pid : String
+    prid: String
+
+}
+
+type Query{
+    persons: [Person]
+    person(pid:String): Person
+    projects: [Project]
+    project(prid:String) : Project
+    issues : [Issue]
+    issue(iid: String): Issue
+
+}
+
+type Mutation {
+    createIssue(input: IssueInput): Issue
+}
