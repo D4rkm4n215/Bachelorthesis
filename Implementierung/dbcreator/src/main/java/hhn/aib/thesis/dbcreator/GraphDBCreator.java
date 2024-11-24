@@ -29,7 +29,6 @@ public class GraphDBCreator {
         try (Session session = driver.session()) {
             try (CSVReader reader = new CSVReader(new FileReader(csvFilePath))) {
                 DateTimeFormatter inputFormatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
-                DateTimeFormatter outputFormatter = DateTimeFormatter.ISO_LOCAL_DATE_TIME;
                 String[] header = reader.readNext(); // Spaltennamen überspringen
                 String[] row;
 
@@ -43,12 +42,12 @@ public class GraphDBCreator {
                     // Projekt-Daten
                     String prid = row[4];
                     String projectTitle = row[5];
-                    String projectCreatedAt = (LocalDateTime.parse(row[6], inputFormatter)).format(outputFormatter);
+                    LocalDateTime projectCreatedAt = (LocalDateTime.parse(row[6], inputFormatter));
 
                     // Issue-Daten
                     String iid = row[7];
                     String issueTitle = row[8];
-                    String issueCreatedAt = (LocalDateTime.parse(row[9], inputFormatter)).format(outputFormatter);
+                    LocalDateTime issueCreatedAt = (LocalDateTime.parse(row[9], inputFormatter));
                     String issueState = row[10];
                     String issueStateReason = row[11];
 
