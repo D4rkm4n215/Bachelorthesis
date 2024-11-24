@@ -6,6 +6,8 @@ import com.opencsv.CSVReader;
 
 import java.io.FileReader;
 import java.io.IOException;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 
 public class GraphDBCreator {
 
@@ -26,6 +28,8 @@ public class GraphDBCreator {
     public void importData(String csvFilePath) {
         try (Session session = driver.session()) {
             try (CSVReader reader = new CSVReader(new FileReader(csvFilePath))) {
+                DateTimeFormatter inputFormatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
+                DateTimeFormatter outputFormatter = DateTimeFormatter.ISO_LOCAL_DATE_TIME;
                 String[] header = reader.readNext(); // Spaltennamen überspringen
                 String[] row;
 
@@ -39,12 +43,12 @@ public class GraphDBCreator {
                     // Projekt-Daten
                     String prid = row[4];
                     String projectTitle = row[5];
-                    String projectCreatedAt = row[6];
+                    String projectCreatedAt = (LocalDateTime.parse(row[6], inputFormatter)).format(outputFormatter);
 
                     // Issue-Daten
                     String iid = row[7];
                     String issueTitle = row[8];
-                    String issueCreatedAt = row[9];
+                    String issueCreatedAt = (LocalDateTime.parse(row[9], inputFormatter)).format(outputFormatter);
                     String issueState = row[10];
                     String issueStateReason = row[11];
 
@@ -57,12 +61,12 @@ public class GraphDBCreator {
 
                         // Projekt-Knoten erstellen und mit Person verknüpfen
                         tx.run("MERGE (pr:Project {prid: $prid})" +
-                                        "SET pr.title = $title, pr.createdAt = $createdAt",
+                                        "SET pr.title = $title, pr.createdAt = datetime($createdAt)",
                                 Values.parameters("prid", prid, "title", projectTitle, "createdAt", projectCreatedAt, "pid", pid));
 
                         // Issue-Knoten erstellen und mit Projekt und Person verknüpfen
                         tx.run("MERGE (i:Issue {iid: $iid})" +
-                                        "SET i.title = $title, i.createdAt = $createdAt, i.state = $state, i.stateReason = $stateReason",
+                                        "SET i.title = $title, i.createdAt = datetime($createdAt), i.state = $state, i.stateReason = $stateReason",
                                 Values.parameters("iid", iid, "title", issueTitle, "createdAt", issueCreatedAt,
                                         "state", issueState, "stateReason", issueStateReason,
                                         "pid", pid, "prid", prid));
