@@ -1,6 +1,7 @@
 package hhn.aib.thesis.neo4rest.DTOs;
 
 import java.text.SimpleDateFormat;
+import java.time.LocalDateTime;
 import java.util.Date;
 
 public class IssueDTO {
@@ -8,17 +9,16 @@ public class IssueDTO {
 
     private String title;
 
-    private String createdAt;
+    private LocalDateTime createdAt;
 
     private String state;
 
     private String stateReason;
 
-    public IssueDTO(long iid, String title, Date createdAt, String state, String stateReason) {
+    public IssueDTO(long iid, String title, LocalDateTime createdAt, String state, String stateReason) {
         this.iid = iid;
         this.title = title;
-        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-        this.createdAt = sdf.format(createdAt);
+        this.createdAt = createdAt;
         this.state = state;
         this.stateReason = stateReason;
     }
@@ -39,11 +39,11 @@ public class IssueDTO {
         this.title = title;
     }
 
-    public String getCreatedAt() {
+    public LocalDateTime getCreatedAt() {
         return createdAt;
     }
 
-    public void setCreatedAt(String createdAt) {
+    public void setCreatedAt(LocalDateTime createdAt) {
         this.createdAt = createdAt;
     }
 

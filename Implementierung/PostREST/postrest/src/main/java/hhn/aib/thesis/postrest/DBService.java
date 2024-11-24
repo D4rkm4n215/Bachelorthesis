@@ -7,24 +7,21 @@ import hhn.aib.thesis.postrest.model.Project;
 import hhn.aib.thesis.postrest.persistance.IssueRepository;
 import hhn.aib.thesis.postrest.persistance.PersonRepository;
 import hhn.aib.thesis.postrest.persistance.ProjectRepository;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import java.util.HashSet;
+import java.util.Collections;
 import java.util.List;
-import java.util.Set;
 
 @Component
 public class DBService implements IDBService{
 
-    @Autowired
-    private ProjectRepository projectRepository;
-    @Autowired
-    private PersonRepository personRepository;
-    @Autowired
-    private IssueRepository issueRepository;
 
-    @Autowired
+    private final ProjectRepository projectRepository;
+
+    private final PersonRepository personRepository;
+
+    private final IssueRepository issueRepository;
+
     public DBService(ProjectRepository projectRepository, PersonRepository personRepository, IssueRepository issueRepository){
         this.projectRepository = projectRepository;
         this.personRepository = personRepository;
@@ -39,17 +36,13 @@ public class DBService implements IDBService{
         return personRepository.findAll();
     }
 
-    @Override
     public List<Issue> getIssueByPersonenIdAndProjectIDAndState(long pid, long prid) {
         return issueRepository.findOpenIssuesByAssigneesAndProject(pid, prid);
     }
 
-    @Override
     public Issue postIssue(long pid, long prid, IssueDTO dto) {
-        // Person aus der DB holen
-        Person person = personRepository.findById(pid).orElseThrow(() -> new RuntimeException("Person nicht gefunden"));
-        Set<Person> personSet = new HashSet<>();
-        personSet.add(person);
+        Person person = personRepository.findById(pid)
+                .orElseThrow(() -> new RuntimeException("Person nicht gefunden"));
         Project project = projectRepository.findById(prid)
                 .orElseThrow(() -> new RuntimeException("Project nicht gefunden"));
 
@@ -61,7 +54,7 @@ public class DBService implements IDBService{
         issue.setState(dto.getState());
         issue.setStateReason(dto.getStateReason());
         issue.setProject(project);
-        issue.setAssignees(personSet);
+        issue.setAssignees(Collections.singleton(person));
 
         issueRepository.save(issue);
 

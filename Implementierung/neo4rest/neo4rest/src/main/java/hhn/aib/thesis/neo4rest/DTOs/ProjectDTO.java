@@ -1,6 +1,5 @@
 package hhn.aib.thesis.neo4rest.DTOs;
 
-import org.springframework.data.neo4j.core.schema.Property;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;

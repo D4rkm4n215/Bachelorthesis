@@ -2,9 +2,8 @@ package hhn.aib.thesis.postgraph.model;
 
 import jakarta.persistence.*;
 
-import java.util.Date;
+import java.time.LocalDateTime;
 import java.util.Set;
-
 
 @Entity
 public class Project {
@@ -16,7 +15,7 @@ public class Project {
     private String title;
 
     @Column(name = "createdat")
-    private Date createdAt;
+    private LocalDateTime createdAt;
 
     @ManyToMany
     @JoinTable(
@@ -33,14 +32,9 @@ public class Project {
 
     public Project() {}
 
-    public Project(String title, Date createdAt) {
+    public Project(String title, LocalDateTime createdAt) {
         this.title = title;
         this.createdAt = createdAt;
-    }
-
-    @PrePersist
-    protected void onCreate() {
-        this.createdAt = new Date();
     }
 
     public long getPrid() {
@@ -59,11 +53,11 @@ public class Project {
         this.title = title;
     }
 
-    public Date getCreatedAt() {
+    public LocalDateTime getCreatedAt() {
         return createdAt;
     }
 
-    public void setCreatedAt(Date createdAt) {
+    public void setCreatedAt(LocalDateTime createdAt) {
         this.createdAt = createdAt;
     }
 
