@@ -29,7 +29,7 @@ public class Project {
     private Set<Person> people;
 
     @OneToMany(mappedBy = "project", cascade = CascadeType.ALL)
-    @JsonManagedReference
+    @JsonBackReference
     private Set<Issue> issues;
 
     public Project() {}

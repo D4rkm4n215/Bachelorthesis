@@ -9,7 +9,9 @@ import java.util.List;
 
 public interface PersonRepository extends Neo4jRepository<Person,String> {
 
-    @Query("MATCH (i:Issue)<-[s:CREATED]-(p:Person)-[r:OWNS]->(pr:Project) RETURN i,s,p,r,pr")
+    @Query("MATCH (i:Issue)<-[s:CREATED]-(p:Person)-[r:OWNS]->(pr:Project) " +
+            "OPTIONAL MATCH (pr)<-[t:BELONGS_TO]-(pi:Issue) " +
+            "RETURN i,s,p,r,pr,t,pi")
     List<Person> findAll();
 
     @Query("MATCH (p:Person {pid: $pid}) " +
