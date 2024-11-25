@@ -1,5 +1,6 @@
 package hhn.aib.thesis.neo4rest.model;
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.neo4j.core.schema.Node;
 import org.springframework.data.neo4j.core.schema.Relationship;
@@ -22,7 +23,7 @@ public class Issue {
     private String stateReason;
 
     @Relationship(type = "BELONGS_TO", direction = Relationship.Direction.OUTGOING)
-    @JsonBackReference
+    @JsonManagedReference
     private Project project;
 
     @Relationship(type = "CREATED", direction = Relationship.Direction.INCOMING)

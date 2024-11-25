@@ -7,7 +7,6 @@ import hhn.aib.thesis.neo4rest.model.Project;
 import hhn.aib.thesis.neo4rest.persistance.IssueRepository;
 import hhn.aib.thesis.neo4rest.persistance.PersonRepository;
 import hhn.aib.thesis.neo4rest.persistance.ProjectRepository;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import java.util.Collections;
@@ -48,14 +47,11 @@ public class DBService implements IDBService {
 
     @Override
     public Issue postIssue(String pid, String prid, IssueDTO dto) {
-        Person person = personRepository.findById(pid)
-                .orElseThrow(() -> new RuntimeException("Person nicht gefunden"));
-        Project project = projectRepository.findById(prid)
-                .orElseThrow(() -> new RuntimeException("Project nicht gefunden"));
-
+        Project project = projectRepository.findByPrid(prid);
+        Person person = personRepository.findByPid(pid);
 
         Issue issue = new Issue();
-        issue.setIid(new Random().toString());
+        issue.setIid(String.valueOf(new Random().nextLong()));
         issue.setTitle(dto.getTitle());
         issue.setCreatedAt(dto.getCreatedAt());
         issue.setState(dto.getState());
