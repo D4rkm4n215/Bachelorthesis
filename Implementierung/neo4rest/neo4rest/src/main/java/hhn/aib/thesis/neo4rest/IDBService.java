@@ -9,6 +9,6 @@ import java.util.List;
 public interface IDBService {
     public Person getPerson(String id);
     public List<Person> getPerson();
-    public List<Issue> getIssueByPersonenIdAndProjectIDAndState(String pid, String prid);
+    public List<Issue> getIssueByPersonenIdAndProjectIDAndState(String pid);
     public Issue postIssue(String pid, String prid, IssueDTO issue);
 }

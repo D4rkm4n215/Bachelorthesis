@@ -21,9 +21,6 @@ public class Person {
     @ManyToMany(mappedBy = "people")
     private Set<Project> projects;
 
-    @ManyToOne
-    private Project project;
-
     @ManyToMany(mappedBy = "assignees")
     private Set<Issue> issues;
 
@@ -74,10 +71,6 @@ public class Person {
     public void setProjects(Set<Project> projects) {
         this.projects = projects;
     }
-
-    public Project getProject() {return project;}
-
-    public void setProject(Project project) {this.project = project;}
 
     public Set<Issue> getIssues() {
         return issues;

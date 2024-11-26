@@ -5,35 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ed484308-cf0a-4c9d-b97b-a998155250e5" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../postgraph/postgraph/src/main/resources/graphql/Query.graphqls" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/schema.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/schema.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../neo4rest/neo4rest/src/main/java/hhn/aib/thesis/neo4rest/DBService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../neo4rest/neo4rest/src/main/java/hhn/aib/thesis/neo4rest/DBService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../neo4rest/neo4rest/src/main/java/hhn/aib/thesis/neo4rest/DTOs/IssueDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/../neo4rest/neo4rest/src/main/java/hhn/aib/thesis/neo4rest/DTOs/IssueDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../neo4rest/neo4rest/src/main/java/hhn/aib/thesis/neo4rest/DTOs/ProjectDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/../neo4rest/neo4rest/src/main/java/hhn/aib/thesis/neo4rest/DTOs/ProjectDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../neo4rest/neo4rest/src/main/java/hhn/aib/thesis/neo4rest/IDBService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../neo4rest/neo4rest/src/main/java/hhn/aib/thesis/neo4rest/IDBService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../neo4rest/neo4rest/src/main/java/hhn/aib/thesis/neo4rest/Neo4RestController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../neo4rest/neo4rest/src/main/java/hhn/aib/thesis/neo4rest/Neo4RestController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../neo4rest/neo4rest/src/main/java/hhn/aib/thesis/neo4rest/model/Issue.java" beforeDir="false" afterPath="$PROJECT_DIR$/../neo4rest/neo4rest/src/main/java/hhn/aib/thesis/neo4rest/model/Issue.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../neo4rest/neo4rest/src/main/java/hhn/aib/thesis/neo4rest/model/Person.java" beforeDir="false" afterPath="$PROJECT_DIR$/../neo4rest/neo4rest/src/main/java/hhn/aib/thesis/neo4rest/model/Person.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../neo4rest/neo4rest/src/main/java/hhn/aib/thesis/neo4rest/model/Project.java" beforeDir="false" afterPath="$PROJECT_DIR$/../neo4rest/neo4rest/src/main/java/hhn/aib/thesis/neo4rest/model/Project.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../neo4rest/neo4rest/src/main/java/hhn/aib/thesis/neo4rest/persistance/IssueRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../neo4rest/neo4rest/src/main/java/hhn/aib/thesis/neo4rest/persistance/IssueRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../neo4rest/neo4rest/src/main/java/hhn/aib/thesis/neo4rest/persistance/PersonRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../neo4rest/neo4rest/src/main/java/hhn/aib/thesis/neo4rest/persistance/PersonRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../neo4rest/neo4rest/src/main/java/hhn/aib/thesis/neo4rest/persistance/ProjectRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../neo4rest/neo4rest/src/main/java/hhn/aib/thesis/neo4rest/persistance/ProjectRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../postgraph/postgraph/src/main/java/hhn/aib/thesis/postgraph/model/Issue.java" beforeDir="false" afterPath="$PROJECT_DIR$/../postgraph/postgraph/src/main/java/hhn/aib/thesis/postgraph/model/Issue.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../postgraph/postgraph/src/main/java/hhn/aib/thesis/postgraph/model/IssueInput.java" beforeDir="false" afterPath="$PROJECT_DIR$/../postgraph/postgraph/src/main/java/hhn/aib/thesis/postgraph/model/IssueInput.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../postgraph/postgraph/src/main/java/hhn/aib/thesis/postgraph/model/Project.java" beforeDir="false" afterPath="$PROJECT_DIR$/../postgraph/postgraph/src/main/java/hhn/aib/thesis/postgraph/model/Project.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../postgraph/postgraph/src/main/java/hhn/aib/thesis/postgraph/persistance/IssueRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../postgraph/postgraph/src/main/java/hhn/aib/thesis/postgraph/persistance/IssueRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../postgraph/postgraph/src/main/java/hhn/aib/thesis/postgraph/persistance/PersonRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../postgraph/postgraph/src/main/java/hhn/aib/thesis/postgraph/persistance/PersonRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../postgraph/postgraph/src/main/java/hhn/aib/thesis/postgraph/persistance/ProjectRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../postgraph/postgraph/src/main/java/hhn/aib/thesis/postgraph/persistance/ProjectRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../postgraph/postgraph/src/main/java/hhn/aib/thesis/postgraph/resolver/IssueResolver.java" beforeDir="false" afterPath="$PROJECT_DIR$/../postgraph/postgraph/src/main/java/hhn/aib/thesis/postgraph/resolver/IssueResolver.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../postgraph/postgraph/src/main/java/hhn/aib/thesis/postgraph/resolver/Mutation.java" beforeDir="false" afterPath="$PROJECT_DIR$/../postgraph/postgraph/src/main/java/hhn/aib/thesis/postgraph/resolver/Mutation.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../postgraph/postgraph/src/main/java/hhn/aib/thesis/postgraph/resolver/PersonResolver.java" beforeDir="false" afterPath="$PROJECT_DIR$/../postgraph/postgraph/src/main/java/hhn/aib/thesis/postgraph/resolver/PersonResolver.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../postgraph/postgraph/src/main/java/hhn/aib/thesis/postgraph/resolver/ProjectResolver.java" beforeDir="false" afterPath="$PROJECT_DIR$/../postgraph/postgraph/src/main/java/hhn/aib/thesis/postgraph/resolver/ProjectResolver.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../postgraph/postgraph/src/main/java/hhn/aib/thesis/postgraph/resolver/Query.java" beforeDir="false" afterPath="$PROJECT_DIR$/../postgraph/postgraph/src/main/java/hhn/aib/thesis/postgraph/resolver/Query.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../postgraph/postgraph/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../postgraph/postgraph/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../postgraph/postgraph/src/main/resources/graphql/issue.graphqls" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../postgraph/postgraph/src/main/resources/graphql/person.graphqls" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../postgraph/postgraph/src/main/resources/graphql/project.graphqls" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../postgraph/postgraph/src/main/resources/graphql/Query.graphqls" beforeDir="false" afterPath="$PROJECT_DIR$/../postgraph/postgraph/src/main/resources/graphql/Query.graphqls" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -81,6 +57,9 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.2",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -151,6 +130,7 @@
       <workItem from="1732129410684" duration="5000" />
       <workItem from="1732132831017" duration="7000" />
       <workItem from="1732483612805" duration="846000" />
+      <workItem from="1732613368033" duration="2033000" />
     </task>
     <servers />
   </component>

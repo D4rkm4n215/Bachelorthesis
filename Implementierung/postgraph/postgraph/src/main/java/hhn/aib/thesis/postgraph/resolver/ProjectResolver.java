@@ -22,13 +22,12 @@ public class ProjectResolver implements GraphQLResolver<Project> {
         this.issueRepository = issueRepository;
     }
 
-    public List<Person> getPeople(Project project) {
+    public List<Person> people(Project project) {
         return personRepository.findByProjectsContains(project);
     }
 
-    public List<Issue> getIssues(Project project) {
+    public List<Issue> issues(Project project) {
         return issueRepository.findByProject(project);
     }
 
-    public List<Issue> getIssuesState(Project project, String state) {return issueRepository.findByStateAndProject(state, project);}
 }

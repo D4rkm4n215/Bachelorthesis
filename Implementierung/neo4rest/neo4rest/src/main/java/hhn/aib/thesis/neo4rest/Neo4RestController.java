@@ -28,9 +28,9 @@ public class Neo4RestController {
         return db.getPerson();
     }
 
-    @GetMapping("/api/persons/{pid}/projects/{prid}/issues/open")
-    public List<Issue> issue(@PathVariable(value = "pid") String pid, @PathVariable(value = "prid") String prid){
-        return db.getIssueByPersonenIdAndProjectIDAndState(pid,prid);
+    @GetMapping("/api/persons/{pid}/projects/issues")
+    public List<Issue> issue(@PathVariable(value = "pid") String pid){
+        return db.getIssueByPersonenIdAndProjectIDAndState(pid);
     }
 
     @PostMapping("/api/persons/{pid}/projects/{prid}/issues")

@@ -41,8 +41,8 @@ public class DBService implements IDBService {
     }
 
     @Override
-    public List<Issue> getIssueByPersonenIdAndProjectIDAndState(String pid, String prid) {
-        return issueRepository.findOpenIssuesByAssigneesAndProject(String.valueOf(pid), String.valueOf(prid));
+    public List<Issue> getIssueByPersonenIdAndProjectIDAndState(String pid) {
+        return issueRepository.findOpenIssuesByAssigneesAndProject(String.valueOf(pid));
     }
 
     @Override

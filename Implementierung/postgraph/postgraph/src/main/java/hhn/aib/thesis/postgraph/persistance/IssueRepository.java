@@ -14,8 +14,6 @@ public interface IssueRepository extends JpaRepository<Issue, Long> {
 
     List<Issue> findByProject(Project project);
 
-    List<Issue> findByStateAndProject(String state, Project project);
-
     @Query(value = "SELECT nextval('issue_iid_seq')", nativeQuery = true)
     Long getNextId();
 }

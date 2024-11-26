@@ -7,7 +7,6 @@ import hhn.aib.thesis.postgraph.model.Project;
 import hhn.aib.thesis.postgraph.persistance.IssueRepository;
 import hhn.aib.thesis.postgraph.persistance.PersonRepository;
 import hhn.aib.thesis.postgraph.persistance.ProjectRepository;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.graphql.data.method.annotation.Argument;
 import org.springframework.graphql.data.method.annotation.QueryMapping;
 import org.springframework.stereotype.Controller;

@@ -36,8 +36,8 @@ public class DBService implements IDBService{
         return personRepository.findAll();
     }
 
-    public List<Issue> getIssueByPersonenIdAndProjectIDAndState(long pid, long prid) {
-        return issueRepository.findOpenIssuesByAssigneesAndProject(pid, prid);
+    public List<Issue> getIssueByPersonenIdAndProjectIDAndState(long pid) {
+        return issueRepository.findOpenIssuesByAssigneesAndProject(pid);
     }
 
     public Issue postIssue(long pid, long prid, IssueDTO dto) {

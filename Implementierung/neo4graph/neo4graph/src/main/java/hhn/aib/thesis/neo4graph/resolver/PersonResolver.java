@@ -1,15 +1,18 @@
 package hhn.aib.thesis.neo4graph.resolver;
 
+
+import graphql.kickstart.tools.GraphQLQueryResolver;
 import graphql.kickstart.tools.GraphQLResolver;
 import hhn.aib.thesis.neo4graph.model.Issue;
 import hhn.aib.thesis.neo4graph.model.Person;
 import hhn.aib.thesis.neo4graph.model.Project;
 import hhn.aib.thesis.neo4graph.persistance.IssueRepository;
 import hhn.aib.thesis.neo4graph.persistance.ProjectRepository;
-import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.graphql.data.method.annotation.SchemaMapping;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
+
 
 @Component
 public class PersonResolver implements GraphQLResolver<Person> {
@@ -23,11 +26,11 @@ public class PersonResolver implements GraphQLResolver<Person> {
         this.issueRepository = issueRepository;
     }
 
-    public List<Project> projects(Person person){
-        return projectRepository.findByPeopleContains(person);
+    public List<Project> GetProjects(Person person) {
+        return projectRepository.findByPeopleContains(person.getPid());
     }
 
-    public List<Issue> issues(Person person){
+    public List<Issue> getIssues(Person person) {
         return issueRepository.findByAssigneesContains(person);
     }
 }
