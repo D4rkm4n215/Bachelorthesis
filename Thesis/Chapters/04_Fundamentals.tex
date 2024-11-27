@@ -1,6 +1,14 @@
 \chapter{Grundlagen} % (fold)
 \label{sec:grundlagen}
 Die folgenden Abschnitte sollen die theoretischen Grundlagen vermitteln, die notwendig sind, um das Thema dieser Thesis zu betrachten. Die Konzepte, die hier beschrieben werden sind APIs, wie REST und GraphQL, als auch relationale und Graph Datenbanken.
+\section{Relationale Algebra} % (fold)
+\label{sec:relationaleAlgebra}
+% section relationaleAlgebra (end)
+
+\section{Graphentheorie} % (fold)
+\label{sec:graphentheorie}
+% section graphentheorie (end)
+
 \section{API} % (fold)
 \label{sec:apigrundlagen}
 Nachfolgend werden die Grundlagen von APIs thematisiert. Hierbei werden die grundlegenden Definitionen im Zusammenhang mit APIs und die verschiedenen Typen vorgestellt.
@@ -8,59 +16,14 @@ Nachfolgend werden die Grundlagen von APIs thematisiert. Hierbei werden die grun
 \label{sec:grundlegendedefinitionvonapi}
 Der Begriff \glqq API\grqq{}  steht für \glqq Application Programming Interface\grqq{}. Eine API bezeichnet eine Schnittstelle, welche Entwicklern den Zugriff auf Daten und Informationen ermöglicht. Bekannte Beispiele für häufig genutzte APIs sind die Twitter- und Facebook-APIs. Diese sind für Entwickler zugänglich und ermöglichen die Interaktion mit der Software von Twitter und Facebook. Zudem ermöglichen APIs die Kommunikation zwischen Anwendungen. Sie bieten den Anwendungen einen Weg, miteinander über das Netzwerk, überwiegend das Internet, in einer gemeinsamen Sprache zu kommunizieren. \citep{apistrategyguide}
 %subsection grundlegendedefinitionvonapi (end)
-\subsection{API Typen} % (fold)
-\label{sec:apitypen}
-APIs können anhand von Verfügbarkeit, Anwendungszweck oder der Spezifikation in verschiedene Typen eingeteilt werden.
-\subsubsection{API Typen nach Anwendungszweck} % (fold)
-\label{sec:apitypenanwendungszweck}
-\begin{itemize}
-\item \textbf{Datenbanken APIs} ermöglichen die Kommunikation zwischen einer Datenbank und einer Anwendung die deren Daten benötigt. \citep{TUM}
-
-\item \textbf{Betriebssystem APIs} definieren wie Ressourcen und Services von Betriebssystemen von einer Anwendung benutzt werden, die auf deren Daten zugreift. \citep{TUM}
-
-\item \textbf{Remote APIs} definieren die Regeln, wie Anwendungen auf verschiedenen Host-Maschinen miteinander interagieren. \citep{TUM}
-
-\item \textbf{Web APIs} sind die verbreitetsten APIs. Sie stellen Daten bereit und übermitteln diese zwischen Web-basierenden Systemen über eine Client-Server Verbindung. \citep{TUM}
-
-\end{itemize}
-%subsubsection apitypenanwendungszweck (end)
-
-\subsubsection{API Typen nach Verfügbarkeit} % (fold)
-\label{sec:apitypenverfuegbarkeit}
-Im Bezug auf Verfügbarkeit können APIs public (öffentlich), privat oder für Partner bereitgestellt werden. 
-\begin{figure}[h!]
-	\centering
-	\includegraphics[scale=0.3]{Illustrations/apitypes.jpg}
-	\caption{API Typen nach Verfügbarkeit}
-\end{figure}
-
-\begin{itemize}
-	\item \textbf{Public APIs:} Öffentliche APIs sind für jeden Entwickler bzw. jegliche Dritte verfügbar. Eine öffentliche API kann zu einer Steigerung der Markenbekanntheit beitragen und eröffnet bei einer Monetarisierung zusätzliche Einnahmequellen.\citep{apistrategyguide}
-	\item \textbf{Partner APIs:} Partner-APIs stellen eine Art Schnittstelle zwischen privaten und öffentlichen APIs dar. Ihr Zweck besteht darin, die Entwicklung von Unternehmensanwendungen zu fördern. Die Unternehmen haben dabei eine hohe Nutzerkontrolle.\citep{apistrategyguide}
-	\item \textbf{Private APIs:} Dieser Typ erlaubt es Entwicklern, die innerhalb einer Firma tätig sind, die API zu nutzen, um interne Produkte, Systeme oder Apps zu integrieren. Des Weiteren können bei der Entwicklung neuer Systeme bereits vorhandene Ressourcen verwendet werden. Dadurch lassen sich die Kosten erheblich reduzieren und es entsteht eine größere Flexibilität. \citep{apistrategyguide}
-\end{itemize}
-%subsubsection apitypenverfuegbarkeit (end)
-\newpage
-\subsubsection{API Typen nach Spezifikation/Protokoll} % (fold)
-\label{sec:apitypenspezifikation}
-Das Ziel der Spezifikation von APIs ist die Kommunikation zwischen verschiedenen Services zu standardisieren
-
-\begin{itemize}
-
-	\item \textbf{Remote Procedure Call (RPC)} stellt eine einfache und zugleich die älteste Form von Application Programming Interfaces dar. Ihr Zweck besteht in der Initiierung von Prozeduren auf unterschiedlichen Computern über das Netzwerk hinweg. Zu diesem Zweck übermittelt eine Anwendung eine oder mehrere Nachrichten an eine andere Anwendung, um eine Prozedur zu starten. Im Anschluss daran sendet die empfangende Anwendung dem Sender eine oder mehrere Nachrichten zurück, sobald die Prozedur abgeschlossen ist. Obwohl es konzeptionell einfach und leicht zu implementieren ist, gibt es eine Menge verschiedener und subtile Probleme, die zu unterschiedlichen RPC-Implementierungen führen.
-	\citep{RPC}
-
-	\item \textbf{Simple Object Access Protocol (SOAP)} stellt ein leichtgewichtiges Protokoll für den Austausch von Informationen in einer dezentralen, verteilten Umgebung dar. Es handelt sich um ein XML-basiertes Protokoll, welches aus drei Teilen besteht: einem Umschlag, welcher einen Rahmen für die Beschreibung des Inhalts einer Nachricht sowie ihrer Verarbeitung definiert, einer Reihe von Kodierungsregeln für die Darstellung von Instanzen anwendungsdefinierter Datentypen sowie einer Konvention für die Darstellung von Remote-Prozeduraufrufen und Antworten. SOAP kann potenziell in Kombination mit einer Vielzahl von anderen Protokollen verwendet werden.
-	\citep{SOAP}
-
-	\item \textbf{Representational State Transfer (REST)} wurde erstmals im Jahr 2000 in einer Dissertation von Roy Fielding beschrieben. Hierbei handelt es sich um einen Software-Architekturstil für APIs. REST basiert auf einer Ressourcenorientierung, bei der jede Entität als Ressource betrachtet und durch eine eindeutige Uniform Resource Locator (URL) identifiziert wird. Die Architektur basiert auf sechs grundlegenden Beschränkungen, darunter die Client-Server-Architektur, bei der Client und Server unabhängig voneinander agieren. Ein wesentliches Charakteristikum von REST ist die Zustandslosigkeit, d. h. jede Anfrage beinhaltet sämtliche für die Verarbeitung erforderlichen Informationen, wodurch die Interaktion zwischen Client und Server vereinfacht wird. Die Umsetzung der CRUD-Operationen (Create, Read, Update, Delete) erfolgt durch die HTTP-Methoden (POST, GET, PUT, DELETE). REST nutzt das in HTTP integrierte Caching, um die Antwortzeiten und die Leistung zu optimieren. Dabei besteht die Möglichkeit, Serverantworten als cachefähig oder nicht cachefähig zu kennzeichnen. Des Weiteren ist eine einheitliche Schnittstelle zu nennen, welche die Interaktionen zwischen unterschiedlichen Geräten und Anwendungen erleichtert und sichtbar macht. Darüber hinaus erfordert REST ein mehrschichtiges System, bei dem jede Komponente lediglich mit der unmittelbar vorgelagerten Schicht interagiert. Die Bereitstellung von ausführbarem Code durch den Server ist optional. RESTful APIs, die diesen Prinzipien folgen, nutzen HTTP-Anfragen, um Ressourcen effizient zu bearbeiten. \citep{Fielding2000}  \citep{graphqlreplacerest}
-
-	\item \textbf{GraphQL} wurde 2012 von Facebook für den internen Gebrauch entwickelt. Im Jahr 2015 erfolgte die Veröffentlichung als Open-Source-Projekt für die Allgemeinheit. Das Kernkonzept von GraphQL basiert auf client-getriebenen Abfragen, bei denen der Client die Struktur der Daten präzise definiert und nur die erforderlichen Daten erhält. Dies resultiert in einer Reduktion von Datenübertragungen und ermöglicht effizientere Netzwerkaufrufe. Die hierarchische Struktur der Abfragen, welche die Graph-Struktur widerspiegelt, erlaubt eine intuitive Datenmodellierung. Die starke Typisierung in GraphQL wird durch ein Schema definiert, welches die Typen der Daten spezifiziert. Dadurch wird eine bessere Validierung und Dokumentation ermöglicht. Im Gegensatz zu REST, bei dem für verschiedene Operationen mehrere Endpunkte erforderlich sind, verwendet GraphQL lediglich einen einzigen Endpunkt für alle API-Abfragen.  \citep{graphqlreplacerest}
-
-\end{itemize}
-%subsubsection apitypenspezifikation (end)
-%subsection apitypen (end)
-
+\subsection{REST API} % (fold)
+\label{sec:restapi}
+ \textbf{Representational State Transfer (REST)} wurde erstmals im Jahr 2000 in einer Dissertation von Roy Fielding beschrieben. Hierbei handelt es sich um einen Software-Architekturstil für APIs. REST basiert auf einer Ressourcenorientierung, bei der jede Entität als Ressource betrachtet und durch eine eindeutige Uniform Resource Locator (URL) identifiziert wird. Die Architektur basiert auf sechs grundlegenden Beschränkungen, darunter die Client-Server-Architektur, bei der Client und Server unabhängig voneinander agieren. Ein wesentliches Charakteristikum von REST ist die Zustandslosigkeit, d. h. jede Anfrage beinhaltet sämtliche für die Verarbeitung erforderlichen Informationen, wodurch die Interaktion zwischen Client und Server vereinfacht wird. Die Umsetzung der CRUD-Operationen (Create, Read, Update, Delete) erfolgt durch die HTTP-Methoden (POST, GET, PUT, DELETE). REST nutzt das in HTTP integrierte Caching, um die Antwortzeiten und die Leistung zu optimieren. Dabei besteht die Möglichkeit, Serverantworten als cachefähig oder nicht cachefähig zu kennzeichnen. Des Weiteren ist eine einheitliche Schnittstelle zu nennen, welche die Interaktionen zwischen unterschiedlichen Geräten und Anwendungen erleichtert und sichtbar macht. Darüber hinaus erfordert REST ein mehrschichtiges System, bei dem jede Komponente lediglich mit der unmittelbar vorgelagerten Schicht interagiert. Die Bereitstellung von ausführbarem Code durch den Server ist optional. RESTful APIs, die diesen Prinzipien folgen, nutzen HTTP-Anfragen, um Ressourcen effizient zu bearbeiten. \citep{Fielding2000}  \citep{graphqlreplacerest}
+%subsection restapi (end)
+\subsection{GraphQL} % (fold)
+\label{sec:graphql}
+\textbf{GraphQL} wurde 2012 von Facebook für den internen Gebrauch entwickelt. Im Jahr 2015 erfolgte die Veröffentlichung als Open-Source-Projekt für die Allgemeinheit. Das Kernkonzept von GraphQL basiert auf client-getriebenen Abfragen, bei denen der Client die Struktur der Daten präzise definiert und nur die erforderlichen Daten erhält. Dies resultiert in einer Reduktion von Datenübertragungen und ermöglicht effizientere Netzwerkaufrufe. Die hierarchische Struktur der Abfragen, welche die Graph-Struktur widerspiegelt, erlaubt eine intuitive Datenmodellierung. Die starke Typisierung in GraphQL wird durch ein Schema definiert, welches die Typen der Daten spezifiziert. Dadurch wird eine bessere Validierung und Dokumentation ermöglicht. Im Gegensatz zu REST, bei dem für verschiedene Operationen mehrere Endpunkte erforderlich sind, verwendet GraphQL lediglich einen einzigen Endpunkt für alle API-Abfragen.  \citep{graphqlreplacerest}
+%subsection graphql (end)
 % section apigrundlagen (end)
 
 \section{Datenbank} % (fold)
@@ -72,24 +35,16 @@ Eine Datenbank stellt eine Sammlung von Daten und Informationen dar, welche für
 
 %subsubsection definitiondatenbank (end)
 
-\subsection{Datenbank Modelle} % (fold)
-Datenbanken können in SQL und NoSQL (Not Only SQL) Datenbanken unterteilt werden. Eine relationale Datenbank stellt eine SQL Datenbank dar, eine Graph Datenbank eine NoSQL Datenbank. Im Folgenden werden beide Vertreter der Technologien vorgestellt.
-\subsubsection{Relationale Datenbank} % (fold)
+\subsection{Relationale Datenbank} % (fold)
 \label{sec:relationaleDatenbanken}
 Relationale Datenbanken basieren auf dem von E. F. Codd eingeführten relationalen Modell. Es verwendet relationale Algebra und Tupel-Relationen und speichert Daten in tabellarischer Form, wobei Zeilen als Tupel und Spalten als Attribute bezeichent werden. Dies hat zur Folge, dass die Struktur, in der die Daten gespeichert werden sollen vor der Speicherung in der Datenbank bekannt sein müssen. Falls Werte nicht vorkammen werden diese auf null gesetzt. Die Tabellen sind durch Primär- und Fremdschlüssel miteinander verknüpft. Diese Art von Datenbanken sind einfach zu entwerfen und umzusetzen und zeichnen sich durch Benutzerfreundlichkeit, Konsistenz und Flexibilität aus. Diese Datenbanken eignen sich besonders für normalisierte Daten und solche, die Transaktionsintegrität erfordern.
  \citep{relationalDatabase}  \citep{9677042}
-%subsubsection relationaleDatenbanken (end)
-\subsubsection{Graph Datenbanken} % (fold)
+%subsection relationaleDatenbanken (end)
+\subsection{Graphdatenbanken} % (fold)
 \label{sec:graphDatenbanken}
 Graphdatenbanken basieren auf dem Konzept der Graphentheorie, die Daten in Form von Graphen schemafreien Weise speichern. Eine Graphdatenbank ist eine Sammlung von Knoten und Kanten, wobei die Knoten Entitäten oder Objekte darstellen und die Kanten die Beziehungen zwischen den Knoten darstellen. Der Graph  enthält auch Informationen über die Eigenschaften der mit den Knoten verbundenen Objekte. Graphdatenbanken bieten eine effiziente Datenspeicherung speziell für semistrukturierte Daten. Die Formulierung von Abfragen als Traversale in Graphen-Datenbanken sind sie schneller als relationale Datenbanken. Graphdatenbanken befolgen ACID-Bedingungen und bieten Rollback-Unterstützung, die die Konsistenz der Informationen Informationen garantiert.
 \citep{9677042}
-
-%subsubsection graphDatenbanken (end)
-
-\label{sec:datenbanktypen}
-%subsubsection datenbanktypen (end)
-
-
+%subsection graphDatenbanken (end)
 % section datenbankGrundlagen (end)
 
 % chapter grundlagen (end)
