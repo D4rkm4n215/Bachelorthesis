@@ -6,20 +6,26 @@ import java.nio.charset.StandardCharsets;
 import java.util.Random;
 
 public class Rest {
-    private static final String TARGETURL = "https://c834-2a00-79c0-65e-e300-54b0-240a-f7f3-972a.ngrok-free.app/";
+    private static final String TARGETURL = "https://dc84-2a00-79c0-65e-e300-54b0-240a-f7f3-972a.ngrok-free.app/";
     private static final int RUNS = 100;
 
 
     public void runRequest() {
         try {
+            /*
+
+
              System.out.println("---------------/api/person/?id---------------");
             for (int i = 0; i <= RUNS; i++){
                 executeGetRequestPersonById();
             }
+            */
+
             System.out.println("---------------/api/person---------------");
             for (int i = 0; i <= RUNS; i++){
                 executeGetRequestPersons();
             }
+            /*
             System.out.println("---------------/api/persons/{pid}/projects/issues---------------");
             for (int i = 0; i <= RUNS; i++){
                 executeGetRequestPersonsProjectsIssues();
@@ -28,6 +34,8 @@ public class Rest {
             for (int i = 0; i <= RUNS; i++){
                 executePostRequestPersonsProjectsIssues();
             }
+
+             */
         } catch (Exception e){
             e.printStackTrace();
         }
