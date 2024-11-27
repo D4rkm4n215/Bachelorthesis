@@ -35,7 +35,7 @@ public class Mutation implements GraphQLMutationResolver {
         Person person = personRepository.findByPid(input.getPid());
 
         Issue issue = new Issue();
-        issue.setIid(new Random().toString());
+        issue.setIid(String.valueOf(new Random().nextLong()));
         issue.setCreatedAt(LocalDateTime.parse(input.getCreatedAt()));
         issue.setTitle(input.getTitle());
         issue.setState(input.getState());

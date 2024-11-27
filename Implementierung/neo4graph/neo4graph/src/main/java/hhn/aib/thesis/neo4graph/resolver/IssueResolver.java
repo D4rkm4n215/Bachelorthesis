@@ -7,8 +7,6 @@ import hhn.aib.thesis.neo4graph.model.Project;
 import hhn.aib.thesis.neo4graph.persistance.PersonRepository;
 import hhn.aib.thesis.neo4graph.persistance.ProjectRepository;
 
-import java.text.SimpleDateFormat;
-import java.util.Date;
 import java.util.List;
 
 public class IssueResolver implements GraphQLResolver<Issue> {

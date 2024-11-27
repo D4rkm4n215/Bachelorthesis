@@ -36,11 +36,11 @@ input IssueInput {
 
 type Query{
     persons: [Person]
-    person(id:String): Person
+    person(id:ID!): Person
     projects: [Project]
-    project(prid:String) : Project
+    project(id:ID!) : Project
     issues : [Issue]
-    issue(iid: String): Issue
+    issue(id: String): Issue
 
 }
 

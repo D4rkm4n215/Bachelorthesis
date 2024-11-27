@@ -1,13 +1,14 @@
 package hhn.aib.thesis.neo4rest;
 
+import hhn.aib.thesis.neo4rest.DTOs.IssueDTO;
 import hhn.aib.thesis.neo4rest.model.Issue;
 import hhn.aib.thesis.neo4rest.model.Person;
 
 import java.util.List;
 
 public interface IDBService {
-    public Person getPerson(long id);
+    public Person getPerson(String id);
     public List<Person> getPerson();
-    public List<Issue> getIssueByPersonenIdAndProjectIDAndState(long pid, long prid);
-    public Issue postIssue(long pid, long prid, Issue issue);
+    public List<Issue> getIssueByPersonenIdAndProjectIDAndState(String pid);
+    public Issue postIssue(String pid, String prid, IssueDTO issue);
 }

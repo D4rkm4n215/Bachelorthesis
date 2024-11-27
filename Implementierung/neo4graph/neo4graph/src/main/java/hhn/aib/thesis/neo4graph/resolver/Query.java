@@ -35,8 +35,8 @@ public class Query implements GraphQLQueryResolver {
     }
 
     @QueryMapping
-    public Person person(@Argument String pid) {
-        return personRepository.findByPid(pid);
+    public Person person(@Argument String id) {
+        return personRepository.findByPid(id);
     }
 
     @QueryMapping

@@ -1,9 +1,10 @@
 package hhn.aib.thesis.postrest.model;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 
-import java.util.Date;
+import java.time.LocalDateTime;
 import java.util.Set;
 @Entity
 public class Issue {
@@ -15,14 +16,13 @@ public class Issue {
     private String title;
 
     @Column(name = "createdat")
-    private Date createdAt;
+    private LocalDateTime createdAt;
 
     @Column(name = "state")
     private String state;
 
     @Column(name = "statereason")
     private String stateReason;
-
 
     @ManyToMany
     @JoinTable(
@@ -35,21 +35,17 @@ public class Issue {
 
     @ManyToOne
     @JoinColumn(name = "prid")
-    @JsonBackReference
+    @JsonManagedReference
     private Project project;
 
     public Issue() {}
+
     public Issue(String title, String state, String stateReason, Set<Person> assignees, Project project) {
         this.title = title;
         this.state = state;
         this.stateReason = stateReason;
         this.assignees = assignees;
         this.project = project;
-    }
-
-    @PrePersist
-    protected void onCreate() {
-        this.createdAt = new Date();
     }
 
     public long getIid() {
@@ -100,11 +96,11 @@ public class Issue {
         this.title = title;
     }
 
-    public Date getCreatedAt() {
+    public LocalDateTime getCreatedAt() {
         return createdAt;
     }
 
-    public void setCreatedAt(Date createdAt) {
+    public void setCreatedAt(LocalDateTime createdAt) {
         this.createdAt = createdAt;
     }
 }

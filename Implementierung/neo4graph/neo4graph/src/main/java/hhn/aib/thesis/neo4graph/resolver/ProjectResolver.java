@@ -26,7 +26,7 @@ public class ProjectResolver implements GraphQLResolver<Project> {
         return personRepository.findByProjectsContains(project);
     }
 
-    public List<Issue> issues(Project project) {
+    public List<Issue> getIssues(Project project) {
         return issueRepository.findByProject(project);
     }
 }

@@ -1,18 +1,15 @@
 package hhn.aib.thesis.neo4rest.model;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import org.springframework.data.annotation.Id;
-import org.springframework.data.annotation.Transient;
-import org.springframework.data.neo4j.core.schema.GeneratedValue;
 import org.springframework.data.neo4j.core.schema.Node;
 import org.springframework.data.neo4j.core.schema.Relationship;
 
 import java.util.List;
 
-@Node("Person")
+@Node
 public class Person {
     @Id
-    private long identity;
-
     private String pid;
 
     private String firstname;
@@ -22,19 +19,16 @@ public class Person {
     private String email;
 
     @Relationship(type = "OWNS", direction = Relationship.Direction.OUTGOING)
-    private List<Project> project;
+    @JsonManagedReference
+    private List<Project> projects;
 
     @Relationship(type = "CREATED", direction = Relationship.Direction.OUTGOING)
-    private List<Issue> Issue;
+    @JsonManagedReference
+    private List<Issue> issues;
 
+    public String getPid() {return pid;}
 
-    public long getPid() {
-        return Long.parseLong(pid);
-    }
-
-    public void setPid(long pid) {
-        this.pid = String.valueOf(pid);
-    }
+    public void setPid(String pid) {this.pid = pid;}
 
     public String getFirstname() {
         return firstname;
@@ -60,19 +54,19 @@ public class Person {
         this.email = email;
     }
 
-    public List<Project> getProject() {
-        return project;
+    public List<Project> getProjects() {
+        return projects;
     }
 
-    public void setProject(List<Project> project) {
-        this.project = project;
+    public void setProjects(List<Project> projects) {
+        this.projects = projects;
     }
 
-    public List<Issue> getIssue() {
-        return Issue;
+    public List<Issue> getIssues() {
+        return issues;
     }
 
-    public void setIssue(List<Issue> issue) {
-        Issue = issue;
+    public void setIssues(List<Issue> issues) {
+        this.issues = issues;
     }
 }

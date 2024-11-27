@@ -1,29 +1,34 @@
 package hhn.aib.thesis.neo4rest.model;
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.neo4j.core.schema.Node;
 import org.springframework.data.neo4j.core.schema.Relationship;
 
-import java.util.List;
+import java.time.LocalDateTime;
+import java.util.Set;
 
 @Node
 public class Issue {
-    @Id
-    private long identity;
 
+    @Id
     private String iid;
 
     private String title;
 
-    private String createdAt;
+    private LocalDateTime createdAt;
 
     private String state;
 
     private String stateReason;
 
     @Relationship(type = "BELONGS_TO", direction = Relationship.Direction.OUTGOING)
-    private Project projects;
+    @JsonManagedReference
+    private Project project;
 
-    
+    @Relationship(type = "CREATED", direction = Relationship.Direction.INCOMING)
+    @JsonBackReference
+    private Set<Person> assignees;
 
     public long getIid() {
         return Long.parseLong(iid);
@@ -41,11 +46,11 @@ public class Issue {
         this.title = title;
     }
 
-    public String getCreatedAt() {
+    public LocalDateTime getCreatedAt() {
         return createdAt;
     }
 
-    public void setCreatedAt(String createdAt) {
+    public void setCreatedAt(LocalDateTime createdAt) {
         this.createdAt = createdAt;
     }
 
@@ -65,11 +70,17 @@ public class Issue {
         this.stateReason = stateReason;
     }
 
-    public Project getProjects() {
-        return projects;
+    public Project getProject() {
+        return project;
     }
 
-    public void setProjects(Project projects) {
-        this.projects = projects;
+    public void setProject(Project project) {
+        this.project = project;
     }
+
+    public void setIid(String iid) {this.iid = iid;}
+
+    public Set<Person> getAssignees() {return assignees;}
+
+    public void setAssignees(Set<Person> assignees) {this.assignees = assignees;}
 }
