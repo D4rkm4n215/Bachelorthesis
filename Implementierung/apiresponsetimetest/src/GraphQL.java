@@ -4,7 +4,7 @@ import java.net.URL;
 import java.util.Random;
 
 public class GraphQL {
-    private static final String TARGETURL = "http://localhost:8080/apis/graphql";
+    private static final String TARGETURL = "https://c834-2a00-79c0-65e-e300-54b0-240a-f7f3-972a.ngrok-free.app/apis/graphql";
     private static final int RUNS = 100;
 
 
@@ -18,16 +18,15 @@ public class GraphQL {
             for (int i = 0; i <= RUNS; i++){
                 executeGetRequestPersons();
             }
-
             System.out.println("---------------/api/persons/{pid}/projects/issues---------------");
             for (int i = 0; i <= RUNS; i++){
                 executeGetRequestPersonsProjectsIssues();
             }
-
             System.out.println("---------------/api/persons/{pid}/projects/{prid}/issues---------------");
             for (int i = 0; i <= RUNS; i++){
                 executePostRequestPersonsProjectsIssues();
             }
+
         } catch (Exception e){
             e.printStackTrace();
         }
@@ -49,7 +48,7 @@ public class GraphQL {
             long id = (new Random().nextLong(5000 - 1) + 1);
             String jsonBody = """
             {
-                "query": "query Person { person(id: %d) { pid firstname lastname email } }"
+                "query": "query Person { person(id: \\\"%d\\\") { pid firstname lastname email } }"
             }
         """.formatted(id);
 
@@ -62,7 +61,7 @@ public class GraphQL {
             int responseCode = con.getResponseCode();
             endTime = System.currentTimeMillis();
             System.out.println("Response Time = " + (endTime - startTime) + " ms | ResponseCode: " + responseCode);
-
+            con.disconnect();
         }catch (Exception e){
             e.printStackTrace();
         }
@@ -95,7 +94,7 @@ public class GraphQL {
             int responseCode = con.getResponseCode();
             endTime = System.currentTimeMillis();
             System.out.println("Response Time = " + (endTime - startTime) + " ms | ResponseCode: " + responseCode);
-
+            con.disconnect();
         }catch (Exception e){
             e.printStackTrace();
         }
@@ -116,7 +115,7 @@ public class GraphQL {
             long id = (new Random().nextLong(5000 - 1) + 1);
             String jsonBody = """
             {
-                "query": "query Person {person(id: %d) {pid projects {prid title createdAt issues {iid title createdAt state stateReason } } firstname lastname email }}"
+                "query": "query Person {person(id: \\\"%d\\\") {pid projects {prid title createdAt issues {iid title createdAt state stateReason } } firstname lastname email }}"
             }
         """.formatted(id);
 
@@ -129,7 +128,7 @@ public class GraphQL {
             int responseCode = con.getResponseCode();
             endTime = System.currentTimeMillis();
             System.out.println("Response Time = " + (endTime - startTime) + " ms | ResponseCode: " + responseCode);
-
+            con.disconnect();
         }catch (Exception e){
             e.printStackTrace();
         }
@@ -151,9 +150,10 @@ public class GraphQL {
             long pid = (new Random().nextLong(5000 - 1) + 1);
             long prid = (new Random().nextLong(2500 - 1) + 1);
             String jsonBody = """
-            {
-                "mutation": mutation CreateIssue {createIssue( input: { title: "test", createdAt: "2023-02-21T00:00:00", state: "Open", stateReason: "Bug" pid: %d prid: %e}) { iid title createdAt state stateReason }}            }
-        """.formatted(pid,prid);
+{
+    "query": "mutation { createIssue(input: { title: \\\"test\\\", createdAt: \\\"2023-02-21T00:00:00\\\", state: \\\"Open\\\", stateReason: \\\"Bug\\\", pid: \\\"%d\\\", prid:\\\" %d\\\" }) { iid title createdAt state stateReason }}"
+}
+""".formatted(pid, prid);
 
             try (OutputStream os = con.getOutputStream()) {
                 byte[] input = jsonBody.getBytes("utf-8");
@@ -164,7 +164,7 @@ public class GraphQL {
             int responseCode = con.getResponseCode();
             endTime = System.currentTimeMillis();
             System.out.println("Response Time = " + (endTime - startTime) + " ms | ResponseCode: " + responseCode);
-
+            con.disconnect();
         }catch (Exception e){
             e.printStackTrace();
         }

@@ -2,16 +2,17 @@
 import java.io.OutputStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.nio.charset.StandardCharsets;
 import java.util.Random;
 
 public class Rest {
-    private static final String TARGETURL = "http://localhost:8080/";
+    private static final String TARGETURL = "https://c834-2a00-79c0-65e-e300-54b0-240a-f7f3-972a.ngrok-free.app/";
     private static final int RUNS = 100;
 
 
     public void runRequest() {
         try {
-            System.out.println("---------------/api/person/?id---------------");
+             System.out.println("---------------/api/person/?id---------------");
             for (int i = 0; i <= RUNS; i++){
                 executeGetRequestPersonById();
             }
@@ -48,6 +49,7 @@ public class Rest {
                 int responseCode= con.getResponseCode();
                 endTime = System.currentTimeMillis();
                 System.out.println(" Response Time = " + (endTime - startTime + " ms | ResponseCode : " + responseCode));
+                con.disconnect();
 
             }catch (Exception e){
                 e.printStackTrace();
@@ -69,6 +71,7 @@ public class Rest {
             int responseCode= con.getResponseCode();
             endTime = System.currentTimeMillis();
             System.out.println(" Response Time = " + (endTime - startTime + " ms | ResponseCode : " + responseCode));
+            con.disconnect();
         }catch (Exception e){
             e.printStackTrace();
         }
@@ -88,6 +91,7 @@ public class Rest {
             int responseCode= con.getResponseCode();
             endTime = System.currentTimeMillis();
             System.out.println(" Response Time = " + (endTime - startTime + " ms | ResponseCode : " + responseCode));
+            con.disconnect();
         }catch (Exception e){
             e.printStackTrace();
         }
@@ -101,6 +105,7 @@ public class Rest {
             HttpURLConnection con = (HttpURLConnection) url.openConnection();
             con.setRequestMethod("POST");
             con.setRequestProperty("Accept", "application/json");
+            con.setRequestProperty("Content-Type", "application/json");
             con.setUseCaches(false);
             con.setDoOutput(true);
 
@@ -114,13 +119,14 @@ public class Rest {
                 """;
 
             try (OutputStream os = con.getOutputStream()) {
-                byte[] input = jsonBody.getBytes("utf-8");
+                byte[] input = jsonBody.getBytes(StandardCharsets.UTF_8);
                 os.write(input, 0, input.length);
             }
             startTime = System.currentTimeMillis();
             int responseCode= con.getResponseCode();
             endTime = System.currentTimeMillis();
-            System.out.println(" Response Time = " + (endTime - startTime + " ms"));
+            System.out.println(" Response Time = " + (endTime - startTime + " ms | ResponseCode : " + responseCode));
+            con.disconnect();
         }catch (Exception e){
             e.printStackTrace();
         }
