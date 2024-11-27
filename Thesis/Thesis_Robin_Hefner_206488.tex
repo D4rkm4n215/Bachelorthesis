@@ -18,6 +18,10 @@
 \counterwithout{footnote}{chapter}
 \counterwithout{figure}{chapter}
 
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+\usepgfplotslibrary{statistics}
+
 \usepackage{hyperref}
 \hypersetup{
   ,colorlinks=true
@@ -36,13 +40,6 @@
 \newcommand{\reprtstudentname}{Robin Hefner}
 \newcommand{\reprtstudentid}{206488}
 \urldef{\reprtstudentmail}\url{rohefner@stud.hs-heilbronn.de}
-
-\usepackage{ifpdf}
-\ifpdf
-\usepackage[pdftex]{graphicx}
-\else
-\usepackage{graphicx}
-\fi
 
 \usepackage[headsepline]{scrlayer-scrpage}
 \pagestyle{scrheadings}

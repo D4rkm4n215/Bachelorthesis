@@ -1,4 +1,120 @@
 \chapter{Ergebnisse} % (fold)
 \label{sec:ergebnisse}
+\begin{figure}[htbp]
+ \centering
+	\begin{tikzpicture}
+	    \begin{axis}[
+	        boxplot/draw direction=y, 
+	        xlabel={API}, 
+	        ylabel={ms}, 
+	        xtick={1,2,3,4}, 
+	        xticklabels={Post Rest, Post Graph, Neo4 Rest, Neo4 Graph}, 
+	        ymin=50, ymax=150,
+		width=12cm
+	    ]
+	        \addplot+[
+	            boxplot prepared={
+	                median=113,
+	                upper quartile=120,
+	                lower quartile=111, 
+	                upper whisker=133,
+	                lower whisker=109
+	            },
+	            draw=black
+	        ] coordinates {};
+	        \addplot+[
+	            boxplot prepared={
+	                median=56,
+	                upper quartile=58,
+	                lower quartile=56, 
+	                upper whisker=60,
+	                lower whisker=54
+	            },
+	            draw=black
+	        ] coordinates {};
+	        \addplot+[
+	            boxplot prepared={
+	                median=120,
+	                upper quartile=125,
+	                lower quartile=116, 
+	                upper whisker=137,
+	                lower whisker=113
+	            },
+	            draw=black
+	        ] coordinates {};
+	       \addplot+[
+	            boxplot prepared={
+	                median=58,
+	                upper quartile=59,
+	                lower quartile=57, 
+	                upper whisker=62,
+	                lower whisker=56
+	            },
+	            draw=black
+	        ] coordinates {};
+	    \end{axis}
+	\end{tikzpicture}
+\caption{/api/person/?id}
+\end{figure}
+
+\begin{figure}[htbp]
+ \centering
+	\begin{tikzpicture}
+	    \begin{axis}[
+	        boxplot/draw direction=y, 
+	        xlabel={API}, 
+	        ylabel={ms}, 
+	        xtick={1,2,3,4}, 
+	        xticklabels={Post Rest, Post Graph, Neo4 Rest, Neo4 Graph}, 
+	        ymin=100, ymax=1100,
+		width=12cm
+	    ]
+	        \addplot+[
+	            boxplot prepared={
+	                median=172,
+	                upper quartile=178,
+	                lower quartile=168, 
+	                upper whisker=188,
+	                lower whisker=101
+	            },
+	            draw=black
+	        ] coordinates {};
+	        \addplot+[
+	            boxplot prepared={
+	                median=206,
+	                upper quartile=214,
+	                lower quartile=198, 
+	                upper whisker=233,
+	                lower whisker=178
+	            },
+	            draw=black
+	        ] coordinates {};
+	        \addplot+[
+	            boxplot prepared={
+	                median=959,
+	                upper quartile=995,
+	                lower quartile=921, 
+	                upper whisker=1077,
+	                lower whisker=879
+	            },
+	            draw=black
+	        ] coordinates {};
+	       \addplot+[
+	            boxplot prepared={
+	                median=499,
+	                upper quartile=509,
+	                lower quartile=494, 
+	                upper whisker=531,
+	                lower whisker=482
+	            },
+	            draw=black
+	        ] coordinates {};
+	    \end{axis}
+	\end{tikzpicture}
+\caption{/api/person}
+\end{figure}
+
+	
+	
 
 % chapter ergebnisse (end)
