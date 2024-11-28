@@ -1,12 +1,61 @@
 \chapter{Grundlagen} % (fold)
 \label{sec:grundlagen}
-Die folgenden Abschnitte sollen die theoretischen Grundlagen vermitteln, die notwendig sind, um das Thema dieser Thesis zu betrachten. Die Konzepte, die hier beschrieben werden sind APIs, wie REST und GraphQL, als auch relationale und Graph Datenbanken.
+Die folgenden Abschnitte sollen die theoretischen Grundlagen vermitteln, die notwendig sind, um das Thema dieser Thesis zu betrachten. Die Konzepte, die hier beschrieben werden sind relationale Algebra, Graphentheorie, APIs, als auch relationale und Graph Datenbanken.
 \section{Relationale Algebra} % (fold)
 \label{sec:relationaleAlgebra}
+Die relationale Algebra ist ein mathematisches System, welches 1970 von E.F. Codd entwickelt wurde. Sie wird unter anderem zu Abfrage und Mutation von Daten in relationalen Datenbanken verwendet wird. Durch sie wird eine Menge an Operationen beschrieben, die auf die Relationen angewendet werden können, um neue Relationen zu bilden. \citep{rdb}
+
+\subsection{Basisrelation} % fold
+\label{sec:basisrelation}
+Um relationale Algebra anzuwenden werden Basisrelationen benötigt. Diese bilden den Grundbaustein, um mit Grundoperationen komplexe Ausdrücke aufzubauen, die neue Relationen definieren. Basisrelationen bestehen aus drei Bausteinen, nämlich Tupel, Attributen und Domänen. Tupel spiegeln die Zeilen der Tabellen woeder, die einzelne Datensätze repräsentieren. Diese werden durch Attribute in einzelne Spalten eingeteilt, welche die Eingenschaften der Tupel beschreiben. Die Wertebereiche, die für die einzelnen Attribute zulässig sind nennt man Domänen. Somit ist jede Relation eine Menge von Tupeln mit spezifischen Attributen und deren Domänen. \citep{rdb}
+%subsection basisrelation (end)
+
+\subsection{Grundoperationen} % fold
+\label{sec:grundoperationen}
+Grundoperationen in der relationalen Algebra sind einfache mengentheoretische Operationen, die auf die Basisrelationen angewandt werden. Insgesamt gibt es sechs Grundoperationen, die nachfolgend erläutert werden.
+\begin{itemize}
+\item Bei der \textbf{Selektion $\sigma$} werden die einzelnen Tupel basieren auf einer Bedingung gefiltert. Ein Beispiel hierfür wäre  \colorbox{gray!20}{$\sigma$ Alter > 30 (Person)}. Hierdurch werden nur Personen mit einem Alter von mehr als 30 Jahren zurückgeliefert.
+\item Die \textbf{Projektion $\pi$} ermöglicht es bestimmte Attribute einer Relation auszuwählen oder zu entfernen. Beispielsweise kann durch \colorbox{gray!20}{$\pi$ Name, Alter (Person)}, nur der Name und das Alter einer Person zurückgegeben werden.
+\item Das \textbf{Kartesisches Produkt $\times$} kombiniert jede Zeile der ersten Relation mit jeder Zeile der zweiten Relation. Somit erzeugt  \colorbox{gray!20}{$R \times S$} alle möglichen Kombinationen aus \colorbox{gray!20}{R} und \colorbox{gray!20}{S}.
+\item Eine \textbf{Vereinigung $\cup$} verknüpft die Tupel zweier Relationen, die eine gleiche Struktur aufweisen.  \colorbox{gray!20}{$R \cup S$} kombiniert somit alle Tupel aus beiden Relationen mit gleicher Struktur, ohne Duplikate zu erzeugen.
+\item Die \textbf{Differenz  $\setminus$} zweier Relationen liefert alle Tupel, die in der ersten Relation vorkommen, aber nicht in der Zweiten. Sinngemäß gibt \colorbox{gray!20}{$R \setminus S$} alle Tupel \colorbox{gray!20}{R} aus die nicht in \colorbox{gray!20}{S} enthalten sind.
+\item Der \textbf{Schnitt $\cap$} findet die Tupel, die in beiden Relationen vorhanden sind. Somit gibt \colorbox{gray!20}{$R \cap S$} die Tupel, die sowohl in \colorbox{gray!20}{R} als auch in \colorbox{gray!20}{S} entahlten sind zurück.
+\end{itemize}
+\noindent Durch die Verbindung dieser Grundoperationen können andere Operationen, wie beispielhaft ein Theat-Join $\bowtie$, welcher durch eine Kombination aus kartesischem Produkt und Selektion alle Tupel zweier Relationenen aufgrund einer Bedingung miteinander verbindet, erstellt werden.  \citep{rdb}
+%subsection grundoperationen (end)
 % section relationaleAlgebra (end)
 
 \section{Graphentheorie} % (fold)
 \label{sec:graphentheorie}
+Ein Graph besteht im allgemeinen aus Knoten und verbindenden Kanten (vgl. Abb 1). In der Informatik bietet diese Datenstruktur einen großen Vorteil gegenüber der relationalen Algebra, wenn es sich um stark verzweigte Daten handelt. \citep{graphTheory}
+
+\begin{figure}[h!]
+	\centering
+	\includegraphics[scale=1]{Illustrations/graph.png}
+	\caption{Modell eines ungerichteten Graphen. \citep{graphTheory}}
+\end{figure}
+\newpage
+\subsection{Knoten} % fold
+\label{sec:knoten}
+Knoten sind Punkte innerhalb eines Graphen, die beispielsweise als Objekte der realen Welt verstanden werden können. Diese Objekte können zum Beispiel geographische Koordinaten sein, um einen Distanz-Graphen zu erstellen oder auch Webseiten, um einen Web-Graphen zu erhalten, der die Verbindung verschiedener Webseiten aufzeigt.
+Innerhalb der Knoten unterscheidet man verschiedene Typen. Zum einen gibt es Isolierte Knoten. Diese besitzen keine Verbindung zu anderen Knoten des Graphens und können zur Identifizierung nicht-verbundener Teile eines Netzwerks verwendet werden. Außerdem gibt es verbundene Knoten, welche mindestens eine Verbindung zu einem andern Knoten besitzen. Dadurch ergibt sich eine dirkete Verbindung zu einem benachbarten Knoten. Außerdem kann eine Indirekte Verbindung enstehen, indem ein Pfad zwischen Ausgangs und Endknoten existiert, der über mehrere Verbindungen führt. \citep{graphTheory}
+%subsection knoten (end)
+
+\subsection{Kanten} % fold
+\label{sec:kanten}
+Kanten dienen in einem Graphen dazu, die Knoten miteinander zu Verbinden, um eine Relation zwischen ihnen zu visualisieren. Jede Kante besitzt einen Start- und Endknoten, der auch derselbe Knoten sein kann. Somit würde man in diesem Fall von einer Schleife sprechen. So wie es verschiedene Arten von Knoten gibt, exestieren auch verschiedene Kanten. 
+\newline
+In Abb. 1 sind ungerichtete Kanten im Graphen zu sehen. Sie verbinden die Knoten auf die trivialste Art, indem sie ohne Richtung, Gewicht oder andere Beschränkung eine verbindung herstellen. Durch ungerichtete Kanten ensteht ein ungerichteter Graph.
+Gerichtete Kanten werden in Abb. 2 (a) genutzt. Diese werden durch einen Pfeil visualisiert. Dieser gibt an, in welcher Richtung der Graph eine Beziehung zwischen den Knoten herstellt. Es ist ebenfalls möglich, dass zwei Knoten eine beidseitige Beziehung durch zwei gerichtete Kanten, also eine Kante pro Richtung, eingehen. Ein Graph, der durch gerichtete Kanten verbunden ist wird gerichteter Graph genannt.
+Werden Zahlenwerte zu einer KAnte hinzugefügt (vgl. Abb 2 (b)), so spricht man von einem gewichteten Graph. Diese können verwendet werden, um die Strecke zwischen zwei Kanten darzustellen oder die Kosten für die Nutzung der Kante anzugeben. Wird ein Graph mit gewichteten Kanten verbunden, spricht man von einem gewichteten Graphen.
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=1]{Illustrations/graph_01.png}
+	\caption{Modell eines gerichteten (a) und eines gewichtet Graphen (b). \citep{graphTheory}}
+\end{figure}
+%subsection kanten (end)
+
+
 % section graphentheorie (end)
 
 \section{API} % (fold)
