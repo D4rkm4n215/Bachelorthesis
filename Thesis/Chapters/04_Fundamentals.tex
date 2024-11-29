@@ -44,23 +44,20 @@ Innerhalb der Knoten unterscheidet man verschiedene Typen. Zum einen gibt es Iso
 \subsection{Kanten} % fold
 \label{sec:kanten}
 Kanten dienen in einem Graphen dazu, die Knoten miteinander zu Verbinden, um eine Relation zwischen ihnen zu visualisieren. Jede Kante besitzt einen Start- und Endknoten, der auch derselbe Knoten sein kann. Somit würde man in diesem Fall von einer Schleife sprechen. So wie es verschiedene Arten von Knoten gibt, exestieren auch verschiedene Kanten. 
-\newline
-In Abb. 1 sind ungerichtete Kanten im Graphen zu sehen. Sie verbinden die Knoten auf die trivialste Art, indem sie ohne Richtung, Gewicht oder andere Beschränkung eine verbindung herstellen. Durch ungerichtete Kanten ensteht ein ungerichteter Graph.
-Gerichtete Kanten werden in Abb. 2 (a) genutzt. Diese werden durch einen Pfeil visualisiert. Dieser gibt an, in welcher Richtung der Graph eine Beziehung zwischen den Knoten herstellt. Es ist ebenfalls möglich, dass zwei Knoten eine beidseitige Beziehung durch zwei gerichtete Kanten, also eine Kante pro Richtung, eingehen. Ein Graph, der durch gerichtete Kanten verbunden ist wird gerichteter Graph genannt.
-Werden Zahlenwerte zu einer KAnte hinzugefügt (vgl. Abb 2 (b)), so spricht man von einem gewichteten Graph. Diese können verwendet werden, um die Strecke zwischen zwei Kanten darzustellen oder die Kosten für die Nutzung der Kante anzugeben. Wird ein Graph mit gewichteten Kanten verbunden, spricht man von einem gewichteten Graphen.
+In Abb. 1 sind \textit{ungerichtete Kanten} im Graphen zu sehen. Sie verbinden die Knoten auf die trivialste Art, indem sie ohne Richtung, Gewicht oder andere Beschränkung eine Verbindung herstellen. Durch ungerichtete Kanten ensteht ein ungerichteter Graph.
+\textit{Gerichtete Kanten} werden in Abb. 2 (a) genutzt. Diese werden durch einen Pfeil visualisiert. Dieser gibt an, in welcher Richtung der Graph eine Beziehung zwischen den Knoten herstellt. Es ist ebenfalls möglich, dass zwei Knoten eine beidseitige Beziehung durch zwei gerichtete Kanten, also eine Kante pro Richtung, eingehen. Ein Graph, der durch gerichtete Kanten verbunden ist wird gerichteter Graph genannt.
+Werden Zahlenwerte zu einer Kante hinzugefügt (vgl. Abb 2 (b)), so spricht man von \textit{gewichteten Kanten}. Diese können verwendet werden, um die Strecke zwischen zwei Kanten darzustellen oder die Kosten für die Nutzung der Kante anzugeben. Wird ein Graph mit gewichteten Kanten verbunden, spricht man von einem gewichteten Graphen.\citep{graphTheory}
 \begin{figure}[H]
 	\centering
 	\includegraphics[scale=1]{Illustrations/graph_01.png}
 	\caption{Modell eines gerichteten (a) und eines gewichtet Graphen (b). \citep{graphTheory}}
 \end{figure}
 %subsection kanten (end)
-
-
 % section graphentheorie (end)
 
 \section{API} % (fold)
 \label{sec:apigrundlagen}
-Nachfolgend werden die Grundlagen von APIs thematisiert. Hierbei werden die grundlegenden Definitionen im Zusammenhang mit APIs und die verschiedenen Typen vorgestellt.
+Nachfolgend werden die Grundlagen von APIs thematisiert. Hierbei werden die grundlegenden Definitionen sowie die Typen vorgestellt, die für diese Arbeit von Relevanz sind.
 \subsection{Definition API} % (fold)
 \label{sec:grundlegendedefinitionvonapi}
 Der Begriff \glqq API\grqq{}  steht für \glqq Application Programming Interface\grqq{}. Eine API bezeichnet eine Schnittstelle, welche Entwicklern den Zugriff auf Daten und Informationen ermöglicht. Bekannte Beispiele für häufig genutzte APIs sind die Twitter- und Facebook-APIs. Diese sind für Entwickler zugänglich und ermöglichen die Interaktion mit der Software von Twitter und Facebook. Zudem ermöglichen APIs die Kommunikation zwischen Anwendungen. Sie bieten den Anwendungen einen Weg, miteinander über das Netzwerk, überwiegend das Internet, in einer gemeinsamen Sprache zu kommunizieren. \citep{apistrategyguide}
