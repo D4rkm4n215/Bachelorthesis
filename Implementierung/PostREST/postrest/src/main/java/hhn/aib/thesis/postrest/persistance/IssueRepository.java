@@ -16,11 +16,8 @@ public interface IssueRepository extends JpaRepository<Issue,Long>{
     @Query("SELECT i FROM Issue i " +
             "JOIN i.project pr " +
             "JOIN pr.people pp " +
-            "WHERE pp.pid = :pid " +
-            "AND pr.prid = :prid " +
-            "AND i.state = 'Open'")
-    List<Issue> findOpenIssuesByAssigneesAndProject(@Param("pid") long pid,
-                                                 @Param("prid") long prid);
+            "WHERE pp.pid = :pid ")
+    List<Issue> findOpenIssuesByAssigneesAndProject(@Param("pid") long pid);
 
     @Query(value = "SELECT nextval('issue_iid_seq')", nativeQuery = true)
     Long getNextId();

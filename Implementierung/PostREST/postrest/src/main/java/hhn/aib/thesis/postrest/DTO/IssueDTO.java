@@ -1,15 +1,17 @@
 package hhn.aib.thesis.postrest.DTO;
 
-import java.util.Date;
+import java.time.LocalDateTime;
 
 public class IssueDTO {
 
     private String title;
-    private Date createdAt;
+    private LocalDateTime createdAt;
     private String state;
     private String stateReason;
 
-    public IssueDTO(String title, Date createdAt, String state, String stateReason) {
+    public IssueDTO(){}
+
+    public IssueDTO(String title, LocalDateTime createdAt, String state, String stateReason) {
         this.title = title;
         this.createdAt = createdAt;
         this.state = state;
@@ -24,11 +26,11 @@ public class IssueDTO {
         this.title = title;
     }
 
-    public Date getCreatedAt() {
+    public LocalDateTime getCreatedAt() {
         return createdAt;
     }
 
-    public void setCreatedAt(Date createdAt) {
+    public void setCreatedAt(LocalDateTime createdAt) {
         this.createdAt = createdAt;
     }
 

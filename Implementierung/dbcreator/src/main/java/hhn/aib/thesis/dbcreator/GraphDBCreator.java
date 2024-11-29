@@ -6,6 +6,8 @@ import com.opencsv.CSVReader;
 
 import java.io.FileReader;
 import java.io.IOException;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 
 public class GraphDBCreator {
 
@@ -26,6 +28,7 @@ public class GraphDBCreator {
     public void importData(String csvFilePath) {
         try (Session session = driver.session()) {
             try (CSVReader reader = new CSVReader(new FileReader(csvFilePath))) {
+                DateTimeFormatter inputFormatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
                 String[] header = reader.readNext(); // Spaltennamen überspringen
                 String[] row;
 
@@ -39,12 +42,12 @@ public class GraphDBCreator {
                     // Projekt-Daten
                     String prid = row[4];
                     String projectTitle = row[5];
-                    String projectCreatedAt = row[6];
+                    LocalDateTime projectCreatedAt = (LocalDateTime.parse(row[6], inputFormatter));
 
                     // Issue-Daten
                     String iid = row[7];
                     String issueTitle = row[8];
-                    String issueCreatedAt = row[9];
+                    LocalDateTime issueCreatedAt = (LocalDateTime.parse(row[9], inputFormatter));
                     String issueState = row[10];
                     String issueStateReason = row[11];
 

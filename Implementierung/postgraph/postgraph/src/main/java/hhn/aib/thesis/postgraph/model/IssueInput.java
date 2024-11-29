@@ -1,38 +1,26 @@
 package hhn.aib.thesis.postgraph.model;
 
-import jakarta.persistence.PrePersist;
 
-import java.util.Date;
+import java.time.LocalDateTime;
 
 public class IssueInput {
 
     private String title;
-    private Date createdAt;
+    private LocalDateTime createdAt;
     private String state;
     private String stateReason;
     private long prid;
-
-
-    @PrePersist
-    protected void onCreate() {
-        this.createdAt = new Date();
-    }
+    private long pid;
 
     public String getTitle() {
         return title;
     }
 
-    public void setTitle(String title) {
-        this.title = title;
-    }
+    public void setTitle(String title) {this.title = title;}
 
-    public Date getCreatedAt() {
-        return createdAt;
-    }
+    public LocalDateTime getCreatedAt() {return createdAt;}
 
-    public void setCreatedAt(Date createdAt) {
-        this.createdAt = createdAt;
-    }
+    public void setCreatedAt(LocalDateTime createdAt) {this.createdAt = createdAt;}
 
     public String getState() {
         return state;
@@ -46,15 +34,13 @@ public class IssueInput {
         return prid;
     }
 
-    public void setPrid(long prid) {
-        this.prid = prid;
-    }
+    public void setPrid(long prid) {this.prid = prid;}
 
-    public String getStateReason() {
-        return stateReason;
-    }
+    public String getStateReason() {return stateReason;}
 
-    public void setStateReason(String stateReason) {
-        this.stateReason = stateReason;
-    }
+    public void setStateReason(String stateReason) {this.stateReason = stateReason;}
+
+    public long getPid() {return pid;}
+
+    public void setPid(long pid) {this.pid = pid;}
 }

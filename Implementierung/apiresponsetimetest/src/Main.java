@@ -1,5 +1,6 @@
 public class Main {
     public static void main(String[] args) {
-        new executeGetRequest();
+        new Rest().runRequest();
+        //new GraphQL().runRequest();
     }
 }

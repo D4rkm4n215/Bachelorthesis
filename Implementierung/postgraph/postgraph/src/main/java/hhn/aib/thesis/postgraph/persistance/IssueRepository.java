@@ -9,9 +9,11 @@ import org.springframework.data.jpa.repository.Query;
 import java.util.List;
 
 public interface IssueRepository extends JpaRepository<Issue, Long> {
+
     List<Issue> findByAssigneesContains(Person person);
+
     List<Issue> findByProject(Project project);
-    List<Issue> findByStateAndProject(String state, Project project);
+
     @Query(value = "SELECT nextval('issue_iid_seq')", nativeQuery = true)
     Long getNextId();
 }

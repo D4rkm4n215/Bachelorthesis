@@ -4,7 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ed484308-cf0a-4c9d-b97b-a998155250e5" name="Changes" comment="" />
+    <list default="true" id="ed484308-cf0a-4c9d-b97b-a998155250e5" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../postgraph/postgraph/src/main/java/hhn/aib/thesis/postgraph/persistance/ProjectRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../postgraph/postgraph/src/main/java/hhn/aib/thesis/postgraph/persistance/ProjectRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../postgraph/postgraph/src/main/java/hhn/aib/thesis/postgraph/resolver/PersonResolver.java" beforeDir="false" afterPath="$PROJECT_DIR$/../postgraph/postgraph/src/main/java/hhn/aib/thesis/postgraph/resolver/PersonResolver.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../postgraph/postgraph/src/main/java/hhn/aib/thesis/postgraph/resolver/ProjectResolver.java" beforeDir="false" afterPath="$PROJECT_DIR$/../postgraph/postgraph/src/main/java/hhn/aib/thesis/postgraph/resolver/ProjectResolver.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../postgraph/postgraph/src/main/resources/graphql/Query.graphqls" beforeDir="false" afterPath="$PROJECT_DIR$/../postgraph/postgraph/src/main/resources/graphql/Query.graphqls" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -38,27 +44,44 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Application.GraphDBCreator.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;3-rest-api-mit-neo4j-implementieren&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/Robin/Documents/Bachelorthesis/Bachelorthesis/Implementierung/neo4rest&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.DBCreator.executor": "Run",
+    "Application.GraphDBCreator.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "13-code-rework",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/Robin/Documents/Bachelorthesis/Bachelorthesis/Implementierung/dbcreator",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.2",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Robin\Documents\Bachelorthesis\Bachelorthesis\Implementierung\dbcreator\src\main\resources" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.GraphDBCreator">
+  <component name="RunManager" selected="Application.DBCreator">
+    <configuration name="DBCreator" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="hhn.aib.thesis.dbcreator.DBCreator" />
+      <module name="dbcreator" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="hhn.aib.thesis.dbcreator.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="GraphDBCreator" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="hhn.aib.thesis.dbcreator.GraphDBCreator" />
       <module name="dbcreator" />
@@ -81,6 +104,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.DBCreator" />
         <item itemvalue="Application.GraphDBCreator" />
       </list>
     </recent_temporary>
@@ -105,6 +129,8 @@
       <workItem from="1732036574458" duration="1708000" />
       <workItem from="1732129410684" duration="5000" />
       <workItem from="1732132831017" duration="7000" />
+      <workItem from="1732483612805" duration="846000" />
+      <workItem from="1732613368033" duration="2033000" />
     </task>
     <servers />
   </component>

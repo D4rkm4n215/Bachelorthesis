@@ -10,6 +10,6 @@ import java.util.List;
 
 public interface IDBService {
     public Person getPerson(long id);
-    public List<Issue> getIssueByPersonenIdAndProjectIDAndState(long pid, long prid);
+    public List<Issue> getIssueByPersonenIdAndProjectIDAndState(long pid);
     public Issue postIssue(long pid, long prid, IssueDTO issue);
 }
