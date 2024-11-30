@@ -46,7 +46,7 @@
 \pagestyle{scrheadings}
 \clearscrheadfoot
 \ihead{\reprttopic}
-\ohead{\pagemark}
+\ohead{\raisebox{-10pt}{\pagemark}}
 \renewcommand*{\chapterpagestyle}{scrheadings}
 \renewcommand*{\chapterheadstartvskip}{}
 
@@ -81,14 +81,17 @@
 
 \include{Chapters/03_Introduction}
 \include{Chapters/04_Fundamentals}
-\include{Chapters/05_Datamodelling}
-\include{Chapters/06_Systemdesign}
-\include{Chapters/07_Implementation}
-\include{Chapters/08_Result}
-\include{Chapters/09_Discussion}
-\include{Chapters/10_Conclusion}
-
+\include{Chapters/05_Analysis}
+\include{Chapters/06_Datamodelling}
+\include{Chapters/07_Systemdesign}
+\include{Chapters/08_Implementation}
+\include{Chapters/09_Result}
+\include{Chapters/10_Discussion}
+\include{Chapters/11_Conclusion}
 \bibliographystyle{dcu}
 \bibliography{literatur}
+\include{Chapters/12_Statutory_Declaration}
+
+
 
 \end{document}
