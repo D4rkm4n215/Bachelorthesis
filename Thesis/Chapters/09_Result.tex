@@ -1,0 +1,231 @@
+\chapter{Ergebnisse} % (fold)
+\label{sec:ergebnisse}
+\begin{figure}[htbp]
+ \centering
+	\begin{tikzpicture}
+	    \begin{axis}[
+	        boxplot/draw direction=y, 
+	        xlabel={API}, 
+	        ylabel={ms}, 
+	        xtick={1,2,3,4}, 
+	        xticklabels={Post Rest, Post Graph, Neo4 Rest, Neo4 Graph}, 
+	        ymin=50, ymax=150,
+		width=12cm
+	    ]
+	        \addplot+[
+	            boxplot prepared={
+	                median=113,
+	                upper quartile=120,
+	                lower quartile=111, 
+	                upper whisker=133,
+	                lower whisker=109
+	            },
+	            draw=black
+	        ] coordinates {};
+	        \addplot+[
+	            boxplot prepared={
+	                median=56,
+	                upper quartile=58,
+	                lower quartile=56, 
+	                upper whisker=60,
+	                lower whisker=54
+	            },
+	            draw=black
+	        ] coordinates {};
+	        \addplot+[
+	            boxplot prepared={
+	                median=120,
+	                upper quartile=125,
+	                lower quartile=116, 
+	                upper whisker=137,
+	                lower whisker=113
+	            },
+	            draw=black
+	        ] coordinates {};
+	       \addplot+[
+	            boxplot prepared={
+	                median=58,
+	                upper quartile=59,
+	                lower quartile=57, 
+	                upper whisker=62,
+	                lower whisker=56
+	            },
+	            draw=black
+	        ] coordinates {};
+	    \end{axis}
+	\end{tikzpicture}
+\caption{GET /api/persons/:pid}
+\end{figure}
+
+\begin{figure}[htbp]
+ \centering
+	\begin{tikzpicture}
+	    \begin{axis}[
+	        boxplot/draw direction=y, 
+	        xlabel={API}, 
+	        ylabel={ms}, 
+	        xtick={1,2,3,4}, 
+	        xticklabels={Post Rest, Post Graph, Neo4 Rest, Neo4 Graph}, 
+	        ymin=90, ymax=600,
+		width=12cm
+	    ]
+	        \addplot+[
+	            boxplot prepared={
+	                median=172,
+	                upper quartile=178,
+	                lower quartile=168, 
+	                upper whisker=188,
+	                lower whisker=101
+	            },
+	            draw=black
+	        ] coordinates {};
+	        \addplot+[
+	            boxplot prepared={
+	                median=206,
+	                upper quartile=214,
+	                lower quartile=198, 
+	                upper whisker=233,
+	                lower whisker=178
+	            },
+	            draw=black
+	        ] coordinates {};
+	         \addplot+[
+	            boxplot prepared={
+	                median=539,
+	                upper quartile=551,
+	                lower quartile=529, 
+	                upper whisker=579,
+	                lower whisker=499
+	            },
+	            draw=black
+	        ] coordinates {};
+	       \addplot+[
+	            boxplot prepared={
+	                median=499,
+	                upper quartile=509,
+	                lower quartile=494, 
+	                upper whisker=531,
+	                lower whisker=482
+	            },
+	            draw=black
+	        ] coordinates {};
+	    \end{axis}
+	\end{tikzpicture}
+\caption{GET /api/persons}
+\end{figure}
+
+\begin{figure}[htbp]
+ \centering
+	\begin{tikzpicture}
+	    \begin{axis}[
+	        boxplot/draw direction=y, 
+	        xlabel={API}, 
+	        ylabel={ms}, 
+	        xtick={1,2,3,4}, 
+	        xticklabels={Post Rest, Post Graph, Neo4 Rest, Neo4 Graph}, 
+	        ymin=50, ymax=140,
+		width=12cm
+	    ]
+	        \addplot+[
+	            boxplot prepared={
+	                median=111,
+	                upper quartile=119,
+	                lower quartile=109, 
+	                upper whisker=134,
+	                lower whisker=107
+	            },
+	            draw=black
+	        ] coordinates {};
+	        \addplot+[
+	            boxplot prepared={
+	                median=56,
+	                upper quartile=57,
+	                lower quartile=56, 
+	                upper whisker=58,
+	                lower whisker=55
+	            },
+	            draw=black
+	        ] coordinates {};
+	         \addplot+[
+	            boxplot prepared={
+	                median=115,
+	                upper quartile=117,
+	                lower quartile=113, 
+	                upper whisker=123,
+	                lower whisker=111
+	            },
+	            draw=black
+	        ] coordinates {};
+	       \addplot+[
+	            boxplot prepared={
+	                median=57,
+	                upper quartile=58,
+	                lower quartile=56, 
+	                upper whisker=59,
+	                lower whisker=55
+	            },
+	            draw=black
+	        ] coordinates {};
+	    \end{axis}
+	\end{tikzpicture}
+\caption{GET /api/persons/:pid/projects/issues}
+\end{figure}
+
+\begin{figure}[htbp]
+ \centering
+	\begin{tikzpicture}
+	    \begin{axis}[
+	        boxplot/draw direction=y, 
+	        xlabel={API}, 
+	        ylabel={ms}, 
+	        xtick={1,2,3,4}, 
+	        xticklabels={Post Rest, Post Graph, Neo4 Rest, Neo4 Graph}, 
+	        ymin=50, ymax=130,
+		width=12cm
+	    ]
+	       \addplot+[
+	            boxplot prepared={
+	                median=56,
+	                upper quartile=57,
+	                lower quartile=55, 
+	                upper whisker=60,
+	                lower whisker=54
+	            },
+	            draw=black
+	        ] coordinates {};
+	        \addplot+[
+	            boxplot prepared={
+	                median=58,
+	                upper quartile=60,
+	                lower quartile=57, 
+	                upper whisker=62,
+	                lower whisker=55
+	            },
+	            draw=black
+	        ] coordinates {};
+	         \addplot+[
+	            boxplot prepared={
+	                median=89,
+	                upper quartile=97,
+	                lower quartile=83, 
+	                upper whisker=118,
+	                lower whisker=77
+	            },
+	            draw=black
+	        ] coordinates {};
+	       \addplot+[
+	            boxplot prepared={
+	                median=82,
+	                upper quartile=87,
+	                lower quartile=78, 
+	                upper whisker=99,
+	                lower whisker=73
+	            },
+	            draw=black
+	        ] coordinates {};
+	    \end{axis}
+	\end{tikzpicture}
+\caption{POST /api/persons/:pid/projects/:prid/issues}
+\end{figure}
+
+% chapter ergebnisse (end)

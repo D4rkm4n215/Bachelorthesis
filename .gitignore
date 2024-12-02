@@ -1,4 +1,18 @@
 
-Thesis/Kolloquium/.~lock.Präsentation_Hefner_Robin_206488.odp\#
-Thesis/Implementierung/neo4graph/.idea/workspace.xml 
+# Allgemeine Dateien
+.DS_Store
+Thumbs.db
 
+# IDEs/Editoren
+.vscode/
+.idea/
+*.swp
+*.swo
+*.bak
+*.tmp
+
+# Betriebssystem-spezifisch
+*.~lock.*
+*.~*#
+.Trashes
+ehthumbs.db

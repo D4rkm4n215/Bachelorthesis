@@ -15,8 +15,13 @@
 \usepackage{cite}
 \usepackage[authoryear]{natbib}
 \usepackage{chngcntr}
+\usepackage{float}
 \counterwithout{footnote}{chapter}
 \counterwithout{figure}{chapter}
+
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+\usepgfplotslibrary{statistics}
 
 \usepackage{hyperref}
 \hypersetup{
@@ -32,23 +37,16 @@
 \newcommand{\hhnsubjectnum}{SPO1a}
 \newcommand{\hhnlecturer}{Prof. Dr. Fankhauser}
 
-\newcommand{\reprttopic}{Vergleichende Untersuchung von GraphQL und REST im Kontext relationaler und graphbasierter Datenbanken, hinsichtlich Anpassungs- und Leistungsfähigkeit}
+\newcommand{\reprttopic}{GraphQL und REST im Kontext relationaler und graphbasierter Datenbanken hinsichtlich Latenz bei unterschiedlichen Lastbedingungen}
 \newcommand{\reprtstudentname}{Robin Hefner}
 \newcommand{\reprtstudentid}{206488}
 \urldef{\reprtstudentmail}\url{rohefner@stud.hs-heilbronn.de}
-
-\usepackage{ifpdf}
-\ifpdf
-\usepackage[pdftex]{graphicx}
-\else
-\usepackage{graphicx}
-\fi
 
 \usepackage[headsepline]{scrlayer-scrpage}
 \pagestyle{scrheadings}
 \clearscrheadfoot
 \ihead{\reprttopic}
-\ohead{\pagemark}
+\ohead{\raisebox{-10pt}{\pagemark}}
 \renewcommand*{\chapterpagestyle}{scrheadings}
 \renewcommand*{\chapterheadstartvskip}{}
 
@@ -83,13 +81,17 @@
 
 \include{Chapters/03_Introduction}
 \include{Chapters/04_Fundamentals}
-\include{Chapters/05_Implementation}
-\include{Chapters/06_Methodology}
-\include{Chapters/07_Result}
-\include{Chapters/08_Discussion}
-\include{Chapters/09_Conclusion}
-
+\include{Chapters/05_Analysis}
+\include{Chapters/06_Datamodelling}
+\include{Chapters/07_Systemdesign}
+\include{Chapters/08_Implementation}
+\include{Chapters/09_Result}
+\include{Chapters/10_Discussion}
+\include{Chapters/11_Conclusion}
 \bibliographystyle{dcu}
 \bibliography{literatur}
+\include{Chapters/12_Statutory_Declaration}
+
+
 
 \end{document}
