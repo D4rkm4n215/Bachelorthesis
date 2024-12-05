@@ -1,0 +1,4 @@
+- Technologien zu Beginn besser erklären
+- Im Ausblick auf die Anknüpfungspunkte eingehen : Wie würde sich das mit mehr Tupeln (10 000 oder 100 000) in der Datenbank verhalten ?
+- Boxplot auf gesamte Seite 
+- wie wird Netzwerkauslastung und Last berücksichtigt ?
