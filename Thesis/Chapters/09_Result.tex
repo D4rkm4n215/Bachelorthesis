@@ -7,10 +7,12 @@
 	        boxplot/draw direction=y, 
 	        xlabel={API}, 
 	        ylabel={ms}, 
+	        ytick distance=5,
 	        xtick={1,2,3,4}, 
 	        xticklabels={Post Rest, Post Graph, Neo4 Rest, Neo4 Graph}, 
 	        ymin=50, ymax=150,
-		width=12cm
+		width=15cm,
+		height= 18cm
 	    ]
 	        \addplot+[
 	            boxplot prepared={
@@ -66,8 +68,10 @@
 	        ylabel={ms}, 
 	        xtick={1,2,3,4}, 
 	        xticklabels={Post Rest, Post Graph, Neo4 Rest, Neo4 Graph}, 
-	        ymin=90, ymax=600,
-		width=12cm
+	        ymin=50, ymax=590,
+                  ytick distance=20,
+                  width=15cm,
+	       height= 18cm
 	    ]
 	        \addplot+[
 	            boxplot prepared={
@@ -124,7 +128,9 @@
 	        xtick={1,2,3,4}, 
 	        xticklabels={Post Rest, Post Graph, Neo4 Rest, Neo4 Graph}, 
 	        ymin=50, ymax=140,
-		width=12cm
+	        ytick distance=5,
+                  width=15cm,
+	       height= 18cm
 	    ]
 	        \addplot+[
 	            boxplot prepared={
@@ -181,7 +187,9 @@
 	        xtick={1,2,3,4}, 
 	        xticklabels={Post Rest, Post Graph, Neo4 Rest, Neo4 Graph}, 
 	        ymin=50, ymax=130,
-		width=12cm
+	       ytick distance=5,
+                  width=15cm,
+	       height= 18cm
 	    ]
 	       \addplot+[
 	            boxplot prepared={
