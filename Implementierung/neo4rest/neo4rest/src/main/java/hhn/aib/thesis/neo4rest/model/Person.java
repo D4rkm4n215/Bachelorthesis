@@ -1,6 +1,8 @@
 package hhn.aib.thesis.neo4rest.model;
 
 import com.fasterxml.jackson.annotation.JsonManagedReference;
+import com.fasterxml.jackson.annotation.JsonView;
+import hhn.aib.thesis.neo4rest.Views;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.neo4j.core.schema.Node;
 import org.springframework.data.neo4j.core.schema.Relationship;
@@ -10,20 +12,26 @@ import java.util.List;
 @Node
 public class Person {
     @Id
+    @JsonView(Views.Basic.class)
     private String pid;
 
+    @JsonView(Views.Basic.class)
     private String firstname;
 
+    @JsonView(Views.Basic.class)
     private String lastname;
 
+    @JsonView(Views.Basic.class)
     private String email;
 
     @Relationship(type = "OWNS", direction = Relationship.Direction.OUTGOING)
     @JsonManagedReference
+    @JsonView(Views.Full.class)
     private List<Project> projects;
 
     @Relationship(type = "CREATED", direction = Relationship.Direction.OUTGOING)
     @JsonManagedReference
+    @JsonView(Views.Full.class)
     private List<Issue> issues;
 
     public String getPid() {return pid;}

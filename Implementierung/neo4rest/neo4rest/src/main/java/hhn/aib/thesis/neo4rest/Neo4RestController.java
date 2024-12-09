@@ -1,5 +1,6 @@
 package hhn.aib.thesis.neo4rest;
 
+import com.fasterxml.jackson.annotation.JsonView;
 import hhn.aib.thesis.neo4rest.DTOs.IssueDTO;
 import hhn.aib.thesis.neo4rest.model.Issue;
 import hhn.aib.thesis.neo4rest.model.Person;
@@ -19,16 +20,19 @@ public class Neo4RestController {
     }
 
     @GetMapping("/api/person/{pid}")
+    @JsonView(Views.Basic.class)
     public Person person(@PathVariable(value = "pid") String id) {
         return db.getPerson(id);
     }
 
     @GetMapping("/api/person")
+    @JsonView(Views.Basic.class)
     public List<Person> person() {
         return db.getPerson();
     }
 
     @GetMapping("/api/persons/{pid}/projects/issues")
+    @JsonView(Views.Full.class)
     public List<Issue> issue(@PathVariable(value = "pid") String pid){
         return db.getIssueByPersonenIdAndProjectIDAndState(pid);
     }

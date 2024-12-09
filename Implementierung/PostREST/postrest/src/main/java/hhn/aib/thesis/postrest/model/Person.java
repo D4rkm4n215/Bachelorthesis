@@ -2,6 +2,8 @@ package hhn.aib.thesis.postrest.model;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
+import com.fasterxml.jackson.annotation.JsonView;
+import hhn.aib.thesis.postrest.Views;
 import jakarta.persistence.*;
 
 import java.util.Set;
@@ -9,27 +11,34 @@ import java.util.Set;
 @Entity
 public class Person{
     @Id
+    @JsonView(Views.Basic.class)
     private long pid;
 
     @Column(name = "firstname")
+    @JsonView(Views.Basic.class)
     private String firstname;
 
     @Column(name = "lastname")
+    @JsonView(Views.Basic.class)
     private String lastname;
 
     @Column(name = "email")
+    @JsonView(Views.Basic.class)
     private String email;
 
     @ManyToMany(mappedBy = "people")
     @JsonManagedReference
+    @JsonView(Views.Full.class)
     private Set<Project> projects;
 
     @ManyToOne
     @JsonBackReference
+    @JsonView(Views.Full.class)
     private Project project;
 
     @ManyToMany(mappedBy = "assignees")
     @JsonManagedReference
+    @JsonView(Views.Full.class)
     private Set<Issue> issues;
 
     public Person() {}
