@@ -1,0 +1,48 @@
+\babel@toc {ngerman}{}\relax 
+\babel@toc {ngerman}{}\relax 
+\contentsline {chapter}{\nonumberline Abkürzungsverzeichnis}{IV}{chapter*.2}%
+\contentsline {chapter}{\nonumberline \bbl@ensure@ngerman {Abbildungsverzeichnis}}{V}{chapter*.3}%
+\contentsline {chapter}{\nonumberline Abstract}{VI}{chapter*.4}%
+\contentsline {chapter}{\nonumberline Zusammenfassung}{VII}{chapter*.5}%
+\contentsline {chapter}{\numberline {1}Einleitung}{1}{chapter.1}%
+\contentsline {section}{\numberline {1.1}Motivation}{1}{section.1.1}%
+\contentsline {section}{\numberline {1.2}Forschungsfragen}{1}{section.1.2}%
+\contentsline {section}{\numberline {1.3}Vorgehensweise}{2}{section.1.3}%
+\contentsline {chapter}{\numberline {2}Grundlagen}{3}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Relationale Algebra}{3}{section.2.1}%
+\contentsline {subsection}{\numberline {2.1.1}Basisrelation}{3}{subsection.2.1.1}%
+\contentsline {subsection}{\numberline {2.1.2}Grundoperationen}{3}{subsection.2.1.2}%
+\contentsline {section}{\numberline {2.2}Graphentheorie}{4}{section.2.2}%
+\contentsline {subsection}{\numberline {2.2.1}Knoten}{5}{subsection.2.2.1}%
+\contentsline {subsection}{\numberline {2.2.2}Kanten}{5}{subsection.2.2.2}%
+\contentsline {section}{\numberline {2.3}API}{6}{section.2.3}%
+\contentsline {subsection}{\numberline {2.3.1}Definition API}{6}{subsection.2.3.1}%
+\contentsline {subsection}{\numberline {2.3.2}REST API}{6}{subsection.2.3.2}%
+\contentsline {subsection}{\numberline {2.3.3}GraphQL}{7}{subsection.2.3.3}%
+\contentsline {section}{\numberline {2.4}Datenbank}{7}{section.2.4}%
+\contentsline {subsection}{\numberline {2.4.1}Definition Datenbank und Datenbank Management System}{8}{subsection.2.4.1}%
+\contentsline {subsection}{\numberline {2.4.2}Relationale Datenbank}{8}{subsection.2.4.2}%
+\contentsline {subsection}{\numberline {2.4.3}Graphdatenbanken}{8}{subsection.2.4.3}%
+\contentsline {chapter}{\numberline {3}Analyse}{10}{chapter.3}%
+\contentsline {chapter}{\numberline {4}Datenmodellierung}{11}{chapter.4}%
+\contentsline {chapter}{\numberline {5}Systemdesign}{12}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Datenbankdesign}{12}{section.5.1}%
+\contentsline {subsection}{\numberline {5.1.1}Relationales Datenbankdesign}{12}{subsection.5.1.1}%
+\contentsline {subsection}{\numberline {5.1.2}Graphdatenbankdesign}{13}{subsection.5.1.2}%
+\contentsline {section}{\numberline {5.2}Schnittstellendesign}{14}{section.5.2}%
+\contentsline {subsection}{\numberline {5.2.1}REST}{14}{subsection.5.2.1}%
+\contentsline {subsection}{\numberline {5.2.2}GraphQL}{14}{subsection.5.2.2}%
+\contentsline {subsection}{\numberline {5.2.3}Datenbank}{15}{subsection.5.2.3}%
+\contentsline {section}{\numberline {5.3}Testumgebung}{15}{section.5.3}%
+\contentsline {chapter}{\numberline {6}Implementierung}{17}{chapter.6}%
+\contentsline {section}{\numberline {6.1}Grundprinzipien während der Implementierung}{17}{section.6.1}%
+\contentsline {section}{\numberline {6.2}Post REST}{17}{section.6.2}%
+\contentsline {section}{\numberline {6.3}Post Graph}{17}{section.6.3}%
+\contentsline {section}{\numberline {6.4}Neo4REST}{17}{section.6.4}%
+\contentsline {section}{\numberline {6.5}Neo4Graph}{17}{section.6.5}%
+\contentsline {chapter}{\numberline {7}Ergebnisse}{18}{chapter.7}%
+\contentsline {chapter}{\numberline {8}Diskussion}{22}{chapter.8}%
+\contentsline {chapter}{\numberline {9}Fazit}{23}{chapter.9}%
+\contentsline {chapter}{\nonumberline \bbl@ensure@ngerman {Literaturverzeichnis}}{24}{chapter*.6}%
+\contentsline {chapter}{Eidesstattliche Erklärung}{25}{chapter*.7}%
+\providecommand \tocbasic@end@toc@file {}\tocbasic@end@toc@file 

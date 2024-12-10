@@ -1,0 +1,61 @@
+This is BibTeX, Version 0.99d (TeX Live 2024/Arch Linux)
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: Thesis_Robin_Hefner_206488.aux
+A level-1 auxiliary file: Chapters/01_List_of_abbreviations.aux
+A level-1 auxiliary file: Chapters/02_Abstract.aux
+A level-1 auxiliary file: Chapters/03_Introduction.aux
+A level-1 auxiliary file: Chapters/04_Fundamentals.aux
+A level-1 auxiliary file: Chapters/05_Analysis.aux
+A level-1 auxiliary file: Chapters/06_Datamodelling.aux
+A level-1 auxiliary file: Chapters/07_Systemdesign.aux
+A level-1 auxiliary file: Chapters/08_Implementation.aux
+A level-1 auxiliary file: Chapters/09_Result.aux
+A level-1 auxiliary file: Chapters/10_Discussion.aux
+A level-1 auxiliary file: Chapters/11_Conclusion.aux
+The style file: plain.bst
+A level-1 auxiliary file: Chapters/12_Statutory_Declaration.aux
+Database file #1: literatur.bib
+Warning--empty journal in Fielding2000
+Warning--empty journal in graphqlreplacerest
+You've used 7 entries,
+            2118 wiz_defined-function locations,
+            552 strings with 5509 characters,
+and the built_in function-call counts, 1908 in all, are:
+= -- 174
+> -- 92
+< -- 1
++ -- 38
+- -- 30
+* -- 103
+:= -- 343
+add.period$ -- 24
+call.type$ -- 7
+change.case$ -- 33
+chr.to.int$ -- 0
+cite$ -- 9
+duplicate$ -- 85
+empty$ -- 153
+format.name$ -- 30
+if$ -- 394
+int.to.chr$ -- 0
+int.to.str$ -- 7
+missing$ -- 10
+newline$ -- 41
+num.names$ -- 14
+pop$ -- 49
+preamble$ -- 1
+purify$ -- 29
+quote$ -- 0
+skip$ -- 53
+stack$ -- 0
+substring$ -- 48
+swap$ -- 11
+text.length$ -- 1
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 22
+warning$ -- 2
+while$ -- 16
+width$ -- 8
+write$ -- 80
+(There were 2 warnings)
