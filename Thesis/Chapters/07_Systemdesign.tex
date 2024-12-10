@@ -12,11 +12,11 @@ Für die Durchführung des Experiments werden zwei Datenbanktypen verwendet, wel
 	\includegraphics[scale=0.6]{Illustrations/table_diagram.png}
 	\caption{Tabellen Diagramm}
 \end{figure}
-Um eine realtionale Datenbank aus dem gegebenen Datenmodell (Abb.3) zu erstellen muss dieses wie in Abb. 4 zu sehen ist angepasst werden, um die Beziehung zwischen Person und Projekt als auch Person und Issue abzubilden. Somit ergeben sich für die relationale Datenbank fünf Tabellen welche in einer PostgreSQL Datenbank realisiert werden. PostgreSQL wird verwendet, da es ein leistungsfähiges, objekt-relationales Datenbanksystem bietet welches Open-Source ist und dadurch kostenfrei zur Verfügung steht. 
+Um eine realtionale Datenbank aus dem gegebenen Datenmodell (Abb. 4.1) zu erstellen muss dieses wie in Abb. 5.1 zu sehen ist angepasst werden, um die Beziehung zwischen Person und Projekt als auch Person und Issue abzubilden. Somit ergeben sich für die relationale Datenbank fünf Tabellen welche in einer PostgreSQL Datenbank realisiert werden. PostgreSQL wird verwendet, da es ein leistungsfähiges, objekt-relationales Datenbanksystem bietet welches Open-Source ist und dadurch kostenfrei zur Verfügung steht. 
 % subsection relationalesdatenbankdesign (end)
 \subsection{Graphdatenbankdesign} % (fold)
 \label{sec:graphsdatenbankdesign}
-Um eine Graphdatenbank zu erstellen benötigt man keine definierten Tabellen, da diese die Daten schemafrei speichert. Die Nodes werden bei der Erstellung entsprechend der Objekte benannt, ebenso werden die Beziehungen zwischen den Nodes bei der Erstellung benannt. Als Graphdatenbank wird auf neo4j zurückgegriffen. Es ist eine der am weitesten verbreiteten Graphdatenbanken und bietet eine hohe Benutzerfreundlichkeit. In Abbildung 5 ist eine Demonstration einer Beziehung zwischen jeweils einem Node zu sehen. Die Kanten sind als gerichtete Kanten abgebildet, dabei hat Person zwei ausgehende Kanten, Projekt zwei eingehende und Issue jeweils eine eingehende als auch eine ausgehende Kante. 
+Um eine Graphdatenbank zu erstellen benötigt man keine definierten Tabellen, da diese die Daten schemafrei speichert. Die Nodes werden bei der Erstellung entsprechend der Objekte benannt, ebenso werden die Beziehungen zwischen den Nodes bei der Erstellung benannt. Als Graphdatenbank wird auf neo4j zurückgegriffen. Es ist eine der am weitesten verbreiteten Graphdatenbanken und bietet eine hohe Benutzerfreundlichkeit. In Abbildung 5.2 ist eine Demonstration einer Beziehung zwischen jeweils einem Node zu sehen. Die Kanten sind als gerichtete Kanten abgebildet, dabei hat Person zwei ausgehende Kanten, Projekt zwei eingehende und Issue jeweils eine eingehende als auch eine ausgehende Kante. 
 
 
 \begin{figure}[H]
@@ -36,6 +36,7 @@ Um eine Graphdatenbank zu erstellen benötigt man keine definierten Tabellen, da
 Bei REST wird für jedes Testszenario ein seperater Endpunkt benötigt. Hierbei wurden vier verschiedene Endpunkte mit unterschiedlichen Komplexität entworfen.
 \begin{itemize}
 \item \textbf{GET api/persons/:pid}: Dieser Endpunkt ermöglicht das Abrufen einer bestimmten Person anhand ihrer ID. Die API liefert dabei ein JSON-Objekt zurück, dass die Person mit den Attributen Vorname, Nachname und E-Mail-Adresse beschreibt und wie folgt strukturiert ist.
+\begin{figure}[H]
 \begin{center}
 \begin{BVerbatim}
 {
@@ -46,8 +47,12 @@ Bei REST wird für jedes Testszenario ein seperater Endpunkt benötigt. Hierbei 
 }
 \end{BVerbatim}
 \end{center}
+\caption{GET api/persons/:pid Response}
+\end{figure}
 
 \item Mit dem Endpunkt  \textbf{GET api/persons} können alle in der Datenbank gespeicherten Personen abgerufen werden. Die Antwort umfasst 5000 Personenobjekte im JSON-Format.
+
+\begin{figure}[H]
 \begin{center}
 \begin{BVerbatim}
 [
@@ -67,7 +72,11 @@ Bei REST wird für jedes Testszenario ein seperater Endpunkt benötigt. Hierbei 
 ]
 \end{BVerbatim}
 \end{center}
+\caption{GET api/persons Response}
+\end{figure}
+
 \item Der Endpunkt \textbf{GET api/persons/:pid/projects/issue} erhöht die Komplexität, da hier nicht nur auf eine einzelnes Objekt zugegriffen wird. Stattdessen erfordert die Abfrage mehrere Objekte, die miteinander in Abhängigkeit stehen, um die Anfrage zu bearbeiten. Die Antwort wird in folgendem Format erwartet:
+\begin{figure}[H]
 \begin{center}
 \begin{BVerbatim}
 [
@@ -88,8 +97,11 @@ Bei REST wird für jedes Testszenario ein seperater Endpunkt benötigt. Hierbei 
 ]
 \end{BVerbatim}
 \end{center}
+\caption{GET api/persons/:pid/projects/issue Response}
+\end{figure}
 
 \item \textbf{POST api/persons/:pid/projects/:prid/issues}: Dieser Endpunkt ermöglicht das Erstellen eines neuen Issues in der Datenbank, um nicht nur Abfragen zu testen, sondern auch das Hinzufügen von Daten. Im Body der Anfrage wird ein Issue-Objekt im JSON-Format übergeben. 
+\begin{figure}[H]
 \begin{center}
 \begin{BVerbatim}
 {
@@ -100,7 +112,10 @@ Bei REST wird für jedes Testszenario ein seperater Endpunkt benötigt. Hierbei 
 }
 \end{BVerbatim}
 \end{center}
+\caption{POST api/persons/:pid/projects/:prid/issues Body}
+\end{figure}
 Die Antwort enthält das erstellte Issue-Objekt, das eine gültige ID sowie Verknüpfungen zu dem zugehörigen Projekt und der Person beinhaltet.
+\begin{figure}[H]
 \begin{center}
 \begin{BVerbatim}
 {
@@ -123,14 +138,15 @@ Die Antwort enthält das erstellte Issue-Objekt, das eine gültige ID sowie Verk
 }
 \end{BVerbatim}
 \end{center}
-
+\caption{POST api/persons/:pid/projects/:prid/issues Response}
+\end{figure}
 \end{itemize}
 
 % section rest (end)
 
 \subsection{GraphQL}
 GraphQL nutzt nur einen Enpunkt, nämlich api/graphql die Anfragen werden im Body mithilfe der GraphQL Query Language definiert. Nachfolgend werden die 4 Anfragen beschrieben, die den in 5.2.1 aufgelisteten REST-Endpunkten enstprechen.
-
+\begin{figure}[H]
 \begin{center}
 \begin{BVerbatim}
 query{
@@ -143,8 +159,9 @@ query{
 }
 \end{BVerbatim}
 \end{center}
-
-
+\caption{GraphQL Query equivalent zu GET api/persons/:pid}
+\end{figure}
+\begin{figure}[H]
 \begin{center}
 \begin{BVerbatim}
 query {
@@ -157,8 +174,10 @@ query {
 }
 \end{BVerbatim}
 \end{center}
+\caption{GraphQL Query equivalent zu GET api/persons}
+\end{figure}
 
-
+\begin{figure}[H]
 \begin{center}
 \begin{BVerbatim}
 query{
@@ -176,8 +195,10 @@ query{
 }
 \end{BVerbatim}
 \end{center}
+\caption{GraphQL Query equivalent zu GET api/persons/:pid/projects/issue}
+\end{figure}
 
-
+\begin{figure}[H]
 \begin{center}
 \begin{BVerbatim}
 mutation{
@@ -197,7 +218,8 @@ mutation{
 }
 \end{BVerbatim}
 \end{center}
-
+\caption{GraphQL Query equivalent zu POST api/persons/:pid/projects/:prid/issues}
+\end{figure}
 
 \label{sec:graphql}
 % section graphql (end)

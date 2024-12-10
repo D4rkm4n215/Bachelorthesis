@@ -7,6 +7,7 @@
 
 \section{Post REST} % (fold)
 \label{sec:postrest}
+PostREST steht in dieser Arbeit für die PostgreSQL REST-API. Diese implementiert die in Abschnitt 5.2.1 definierten Endpunkte und soll die dort definierten Antworten zurückliefern. Hierfür sorgt die Controller-Klasse, in der die Endpunkte mit Ihren entsprechenden Pfadvariablen und Rückgabewerten eingebunden wurden. Der PostrestController ruft den DBService auf, welcher das Interface IDBService implementiert. Hierin sind alle Methoden definiert, die zur Anforderung von Daten aus den Datenbanken benötigt werden. Mittels Dependecy Injection werden die Repositorys der Objekte referenziert. Die einzelnen Repositorys beinhalten die Methoden und zugehörigen SQL Querys, die zur abfrage auf der Datenbank verwendet werden. Die Daten werden nach erfolgreicher Abfrage auf der Datenbank in der Hirachie nach oben gegeben und dem Nutzer der API in dem beschriebenen Format bereitgestellt.
 % section postrest (end)
 
 \section{Post Graph} % (fold)
