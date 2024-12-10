@@ -35,16 +35,102 @@ Um eine Graphdatenbank zu erstellen benötigt man keine definierten Tabellen, da
 \label{sec:rest}
 Bei REST wird für jedes Testszenario ein seperater Endpunkt benötigt. Hierbei wurden vier verschiedene Endpunkte mit unterschiedlichen Komplexität entworfen.
 \begin{itemize}
-\item GET api/persons/:pid Dieser Endpunkt soll eine spezifische Person anhand der ID zurückgeben. Hierbei soll ein Personen Objekt mit Vorname, Nachname und Email Adresse als JSON von der API zurückgeliefert werden.
-\item GET api/persons soll alle Personen die in der Datenbank vorhanden sind zurückliefern
-\item GET api/persons/:pid/projects/issue: Hierdurch soll die komplexität erhöht werden, da hierbei ein nicht nur eine Tabelle verwendet wird und auf der realtionalen Datenbank somit ein Join erforderlich wird, bei dem durch die Bildung des Kartesischen Produkts rechenzeit benötigt wird.
-\item POST api/persons/:pid/projects/:prid/issues Um nicht nur Abfragen zu prüfen soll mittels POST auch das Erstellen eines Issues auf der Datenbank getestet werden.
+\item \textbf{GET api/persons/:pid}: Dieser Endpunkt ermöglicht das Abrufen einer bestimmten Person anhand ihrer ID. Die API liefert dabei ein JSON-Objekt zurück, dass die Person mit den Attributen Vorname, Nachname und E-Mail-Adresse beschreibt und wie folgt strukturiert ist.
+\begin{center}
+\begin{BVerbatim}
+{
+    "pid": 10,
+    "firstname": "Cecilla",
+    "lastname": "Beningfield",
+    "email": "cbeningfield9@wp.com"
+}
+\end{BVerbatim}
+\end{center}
+
+\item Mit dem Endpunkt  \textbf{GET api/persons} können alle in der Datenbank gespeicherten Personen abgerufen werden. Die Antwort umfasst 5000 Personenobjekte im JSON-Format.
+\begin{center}
+\begin{BVerbatim}
+[
+    {
+        "pid": 1,
+        "firstname": "Ruby",
+        "lastname": "Burchatt",
+        "email": "rburchatt0@msn.com"
+    },
+	[...]
+    {
+        "pid": 5000,
+        "firstname": "Murdoch",
+        "lastname": "Simonitto",
+        "email": "msimonittorr@google.ca"
+    }
+]
+\end{BVerbatim}
+\end{center}
+\item Der Endpunkt \textbf{GET api/persons/:pid/projects/issue} erhöht die Komplexität, da hier nicht nur auf eine einzelnes Objekt zugegriffen wird. Stattdessen erfordert die Abfrage mehrere Objekte, die miteinander in Abhängigkeit stehen, um die Anfrage zu bearbeiten. Die Antwort wird in folgendem Format erwartet:
+\begin{center}
+\begin{BVerbatim}
+[
+   {
+        "iid": 1,
+        "title": "Pixope",
+        "createdAt": "2024-07-23 00:00:00",
+        "state": "Closed"
+        "stateReason": "Cancelled"
+    },
+    {
+        "iid": 2876,
+        "title": "Zoomlounge",
+        "createdAt": "2020-08-26 00:00:00",
+        "state": "Open"
+        "stateReason": "Bug"
+    },
+]
+\end{BVerbatim}
+\end{center}
+
+\item \textbf{POST api/persons/:pid/projects/:prid/issues}: Dieser Endpunkt ermöglicht das Erstellen eines neuen Issues in der Datenbank, um nicht nur Abfragen zu testen, sondern auch das Hinzufügen von Daten. Im Body der Anfrage wird ein Issue-Objekt im JSON-Format übergeben. 
+\begin{center}
+\begin{BVerbatim}
+{
+    "title":"test",
+    "createdAt":"2023-02-21T00:00:00",
+    "state":"Open",
+    "stateReason":"Bug"
+}
+\end{BVerbatim}
+\end{center}
+Die Antwort enthält das erstellte Issue-Objekt, das eine gültige ID sowie Verknüpfungen zu dem zugehörigen Projekt und der Person beinhaltet.
+\begin{center}
+\begin{BVerbatim}
+{
+    "iid": 5207,
+    "title": "test",
+    "createdAt": "2023-02-21T00:00:00",
+    "state": "Open",
+    "stateReason": "Bug",
+    "project": {
+        "prid": 12,
+        "title": "Y-find",
+        "createdAt": "2021-01-10T00:00:00"
+    },
+    "assignee"{
+        "pid": 1,
+        "firstname": "Ruby",
+        "lastname": "Burchatt",
+        "email": "rburchatt0@msn.com"
+    },
+}
+\end{BVerbatim}
+\end{center}
+
 \end{itemize}
 
 % section rest (end)
 
 \subsection{GraphQL}
-GraphQL nutzt nur einen Enpunkt, nämlich api/graphql die Anfragen werden im Body mithilfe der GraphQL Query Language definiert. Nachfolgend werden die 4 Anfragen beschrieben, die den in 5.2.1 aufgelisteten REST-Endpunkten enstprechen
+GraphQL nutzt nur einen Enpunkt, nämlich api/graphql die Anfragen werden im Body mithilfe der GraphQL Query Language definiert. Nachfolgend werden die 4 Anfragen beschrieben, die den in 5.2.1 aufgelisteten REST-Endpunkten enstprechen.
+
 \begin{center}
 \begin{BVerbatim}
 query{

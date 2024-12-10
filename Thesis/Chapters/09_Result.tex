@@ -1,6 +1,14 @@
 \chapter{Ergebnisse} % (fold)
 Im Nachfolgenden werden die Ergebnisse der Latenztests der oben eingeführten APIs dargestellt.
 
+\noindent
+Wie in Abbildung 6 zusehen ist, hat die PostgreSQL REST-API eine höhere Latenzzeit als die GraphQL PostgeSQL. Dies deutet darauf hin, dass die GraphQL API bei der Abfrage eines spezifischen Personenobjekts, anhand der Personen-ID in kombination mit einer relationalen Datenbank effizientere Abfragen und eine bessere Performance bei der Verarbeitung bietet. Ähnliches zeigt sich bei einer Neo4j Datenbank. Auch hier hat die Neo4j GraphQL API niedrigere Latenzzeiten als die REST-API. Allerdings sind die Latenzen bei Neo4j minimal höher als bei dem realtionalen Pendant. Das deutet darauf hin, dass Postgres bei dieser Anfrage eine performantere Verarbeitung von Abfragen ermöglicht. Zusammenfassend kann man für diese Anfrage sagen, dass GraphQL sowohl in kombination mit einer relationalen, als auch einer Graphdatenbank eine niedrigere Latenz aufweist. Zudem ist Postgres bei dieser Anfrage insgesamt ein wenig performanter als neo4j.
+\newline
+In Abbildung 7 sind die Latenzen für die komplexere Anfrge, die alle Personenobjekte aus der Datenbank zurückliefert dargestellt. Bei den APIs die mit Postgres implementiert sind ist eine deutlich niedrigere Latenz zu sehen, als bei den mit neo4j implementierten. GraphQL hat hierbei sowohl bei der relationalen Datenbank als auch bei der Graphdatenbank im Median eine niedrigere Latenz. REST ist somit in beiden Fällen die unperformantere API.
+\newline
+Wenn nun die Anfragekomplexität steigt, wodurch sich die Abhängigkeit zwischen den Objekten in der Datenbank erhöht, ist deutlich zu sehen, dass die Streuung bei der Postgres REST-API höher ist als bei allen anderen APIs(vgl Abb.8). Zudem ist diese API diejenige mit der höchsten Latenz. Allerdings liegt die Neo4j REST-API im Median über den Postgres REST-API. Beide GraphQL APIs weißen erneut eine deutlich niedrigere Latenz auf.
+\newline
+Bei der Speicherung in eine Datenbank ist ein deutlich anderes Bild zu sehen. Wie in Abbildung 9 zusehen, ist hierbei die Postgres REST-API diejenige mit der geringsten LAtenz. Dicht gefolgt von der Postgres GraphQL API. Eine deutlich höhere Latenz ist bei den neo4j APIs zu erkennen. Hierbei ist allerdings die GraphQL API die performantere.
 \label{sec:ergebnisse}
 \begin{figure}[htbp]
  \centering
@@ -60,9 +68,6 @@ Im Nachfolgenden werden die Ergebnisse der Latenztests der oben eingeführten AP
 	\end{tikzpicture}
 \caption{GET /api/persons/:pid}
 \end{figure}
-
-
-Wie in Abbildung 6 zusehen ist, hat GraphQL bei der Abfrage eines einzelnen Personenobjekts eine deutlich niedrigere Latenz als die jeweilige REST API. Die zugrundeliegende Datenbank wirkt sich hierbei nur gering aus.
 
 \begin{figure}[htbp]
  \centering
