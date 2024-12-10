@@ -35,7 +35,7 @@ Um eine Graphdatenbank zu erstellen benötigt man keine definierten Tabellen, da
 \label{sec:rest}
 Bei REST wird für jedes Testszenario ein seperater Endpunkt benötigt. Hierbei wurden vier verschiedene Endpunkte mit unterschiedlichen Komplexität entworfen.
 \begin{itemize}
-\item \textbf{GET api/persons/:pid}: Dieser Endpunkt ermöglicht das Abrufen einer bestimmten Person anhand ihrer ID. Die API liefert dabei ein JSON-Objekt zurück, dass die Person mit den Attributen Vorname, Nachname und E-Mail-Adresse beschreibt und wie folgt strukturiert ist.
+\item \textbf{GET api/persons/:pid}: Dieser Endpunkt ermöglicht das Abrufen einer bestimmten Person anhand ihrer ID. Die API liefert dabei ein JSON-Objekt zurück, dass die Person mit den Attributen Vorname, Nachname und E-Mail-Adresse beschreibt.(Abb. 5.3)
 \begin{figure}[H]
 \begin{center}
 \begin{BVerbatim}
@@ -50,7 +50,7 @@ Bei REST wird für jedes Testszenario ein seperater Endpunkt benötigt. Hierbei 
 \caption{GET api/persons/:pid Response}
 \end{figure}
 
-\item Mit dem Endpunkt  \textbf{GET api/persons} können alle in der Datenbank gespeicherten Personen abgerufen werden. Die Antwort umfasst 5000 Personenobjekte im JSON-Format.
+\item Mit dem Endpunkt  \textbf{GET api/persons} können alle in der Datenbank gespeicherten Personen abgerufen werden. Die Antwort umfasst 5000 Personenobjekte im JSON-Format.(Abb. 5.4)
 
 \begin{figure}[H]
 \begin{center}
@@ -75,7 +75,7 @@ Bei REST wird für jedes Testszenario ein seperater Endpunkt benötigt. Hierbei 
 \caption{GET api/persons Response}
 \end{figure}
 
-\item Der Endpunkt \textbf{GET api/persons/:pid/projects/issue} erhöht die Komplexität, da hier nicht nur auf eine einzelnes Objekt zugegriffen wird. Stattdessen erfordert die Abfrage mehrere Objekte, die miteinander in Abhängigkeit stehen, um die Anfrage zu bearbeiten. Die Antwort wird in folgendem Format erwartet:
+\item Der Endpunkt \textbf{GET api/persons/:pid/projects/issue} erhöht die Komplexität, da hier nicht nur auf ein einzelnes Objekt zugegriffen wird. Stattdessen erfordert die Abfrage mehrere Objekte, die miteinander in Abhängigkeit stehen, um die Anfrage zu bearbeiten. Die Antwort umfasst alle Issues die in Projekten vorhanden sind in der eine Person mitwirkt.(Abb. 5.5)
 \begin{figure}[H]
 \begin{center}
 \begin{BVerbatim}
@@ -100,7 +100,8 @@ Bei REST wird für jedes Testszenario ein seperater Endpunkt benötigt. Hierbei 
 \caption{GET api/persons/:pid/projects/issue Response}
 \end{figure}
 
-\item \textbf{POST api/persons/:pid/projects/:prid/issues}: Dieser Endpunkt ermöglicht das Erstellen eines neuen Issues in der Datenbank, um nicht nur Abfragen zu testen, sondern auch das Hinzufügen von Daten. Im Body der Anfrage wird ein Issue-Objekt im JSON-Format übergeben. 
+\item \textbf{POST api/persons/:pid/projects/:prid/issues}: Dieser Endpunkt ermöglicht das Erstellen eines neuen Issues in der Datenbank, um nicht nur Abfragen zu testen, sondern auch das Hinzufügen von Daten. Im Body der Anfrage wird ein Issue-Objekt im JSON-Format übergeben.(Abb. 5.6) 
+\newline
 \begin{figure}[H]
 \begin{center}
 \begin{BVerbatim}
@@ -114,7 +115,7 @@ Bei REST wird für jedes Testszenario ein seperater Endpunkt benötigt. Hierbei 
 \end{center}
 \caption{POST api/persons/:pid/projects/:prid/issues Body}
 \end{figure}
-Die Antwort enthält das erstellte Issue-Objekt, das eine gültige ID sowie Verknüpfungen zu dem zugehörigen Projekt und der Person beinhaltet.
+Die Antwort enthält das erstellte Issue-Objekt, das eine gültige ID sowie Verknüpfungen zu dem zugehörigen Projekt und der Person beinhaltet.(Abb. 5.7)
 \begin{figure}[H]
 \begin{center}
 \begin{BVerbatim}
@@ -145,7 +146,7 @@ Die Antwort enthält das erstellte Issue-Objekt, das eine gültige ID sowie Verk
 % section rest (end)
 
 \subsection{GraphQL}
-GraphQL nutzt nur einen Enpunkt, nämlich api/graphql die Anfragen werden im Body mithilfe der GraphQL Query Language definiert. Nachfolgend werden die 4 Anfragen beschrieben, die den in 5.2.1 aufgelisteten REST-Endpunkten enstprechen.
+GraphQL unterscheidet sich bei der Art der Anfragen sehr stark zu REST. Es wird nur über den Endpunkt POST api/graphql angesprochen. Hierüber werden sowohl Querys als auch Mutations abgedeckt. Die Anfragen werden im Body mithilfe der GraphQL Query Language definiert, welche JSON sehr ähnlich ist. Die in 5.2.1 definierten REST Endpunkte wurden in GraphQL nachgebildet, sodass sie die selbe Antwort liefern. Die in Abbildung 5.8 dargestellte Query ist dem REST Enpunkt GET api/persons/:pid eqivalent. Hierbei wird ebenfalls eine ID übergeben, allerdings können die Felder die in der Antwort enthalten sind explizit gewhlt werden. Hierbei wurden die Personen ID, Vorname, Nachname als auch die Email gewählt, um die selbe Antwort wie der REST Endpunkt zu erhalten. 
 \begin{figure}[H]
 \begin{center}
 \begin{BVerbatim}
@@ -161,6 +162,8 @@ query{
 \end{center}
 \caption{GraphQL Query equivalent zu GET api/persons/:pid}
 \end{figure}
+\noindent
+Der REST Endpunkt GET api/persons wird von der GraphQL Query in Abbildung 5.9 repräsentiert. Hierbei werden die selben Felder selektiert wie in der vorherigen Abfrage, jedoch wird hierbei die Query persons angesprochen, wodurch alle Personen der Datenbank abgerufen werden.
 \begin{figure}[H]
 \begin{center}
 \begin{BVerbatim}
@@ -176,7 +179,8 @@ query {
 \end{center}
 \caption{GraphQL Query equivalent zu GET api/persons}
 \end{figure}
-
+\noindent
+Abbildung 5.10 zeigt die GraphQL Query, welche dem REST Endpunkt GET api/persons/:pid/projects/issue entspricht. Hierbei werden die im Schema definierten Querys geschachtelt, um eine Abfrage zu erhalten, welche die Abhängigkeiten zwischen den Objekten repräsentiert.
 \begin{figure}[H]
 \begin{center}
 \begin{BVerbatim}
@@ -197,7 +201,8 @@ query{
 \end{center}
 \caption{GraphQL Query equivalent zu GET api/persons/:pid/projects/issue}
 \end{figure}
-
+\noindent
+Um den REST Endpunkt POST api/persons/:pid/projects/:prid/issues nachzubilden wurde die in Abb. 5.11 dargestellte Mutation entwickelt. Hierbei wird ein Input Objekt definiert, welches die Attribute beinhaltet, die zur Erstellung des Issues benötigt werden. Danach kann, wie auch in den zuvor beschriebenen Querys, selektiert werden, welche Felder in der Antwort entahlten sind.
 \begin{figure}[H]
 \begin{center}
 \begin{BVerbatim}
@@ -208,6 +213,7 @@ mutation{
 	state : „Open“
 	stateReason : „Error in Login“
 	prid: 80
+	pid: 10
 	}){
 	iid
 	title
