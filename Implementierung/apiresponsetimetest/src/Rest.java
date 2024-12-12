@@ -6,21 +6,24 @@ import java.nio.charset.StandardCharsets;
 import java.util.Random;
 
 public class Rest {
-    private static final String TARGETURL = "https://c5dd-2a00-79c0-66d-200-4137-6b-298-6aa7.ngrok-free.app/";
+    private static final String TARGETURL = "https://36db-2a00-79c0-60f-6a00-b003-2420-9166-df33.ngrok-free.app/";
     private static final int RUNS = 100;
 
 
     public void runRequest() {
         try {
 
+            System.out.println("---------------/api/resource---------------");
+            for (int i = 0; i <= RUNS; i++){
+                executeHeadRequest();
+            }
 
+/*
              System.out.println("---------------/api/person/?id---------------");
             for (int i = 0; i <= RUNS; i++){
                 executeGetRequestPersonById();
             }
 
-
-/*
             System.out.println("---------------/api/person---------------");
             for (int i = 0; i <= RUNS; i++){
                 executeGetRequestPersons();
@@ -43,6 +46,27 @@ public class Rest {
             e.printStackTrace();
         }
 
+    }
+
+
+    private void executeHeadRequest() {
+        long startTime;
+        long endTime;
+        try{
+            URL url = new URL(TARGETURL + "api/resource");
+
+            HttpURLConnection con = (HttpURLConnection) url.openConnection();
+            con.setRequestMethod("HEAD");
+            con.setUseCaches(false);
+            startTime = System.currentTimeMillis();
+            int responseCode= con.getResponseCode();
+            endTime = System.currentTimeMillis();
+            System.out.println(" Response Time = " + (endTime - startTime + " ms | ResponseCode : " + responseCode));
+            con.disconnect();
+
+        }catch (Exception e){
+            e.printStackTrace();
+        }
     }
 
 
