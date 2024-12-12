@@ -13,6 +13,64 @@ Für die Durchführung des Experiments werden zwei Datenbanktypen verwendet, wel
 	\caption{Tabellen Diagramm}
 \end{figure}
 Um eine realtionale Datenbank aus dem gegebenen Datenmodell (Abb. 4.1) zu erstellen muss dieses wie in Abb. 5.1 zu sehen ist angepasst werden, um die Beziehung zwischen Person und Projekt als auch Person und Issue abzubilden. Somit ergeben sich für die relationale Datenbank fünf Tabellen welche in einer PostgreSQL Datenbank realisiert werden. PostgreSQL wird verwendet, da es ein leistungsfähiges, objekt-relationales Datenbanksystem bietet welches Open-Source ist und dadurch kostenfrei zur Verfügung steht. 
+
+\begin{figure}[H]
+	\centering
+	\begin{tabular}{|l | l | l | l |}
+	\hline
+	pid & firstname & lastname & email \\
+	\hline
+	1 & Ruby & Burchatt & rburchatt0@msn.com \\
+	\hline
+	\end{tabular}
+	\caption{Tupel der Tabelle Person}
+\end{figure}
+\begin{figure}[H]
+	\centering
+	\begin{tabular}{|l | l |}
+	\hline
+	pid & iid \\
+	\hline
+	1 & 4894 \\
+	\hline
+	\end{tabular}
+	\caption{Tupel der Tabelle Person\_Issue}
+\end{figure}
+\begin{figure}[H]
+	\centering
+	\begin{tabular}{|l | l | l | l | l | l|}
+	\hline
+	iid & title & createdat & state & statereason & prid \\
+	\hline
+	1 & Pixope & 2024-07-23 00:00:00 & Closed & Cancelled & 586 \\
+	\hline
+	\end{tabular}
+	\caption{Tupel der Tabelle Issue}
+\end{figure}
+\begin{figure}[H]
+	\centering
+	\begin{tabular}{|l | l |}
+	\hline
+	pid & iid \\
+	\hline
+	1 & 714 \\
+	\hline
+	\end{tabular}
+	\caption{Tupel der Tabelle Person\_Project}
+\end{figure}
+\begin{figure}[H]
+	\centering
+	\begin{tabular}{|l | l | l |}
+	\hline
+	prid & title & createdat \\
+	\hline
+	1 & Bitchip & 2019-11-23 00:00:00 \\
+	\hline
+	\end{tabular}
+	\caption{Tupel der Tabelle Project}
+\end{figure}
+
+
 % subsection relationalesdatenbankdesign (end)
 \subsection{Graphdatenbankdesign} % (fold)
 \label{sec:graphsdatenbankdesign}
