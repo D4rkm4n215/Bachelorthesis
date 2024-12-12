@@ -5,6 +5,7 @@ import hhn.aib.thesis.postrest.DTO.IssueDTO;
 import hhn.aib.thesis.postrest.model.Issue;
 import hhn.aib.thesis.postrest.model.Person;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -17,6 +18,15 @@ public class PostrestController {
 
     public PostrestController(DBService db) {
         this.db = db;
+    }
+
+
+    @RequestMapping(value = "api/resource", method = RequestMethod.HEAD)
+    public ResponseEntity<Void> headResource() {
+        return ResponseEntity.ok()
+                .header("Content-Type", "application/json")
+                .header("X-Custom-Header", "CustomValue")
+                .build();
     }
 
     @GetMapping("/api/person/{pid}")
