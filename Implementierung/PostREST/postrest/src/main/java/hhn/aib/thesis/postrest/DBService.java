@@ -56,7 +56,7 @@ public class DBService implements IDBService{
     }
 
     public List<Issue> getIssueByPersonenIdAndProjectIDAndState(long pid) {
-        return issueRepository.findOpenIssuesByAssigneesAndProject(pid);
+       return issueRepository.findOpenIssuesByAssigneesAndProject(pid);
     }
 
     public Issue postIssue(long pid, long prid, IssueDTO dto) {
@@ -72,8 +72,6 @@ public class DBService implements IDBService{
         issue.setCreatedAt(dto.getCreatedAt());
         issue.setState(dto.getState());
         issue.setStateReason(dto.getStateReason());
-        issue.setProject(project);
-        issue.setAssignees(Collections.singleton(person));
 
         issueRepository.save(issue);
 

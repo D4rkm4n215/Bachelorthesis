@@ -63,6 +63,11 @@ public class Query implements GraphQLQueryResolver {
     }
 
     @QueryMapping
+    public Iterable<Issue> issuesInProjectsByPerson(@Argument long id){
+        return issueRepository.findOpenIssuesByAssigneesAndProject(id);
+    }
+
+    @QueryMapping
     public Iterable<Issue> issues() {
         return issueRepository.findAll();
     }

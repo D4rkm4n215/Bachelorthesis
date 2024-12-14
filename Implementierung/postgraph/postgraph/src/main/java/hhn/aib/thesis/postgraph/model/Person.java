@@ -18,12 +18,6 @@ public class Person {
     @Column(name = "email")
     private String email;
 
-    @ManyToMany(mappedBy = "people",fetch = FetchType.LAZY)
-    private Set<Project> projects;
-
-    @ManyToMany(mappedBy = "assignees",fetch = FetchType.LAZY)
-    private Set<Issue> issues;
-
     public Person() {}
 
     public Person(String firstname, String lastname, String email) {
@@ -62,21 +56,5 @@ public class Person {
 
     public void setEmail(String email) {
         this.email = email;
-    }
-
-    public Set<Project> getProjects() {
-        return projects;
-    }
-
-    public void setProjects(Set<Project> projects) {
-        this.projects = projects;
-    }
-
-    public Set<Issue> getIssues() {
-        return issues;
-    }
-
-    public void setIssues(Set<Issue> issues) {
-        this.issues = issues;
     }
 }

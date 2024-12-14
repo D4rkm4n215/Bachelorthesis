@@ -22,12 +22,4 @@ public class ProjectResolver implements GraphQLResolver<Project> {
         this.issueRepository = issueRepository;
     }
 
-    public List<Person> people(Project project) {
-        return personRepository.findByProjectsContains(project);
-    }
-
-    public List<Issue> issues(Project project) {
-        return issueRepository.findByProject(project);
-    }
-
 }

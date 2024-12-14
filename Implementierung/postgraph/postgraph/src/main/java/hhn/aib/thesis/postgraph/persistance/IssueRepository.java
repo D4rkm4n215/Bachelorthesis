@@ -11,9 +11,8 @@ import java.util.List;
 
 public interface IssueRepository extends JpaRepository<Issue, Long> {
 
-    List<Issue> findByAssigneesContains(Person person);
-
-    List<Issue> findByProject(Project project);
+    @Query(value = "SELECT i.iid, i.title, i.createdat, i.state, i.statereason, i.prid FROM Issue i JOIN project pr ON i.prid = pr.prid JOIN person_project pp ON pr.prid = pp.prid JOIN person p ON p.pid = pp.pid WHERE p.pid = :pid ", nativeQuery = true)
+    List<Issue> findOpenIssuesByAssigneesAndProject(@Param("pid") long pid);
 
     @Query(value = "SELECT * FROM issue LIMIT :counter", nativeQuery = true)
     List<Issue> findByCounter(@Param("counter") long counter);

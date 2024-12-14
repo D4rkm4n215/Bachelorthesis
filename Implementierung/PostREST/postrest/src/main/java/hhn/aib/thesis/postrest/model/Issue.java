@@ -32,30 +32,12 @@ public class Issue {
     @JsonView(Views.Basic.class)
     private String stateReason;
 
-    @ManyToMany(fetch = FetchType.LAZY)
-    @JsonView(Views.Full.class)
-    @JoinTable(
-            name = "person_issue",
-            joinColumns = @JoinColumn(name = "iid"),
-            inverseJoinColumns = @JoinColumn(name = "pid")
-    )
-    @JsonBackReference
-    private Set<Person> assignees;
-
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "prid")
-    @JsonView(Views.Extended.class)
-    @JsonManagedReference
-    private Project project;
-
     public Issue() {}
 
     public Issue(String title, String state, String stateReason, Set<Person> assignees, Project project) {
         this.title = title;
         this.state = state;
         this.stateReason = stateReason;
-        this.assignees = assignees;
-        this.project = project;
     }
 
     public long getIid() {
@@ -64,22 +46,6 @@ public class Issue {
 
     public void setIid(long iid) {
         this.iid = iid;
-    }
-
-    public Project getProject() {
-        return project;
-    }
-
-    public void setProject(Project project) {
-        this.project = project;
-    }
-
-    public Set<Person> getAssignees() {
-        return assignees;
-    }
-
-    public void setAssignees(Set<Person> assignees) {
-        this.assignees = assignees;
     }
 
     public String getStateReason() {

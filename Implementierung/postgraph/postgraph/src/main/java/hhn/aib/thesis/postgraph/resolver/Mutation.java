@@ -40,8 +40,6 @@ public class Mutation implements GraphQLMutationResolver {
         issue.setTitle(input.getTitle());
         issue.setState(input.getState());
         issue.setStateReason(input.getStateReason());
-        issue.setProject(project);
-        issue.setAssignees(Collections.singleton(person));
 
         return issueRepository.save(issue);
     }

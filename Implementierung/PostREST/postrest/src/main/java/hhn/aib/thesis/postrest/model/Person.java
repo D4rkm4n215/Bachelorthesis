@@ -26,21 +26,6 @@ public class Person{
     @JsonView(Views.Basic.class)
     private String email;
 
-    @ManyToMany(mappedBy = "people", fetch = FetchType.LAZY)
-    @JsonManagedReference
-    @JsonView(Views.Full.class)
-    private Set<Project> projects;
-
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JsonBackReference
-    @JsonView(Views.Full.class)
-    private Project project;
-
-    @ManyToMany(mappedBy = "assignees", fetch = FetchType.LAZY)
-    @JsonManagedReference
-    @JsonView(Views.Full.class)
-    private Set<Issue> issues;
-
     public Person() {}
 
     public Person(String firstname, String lastname, String email) {
@@ -79,25 +64,5 @@ public class Person{
 
     public void setEmail(String email) {
         this.email = email;
-    }
-
-    public Set<Project> getProjects() {
-        return projects;
-    }
-
-    public void setProjects(Set<Project> projects) {
-        this.projects = projects;
-    }
-
-    public Project getProject() {return project;}
-
-    public void setProject(Project project) {this.project = project;}
-
-    public Set<Issue> getIssues() {
-        return issues;
-    }
-
-    public void setIssues(Set<Issue> issues) {
-        this.issues = issues;
     }
 }

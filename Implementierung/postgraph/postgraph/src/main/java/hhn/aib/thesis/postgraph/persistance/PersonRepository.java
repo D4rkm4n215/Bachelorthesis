@@ -10,9 +10,6 @@ import java.util.List;
 
 public interface PersonRepository extends JpaRepository<Person, Long> {
 
-    List<Person> findByProjectsContains(Project project);
-
-    List<Person> findByIssuesContains(Issue issue);
 
     @Override
     @Query(value = "SELECT * FROM person LIMIT 5000", nativeQuery = true)

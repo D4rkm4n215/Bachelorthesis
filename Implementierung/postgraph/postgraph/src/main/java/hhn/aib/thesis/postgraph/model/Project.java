@@ -17,19 +17,6 @@ public class Project {
     @Column(name = "createdat")
     private LocalDateTime createdAt;
 
-    @ManyToMany(fetch = FetchType.LAZY)
-    @JoinTable(
-            name = "person_project",
-            joinColumns = @JoinColumn(name = "prid"),
-            inverseJoinColumns = @JoinColumn(name = "pid")
-    )
-    private Set<Person> people;
-
-    @OneToMany(mappedBy = "project",fetch = FetchType.LAZY)
-    private Set<Issue> issues;
-
-
-
     public Project() {}
 
     public Project(String title, LocalDateTime createdAt) {
@@ -59,21 +46,5 @@ public class Project {
 
     public void setCreatedAt(LocalDateTime createdAt) {
         this.createdAt = createdAt;
-    }
-
-    public Set<Person> getPeople() {
-        return people;
-    }
-
-    public void setPeople(Set<Person> people) {
-        this.people = people;
-    }
-
-    public Set<Issue> getIssues() {
-        return issues;
-    }
-
-    public void setIssues(Set<Issue> issues) {
-        this.issues = issues;
     }
 }
