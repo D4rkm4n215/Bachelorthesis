@@ -49,6 +49,20 @@ public class Query implements GraphQLQueryResolver {
     }
 
     @QueryMapping
+    public Iterable<Issue> issuesCount(@Argument int counter, @Argument int joins ) {
+        switch (joins){
+            case 0:return issueRepository.findByCounter(counter);
+            case 1:return issueRepository.findIssueAndProjectByCounter(counter);
+            case 2:return issueRepository.findIssueAndProjectAndPersonIssueByCounter(counter);
+            case 3:return issueRepository.findIssueAndProjectAndPersonByCounter(counter);
+            default:
+                System.out.println("joins must be between 0 and 3");
+                break;
+        }
+        return null;
+    }
+
+    @QueryMapping
     public Iterable<Issue> issues() {
         return issueRepository.findAll();
     }

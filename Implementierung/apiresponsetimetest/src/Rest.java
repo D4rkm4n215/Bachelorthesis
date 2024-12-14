@@ -6,19 +6,20 @@ import java.nio.charset.StandardCharsets;
 import java.util.Random;
 
 public class Rest {
-    private static final String TARGETURL = "https://36db-2a00-79c0-60f-6a00-b003-2420-9166-df33.ngrok-free.app/";
+    private static final String TARGETURL = "https://5b83-2a00-79c0-64c-5500-d53e-7b21-ccf9-6caf.ngrok-free.app/";
     private static final int RUNS = 100;
 
 
     public void runRequest() {
         try {
-
+            executeGetRequestIssueProjectsPeople();
+/*
             System.out.println("---------------/api/resource---------------");
             for (int i = 0; i <= RUNS; i++){
                 executeHeadRequest();
             }
 
-/*
+
              System.out.println("---------------/api/person/?id---------------");
             for (int i = 0; i <= RUNS; i++){
                 executeGetRequestPersonById();
@@ -64,6 +65,30 @@ public class Rest {
             System.out.println(" Response Time = " + (endTime - startTime + " ms | ResponseCode : " + responseCode));
             con.disconnect();
 
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+    }
+
+    private void executeGetRequestIssueProjectsPeople() {
+        long startTime;
+        long endTime;
+        try{
+            for(int i = 0; i < 4; i++){
+                System.out.println("--------------JOINS: " + i + "--------------");
+                for(int j = 1; i <= 5000; j+= 100){
+                    URL url = new URL(TARGETURL + "api/issues?counter=" + j + "&joins=" + i);
+                    HttpURLConnection con = (HttpURLConnection) url.openConnection();
+                    con.setRequestMethod("GET");
+                    con.setRequestProperty("Accept", "application/json");
+                    con.setUseCaches(false);
+                    startTime = System.currentTimeMillis();
+                    int responseCode= con.getResponseCode();
+                    endTime = System.currentTimeMillis();
+                    System.out.println(" Response Time = " + (endTime - startTime + " ms | ResponseCode : " + responseCode));
+                    con.disconnect();
+                }
+            }
         }catch (Exception e){
             e.printStackTrace();
         }

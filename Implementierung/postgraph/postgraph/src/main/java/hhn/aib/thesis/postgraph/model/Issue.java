@@ -23,7 +23,7 @@ public class Issue {
     @Column(name = "statereason")
     private String stateReason;
 
-    @ManyToMany
+    @ManyToMany(fetch = FetchType.LAZY)
     @JoinTable(
             name = "person_issue",
             joinColumns = @JoinColumn(name = "iid"),
@@ -31,7 +31,7 @@ public class Issue {
     )
     private Set<Person> assignees;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "prid")
     private Project project;
 

@@ -41,6 +41,7 @@ type Query{
     project(id:ID!) : Project
     issues : [Issue]
     issue(id: String): Issue
+    issuesCount(counter: Int!, joins: Int!): [Issue!]!
 
 }
 

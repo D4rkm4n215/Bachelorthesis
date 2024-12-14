@@ -26,17 +26,17 @@ public class Person{
     @JsonView(Views.Basic.class)
     private String email;
 
-    @ManyToMany(mappedBy = "people")
+    @ManyToMany(mappedBy = "people", fetch = FetchType.LAZY)
     @JsonManagedReference
     @JsonView(Views.Full.class)
     private Set<Project> projects;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JsonBackReference
     @JsonView(Views.Full.class)
     private Project project;
 
-    @ManyToMany(mappedBy = "assignees")
+    @ManyToMany(mappedBy = "assignees", fetch = FetchType.LAZY)
     @JsonManagedReference
     @JsonView(Views.Full.class)
     private Set<Issue> issues;

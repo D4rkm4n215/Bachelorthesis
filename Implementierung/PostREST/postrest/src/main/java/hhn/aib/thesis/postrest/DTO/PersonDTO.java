@@ -1,32 +1,23 @@
-package hhn.aib.thesis.postgraph.model;
+package hhn.aib.thesis.postrest.DTO;
 
 import jakarta.persistence.*;
 
-import java.util.Set;
 
-@Entity
-public class Person {
+public class PersonDTO {
+
     @Id
     private long pid;
 
-    @Column(name = "firstname")
     private String firstname;
 
-    @Column(name = "lastname")
     private String lastname;
 
-    @Column(name = "email")
     private String email;
 
-    @ManyToMany(mappedBy = "people",fetch = FetchType.LAZY)
-    private Set<Project> projects;
+    public PersonDTO() {}
 
-    @ManyToMany(mappedBy = "assignees",fetch = FetchType.LAZY)
-    private Set<Issue> issues;
-
-    public Person() {}
-
-    public Person(String firstname, String lastname, String email) {
+    public PersonDTO(long pid, String firstname, String lastname, String email) {
+        this.pid = pid;
         this.firstname = firstname;
         this.lastname = lastname;
         this.email = email;
@@ -62,21 +53,5 @@ public class Person {
 
     public void setEmail(String email) {
         this.email = email;
-    }
-
-    public Set<Project> getProjects() {
-        return projects;
-    }
-
-    public void setProjects(Set<Project> projects) {
-        this.projects = projects;
-    }
-
-    public Set<Issue> getIssues() {
-        return issues;
-    }
-
-    public void setIssues(Set<Issue> issues) {
-        this.issues = issues;
     }
 }

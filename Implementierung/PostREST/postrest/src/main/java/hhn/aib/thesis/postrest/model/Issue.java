@@ -2,29 +2,38 @@ package hhn.aib.thesis.postrest.model;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
+import com.fasterxml.jackson.annotation.JsonView;
+import hhn.aib.thesis.postrest.Views;
 import jakarta.persistence.*;
 
 import java.time.LocalDateTime;
 import java.util.Set;
 @Entity
+@Table(name = "issue")
 public class Issue {
 
     @Id
+    @JsonView(Views.Basic.class)
     private long iid;
 
     @Column(name = "title")
+    @JsonView(Views.Basic.class)
     private String title;
 
     @Column(name = "createdat")
+    @JsonView(Views.Basic.class)
     private LocalDateTime createdAt;
 
     @Column(name = "state")
+    @JsonView(Views.Basic.class)
     private String state;
 
     @Column(name = "statereason")
+    @JsonView(Views.Basic.class)
     private String stateReason;
 
-    @ManyToMany
+    @ManyToMany(fetch = FetchType.LAZY)
+    @JsonView(Views.Full.class)
     @JoinTable(
             name = "person_issue",
             joinColumns = @JoinColumn(name = "iid"),
@@ -33,8 +42,9 @@ public class Issue {
     @JsonBackReference
     private Set<Person> assignees;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "prid")
+    @JsonView(Views.Extended.class)
     @JsonManagedReference
     private Project project;
 
