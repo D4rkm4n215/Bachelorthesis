@@ -21,4 +21,12 @@ public class PersonResolver implements GraphQLResolver<Person> {
         this.projectRepository = projectRepository;
         this.issueRepository = issueRepository;
     }
+
+    public List<Project> GetProjects(Person person) {
+        return projectRepository.findByPeopleContains(person.getPid());
+    }
+
+    public List<Issue> getIssues(Person person) {
+        return issueRepository.findByAssigneesContains(person.getPid());
+    }
 }

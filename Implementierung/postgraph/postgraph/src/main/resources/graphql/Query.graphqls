@@ -3,12 +3,14 @@ type Person{
     firstname : String
     lastname : String
     email : String
+    projects : [Project!]!
 }
 
 type Project{
     prid: ID!
     title : String!
     createdAt : String
+    issues : [Issue]
 }
 
 type Issue{

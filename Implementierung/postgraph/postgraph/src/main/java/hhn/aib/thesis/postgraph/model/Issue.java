@@ -23,6 +23,18 @@ public class Issue {
     @Column(name = "statereason")
     private String stateReason;
 
+    @ManyToMany
+    @JoinTable(
+            name = "person_issue",
+            joinColumns = @JoinColumn(name = "iid"),
+            inverseJoinColumns = @JoinColumn(name = "pid")
+    )
+    private Set<Person> assignees;
+
+    @ManyToOne
+    @JoinColumn(name = "prid")
+    private Project project;
+
     public Issue() {}
 
     public Issue(String title, String state, String stateReason, Set<Person> assignees, Project project) {
@@ -67,5 +79,21 @@ public class Issue {
 
     public void setCreatedAt(LocalDateTime createdAt) {
         this.createdAt = createdAt;
+    }
+
+    public Set<Person> getAssignees() {
+        return assignees;
+    }
+
+    public void setAssignees(Set<Person> assignees) {
+        this.assignees = assignees;
+    }
+
+    public Project getProject() {
+        return project;
+    }
+
+    public void setProject(Project project) {
+        this.project = project;
     }
 }
