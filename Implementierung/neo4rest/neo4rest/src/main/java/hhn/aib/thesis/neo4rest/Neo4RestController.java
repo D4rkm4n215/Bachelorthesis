@@ -28,6 +28,21 @@ public class Neo4RestController {
                 .build();
     }
 
+    @GetMapping("/api/issues")
+    public List<Issue> issueCount(@RequestParam long counter,
+                                  @RequestParam int joins){
+        switch (joins){
+            case 0:return db.getIssueByCount(counter);
+            case 1:return db.getIssueAndProjectByCount(counter);
+            case 2:return null;
+            case 3:return db.issueAndProjectAndPeopleCount(counter);
+            default:
+                System.out.println("joins must be between 0 and 3");
+                break;
+        }
+        return null;
+    }
+
 
     @GetMapping("/api/person/{pid}")
     @JsonView(Views.Basic.class)
