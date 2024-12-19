@@ -2,7 +2,7 @@
 \label{sec:systemdesign}
 Innerhalb dieses Abschnitt sollen die konkreten Technologien beschrieben werden, die gewählt wurden um ein System zu entwickeln welches für Latentztests verwendet werden kann.
 \section{Datenbankdesign} % (fold)
-Für die Durchführung des Experiments werden zwei Datenbanktypen verwendet, welche nachfolgend mit ihrer konkreten Konfiguration beschrieben werden. In jeder Datenbank sind 5000 Personen als auch Issue Objekte vorhanden, sowie 2500 Project Objekte, somit enthählt jede Datenbank 12500 Datensätze.
+Für die Durchführung des Experiments werden zwei Datenbanktypen verwendet, welche nachfolgend mit ihrer konkreten Konfiguration beschrieben werden. In jeder Datenbank sind 500.000 Person, Project, als auch Issue Objekte vorhanden, somit enthählt jede Datenbank 1,5 Mio Datensätze.
 \label{sec:datenbankdesign}
 \subsection{Relationales Datenbankdesign} % (fold)
 \label{sec:relationalesdatenbankdesign}
@@ -20,7 +20,7 @@ Um eine realtionale Datenbank aus dem gegebenen Datenmodell (Abb. 4.1) zu erstel
 	\hline
 	pid & firstname & lastname & email \\
 	\hline
-	1 & Ruby & Burchatt & rburchatt0@msn.com \\
+	1 & Cecilla & Beningfield & cbeningfield9@wp.com \\
 	\hline
 	\end{tabular}
 	\caption{Tupel der Tabelle Person}
@@ -42,7 +42,7 @@ Um eine realtionale Datenbank aus dem gegebenen Datenmodell (Abb. 4.1) zu erstel
 	\hline
 	iid & title & createdat & state & statereason & prid \\
 	\hline
-	1 & Pixope & 2024-07-23 00:00:00 & Closed & Cancelled & 586 \\
+	1 & Dabfeed & 2023-06-10 00:00:00 & Open & Assigned & 586 \\
 	\hline
 	\end{tabular}
 	\caption{Tupel der Tabelle Issue}
@@ -64,7 +64,7 @@ Um eine realtionale Datenbank aus dem gegebenen Datenmodell (Abb. 4.1) zu erstel
 	\hline
 	prid & title & createdat \\
 	\hline
-	1 & Bitchip & 2019-11-23 00:00:00 \\
+	1 & Asoka & 2022-02-17 00:00:00 \\
 	\hline
 	\end{tabular}
 	\caption{Tupel der Tabelle Project}
@@ -91,8 +91,27 @@ Um eine Graphdatenbank zu erstellen benötigt man keine definierten Tabellen, da
 
 \subsection{REST}
 \label{sec:rest}
-Bei REST wird für jedes Testszenario ein seperater Endpunkt benötigt. Hierbei wurden vier verschiedene Endpunkte mit unterschiedlichen Komplexität entworfen.
+Bei REST wird für jedes Testszenario ein seperater Endpunkt benötigt. Hierbei wurden sechs verschiedene Endpunkte mit unterschiedlichen Komplexität entworfen.
+
 \begin{itemize}
+\item \textbf{HEAD api/resource} wird verwendet, um einen Head-Request durchzuführen um die Latenz der API zu bestimmen.
+\item \textbf{GET api/issues?counter=x\&?joins=y}: Hierbei kann die Menge der Ergebnistupel(x) und die Anzahl der Joins(y) die auf der Datenbank durchgeführt werden bei der Anfrage bestimmt werden.
+\begin{figure}[H]
+\begin{center}
+\begin{BVerbatim}
+{
+    "pid": 10,
+    "firstname": "Cecilla",
+    "lastname": "Beningfield",
+    "email": "cbeningfield9@wp.com"
+}
+[...]
+\end{BVerbatim}
+\end{center}
+\caption{GET api/issues?counter=x\&?joins=y Response}
+\end{figure}
+
+
 \item \textbf{GET api/persons/:pid}: Dieser Endpunkt ermöglicht das Abrufen einer bestimmten Person anhand ihrer ID. Die API liefert dabei ein JSON-Objekt zurück, dass die Person mit den Attributen Vorname, Nachname und E-Mail-Adresse beschreibt.(Abb. 5.3)
 \begin{figure}[H]
 \begin{center}
