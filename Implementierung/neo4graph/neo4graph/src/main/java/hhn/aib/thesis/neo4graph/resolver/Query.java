@@ -8,10 +8,12 @@ import hhn.aib.thesis.neo4graph.persistance.IssueRepository;
 import hhn.aib.thesis.neo4graph.persistance.PersonRepository;
 import hhn.aib.thesis.neo4graph.persistance.ProjectRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Lazy;
 import org.springframework.graphql.data.method.annotation.Argument;
 import org.springframework.graphql.data.method.annotation.QueryMapping;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
@@ -40,6 +42,7 @@ public class Query implements GraphQLQueryResolver {
     }
 
     @QueryMapping
+    @Transactional(readOnly = true)
     public Iterable<Issue> issuesCount(@Argument int counter, @Argument int joins ) {
         switch (joins){
             case 0:return issueRepository.findByCounter(counter);
@@ -55,11 +58,13 @@ public class Query implements GraphQLQueryResolver {
 
 
     @QueryMapping
+    @Transactional(readOnly = true)
     public Iterable<Person> persons() {
         return personRepository.findAll();
     }
 
     @QueryMapping
+    @Transactional(readOnly = true)
     public Person person(@Argument String id) {
         return personRepository.findByPid(id);
     }

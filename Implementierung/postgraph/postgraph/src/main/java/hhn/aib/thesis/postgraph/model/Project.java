@@ -17,7 +17,7 @@ public class Project {
     @Column(name = "createdat")
     private LocalDateTime createdAt;
 
-    @ManyToMany
+    @ManyToMany(fetch = FetchType.LAZY)
     @JoinTable(
             name = "person_project",
             joinColumns = @JoinColumn(name = "prid"),
@@ -25,7 +25,7 @@ public class Project {
     )
     private Set<Person> people;
 
-    @OneToMany(mappedBy = "project")
+    @OneToMany(mappedBy = "project", fetch = FetchType.LAZY)
     private Set<Issue> issues;
 
     public Project() {}

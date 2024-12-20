@@ -2,6 +2,7 @@ package hhn.aib.thesis.neo4graph.model;
 
 
 import jakarta.persistence.PrePersist;
+import org.springframework.context.annotation.Lazy;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.neo4j.core.schema.*;
 
@@ -19,10 +20,8 @@ public class Project {
 
     private LocalDateTime createdAt;
 
-    @Relationship(type = "OWNS", direction = Relationship.Direction.INCOMING)
     private Set<Person> people;
 
-    @Relationship(type = "BELONGS_TO", direction = Relationship.Direction.INCOMING)
     private Set<Issue> issues;
 
     public String getPrid() {

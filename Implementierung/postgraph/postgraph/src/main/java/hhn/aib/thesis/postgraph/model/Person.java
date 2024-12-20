@@ -22,10 +22,10 @@ public class Person {
     @Column(name = "email")
     private String email;
 
-    @ManyToMany(mappedBy = "people")
+    @ManyToMany(mappedBy = "people", fetch = FetchType.LAZY)
     private Set<Project> projects;
 
-    @ManyToMany(mappedBy = "assignees")
+    @ManyToMany(mappedBy = "assignees", fetch = FetchType.LAZY)
     private Set<Issue> issues;
 
 

@@ -1,309 +1,1431 @@
+---------------/api/resource---------------
+ Response Time = 256 ms | ResponseCode : 200
+ Response Time = 53 ms | ResponseCode : 200
+ Response Time = 55 ms | ResponseCode : 200
+ Response Time = 53 ms | ResponseCode : 200
+ Response Time = 54 ms | ResponseCode : 200
+ Response Time = 53 ms | ResponseCode : 200
+ Response Time = 53 ms | ResponseCode : 200
+ Response Time = 53 ms | ResponseCode : 200
+ Response Time = 53 ms | ResponseCode : 200
+ Response Time = 56 ms | ResponseCode : 200
+ Response Time = 53 ms | ResponseCode : 200
+ Response Time = 53 ms | ResponseCode : 200
+ Response Time = 53 ms | ResponseCode : 200
+ Response Time = 54 ms | ResponseCode : 200
+ Response Time = 52 ms | ResponseCode : 200
+ Response Time = 53 ms | ResponseCode : 200
+ Response Time = 53 ms | ResponseCode : 200
+ Response Time = 53 ms | ResponseCode : 200
+ Response Time = 53 ms | ResponseCode : 200
+ Response Time = 54 ms | ResponseCode : 200
+ Response Time = 53 ms | ResponseCode : 200
+ Response Time = 53 ms | ResponseCode : 200
+ Response Time = 53 ms | ResponseCode : 200
+ Response Time = 54 ms | ResponseCode : 200
+ Response Time = 53 ms | ResponseCode : 200
+ Response Time = 53 ms | ResponseCode : 200
+ Response Time = 53 ms | ResponseCode : 200
+ Response Time = 53 ms | ResponseCode : 200
+ Response Time = 53 ms | ResponseCode : 200
+ Response Time = 53 ms | ResponseCode : 200
+ Response Time = 53 ms | ResponseCode : 200
+ Response Time = 53 ms | ResponseCode : 200
+ Response Time = 53 ms | ResponseCode : 200
+ Response Time = 53 ms | ResponseCode : 200
+ Response Time = 53 ms | ResponseCode : 200
+ Response Time = 53 ms | ResponseCode : 200
+ Response Time = 53 ms | ResponseCode : 200
+ Response Time = 54 ms | ResponseCode : 200
+ Response Time = 53 ms | ResponseCode : 200
+ Response Time = 53 ms | ResponseCode : 200
+ Response Time = 53 ms | ResponseCode : 200
+ Response Time = 52 ms | ResponseCode : 200
+ Response Time = 54 ms | ResponseCode : 200
+ Response Time = 53 ms | ResponseCode : 200
+ Response Time = 53 ms | ResponseCode : 200
+ Response Time = 53 ms | ResponseCode : 200
+ Response Time = 54 ms | ResponseCode : 200
+ Response Time = 53 ms | ResponseCode : 200
+ Response Time = 53 ms | ResponseCode : 200
+ Response Time = 53 ms | ResponseCode : 200
+ Response Time = 53 ms | ResponseCode : 200
+ Response Time = 54 ms | ResponseCode : 200
+ Response Time = 54 ms | ResponseCode : 200
+ Response Time = 52 ms | ResponseCode : 200
+ Response Time = 53 ms | ResponseCode : 200
+ Response Time = 53 ms | ResponseCode : 200
+ Response Time = 55 ms | ResponseCode : 200
+ Response Time = 53 ms | ResponseCode : 200
+ Response Time = 54 ms | ResponseCode : 200
+ Response Time = 53 ms | ResponseCode : 200
+ Response Time = 55 ms | ResponseCode : 200
+ Response Time = 53 ms | ResponseCode : 200
+ Response Time = 52 ms | ResponseCode : 200
+ Response Time = 54 ms | ResponseCode : 200
+ Response Time = 53 ms | ResponseCode : 200
+ Response Time = 53 ms | ResponseCode : 200
+ Response Time = 54 ms | ResponseCode : 200
+ Response Time = 53 ms | ResponseCode : 200
+ Response Time = 53 ms | ResponseCode : 200
+ Response Time = 53 ms | ResponseCode : 200
+ Response Time = 53 ms | ResponseCode : 200
+ Response Time = 53 ms | ResponseCode : 200
+ Response Time = 53 ms | ResponseCode : 200
+ Response Time = 53 ms | ResponseCode : 200
+ Response Time = 54 ms | ResponseCode : 200
+ Response Time = 53 ms | ResponseCode : 200
+ Response Time = 53 ms | ResponseCode : 200
+ Response Time = 53 ms | ResponseCode : 200
+ Response Time = 54 ms | ResponseCode : 200
+ Response Time = 54 ms | ResponseCode : 200
+ Response Time = 52 ms | ResponseCode : 200
+ Response Time = 53 ms | ResponseCode : 200
+ Response Time = 55 ms | ResponseCode : 200
+ Response Time = 52 ms | ResponseCode : 200
+ Response Time = 54 ms | ResponseCode : 200
+ Response Time = 53 ms | ResponseCode : 200
+ Response Time = 53 ms | ResponseCode : 200
+ Response Time = 53 ms | ResponseCode : 200
+ Response Time = 53 ms | ResponseCode : 200
+ Response Time = 53 ms | ResponseCode : 200
+ Response Time = 53 ms | ResponseCode : 200
+ Response Time = 53 ms | ResponseCode : 200
+ Response Time = 54 ms | ResponseCode : 200
+ Response Time = 53 ms | ResponseCode : 200
+ Response Time = 53 ms | ResponseCode : 200
+ Response Time = 53 ms | ResponseCode : 200
+ Response Time = 54 ms | ResponseCode : 200
+ Response Time = 52 ms | ResponseCode : 200
+ Response Time = 52 ms | ResponseCode : 200
+ Response Time = 53 ms | ResponseCode : 200
+ Response Time = 57 ms | ResponseCode : 200
+--------------JOINS: 0--------------
+Counter=1Joins=0 Response Time = 60 ms | ResponseCode : 200
+Counter=1Joins=0 Response Time = 56 ms | ResponseCode : 200
+Counter=1Joins=0 Response Time = 57 ms | ResponseCode : 200
+Counter=1Joins=0 Response Time = 56 ms | ResponseCode : 200
+Counter=1Joins=0 Response Time = 56 ms | ResponseCode : 200
+Counter=1Joins=0 Response Time = 57 ms | ResponseCode : 200
+Counter=1Joins=0 Response Time = 58 ms | ResponseCode : 200
+Counter=1Joins=0 Response Time = 56 ms | ResponseCode : 200
+Counter=1Joins=0 Response Time = 57 ms | ResponseCode : 200
+Counter=1Joins=0 Response Time = 56 ms | ResponseCode : 200
+Counter=1Joins=0 Response Time = 57 ms | ResponseCode : 200
+Counter=1Joins=0 Response Time = 56 ms | ResponseCode : 200
+Counter=1Joins=0 Response Time = 55 ms | ResponseCode : 200
+Counter=1Joins=0 Response Time = 56 ms | ResponseCode : 200
+Counter=1Joins=0 Response Time = 56 ms | ResponseCode : 200
+Counter=1Joins=0 Response Time = 56 ms | ResponseCode : 200
+Counter=1Joins=0 Response Time = 56 ms | ResponseCode : 200
+Counter=1Joins=0 Response Time = 57 ms | ResponseCode : 200
+Counter=1Joins=0 Response Time = 57 ms | ResponseCode : 200
+Counter=1Joins=0 Response Time = 57 ms | ResponseCode : 200
+Counter=1Joins=0 Response Time = 56 ms | ResponseCode : 200
+Counter=1Joins=0 Response Time = 56 ms | ResponseCode : 200
+Counter=1Joins=0 Response Time = 57 ms | ResponseCode : 200
+Counter=1Joins=0 Response Time = 56 ms | ResponseCode : 200
+Counter=1Joins=0 Response Time = 56 ms | ResponseCode : 200
+Counter=1Joins=0 Response Time = 55 ms | ResponseCode : 200
+Counter=1Joins=0 Response Time = 57 ms | ResponseCode : 200
+Counter=1Joins=0 Response Time = 58 ms | ResponseCode : 200
+Counter=1Joins=0 Response Time = 57 ms | ResponseCode : 200
+Counter=1Joins=0 Response Time = 55 ms | ResponseCode : 200
+Counter=1Joins=0 Response Time = 55 ms | ResponseCode : 200
+Counter=1Joins=0 Response Time = 55 ms | ResponseCode : 200
+Counter=1Joins=0 Response Time = 56 ms | ResponseCode : 200
+Counter=1Joins=0 Response Time = 55 ms | ResponseCode : 200
+Counter=1Joins=0 Response Time = 55 ms | ResponseCode : 200
+Counter=1Joins=0 Response Time = 57 ms | ResponseCode : 200
+Counter=1Joins=0 Response Time = 55 ms | ResponseCode : 200
+Counter=1Joins=0 Response Time = 56 ms | ResponseCode : 200
+Counter=1Joins=0 Response Time = 57 ms | ResponseCode : 200
+Counter=1Joins=0 Response Time = 56 ms | ResponseCode : 200
+Counter=1Joins=0 Response Time = 57 ms | ResponseCode : 200
+Counter=1Joins=0 Response Time = 57 ms | ResponseCode : 200
+Counter=1Joins=0 Response Time = 55 ms | ResponseCode : 200
+Counter=1Joins=0 Response Time = 56 ms | ResponseCode : 200
+Counter=1Joins=0 Response Time = 56 ms | ResponseCode : 200
+Counter=1Joins=0 Response Time = 58 ms | ResponseCode : 200
+Counter=1Joins=0 Response Time = 56 ms | ResponseCode : 200
+Counter=1Joins=0 Response Time = 55 ms | ResponseCode : 200
+Counter=1Joins=0 Response Time = 64 ms | ResponseCode : 200
+Counter=1Joins=0 Response Time = 55 ms | ResponseCode : 200
+--------------JOINS: 0--------------
+Counter=100Joins=0 Response Time = 69 ms | ResponseCode : 200
+Counter=100Joins=0 Response Time = 68 ms | ResponseCode : 200
+Counter=100Joins=0 Response Time = 71 ms | ResponseCode : 200
+Counter=100Joins=0 Response Time = 68 ms | ResponseCode : 200
+Counter=100Joins=0 Response Time = 72 ms | ResponseCode : 200
+Counter=100Joins=0 Response Time = 72 ms | ResponseCode : 200
+Counter=100Joins=0 Response Time = 66 ms | ResponseCode : 200
+Counter=100Joins=0 Response Time = 63 ms | ResponseCode : 200
+Counter=100Joins=0 Response Time = 65 ms | ResponseCode : 200
+Counter=100Joins=0 Response Time = 66 ms | ResponseCode : 200
+Counter=100Joins=0 Response Time = 67 ms | ResponseCode : 200
+Counter=100Joins=0 Response Time = 69 ms | ResponseCode : 200
+Counter=100Joins=0 Response Time = 67 ms | ResponseCode : 200
+Counter=100Joins=0 Response Time = 64 ms | ResponseCode : 200
+Counter=100Joins=0 Response Time = 66 ms | ResponseCode : 200
+Counter=100Joins=0 Response Time = 67 ms | ResponseCode : 200
+Counter=100Joins=0 Response Time = 66 ms | ResponseCode : 200
+Counter=100Joins=0 Response Time = 66 ms | ResponseCode : 200
+Counter=100Joins=0 Response Time = 66 ms | ResponseCode : 200
+Counter=100Joins=0 Response Time = 65 ms | ResponseCode : 200
+Counter=100Joins=0 Response Time = 64 ms | ResponseCode : 200
+Counter=100Joins=0 Response Time = 68 ms | ResponseCode : 200
+Counter=100Joins=0 Response Time = 74 ms | ResponseCode : 200
+Counter=100Joins=0 Response Time = 66 ms | ResponseCode : 200
+Counter=100Joins=0 Response Time = 64 ms | ResponseCode : 200
+Counter=100Joins=0 Response Time = 63 ms | ResponseCode : 200
+Counter=100Joins=0 Response Time = 68 ms | ResponseCode : 200
+Counter=100Joins=0 Response Time = 67 ms | ResponseCode : 200
+Counter=100Joins=0 Response Time = 65 ms | ResponseCode : 200
+Counter=100Joins=0 Response Time = 68 ms | ResponseCode : 200
+Counter=100Joins=0 Response Time = 65 ms | ResponseCode : 200
+Counter=100Joins=0 Response Time = 66 ms | ResponseCode : 200
+Counter=100Joins=0 Response Time = 66 ms | ResponseCode : 200
+Counter=100Joins=0 Response Time = 64 ms | ResponseCode : 200
+Counter=100Joins=0 Response Time = 66 ms | ResponseCode : 200
+Counter=100Joins=0 Response Time = 65 ms | ResponseCode : 200
+Counter=100Joins=0 Response Time = 66 ms | ResponseCode : 200
+Counter=100Joins=0 Response Time = 66 ms | ResponseCode : 200
+Counter=100Joins=0 Response Time = 67 ms | ResponseCode : 200
+Counter=100Joins=0 Response Time = 65 ms | ResponseCode : 200
+Counter=100Joins=0 Response Time = 67 ms | ResponseCode : 200
+Counter=100Joins=0 Response Time = 69 ms | ResponseCode : 200
+Counter=100Joins=0 Response Time = 66 ms | ResponseCode : 200
+Counter=100Joins=0 Response Time = 64 ms | ResponseCode : 200
+Counter=100Joins=0 Response Time = 64 ms | ResponseCode : 200
+Counter=100Joins=0 Response Time = 63 ms | ResponseCode : 200
+Counter=100Joins=0 Response Time = 66 ms | ResponseCode : 200
+Counter=100Joins=0 Response Time = 66 ms | ResponseCode : 200
+Counter=100Joins=0 Response Time = 66 ms | ResponseCode : 200
+Counter=100Joins=0 Response Time = 63 ms | ResponseCode : 200
+--------------JOINS: 0--------------
+Counter=1000Joins=0 Response Time = 85 ms | ResponseCode : 200
+Counter=1000Joins=0 Response Time = 86 ms | ResponseCode : 200
+Counter=1000Joins=0 Response Time = 78 ms | ResponseCode : 200
+Counter=1000Joins=0 Response Time = 90 ms | ResponseCode : 200
+Counter=1000Joins=0 Response Time = 125 ms | ResponseCode : 200
+Counter=1000Joins=0 Response Time = 99 ms | ResponseCode : 200
+Counter=1000Joins=0 Response Time = 79 ms | ResponseCode : 200
+Counter=1000Joins=0 Response Time = 91 ms | ResponseCode : 200
+Counter=1000Joins=0 Response Time = 78 ms | ResponseCode : 200
+Counter=1000Joins=0 Response Time = 98 ms | ResponseCode : 200
+Counter=1000Joins=0 Response Time = 85 ms | ResponseCode : 200
+Counter=1000Joins=0 Response Time = 81 ms | ResponseCode : 200
+Counter=1000Joins=0 Response Time = 92 ms | ResponseCode : 200
+Counter=1000Joins=0 Response Time = 92 ms | ResponseCode : 200
+Counter=1000Joins=0 Response Time = 79 ms | ResponseCode : 200
+Counter=1000Joins=0 Response Time = 86 ms | ResponseCode : 200
+Counter=1000Joins=0 Response Time = 80 ms | ResponseCode : 200
+Counter=1000Joins=0 Response Time = 91 ms | ResponseCode : 200
+Counter=1000Joins=0 Response Time = 90 ms | ResponseCode : 200
+Counter=1000Joins=0 Response Time = 100 ms | ResponseCode : 200
+Counter=1000Joins=0 Response Time = 92 ms | ResponseCode : 200
+Counter=1000Joins=0 Response Time = 83 ms | ResponseCode : 200
+Counter=1000Joins=0 Response Time = 88 ms | ResponseCode : 200
+Counter=1000Joins=0 Response Time = 93 ms | ResponseCode : 200
+Counter=1000Joins=0 Response Time = 80 ms | ResponseCode : 200
+Counter=1000Joins=0 Response Time = 81 ms | ResponseCode : 200
+Counter=1000Joins=0 Response Time = 84 ms | ResponseCode : 200
+Counter=1000Joins=0 Response Time = 83 ms | ResponseCode : 200
+Counter=1000Joins=0 Response Time = 88 ms | ResponseCode : 200
+Counter=1000Joins=0 Response Time = 89 ms | ResponseCode : 200
+Counter=1000Joins=0 Response Time = 82 ms | ResponseCode : 200
+Counter=1000Joins=0 Response Time = 81 ms | ResponseCode : 200
+Counter=1000Joins=0 Response Time = 80 ms | ResponseCode : 200
+Counter=1000Joins=0 Response Time = 89 ms | ResponseCode : 200
+Counter=1000Joins=0 Response Time = 81 ms | ResponseCode : 200
+Counter=1000Joins=0 Response Time = 94 ms | ResponseCode : 200
+Counter=1000Joins=0 Response Time = 88 ms | ResponseCode : 200
+Counter=1000Joins=0 Response Time = 88 ms | ResponseCode : 200
+Counter=1000Joins=0 Response Time = 94 ms | ResponseCode : 200
+Counter=1000Joins=0 Response Time = 87 ms | ResponseCode : 200
+Counter=1000Joins=0 Response Time = 80 ms | ResponseCode : 200
+Counter=1000Joins=0 Response Time = 82 ms | ResponseCode : 200
+Counter=1000Joins=0 Response Time = 95 ms | ResponseCode : 200
+Counter=1000Joins=0 Response Time = 91 ms | ResponseCode : 200
+Counter=1000Joins=0 Response Time = 115 ms | ResponseCode : 200
+Counter=1000Joins=0 Response Time = 106 ms | ResponseCode : 200
+Counter=1000Joins=0 Response Time = 112 ms | ResponseCode : 200
+Counter=1000Joins=0 Response Time = 86 ms | ResponseCode : 200
+Counter=1000Joins=0 Response Time = 77 ms | ResponseCode : 200
+Counter=1000Joins=0 Response Time = 84 ms | ResponseCode : 200
+--------------JOINS: 0--------------
+Counter=10000Joins=0 Response Time = 242 ms | ResponseCode : 200
+Counter=10000Joins=0 Response Time = 289 ms | ResponseCode : 200
+Counter=10000Joins=0 Response Time = 227 ms | ResponseCode : 200
+Counter=10000Joins=0 Response Time = 242 ms | ResponseCode : 200
+Counter=10000Joins=0 Response Time = 239 ms | ResponseCode : 200
+Counter=10000Joins=0 Response Time = 230 ms | ResponseCode : 200
+Counter=10000Joins=0 Response Time = 249 ms | ResponseCode : 200
+Counter=10000Joins=0 Response Time = 250 ms | ResponseCode : 200
+Counter=10000Joins=0 Response Time = 239 ms | ResponseCode : 200
+Counter=10000Joins=0 Response Time = 230 ms | ResponseCode : 200
+Counter=10000Joins=0 Response Time = 240 ms | ResponseCode : 200
+Counter=10000Joins=0 Response Time = 247 ms | ResponseCode : 200
+Counter=10000Joins=0 Response Time = 234 ms | ResponseCode : 200
+Counter=10000Joins=0 Response Time = 241 ms | ResponseCode : 200
+Counter=10000Joins=0 Response Time = 240 ms | ResponseCode : 200
+Counter=10000Joins=0 Response Time = 244 ms | ResponseCode : 200
+Counter=10000Joins=0 Response Time = 243 ms | ResponseCode : 200
+Counter=10000Joins=0 Response Time = 233 ms | ResponseCode : 200
+Counter=10000Joins=0 Response Time = 254 ms | ResponseCode : 200
+Counter=10000Joins=0 Response Time = 278 ms | ResponseCode : 200
+Counter=10000Joins=0 Response Time = 312 ms | ResponseCode : 200
+Counter=10000Joins=0 Response Time = 251 ms | ResponseCode : 200
+Counter=10000Joins=0 Response Time = 234 ms | ResponseCode : 200
+Counter=10000Joins=0 Response Time = 234 ms | ResponseCode : 200
+Counter=10000Joins=0 Response Time = 247 ms | ResponseCode : 200
+Counter=10000Joins=0 Response Time = 229 ms | ResponseCode : 200
+Counter=10000Joins=0 Response Time = 257 ms | ResponseCode : 200
+Counter=10000Joins=0 Response Time = 270 ms | ResponseCode : 200
+Counter=10000Joins=0 Response Time = 229 ms | ResponseCode : 200
+Counter=10000Joins=0 Response Time = 236 ms | ResponseCode : 200
+Counter=10000Joins=0 Response Time = 228 ms | ResponseCode : 200
+Counter=10000Joins=0 Response Time = 229 ms | ResponseCode : 200
+Counter=10000Joins=0 Response Time = 230 ms | ResponseCode : 200
+Counter=10000Joins=0 Response Time = 230 ms | ResponseCode : 200
+Counter=10000Joins=0 Response Time = 231 ms | ResponseCode : 200
+Counter=10000Joins=0 Response Time = 260 ms | ResponseCode : 200
+Counter=10000Joins=0 Response Time = 224 ms | ResponseCode : 200
+Counter=10000Joins=0 Response Time = 227 ms | ResponseCode : 200
+Counter=10000Joins=0 Response Time = 232 ms | ResponseCode : 200
+Counter=10000Joins=0 Response Time = 254 ms | ResponseCode : 200
+Counter=10000Joins=0 Response Time = 250 ms | ResponseCode : 200
+Counter=10000Joins=0 Response Time = 304 ms | ResponseCode : 200
+Counter=10000Joins=0 Response Time = 239 ms | ResponseCode : 200
+Counter=10000Joins=0 Response Time = 256 ms | ResponseCode : 200
+Counter=10000Joins=0 Response Time = 263 ms | ResponseCode : 200
+Counter=10000Joins=0 Response Time = 269 ms | ResponseCode : 200
+Counter=10000Joins=0 Response Time = 251 ms | ResponseCode : 200
+Counter=10000Joins=0 Response Time = 241 ms | ResponseCode : 200
+Counter=10000Joins=0 Response Time = 228 ms | ResponseCode : 200
+Counter=10000Joins=0 Response Time = 239 ms | ResponseCode : 200
+--------------JOINS: 0--------------
+Counter=100000Joins=0 Response Time = 1894 ms | ResponseCode : 200
+Counter=100000Joins=0 Response Time = 1831 ms | ResponseCode : 200
+Counter=100000Joins=0 Response Time = 1883 ms | ResponseCode : 200
+Counter=100000Joins=0 Response Time = 1812 ms | ResponseCode : 200
+Counter=100000Joins=0 Response Time = 1886 ms | ResponseCode : 200
+Counter=100000Joins=0 Response Time = 1887 ms | ResponseCode : 200
+Counter=100000Joins=0 Response Time = 1882 ms | ResponseCode : 200
+Counter=100000Joins=0 Response Time = 1963 ms | ResponseCode : 200
+Counter=100000Joins=0 Response Time = 1916 ms | ResponseCode : 200
+Counter=100000Joins=0 Response Time = 1904 ms | ResponseCode : 200
+Counter=100000Joins=0 Response Time = 1990 ms | ResponseCode : 200
+Counter=100000Joins=0 Response Time = 1916 ms | ResponseCode : 200
+Counter=100000Joins=0 Response Time = 1934 ms | ResponseCode : 200
+Counter=100000Joins=0 Response Time = 1899 ms | ResponseCode : 200
+Counter=100000Joins=0 Response Time = 1873 ms | ResponseCode : 200
+Counter=100000Joins=0 Response Time = 1823 ms | ResponseCode : 200
+Counter=100000Joins=0 Response Time = 1865 ms | ResponseCode : 200
+Counter=100000Joins=0 Response Time = 1830 ms | ResponseCode : 200
+Counter=100000Joins=0 Response Time = 1754 ms | ResponseCode : 200
+Counter=100000Joins=0 Response Time = 1784 ms | ResponseCode : 200
+Counter=100000Joins=0 Response Time = 1848 ms | ResponseCode : 200
+Counter=100000Joins=0 Response Time = 1851 ms | ResponseCode : 200
+Counter=100000Joins=0 Response Time = 1802 ms | ResponseCode : 200
+Counter=100000Joins=0 Response Time = 1815 ms | ResponseCode : 200
+Counter=100000Joins=0 Response Time = 1799 ms | ResponseCode : 200
+Counter=100000Joins=0 Response Time = 1819 ms | ResponseCode : 200
+Counter=100000Joins=0 Response Time = 1760 ms | ResponseCode : 200
+Counter=100000Joins=0 Response Time = 1805 ms | ResponseCode : 200
+Counter=100000Joins=0 Response Time = 1740 ms | ResponseCode : 200
+Counter=100000Joins=0 Response Time = 1782 ms | ResponseCode : 200
+Counter=100000Joins=0 Response Time = 1790 ms | ResponseCode : 200
+Counter=100000Joins=0 Response Time = 1769 ms | ResponseCode : 200
+Counter=100000Joins=0 Response Time = 1840 ms | ResponseCode : 200
+Counter=100000Joins=0 Response Time = 1818 ms | ResponseCode : 200
+Counter=100000Joins=0 Response Time = 1727 ms | ResponseCode : 200
+Counter=100000Joins=0 Response Time = 1785 ms | ResponseCode : 200
+Counter=100000Joins=0 Response Time = 1849 ms | ResponseCode : 200
+Counter=100000Joins=0 Response Time = 1777 ms | ResponseCode : 200
+Counter=100000Joins=0 Response Time = 1822 ms | ResponseCode : 200
+Counter=100000Joins=0 Response Time = 1810 ms | ResponseCode : 200
+Counter=100000Joins=0 Response Time = 1748 ms | ResponseCode : 200
+Counter=100000Joins=0 Response Time = 1761 ms | ResponseCode : 200
+Counter=100000Joins=0 Response Time = 1768 ms | ResponseCode : 200
+Counter=100000Joins=0 Response Time = 1733 ms | ResponseCode : 200
+Counter=100000Joins=0 Response Time = 1758 ms | ResponseCode : 200
+Counter=100000Joins=0 Response Time = 1811 ms | ResponseCode : 200
+Counter=100000Joins=0 Response Time = 1732 ms | ResponseCode : 200
+Counter=100000Joins=0 Response Time = 1780 ms | ResponseCode : 200
+Counter=100000Joins=0 Response Time = 1816 ms | ResponseCode : 200
+Counter=100000Joins=0 Response Time = 1778 ms | ResponseCode : 200
+--------------JOINS: 1--------------
+Counter=1Joins=1 Response Time = 95 ms | ResponseCode : 200
+Counter=1Joins=1 Response Time = 180 ms | ResponseCode : 200
+Counter=1Joins=1 Response Time = 92 ms | ResponseCode : 200
+Counter=1Joins=1 Response Time = 178 ms | ResponseCode : 200
+Counter=1Joins=1 Response Time = 91 ms | ResponseCode : 200
+Counter=1Joins=1 Response Time = 176 ms | ResponseCode : 200
+Counter=1Joins=1 Response Time = 91 ms | ResponseCode : 200
+Counter=1Joins=1 Response Time = 92 ms | ResponseCode : 200
+Counter=1Joins=1 Response Time = 93 ms | ResponseCode : 200
+Counter=1Joins=1 Response Time = 94 ms | ResponseCode : 200
+Counter=1Joins=1 Response Time = 92 ms | ResponseCode : 200
+Counter=1Joins=1 Response Time = 93 ms | ResponseCode : 200
+Counter=1Joins=1 Response Time = 93 ms | ResponseCode : 200
+Counter=1Joins=1 Response Time = 174 ms | ResponseCode : 200
+Counter=1Joins=1 Response Time = 97 ms | ResponseCode : 200
+Counter=1Joins=1 Response Time = 94 ms | ResponseCode : 200
+Counter=1Joins=1 Response Time = 91 ms | ResponseCode : 200
+Counter=1Joins=1 Response Time = 94 ms | ResponseCode : 200
+Counter=1Joins=1 Response Time = 92 ms | ResponseCode : 200
+Counter=1Joins=1 Response Time = 174 ms | ResponseCode : 200
+Counter=1Joins=1 Response Time = 146 ms | ResponseCode : 200
+Counter=1Joins=1 Response Time = 123 ms | ResponseCode : 200
+Counter=1Joins=1 Response Time = 206 ms | ResponseCode : 200
+Counter=1Joins=1 Response Time = 175 ms | ResponseCode : 200
+Counter=1Joins=1 Response Time = 95 ms | ResponseCode : 200
+Counter=1Joins=1 Response Time = 176 ms | ResponseCode : 200
+Counter=1Joins=1 Response Time = 99 ms | ResponseCode : 200
+Counter=1Joins=1 Response Time = 174 ms | ResponseCode : 200
+Counter=1Joins=1 Response Time = 95 ms | ResponseCode : 200
+Counter=1Joins=1 Response Time = 93 ms | ResponseCode : 200
+Counter=1Joins=1 Response Time = 91 ms | ResponseCode : 200
+Counter=1Joins=1 Response Time = 93 ms | ResponseCode : 200
+Counter=1Joins=1 Response Time = 174 ms | ResponseCode : 200
+Counter=1Joins=1 Response Time = 93 ms | ResponseCode : 200
+Counter=1Joins=1 Response Time = 94 ms | ResponseCode : 200
+Counter=1Joins=1 Response Time = 90 ms | ResponseCode : 200
+Counter=1Joins=1 Response Time = 91 ms | ResponseCode : 200
+Counter=1Joins=1 Response Time = 94 ms | ResponseCode : 200
+Counter=1Joins=1 Response Time = 92 ms | ResponseCode : 200
+Counter=1Joins=1 Response Time = 93 ms | ResponseCode : 200
+Counter=1Joins=1 Response Time = 92 ms | ResponseCode : 200
+Counter=1Joins=1 Response Time = 92 ms | ResponseCode : 200
+Counter=1Joins=1 Response Time = 176 ms | ResponseCode : 200
+Counter=1Joins=1 Response Time = 92 ms | ResponseCode : 200
+Counter=1Joins=1 Response Time = 94 ms | ResponseCode : 200
+Counter=1Joins=1 Response Time = 91 ms | ResponseCode : 200
+Counter=1Joins=1 Response Time = 92 ms | ResponseCode : 200
+Counter=1Joins=1 Response Time = 94 ms | ResponseCode : 200
+Counter=1Joins=1 Response Time = 95 ms | ResponseCode : 200
+Counter=1Joins=1 Response Time = 92 ms | ResponseCode : 200
+--------------JOINS: 1--------------
+Counter=100Joins=1 Response Time = 154 ms | ResponseCode : 200
+Counter=100Joins=1 Response Time = 111 ms | ResponseCode : 200
+Counter=100Joins=1 Response Time = 121 ms | ResponseCode : 200
+Counter=100Joins=1 Response Time = 108 ms | ResponseCode : 200
+Counter=100Joins=1 Response Time = 104 ms | ResponseCode : 200
+Counter=100Joins=1 Response Time = 109 ms | ResponseCode : 200
+Counter=100Joins=1 Response Time = 104 ms | ResponseCode : 200
+Counter=100Joins=1 Response Time = 105 ms | ResponseCode : 200
+Counter=100Joins=1 Response Time = 102 ms | ResponseCode : 200
+Counter=100Joins=1 Response Time = 183 ms | ResponseCode : 200
+Counter=100Joins=1 Response Time = 100 ms | ResponseCode : 200
+Counter=100Joins=1 Response Time = 105 ms | ResponseCode : 200
+Counter=100Joins=1 Response Time = 184 ms | ResponseCode : 200
+Counter=100Joins=1 Response Time = 101 ms | ResponseCode : 200
+Counter=100Joins=1 Response Time = 103 ms | ResponseCode : 200
+Counter=100Joins=1 Response Time = 102 ms | ResponseCode : 200
+Counter=100Joins=1 Response Time = 103 ms | ResponseCode : 200
+Counter=100Joins=1 Response Time = 102 ms | ResponseCode : 200
+Counter=100Joins=1 Response Time = 99 ms | ResponseCode : 200
+Counter=100Joins=1 Response Time = 98 ms | ResponseCode : 200
+Counter=100Joins=1 Response Time = 186 ms | ResponseCode : 200
+Counter=100Joins=1 Response Time = 105 ms | ResponseCode : 200
+Counter=100Joins=1 Response Time = 104 ms | ResponseCode : 200
+Counter=100Joins=1 Response Time = 185 ms | ResponseCode : 200
+Counter=100Joins=1 Response Time = 105 ms | ResponseCode : 200
+Counter=100Joins=1 Response Time = 103 ms | ResponseCode : 200
+Counter=100Joins=1 Response Time = 102 ms | ResponseCode : 200
+Counter=100Joins=1 Response Time = 186 ms | ResponseCode : 200
+Counter=100Joins=1 Response Time = 100 ms | ResponseCode : 200
+Counter=100Joins=1 Response Time = 104 ms | ResponseCode : 200
+Counter=100Joins=1 Response Time = 103 ms | ResponseCode : 200
+Counter=100Joins=1 Response Time = 185 ms | ResponseCode : 200
+Counter=100Joins=1 Response Time = 102 ms | ResponseCode : 200
+Counter=100Joins=1 Response Time = 99 ms | ResponseCode : 200
+Counter=100Joins=1 Response Time = 101 ms | ResponseCode : 200
+Counter=100Joins=1 Response Time = 112 ms | ResponseCode : 200
+Counter=100Joins=1 Response Time = 158 ms | ResponseCode : 200
+Counter=100Joins=1 Response Time = 125 ms | ResponseCode : 200
+Counter=100Joins=1 Response Time = 108 ms | ResponseCode : 200
+Counter=100Joins=1 Response Time = 102 ms | ResponseCode : 200
+Counter=100Joins=1 Response Time = 102 ms | ResponseCode : 200
+Counter=100Joins=1 Response Time = 101 ms | ResponseCode : 200
+Counter=100Joins=1 Response Time = 186 ms | ResponseCode : 200
+Counter=100Joins=1 Response Time = 101 ms | ResponseCode : 200
+Counter=100Joins=1 Response Time = 102 ms | ResponseCode : 200
+Counter=100Joins=1 Response Time = 98 ms | ResponseCode : 200
+Counter=100Joins=1 Response Time = 99 ms | ResponseCode : 200
+Counter=100Joins=1 Response Time = 103 ms | ResponseCode : 200
+Counter=100Joins=1 Response Time = 103 ms | ResponseCode : 200
+Counter=100Joins=1 Response Time = 102 ms | ResponseCode : 200
+--------------JOINS: 1--------------
+Counter=1000Joins=1 Response Time = 127 ms | ResponseCode : 200
+Counter=1000Joins=1 Response Time = 136 ms | ResponseCode : 200
+Counter=1000Joins=1 Response Time = 120 ms | ResponseCode : 200
+Counter=1000Joins=1 Response Time = 119 ms | ResponseCode : 200
+Counter=1000Joins=1 Response Time = 199 ms | ResponseCode : 200
+Counter=1000Joins=1 Response Time = 130 ms | ResponseCode : 200
+Counter=1000Joins=1 Response Time = 115 ms | ResponseCode : 200
+Counter=1000Joins=1 Response Time = 217 ms | ResponseCode : 200
+Counter=1000Joins=1 Response Time = 128 ms | ResponseCode : 200
+Counter=1000Joins=1 Response Time = 129 ms | ResponseCode : 200
+Counter=1000Joins=1 Response Time = 134 ms | ResponseCode : 200
+Counter=1000Joins=1 Response Time = 203 ms | ResponseCode : 200
+Counter=1000Joins=1 Response Time = 116 ms | ResponseCode : 200
+Counter=1000Joins=1 Response Time = 209 ms | ResponseCode : 200
+Counter=1000Joins=1 Response Time = 115 ms | ResponseCode : 200
+Counter=1000Joins=1 Response Time = 116 ms | ResponseCode : 200
+Counter=1000Joins=1 Response Time = 131 ms | ResponseCode : 200
+Counter=1000Joins=1 Response Time = 123 ms | ResponseCode : 200
+Counter=1000Joins=1 Response Time = 135 ms | ResponseCode : 200
+Counter=1000Joins=1 Response Time = 118 ms | ResponseCode : 200
+Counter=1000Joins=1 Response Time = 197 ms | ResponseCode : 200
+Counter=1000Joins=1 Response Time = 130 ms | ResponseCode : 200
+Counter=1000Joins=1 Response Time = 122 ms | ResponseCode : 200
+Counter=1000Joins=1 Response Time = 146 ms | ResponseCode : 200
+Counter=1000Joins=1 Response Time = 239 ms | ResponseCode : 200
+Counter=1000Joins=1 Response Time = 149 ms | ResponseCode : 200
+Counter=1000Joins=1 Response Time = 118 ms | ResponseCode : 200
+Counter=1000Joins=1 Response Time = 129 ms | ResponseCode : 200
+Counter=1000Joins=1 Response Time = 114 ms | ResponseCode : 200
+Counter=1000Joins=1 Response Time = 221 ms | ResponseCode : 200
+Counter=1000Joins=1 Response Time = 135 ms | ResponseCode : 200
+Counter=1000Joins=1 Response Time = 201 ms | ResponseCode : 200
+Counter=1000Joins=1 Response Time = 116 ms | ResponseCode : 200
+Counter=1000Joins=1 Response Time = 121 ms | ResponseCode : 200
+Counter=1000Joins=1 Response Time = 115 ms | ResponseCode : 200
+Counter=1000Joins=1 Response Time = 122 ms | ResponseCode : 200
+Counter=1000Joins=1 Response Time = 120 ms | ResponseCode : 200
+Counter=1000Joins=1 Response Time = 236 ms | ResponseCode : 200
+Counter=1000Joins=1 Response Time = 147 ms | ResponseCode : 200
+Counter=1000Joins=1 Response Time = 122 ms | ResponseCode : 200
+Counter=1000Joins=1 Response Time = 120 ms | ResponseCode : 200
+Counter=1000Joins=1 Response Time = 118 ms | ResponseCode : 200
+Counter=1000Joins=1 Response Time = 122 ms | ResponseCode : 200
+Counter=1000Joins=1 Response Time = 114 ms | ResponseCode : 200
+Counter=1000Joins=1 Response Time = 130 ms | ResponseCode : 200
+Counter=1000Joins=1 Response Time = 114 ms | ResponseCode : 200
+Counter=1000Joins=1 Response Time = 202 ms | ResponseCode : 200
+Counter=1000Joins=1 Response Time = 211 ms | ResponseCode : 200
+Counter=1000Joins=1 Response Time = 129 ms | ResponseCode : 200
+Counter=1000Joins=1 Response Time = 211 ms | ResponseCode : 200
+--------------JOINS: 1--------------
+Counter=10000Joins=1 Response Time = 313 ms | ResponseCode : 200
+Counter=10000Joins=1 Response Time = 505 ms | ResponseCode : 200
+Counter=10000Joins=1 Response Time = 270 ms | ResponseCode : 200
+Counter=10000Joins=1 Response Time = 351 ms | ResponseCode : 200
+Counter=10000Joins=1 Response Time = 293 ms | ResponseCode : 200
+Counter=10000Joins=1 Response Time = 276 ms | ResponseCode : 200
+Counter=10000Joins=1 Response Time = 353 ms | ResponseCode : 200
+Counter=10000Joins=1 Response Time = 269 ms | ResponseCode : 200
+Counter=10000Joins=1 Response Time = 292 ms | ResponseCode : 200
+Counter=10000Joins=1 Response Time = 368 ms | ResponseCode : 200
+Counter=10000Joins=1 Response Time = 351 ms | ResponseCode : 200
+Counter=10000Joins=1 Response Time = 287 ms | ResponseCode : 200
+Counter=10000Joins=1 Response Time = 275 ms | ResponseCode : 200
+Counter=10000Joins=1 Response Time = 351 ms | ResponseCode : 200
+Counter=10000Joins=1 Response Time = 271 ms | ResponseCode : 200
+Counter=10000Joins=1 Response Time = 294 ms | ResponseCode : 200
+Counter=10000Joins=1 Response Time = 298 ms | ResponseCode : 200
+Counter=10000Joins=1 Response Time = 272 ms | ResponseCode : 200
+Counter=10000Joins=1 Response Time = 282 ms | ResponseCode : 200
+Counter=10000Joins=1 Response Time = 274 ms | ResponseCode : 200
+Counter=10000Joins=1 Response Time = 365 ms | ResponseCode : 200
+Counter=10000Joins=1 Response Time = 275 ms | ResponseCode : 200
+Counter=10000Joins=1 Response Time = 358 ms | ResponseCode : 200
+Counter=10000Joins=1 Response Time = 282 ms | ResponseCode : 200
+Counter=10000Joins=1 Response Time = 269 ms | ResponseCode : 200
+Counter=10000Joins=1 Response Time = 275 ms | ResponseCode : 200
+Counter=10000Joins=1 Response Time = 278 ms | ResponseCode : 200
+Counter=10000Joins=1 Response Time = 272 ms | ResponseCode : 200
+Counter=10000Joins=1 Response Time = 350 ms | ResponseCode : 200
+Counter=10000Joins=1 Response Time = 284 ms | ResponseCode : 200
+Counter=10000Joins=1 Response Time = 276 ms | ResponseCode : 200
+Counter=10000Joins=1 Response Time = 283 ms | ResponseCode : 200
+Counter=10000Joins=1 Response Time = 267 ms | ResponseCode : 200
+Counter=10000Joins=1 Response Time = 281 ms | ResponseCode : 200
+Counter=10000Joins=1 Response Time = 285 ms | ResponseCode : 200
+Counter=10000Joins=1 Response Time = 386 ms | ResponseCode : 200
+Counter=10000Joins=1 Response Time = 275 ms | ResponseCode : 200
+Counter=10000Joins=1 Response Time = 280 ms | ResponseCode : 200
+Counter=10000Joins=1 Response Time = 280 ms | ResponseCode : 200
+Counter=10000Joins=1 Response Time = 273 ms | ResponseCode : 200
+Counter=10000Joins=1 Response Time = 287 ms | ResponseCode : 200
+Counter=10000Joins=1 Response Time = 347 ms | ResponseCode : 200
+Counter=10000Joins=1 Response Time = 273 ms | ResponseCode : 200
+Counter=10000Joins=1 Response Time = 272 ms | ResponseCode : 200
+Counter=10000Joins=1 Response Time = 345 ms | ResponseCode : 200
+Counter=10000Joins=1 Response Time = 361 ms | ResponseCode : 200
+Counter=10000Joins=1 Response Time = 366 ms | ResponseCode : 200
+Counter=10000Joins=1 Response Time = 276 ms | ResponseCode : 200
+Counter=10000Joins=1 Response Time = 292 ms | ResponseCode : 200
+Counter=10000Joins=1 Response Time = 290 ms | ResponseCode : 200
+--------------JOINS: 1--------------
+Counter=100000Joins=1 Response Time = 1924 ms | ResponseCode : 200
+Counter=100000Joins=1 Response Time = 1805 ms | ResponseCode : 200
+Counter=100000Joins=1 Response Time = 1846 ms | ResponseCode : 200
+Counter=100000Joins=1 Response Time = 1864 ms | ResponseCode : 200
+Counter=100000Joins=1 Response Time = 1820 ms | ResponseCode : 200
+Counter=100000Joins=1 Response Time = 1792 ms | ResponseCode : 200
+Counter=100000Joins=1 Response Time = 1815 ms | ResponseCode : 200
+Counter=100000Joins=1 Response Time = 1777 ms | ResponseCode : 200
+Counter=100000Joins=1 Response Time = 1831 ms | ResponseCode : 200
+Counter=100000Joins=1 Response Time = 1849 ms | ResponseCode : 200
+Counter=100000Joins=1 Response Time = 1785 ms | ResponseCode : 200
+Counter=100000Joins=1 Response Time = 1932 ms | ResponseCode : 200
+Counter=100000Joins=1 Response Time = 1864 ms | ResponseCode : 200
+Counter=100000Joins=1 Response Time = 1792 ms | ResponseCode : 200
+Counter=100000Joins=1 Response Time = 1800 ms | ResponseCode : 200
+Counter=100000Joins=1 Response Time = 1826 ms | ResponseCode : 200
+Counter=100000Joins=1 Response Time = 1851 ms | ResponseCode : 200
+Counter=100000Joins=1 Response Time = 1816 ms | ResponseCode : 200
+Counter=100000Joins=1 Response Time = 1821 ms | ResponseCode : 200
+Counter=100000Joins=1 Response Time = 1786 ms | ResponseCode : 200
+Counter=100000Joins=1 Response Time = 1829 ms | ResponseCode : 200
+Counter=100000Joins=1 Response Time = 1832 ms | ResponseCode : 200
+Counter=100000Joins=1 Response Time = 1814 ms | ResponseCode : 200
+Counter=100000Joins=1 Response Time = 1834 ms | ResponseCode : 200
+Counter=100000Joins=1 Response Time = 1901 ms | ResponseCode : 200
+Counter=100000Joins=1 Response Time = 1776 ms | ResponseCode : 200
+Counter=100000Joins=1 Response Time = 1870 ms | ResponseCode : 200
+Counter=100000Joins=1 Response Time = 1900 ms | ResponseCode : 200
+Counter=100000Joins=1 Response Time = 1859 ms | ResponseCode : 200
+Counter=100000Joins=1 Response Time = 1850 ms | ResponseCode : 200
+Counter=100000Joins=1 Response Time = 1835 ms | ResponseCode : 200
+Counter=100000Joins=1 Response Time = 1819 ms | ResponseCode : 200
+Counter=100000Joins=1 Response Time = 1840 ms | ResponseCode : 200
+Counter=100000Joins=1 Response Time = 1864 ms | ResponseCode : 200
+Counter=100000Joins=1 Response Time = 1804 ms | ResponseCode : 200
+Counter=100000Joins=1 Response Time = 1799 ms | ResponseCode : 200
+Counter=100000Joins=1 Response Time = 1861 ms | ResponseCode : 200
+Counter=100000Joins=1 Response Time = 1787 ms | ResponseCode : 200
+Counter=100000Joins=1 Response Time = 1795 ms | ResponseCode : 200
+Counter=100000Joins=1 Response Time = 1883 ms | ResponseCode : 200
+Counter=100000Joins=1 Response Time = 1874 ms | ResponseCode : 200
+Counter=100000Joins=1 Response Time = 1798 ms | ResponseCode : 200
+Counter=100000Joins=1 Response Time = 1875 ms | ResponseCode : 200
+Counter=100000Joins=1 Response Time = 1863 ms | ResponseCode : 200
+Counter=100000Joins=1 Response Time = 1839 ms | ResponseCode : 200
+Counter=100000Joins=1 Response Time = 1847 ms | ResponseCode : 200
+Counter=100000Joins=1 Response Time = 1819 ms | ResponseCode : 200
+Counter=100000Joins=1 Response Time = 1803 ms | ResponseCode : 200
+Counter=100000Joins=1 Response Time = 1856 ms | ResponseCode : 200
+Counter=100000Joins=1 Response Time = 1825 ms | ResponseCode : 200
+--------------JOINS: 2--------------
+Counter=1Joins=2 Response Time = 63 ms | ResponseCode : 200
+Counter=1Joins=2 Response Time = 57 ms | ResponseCode : 200
+Counter=1Joins=2 Response Time = 56 ms | ResponseCode : 200
+Counter=1Joins=2 Response Time = 57 ms | ResponseCode : 200
+Counter=1Joins=2 Response Time = 56 ms | ResponseCode : 200
+Counter=1Joins=2 Response Time = 56 ms | ResponseCode : 200
+Counter=1Joins=2 Response Time = 56 ms | ResponseCode : 200
+Counter=1Joins=2 Response Time = 56 ms | ResponseCode : 200
+Counter=1Joins=2 Response Time = 60 ms | ResponseCode : 200
+Counter=1Joins=2 Response Time = 57 ms | ResponseCode : 200
+Counter=1Joins=2 Response Time = 57 ms | ResponseCode : 200
+Counter=1Joins=2 Response Time = 56 ms | ResponseCode : 200
+Counter=1Joins=2 Response Time = 56 ms | ResponseCode : 200
+Counter=1Joins=2 Response Time = 56 ms | ResponseCode : 200
+Counter=1Joins=2 Response Time = 56 ms | ResponseCode : 200
+Counter=1Joins=2 Response Time = 55 ms | ResponseCode : 200
+Counter=1Joins=2 Response Time = 56 ms | ResponseCode : 200
+Counter=1Joins=2 Response Time = 56 ms | ResponseCode : 200
+Counter=1Joins=2 Response Time = 63 ms | ResponseCode : 200
+Counter=1Joins=2 Response Time = 57 ms | ResponseCode : 200
+Counter=1Joins=2 Response Time = 57 ms | ResponseCode : 200
+Counter=1Joins=2 Response Time = 56 ms | ResponseCode : 200
+Counter=1Joins=2 Response Time = 57 ms | ResponseCode : 200
+Counter=1Joins=2 Response Time = 56 ms | ResponseCode : 200
+Counter=1Joins=2 Response Time = 56 ms | ResponseCode : 200
+Counter=1Joins=2 Response Time = 56 ms | ResponseCode : 200
+Counter=1Joins=2 Response Time = 60 ms | ResponseCode : 200
+Counter=1Joins=2 Response Time = 57 ms | ResponseCode : 200
+Counter=1Joins=2 Response Time = 56 ms | ResponseCode : 200
+Counter=1Joins=2 Response Time = 56 ms | ResponseCode : 200
+Counter=1Joins=2 Response Time = 57 ms | ResponseCode : 200
+Counter=1Joins=2 Response Time = 56 ms | ResponseCode : 200
+Counter=1Joins=2 Response Time = 56 ms | ResponseCode : 200
+Counter=1Joins=2 Response Time = 61 ms | ResponseCode : 200
+Counter=1Joins=2 Response Time = 56 ms | ResponseCode : 200
+Counter=1Joins=2 Response Time = 57 ms | ResponseCode : 200
+Counter=1Joins=2 Response Time = 56 ms | ResponseCode : 200
+Counter=1Joins=2 Response Time = 56 ms | ResponseCode : 200
+Counter=1Joins=2 Response Time = 55 ms | ResponseCode : 200
+Counter=1Joins=2 Response Time = 56 ms | ResponseCode : 200
+Counter=1Joins=2 Response Time = 56 ms | ResponseCode : 200
+Counter=1Joins=2 Response Time = 56 ms | ResponseCode : 200
+Counter=1Joins=2 Response Time = 56 ms | ResponseCode : 200
+Counter=1Joins=2 Response Time = 56 ms | ResponseCode : 200
+Counter=1Joins=2 Response Time = 57 ms | ResponseCode : 200
+Counter=1Joins=2 Response Time = 58 ms | ResponseCode : 200
+Counter=1Joins=2 Response Time = 60 ms | ResponseCode : 200
+Counter=1Joins=2 Response Time = 56 ms | ResponseCode : 200
+Counter=1Joins=2 Response Time = 59 ms | ResponseCode : 200
+Counter=1Joins=2 Response Time = 59 ms | ResponseCode : 200
+--------------JOINS: 2--------------
+Counter=100Joins=2 Response Time = 69 ms | ResponseCode : 200
+Counter=100Joins=2 Response Time = 67 ms | ResponseCode : 200
+Counter=100Joins=2 Response Time = 66 ms | ResponseCode : 200
+Counter=100Joins=2 Response Time = 68 ms | ResponseCode : 200
+Counter=100Joins=2 Response Time = 65 ms | ResponseCode : 200
+Counter=100Joins=2 Response Time = 67 ms | ResponseCode : 200
+Counter=100Joins=2 Response Time = 67 ms | ResponseCode : 200
+Counter=100Joins=2 Response Time = 67 ms | ResponseCode : 200
+Counter=100Joins=2 Response Time = 67 ms | ResponseCode : 200
+Counter=100Joins=2 Response Time = 67 ms | ResponseCode : 200
+Counter=100Joins=2 Response Time = 67 ms | ResponseCode : 200
+Counter=100Joins=2 Response Time = 69 ms | ResponseCode : 200
+Counter=100Joins=2 Response Time = 67 ms | ResponseCode : 200
+Counter=100Joins=2 Response Time = 64 ms | ResponseCode : 200
+Counter=100Joins=2 Response Time = 67 ms | ResponseCode : 200
+Counter=100Joins=2 Response Time = 64 ms | ResponseCode : 200
+Counter=100Joins=2 Response Time = 67 ms | ResponseCode : 200
+Counter=100Joins=2 Response Time = 67 ms | ResponseCode : 200
+Counter=100Joins=2 Response Time = 66 ms | ResponseCode : 200
+Counter=100Joins=2 Response Time = 67 ms | ResponseCode : 200
+Counter=100Joins=2 Response Time = 66 ms | ResponseCode : 200
+Counter=100Joins=2 Response Time = 67 ms | ResponseCode : 200
+Counter=100Joins=2 Response Time = 65 ms | ResponseCode : 200
+Counter=100Joins=2 Response Time = 64 ms | ResponseCode : 200
+Counter=100Joins=2 Response Time = 67 ms | ResponseCode : 200
+Counter=100Joins=2 Response Time = 63 ms | ResponseCode : 200
+Counter=100Joins=2 Response Time = 69 ms | ResponseCode : 200
+Counter=100Joins=2 Response Time = 72 ms | ResponseCode : 200
+Counter=100Joins=2 Response Time = 67 ms | ResponseCode : 200
+Counter=100Joins=2 Response Time = 66 ms | ResponseCode : 200
+Counter=100Joins=2 Response Time = 64 ms | ResponseCode : 200
+Counter=100Joins=2 Response Time = 69 ms | ResponseCode : 200
+Counter=100Joins=2 Response Time = 64 ms | ResponseCode : 200
+Counter=100Joins=2 Response Time = 65 ms | ResponseCode : 200
+Counter=100Joins=2 Response Time = 66 ms | ResponseCode : 200
+Counter=100Joins=2 Response Time = 67 ms | ResponseCode : 200
+Counter=100Joins=2 Response Time = 64 ms | ResponseCode : 200
+Counter=100Joins=2 Response Time = 67 ms | ResponseCode : 200
+Counter=100Joins=2 Response Time = 66 ms | ResponseCode : 200
+Counter=100Joins=2 Response Time = 67 ms | ResponseCode : 200
+Counter=100Joins=2 Response Time = 67 ms | ResponseCode : 200
+Counter=100Joins=2 Response Time = 69 ms | ResponseCode : 200
+Counter=100Joins=2 Response Time = 75 ms | ResponseCode : 200
+Counter=100Joins=2 Response Time = 75 ms | ResponseCode : 200
+Counter=100Joins=2 Response Time = 72 ms | ResponseCode : 200
+Counter=100Joins=2 Response Time = 75 ms | ResponseCode : 200
+Counter=100Joins=2 Response Time = 74 ms | ResponseCode : 200
+Counter=100Joins=2 Response Time = 66 ms | ResponseCode : 200
+Counter=100Joins=2 Response Time = 67 ms | ResponseCode : 200
+Counter=100Joins=2 Response Time = 64 ms | ResponseCode : 200
+--------------JOINS: 2--------------
+Counter=1000Joins=2 Response Time = 115 ms | ResponseCode : 200
+Counter=1000Joins=2 Response Time = 87 ms | ResponseCode : 200
+Counter=1000Joins=2 Response Time = 85 ms | ResponseCode : 200
+Counter=1000Joins=2 Response Time = 101 ms | ResponseCode : 200
+Counter=1000Joins=2 Response Time = 85 ms | ResponseCode : 200
+Counter=1000Joins=2 Response Time = 92 ms | ResponseCode : 200
+Counter=1000Joins=2 Response Time = 92 ms | ResponseCode : 200
+Counter=1000Joins=2 Response Time = 92 ms | ResponseCode : 200
+Counter=1000Joins=2 Response Time = 98 ms | ResponseCode : 200
+Counter=1000Joins=2 Response Time = 99 ms | ResponseCode : 200
+Counter=1000Joins=2 Response Time = 85 ms | ResponseCode : 200
+Counter=1000Joins=2 Response Time = 94 ms | ResponseCode : 200
+Counter=1000Joins=2 Response Time = 107 ms | ResponseCode : 200
+Counter=1000Joins=2 Response Time = 120 ms | ResponseCode : 200
+Counter=1000Joins=2 Response Time = 114 ms | ResponseCode : 200
+Counter=1000Joins=2 Response Time = 92 ms | ResponseCode : 200
+Counter=1000Joins=2 Response Time = 113 ms | ResponseCode : 200
+Counter=1000Joins=2 Response Time = 88 ms | ResponseCode : 200
+Counter=1000Joins=2 Response Time = 102 ms | ResponseCode : 200
+Counter=1000Joins=2 Response Time = 120 ms | ResponseCode : 200
+Counter=1000Joins=2 Response Time = 107 ms | ResponseCode : 200
+Counter=1000Joins=2 Response Time = 131 ms | ResponseCode : 200
+Counter=1000Joins=2 Response Time = 98 ms | ResponseCode : 200
+Counter=1000Joins=2 Response Time = 90 ms | ResponseCode : 200
+Counter=1000Joins=2 Response Time = 100 ms | ResponseCode : 200
+Counter=1000Joins=2 Response Time = 98 ms | ResponseCode : 200
+Counter=1000Joins=2 Response Time = 98 ms | ResponseCode : 200
+Counter=1000Joins=2 Response Time = 105 ms | ResponseCode : 200
+Counter=1000Joins=2 Response Time = 90 ms | ResponseCode : 200
+Counter=1000Joins=2 Response Time = 84 ms | ResponseCode : 200
+Counter=1000Joins=2 Response Time = 83 ms | ResponseCode : 200
+Counter=1000Joins=2 Response Time = 98 ms | ResponseCode : 200
+Counter=1000Joins=2 Response Time = 83 ms | ResponseCode : 200
+Counter=1000Joins=2 Response Time = 83 ms | ResponseCode : 200
+Counter=1000Joins=2 Response Time = 97 ms | ResponseCode : 200
+Counter=1000Joins=2 Response Time = 96 ms | ResponseCode : 200
+Counter=1000Joins=2 Response Time = 96 ms | ResponseCode : 200
+Counter=1000Joins=2 Response Time = 84 ms | ResponseCode : 200
+Counter=1000Joins=2 Response Time = 99 ms | ResponseCode : 200
+Counter=1000Joins=2 Response Time = 89 ms | ResponseCode : 200
+Counter=1000Joins=2 Response Time = 90 ms | ResponseCode : 200
+Counter=1000Joins=2 Response Time = 97 ms | ResponseCode : 200
+Counter=1000Joins=2 Response Time = 83 ms | ResponseCode : 200
+Counter=1000Joins=2 Response Time = 84 ms | ResponseCode : 200
+Counter=1000Joins=2 Response Time = 84 ms | ResponseCode : 200
+Counter=1000Joins=2 Response Time = 95 ms | ResponseCode : 200
+Counter=1000Joins=2 Response Time = 84 ms | ResponseCode : 200
+Counter=1000Joins=2 Response Time = 106 ms | ResponseCode : 200
+Counter=1000Joins=2 Response Time = 97 ms | ResponseCode : 200
+Counter=1000Joins=2 Response Time = 96 ms | ResponseCode : 200
+--------------JOINS: 2--------------
+Counter=10000Joins=2 Response Time = 317 ms | ResponseCode : 200
+Counter=10000Joins=2 Response Time = 290 ms | ResponseCode : 200
+Counter=10000Joins=2 Response Time = 292 ms | ResponseCode : 200
+Counter=10000Joins=2 Response Time = 289 ms | ResponseCode : 200
+Counter=10000Joins=2 Response Time = 284 ms | ResponseCode : 200
+Counter=10000Joins=2 Response Time = 291 ms | ResponseCode : 200
+Counter=10000Joins=2 Response Time = 270 ms | ResponseCode : 200
+Counter=10000Joins=2 Response Time = 286 ms | ResponseCode : 200
+Counter=10000Joins=2 Response Time = 287 ms | ResponseCode : 200
+Counter=10000Joins=2 Response Time = 269 ms | ResponseCode : 200
+Counter=10000Joins=2 Response Time = 273 ms | ResponseCode : 200
+Counter=10000Joins=2 Response Time = 287 ms | ResponseCode : 200
+Counter=10000Joins=2 Response Time = 273 ms | ResponseCode : 200
+Counter=10000Joins=2 Response Time = 268 ms | ResponseCode : 200
+Counter=10000Joins=2 Response Time = 297 ms | ResponseCode : 200
+Counter=10000Joins=2 Response Time = 292 ms | ResponseCode : 200
+Counter=10000Joins=2 Response Time = 277 ms | ResponseCode : 200
+Counter=10000Joins=2 Response Time = 290 ms | ResponseCode : 200
+Counter=10000Joins=2 Response Time = 269 ms | ResponseCode : 200
+Counter=10000Joins=2 Response Time = 275 ms | ResponseCode : 200
+Counter=10000Joins=2 Response Time = 285 ms | ResponseCode : 200
+Counter=10000Joins=2 Response Time = 273 ms | ResponseCode : 200
+Counter=10000Joins=2 Response Time = 282 ms | ResponseCode : 200
+Counter=10000Joins=2 Response Time = 282 ms | ResponseCode : 200
+Counter=10000Joins=2 Response Time = 269 ms | ResponseCode : 200
+Counter=10000Joins=2 Response Time = 297 ms | ResponseCode : 200
+Counter=10000Joins=2 Response Time = 298 ms | ResponseCode : 200
+Counter=10000Joins=2 Response Time = 309 ms | ResponseCode : 200
+Counter=10000Joins=2 Response Time = 301 ms | ResponseCode : 200
+Counter=10000Joins=2 Response Time = 307 ms | ResponseCode : 200
+Counter=10000Joins=2 Response Time = 286 ms | ResponseCode : 200
+Counter=10000Joins=2 Response Time = 284 ms | ResponseCode : 200
+Counter=10000Joins=2 Response Time = 286 ms | ResponseCode : 200
+Counter=10000Joins=2 Response Time = 282 ms | ResponseCode : 200
+Counter=10000Joins=2 Response Time = 298 ms | ResponseCode : 200
+Counter=10000Joins=2 Response Time = 280 ms | ResponseCode : 200
+Counter=10000Joins=2 Response Time = 282 ms | ResponseCode : 200
+Counter=10000Joins=2 Response Time = 289 ms | ResponseCode : 200
+Counter=10000Joins=2 Response Time = 294 ms | ResponseCode : 200
+Counter=10000Joins=2 Response Time = 296 ms | ResponseCode : 200
+Counter=10000Joins=2 Response Time = 280 ms | ResponseCode : 200
+Counter=10000Joins=2 Response Time = 281 ms | ResponseCode : 200
+Counter=10000Joins=2 Response Time = 288 ms | ResponseCode : 200
+Counter=10000Joins=2 Response Time = 276 ms | ResponseCode : 200
+Counter=10000Joins=2 Response Time = 273 ms | ResponseCode : 200
+Counter=10000Joins=2 Response Time = 289 ms | ResponseCode : 200
+Counter=10000Joins=2 Response Time = 277 ms | ResponseCode : 200
+Counter=10000Joins=2 Response Time = 270 ms | ResponseCode : 200
+Counter=10000Joins=2 Response Time = 275 ms | ResponseCode : 200
+Counter=10000Joins=2 Response Time = 273 ms | ResponseCode : 200
+--------------JOINS: 2--------------
+Counter=100000Joins=2 Response Time = 1817 ms | ResponseCode : 200
+Counter=100000Joins=2 Response Time = 1817 ms | ResponseCode : 200
+Counter=100000Joins=2 Response Time = 1734 ms | ResponseCode : 200
+Counter=100000Joins=2 Response Time = 1714 ms | ResponseCode : 200
+Counter=100000Joins=2 Response Time = 1728 ms | ResponseCode : 200
+Counter=100000Joins=2 Response Time = 1711 ms | ResponseCode : 200
+Counter=100000Joins=2 Response Time = 1766 ms | ResponseCode : 200
+Counter=100000Joins=2 Response Time = 1811 ms | ResponseCode : 200
+Counter=100000Joins=2 Response Time = 1751 ms | ResponseCode : 200
+Counter=100000Joins=2 Response Time = 1743 ms | ResponseCode : 200
+Counter=100000Joins=2 Response Time = 1704 ms | ResponseCode : 200
+Counter=100000Joins=2 Response Time = 1706 ms | ResponseCode : 200
+Counter=100000Joins=2 Response Time = 1741 ms | ResponseCode : 200
+Counter=100000Joins=2 Response Time = 1722 ms | ResponseCode : 200
+Counter=100000Joins=2 Response Time = 1699 ms | ResponseCode : 200
+Counter=100000Joins=2 Response Time = 1796 ms | ResponseCode : 200
+Counter=100000Joins=2 Response Time = 1717 ms | ResponseCode : 200
+Counter=100000Joins=2 Response Time = 1773 ms | ResponseCode : 200
+Counter=100000Joins=2 Response Time = 1781 ms | ResponseCode : 200
+Counter=100000Joins=2 Response Time = 1691 ms | ResponseCode : 200
+Counter=100000Joins=2 Response Time = 1729 ms | ResponseCode : 200
+Counter=100000Joins=2 Response Time = 1727 ms | ResponseCode : 200
+Counter=100000Joins=2 Response Time = 1721 ms | ResponseCode : 200
+Counter=100000Joins=2 Response Time = 1763 ms | ResponseCode : 200
+Counter=100000Joins=2 Response Time = 1718 ms | ResponseCode : 200
+Counter=100000Joins=2 Response Time = 1744 ms | ResponseCode : 200
+Counter=100000Joins=2 Response Time = 1797 ms | ResponseCode : 200
+Counter=100000Joins=2 Response Time = 1743 ms | ResponseCode : 200
+Counter=100000Joins=2 Response Time = 1764 ms | ResponseCode : 200
+Counter=100000Joins=2 Response Time = 1747 ms | ResponseCode : 200
+Counter=100000Joins=2 Response Time = 1744 ms | ResponseCode : 200
+Counter=100000Joins=2 Response Time = 1774 ms | ResponseCode : 200
+Counter=100000Joins=2 Response Time = 1780 ms | ResponseCode : 200
+Counter=100000Joins=2 Response Time = 1746 ms | ResponseCode : 200
+Counter=100000Joins=2 Response Time = 1742 ms | ResponseCode : 200
+Counter=100000Joins=2 Response Time = 1699 ms | ResponseCode : 200
+Counter=100000Joins=2 Response Time = 1781 ms | ResponseCode : 200
+Counter=100000Joins=2 Response Time = 1740 ms | ResponseCode : 200
+Counter=100000Joins=2 Response Time = 1718 ms | ResponseCode : 200
+Counter=100000Joins=2 Response Time = 1738 ms | ResponseCode : 200
+Counter=100000Joins=2 Response Time = 1771 ms | ResponseCode : 200
+Counter=100000Joins=2 Response Time = 1725 ms | ResponseCode : 200
+Counter=100000Joins=2 Response Time = 1751 ms | ResponseCode : 200
+Counter=100000Joins=2 Response Time = 1744 ms | ResponseCode : 200
+Counter=100000Joins=2 Response Time = 1754 ms | ResponseCode : 200
+Counter=100000Joins=2 Response Time = 1739 ms | ResponseCode : 200
+Counter=100000Joins=2 Response Time = 1738 ms | ResponseCode : 200
+Counter=100000Joins=2 Response Time = 1757 ms | ResponseCode : 200
+Counter=100000Joins=2 Response Time = 1760 ms | ResponseCode : 200
+Counter=100000Joins=2 Response Time = 1740 ms | ResponseCode : 200
+--------------JOINS: 3--------------
+Counter=1Joins=3 Response Time = 62 ms | ResponseCode : 200
+Counter=1Joins=3 Response Time = 56 ms | ResponseCode : 200
+Counter=1Joins=3 Response Time = 55 ms | ResponseCode : 200
+Counter=1Joins=3 Response Time = 56 ms | ResponseCode : 200
+Counter=1Joins=3 Response Time = 54 ms | ResponseCode : 200
+Counter=1Joins=3 Response Time = 55 ms | ResponseCode : 200
+Counter=1Joins=3 Response Time = 54 ms | ResponseCode : 200
+Counter=1Joins=3 Response Time = 54 ms | ResponseCode : 200
+Counter=1Joins=3 Response Time = 57 ms | ResponseCode : 200
+Counter=1Joins=3 Response Time = 55 ms | ResponseCode : 200
+Counter=1Joins=3 Response Time = 54 ms | ResponseCode : 200
+Counter=1Joins=3 Response Time = 58 ms | ResponseCode : 200
+Counter=1Joins=3 Response Time = 55 ms | ResponseCode : 200
+Counter=1Joins=3 Response Time = 55 ms | ResponseCode : 200
+Counter=1Joins=3 Response Time = 55 ms | ResponseCode : 200
+Counter=1Joins=3 Response Time = 54 ms | ResponseCode : 200
+Counter=1Joins=3 Response Time = 56 ms | ResponseCode : 200
+Counter=1Joins=3 Response Time = 56 ms | ResponseCode : 200
+Counter=1Joins=3 Response Time = 54 ms | ResponseCode : 200
+Counter=1Joins=3 Response Time = 55 ms | ResponseCode : 200
+Counter=1Joins=3 Response Time = 55 ms | ResponseCode : 200
+Counter=1Joins=3 Response Time = 54 ms | ResponseCode : 200
+Counter=1Joins=3 Response Time = 55 ms | ResponseCode : 200
+Counter=1Joins=3 Response Time = 55 ms | ResponseCode : 200
+Counter=1Joins=3 Response Time = 54 ms | ResponseCode : 200
+Counter=1Joins=3 Response Time = 55 ms | ResponseCode : 200
+Counter=1Joins=3 Response Time = 57 ms | ResponseCode : 200
+Counter=1Joins=3 Response Time = 54 ms | ResponseCode : 200
+Counter=1Joins=3 Response Time = 55 ms | ResponseCode : 200
+Counter=1Joins=3 Response Time = 55 ms | ResponseCode : 200
+Counter=1Joins=3 Response Time = 54 ms | ResponseCode : 200
+Counter=1Joins=3 Response Time = 54 ms | ResponseCode : 200
+Counter=1Joins=3 Response Time = 54 ms | ResponseCode : 200
+Counter=1Joins=3 Response Time = 55 ms | ResponseCode : 200
+Counter=1Joins=3 Response Time = 55 ms | ResponseCode : 200
+Counter=1Joins=3 Response Time = 54 ms | ResponseCode : 200
+Counter=1Joins=3 Response Time = 54 ms | ResponseCode : 200
+Counter=1Joins=3 Response Time = 55 ms | ResponseCode : 200
+Counter=1Joins=3 Response Time = 57 ms | ResponseCode : 200
+Counter=1Joins=3 Response Time = 55 ms | ResponseCode : 200
+Counter=1Joins=3 Response Time = 55 ms | ResponseCode : 200
+Counter=1Joins=3 Response Time = 54 ms | ResponseCode : 200
+Counter=1Joins=3 Response Time = 55 ms | ResponseCode : 200
+Counter=1Joins=3 Response Time = 54 ms | ResponseCode : 200
+Counter=1Joins=3 Response Time = 55 ms | ResponseCode : 200
+Counter=1Joins=3 Response Time = 55 ms | ResponseCode : 200
+Counter=1Joins=3 Response Time = 55 ms | ResponseCode : 200
+Counter=1Joins=3 Response Time = 54 ms | ResponseCode : 200
+Counter=1Joins=3 Response Time = 54 ms | ResponseCode : 200
+Counter=1Joins=3 Response Time = 61 ms | ResponseCode : 200
+--------------JOINS: 3--------------
+Counter=100Joins=3 Response Time = 70 ms | ResponseCode : 200
+Counter=100Joins=3 Response Time = 65 ms | ResponseCode : 200
+Counter=100Joins=3 Response Time = 63 ms | ResponseCode : 200
+Counter=100Joins=3 Response Time = 64 ms | ResponseCode : 200
+Counter=100Joins=3 Response Time = 65 ms | ResponseCode : 200
+Counter=100Joins=3 Response Time = 63 ms | ResponseCode : 200
+Counter=100Joins=3 Response Time = 65 ms | ResponseCode : 200
+Counter=100Joins=3 Response Time = 65 ms | ResponseCode : 200
+Counter=100Joins=3 Response Time = 70 ms | ResponseCode : 200
+Counter=100Joins=3 Response Time = 66 ms | ResponseCode : 200
+Counter=100Joins=3 Response Time = 65 ms | ResponseCode : 200
+Counter=100Joins=3 Response Time = 63 ms | ResponseCode : 200
+Counter=100Joins=3 Response Time = 65 ms | ResponseCode : 200
+Counter=100Joins=3 Response Time = 63 ms | ResponseCode : 200
+Counter=100Joins=3 Response Time = 62 ms | ResponseCode : 200
+Counter=100Joins=3 Response Time = 62 ms | ResponseCode : 200
+Counter=100Joins=3 Response Time = 64 ms | ResponseCode : 200
+Counter=100Joins=3 Response Time = 62 ms | ResponseCode : 200
+Counter=100Joins=3 Response Time = 65 ms | ResponseCode : 200
+Counter=100Joins=3 Response Time = 66 ms | ResponseCode : 200
+Counter=100Joins=3 Response Time = 69 ms | ResponseCode : 200
+Counter=100Joins=3 Response Time = 70 ms | ResponseCode : 200
+Counter=100Joins=3 Response Time = 82 ms | ResponseCode : 200
+Counter=100Joins=3 Response Time = 74 ms | ResponseCode : 200
+Counter=100Joins=3 Response Time = 72 ms | ResponseCode : 200
+Counter=100Joins=3 Response Time = 74 ms | ResponseCode : 200
+Counter=100Joins=3 Response Time = 72 ms | ResponseCode : 200
+Counter=100Joins=3 Response Time = 64 ms | ResponseCode : 200
+Counter=100Joins=3 Response Time = 65 ms | ResponseCode : 200
+Counter=100Joins=3 Response Time = 65 ms | ResponseCode : 200
+Counter=100Joins=3 Response Time = 65 ms | ResponseCode : 200
+Counter=100Joins=3 Response Time = 62 ms | ResponseCode : 200
+Counter=100Joins=3 Response Time = 63 ms | ResponseCode : 200
+Counter=100Joins=3 Response Time = 62 ms | ResponseCode : 200
+Counter=100Joins=3 Response Time = 63 ms | ResponseCode : 200
+Counter=100Joins=3 Response Time = 65 ms | ResponseCode : 200
+Counter=100Joins=3 Response Time = 67 ms | ResponseCode : 200
+Counter=100Joins=3 Response Time = 65 ms | ResponseCode : 200
+Counter=100Joins=3 Response Time = 65 ms | ResponseCode : 200
+Counter=100Joins=3 Response Time = 64 ms | ResponseCode : 200
+Counter=100Joins=3 Response Time = 64 ms | ResponseCode : 200
+Counter=100Joins=3 Response Time = 67 ms | ResponseCode : 200
+Counter=100Joins=3 Response Time = 66 ms | ResponseCode : 200
+Counter=100Joins=3 Response Time = 66 ms | ResponseCode : 200
+Counter=100Joins=3 Response Time = 66 ms | ResponseCode : 200
+Counter=100Joins=3 Response Time = 62 ms | ResponseCode : 200
+Counter=100Joins=3 Response Time = 63 ms | ResponseCode : 200
+Counter=100Joins=3 Response Time = 66 ms | ResponseCode : 200
+Counter=100Joins=3 Response Time = 66 ms | ResponseCode : 200
+Counter=100Joins=3 Response Time = 63 ms | ResponseCode : 200
+--------------JOINS: 3--------------
+Counter=1000Joins=3 Response Time = 101 ms | ResponseCode : 200
+Counter=1000Joins=3 Response Time = 91 ms | ResponseCode : 200
+Counter=1000Joins=3 Response Time = 98 ms | ResponseCode : 200
+Counter=1000Joins=3 Response Time = 96 ms | ResponseCode : 200
+Counter=1000Joins=3 Response Time = 114 ms | ResponseCode : 200
+Counter=1000Joins=3 Response Time = 109 ms | ResponseCode : 200
+Counter=1000Joins=3 Response Time = 108 ms | ResponseCode : 200
+Counter=1000Joins=3 Response Time = 92 ms | ResponseCode : 200
+Counter=1000Joins=3 Response Time = 97 ms | ResponseCode : 200
+Counter=1000Joins=3 Response Time = 86 ms | ResponseCode : 200
+Counter=1000Joins=3 Response Time = 96 ms | ResponseCode : 200
+Counter=1000Joins=3 Response Time = 85 ms | ResponseCode : 200
+Counter=1000Joins=3 Response Time = 96 ms | ResponseCode : 200
+Counter=1000Joins=3 Response Time = 83 ms | ResponseCode : 200
+Counter=1000Joins=3 Response Time = 83 ms | ResponseCode : 200
+Counter=1000Joins=3 Response Time = 97 ms | ResponseCode : 200
+Counter=1000Joins=3 Response Time = 89 ms | ResponseCode : 200
+Counter=1000Joins=3 Response Time = 96 ms | ResponseCode : 200
+Counter=1000Joins=3 Response Time = 96 ms | ResponseCode : 200
+Counter=1000Joins=3 Response Time = 82 ms | ResponseCode : 200
+Counter=1000Joins=3 Response Time = 98 ms | ResponseCode : 200
+Counter=1000Joins=3 Response Time = 84 ms | ResponseCode : 200
+Counter=1000Joins=3 Response Time = 97 ms | ResponseCode : 200
+Counter=1000Joins=3 Response Time = 82 ms | ResponseCode : 200
+Counter=1000Joins=3 Response Time = 89 ms | ResponseCode : 200
+Counter=1000Joins=3 Response Time = 83 ms | ResponseCode : 200
+Counter=1000Joins=3 Response Time = 104 ms | ResponseCode : 200
+Counter=1000Joins=3 Response Time = 85 ms | ResponseCode : 200
+Counter=1000Joins=3 Response Time = 84 ms | ResponseCode : 200
+Counter=1000Joins=3 Response Time = 99 ms | ResponseCode : 200
+Counter=1000Joins=3 Response Time = 90 ms | ResponseCode : 200
+Counter=1000Joins=3 Response Time = 83 ms | ResponseCode : 200
+Counter=1000Joins=3 Response Time = 85 ms | ResponseCode : 200
+Counter=1000Joins=3 Response Time = 83 ms | ResponseCode : 200
+Counter=1000Joins=3 Response Time = 91 ms | ResponseCode : 200
+Counter=1000Joins=3 Response Time = 97 ms | ResponseCode : 200
+Counter=1000Joins=3 Response Time = 97 ms | ResponseCode : 200
+Counter=1000Joins=3 Response Time = 95 ms | ResponseCode : 200
+Counter=1000Joins=3 Response Time = 88 ms | ResponseCode : 200
+Counter=1000Joins=3 Response Time = 82 ms | ResponseCode : 200
+Counter=1000Joins=3 Response Time = 84 ms | ResponseCode : 200
+Counter=1000Joins=3 Response Time = 98 ms | ResponseCode : 200
+Counter=1000Joins=3 Response Time = 96 ms | ResponseCode : 200
+Counter=1000Joins=3 Response Time = 96 ms | ResponseCode : 200
+Counter=1000Joins=3 Response Time = 96 ms | ResponseCode : 200
+Counter=1000Joins=3 Response Time = 96 ms | ResponseCode : 200
+Counter=1000Joins=3 Response Time = 88 ms | ResponseCode : 200
+Counter=1000Joins=3 Response Time = 83 ms | ResponseCode : 200
+Counter=1000Joins=3 Response Time = 82 ms | ResponseCode : 200
+Counter=1000Joins=3 Response Time = 83 ms | ResponseCode : 200
+--------------JOINS: 3--------------
+Counter=10000Joins=3 Response Time = 294 ms | ResponseCode : 200
+Counter=10000Joins=3 Response Time = 344 ms | ResponseCode : 200
+Counter=10000Joins=3 Response Time = 280 ms | ResponseCode : 200
+Counter=10000Joins=3 Response Time = 379 ms | ResponseCode : 200
+Counter=10000Joins=3 Response Time = 281 ms | ResponseCode : 200
+Counter=10000Joins=3 Response Time = 295 ms | ResponseCode : 200
+Counter=10000Joins=3 Response Time = 287 ms | ResponseCode : 200
+Counter=10000Joins=3 Response Time = 294 ms | ResponseCode : 200
+Counter=10000Joins=3 Response Time = 382 ms | ResponseCode : 200
+Counter=10000Joins=3 Response Time = 380 ms | ResponseCode : 200
+Counter=10000Joins=3 Response Time = 283 ms | ResponseCode : 200
+Counter=10000Joins=3 Response Time = 285 ms | ResponseCode : 200
+Counter=10000Joins=3 Response Time = 287 ms | ResponseCode : 200
+Counter=10000Joins=3 Response Time = 387 ms | ResponseCode : 200
+Counter=10000Joins=3 Response Time = 294 ms | ResponseCode : 200
+Counter=10000Joins=3 Response Time = 285 ms | ResponseCode : 200
+Counter=10000Joins=3 Response Time = 311 ms | ResponseCode : 200
+Counter=10000Joins=3 Response Time = 317 ms | ResponseCode : 200
+Counter=10000Joins=3 Response Time = 295 ms | ResponseCode : 200
+Counter=10000Joins=3 Response Time = 377 ms | ResponseCode : 200
+Counter=10000Joins=3 Response Time = 279 ms | ResponseCode : 200
+Counter=10000Joins=3 Response Time = 292 ms | ResponseCode : 200
+Counter=10000Joins=3 Response Time = 283 ms | ResponseCode : 200
+Counter=10000Joins=3 Response Time = 391 ms | ResponseCode : 200
+Counter=10000Joins=3 Response Time = 292 ms | ResponseCode : 200
+Counter=10000Joins=3 Response Time = 283 ms | ResponseCode : 200
+Counter=10000Joins=3 Response Time = 308 ms | ResponseCode : 200
+Counter=10000Joins=3 Response Time = 292 ms | ResponseCode : 200
+Counter=10000Joins=3 Response Time = 279 ms | ResponseCode : 200
+Counter=10000Joins=3 Response Time = 281 ms | ResponseCode : 200
+Counter=10000Joins=3 Response Time = 373 ms | ResponseCode : 200
+Counter=10000Joins=3 Response Time = 284 ms | ResponseCode : 200
+Counter=10000Joins=3 Response Time = 280 ms | ResponseCode : 200
+Counter=10000Joins=3 Response Time = 293 ms | ResponseCode : 200
+Counter=10000Joins=3 Response Time = 279 ms | ResponseCode : 200
+Counter=10000Joins=3 Response Time = 298 ms | ResponseCode : 200
+Counter=10000Joins=3 Response Time = 377 ms | ResponseCode : 200
+Counter=10000Joins=3 Response Time = 281 ms | ResponseCode : 200
+Counter=10000Joins=3 Response Time = 385 ms | ResponseCode : 200
+Counter=10000Joins=3 Response Time = 290 ms | ResponseCode : 200
+Counter=10000Joins=3 Response Time = 284 ms | ResponseCode : 200
+Counter=10000Joins=3 Response Time = 304 ms | ResponseCode : 200
+Counter=10000Joins=3 Response Time = 299 ms | ResponseCode : 200
+Counter=10000Joins=3 Response Time = 278 ms | ResponseCode : 200
+Counter=10000Joins=3 Response Time = 291 ms | ResponseCode : 200
+Counter=10000Joins=3 Response Time = 377 ms | ResponseCode : 200
+Counter=10000Joins=3 Response Time = 291 ms | ResponseCode : 200
+Counter=10000Joins=3 Response Time = 281 ms | ResponseCode : 200
+Counter=10000Joins=3 Response Time = 280 ms | ResponseCode : 200
+Counter=10000Joins=3 Response Time = 294 ms | ResponseCode : 200
+--------------JOINS: 3--------------
+Counter=100000Joins=3 Response Time = 1765 ms | ResponseCode : 200
+Counter=100000Joins=3 Response Time = 1725 ms | ResponseCode : 200
+Counter=100000Joins=3 Response Time = 1789 ms | ResponseCode : 200
+Counter=100000Joins=3 Response Time = 1781 ms | ResponseCode : 200
+Counter=100000Joins=3 Response Time = 1756 ms | ResponseCode : 200
+Counter=100000Joins=3 Response Time = 1824 ms | ResponseCode : 200
+Counter=100000Joins=3 Response Time = 1737 ms | ResponseCode : 200
+Counter=100000Joins=3 Response Time = 1760 ms | ResponseCode : 200
+Counter=100000Joins=3 Response Time = 1792 ms | ResponseCode : 200
+Counter=100000Joins=3 Response Time = 1784 ms | ResponseCode : 200
+Counter=100000Joins=3 Response Time = 1816 ms | ResponseCode : 200
+Counter=100000Joins=3 Response Time = 1797 ms | ResponseCode : 200
+Counter=100000Joins=3 Response Time = 1795 ms | ResponseCode : 200
+Counter=100000Joins=3 Response Time = 1807 ms | ResponseCode : 200
+Counter=100000Joins=3 Response Time = 1760 ms | ResponseCode : 200
+Counter=100000Joins=3 Response Time = 1775 ms | ResponseCode : 200
+Counter=100000Joins=3 Response Time = 1802 ms | ResponseCode : 200
+Counter=100000Joins=3 Response Time = 1725 ms | ResponseCode : 200
+Counter=100000Joins=3 Response Time = 1780 ms | ResponseCode : 200
+Counter=100000Joins=3 Response Time = 1834 ms | ResponseCode : 200
+Counter=100000Joins=3 Response Time = 1739 ms | ResponseCode : 200
+Counter=100000Joins=3 Response Time = 1834 ms | ResponseCode : 200
+Counter=100000Joins=3 Response Time = 1787 ms | ResponseCode : 200
+Counter=100000Joins=3 Response Time = 1776 ms | ResponseCode : 200
+Counter=100000Joins=3 Response Time = 1815 ms | ResponseCode : 200
+Counter=100000Joins=3 Response Time = 1815 ms | ResponseCode : 200
+Counter=100000Joins=3 Response Time = 1810 ms | ResponseCode : 200
+Counter=100000Joins=3 Response Time = 1819 ms | ResponseCode : 200
+Counter=100000Joins=3 Response Time = 1799 ms | ResponseCode : 200
+Counter=100000Joins=3 Response Time = 1861 ms | ResponseCode : 200
+Counter=100000Joins=3 Response Time = 1852 ms | ResponseCode : 200
+Counter=100000Joins=3 Response Time = 1753 ms | ResponseCode : 200
+Counter=100000Joins=3 Response Time = 1784 ms | ResponseCode : 200
+Counter=100000Joins=3 Response Time = 1763 ms | ResponseCode : 200
+Counter=100000Joins=3 Response Time = 1743 ms | ResponseCode : 200
+Counter=100000Joins=3 Response Time = 1793 ms | ResponseCode : 200
+Counter=100000Joins=3 Response Time = 1813 ms | ResponseCode : 200
+Counter=100000Joins=3 Response Time = 1805 ms | ResponseCode : 200
+Counter=100000Joins=3 Response Time = 1854 ms | ResponseCode : 200
+Counter=100000Joins=3 Response Time = 1778 ms | ResponseCode : 200
+Counter=100000Joins=3 Response Time = 1779 ms | ResponseCode : 200
+Counter=100000Joins=3 Response Time = 1829 ms | ResponseCode : 200
+Counter=100000Joins=3 Response Time = 1746 ms | ResponseCode : 200
+Counter=100000Joins=3 Response Time = 1817 ms | ResponseCode : 200
+Counter=100000Joins=3 Response Time = 1806 ms | ResponseCode : 200
+Counter=100000Joins=3 Response Time = 1809 ms | ResponseCode : 200
+Counter=100000Joins=3 Response Time = 1787 ms | ResponseCode : 200
+Counter=100000Joins=3 Response Time = 1742 ms | ResponseCode : 200
+Counter=100000Joins=3 Response Time = 1803 ms | ResponseCode : 200
+Counter=100000Joins=3 Response Time = 1833 ms | ResponseCode : 200
 ---------------/api/person/?id---------------
-Response Time = 289 ms | ResponseCode: 200
-Response Time = 57 ms | ResponseCode: 200
-Response Time = 57 ms | ResponseCode: 200
-Response Time = 58 ms | ResponseCode: 200
-Response Time = 58 ms | ResponseCode: 200
-Response Time = 57 ms | ResponseCode: 200
-Response Time = 58 ms | ResponseCode: 200
-Response Time = 57 ms | ResponseCode: 200
-Response Time = 60 ms | ResponseCode: 200
+Response Time = 84 ms | ResponseCode: 200
 Response Time = 56 ms | ResponseCode: 200
+Response Time = 57 ms | ResponseCode: 200
+Response Time = 55 ms | ResponseCode: 200
 Response Time = 58 ms | ResponseCode: 200
 Response Time = 56 ms | ResponseCode: 200
 Response Time = 56 ms | ResponseCode: 200
 Response Time = 56 ms | ResponseCode: 200
-Response Time = 56 ms | ResponseCode: 200
-Response Time = 59 ms | ResponseCode: 200
-Response Time = 56 ms | ResponseCode: 200
-Response Time = 57 ms | ResponseCode: 200
-Response Time = 57 ms | ResponseCode: 200
-Response Time = 56 ms | ResponseCode: 200
-Response Time = 57 ms | ResponseCode: 200
-Response Time = 57 ms | ResponseCode: 200
-Response Time = 60 ms | ResponseCode: 200
-Response Time = 75 ms | ResponseCode: 200
-Response Time = 65 ms | ResponseCode: 200
-Response Time = 65 ms | ResponseCode: 200
-Response Time = 57 ms | ResponseCode: 200
-Response Time = 57 ms | ResponseCode: 200
-Response Time = 57 ms | ResponseCode: 200
-Response Time = 64 ms | ResponseCode: 200
-Response Time = 75 ms | ResponseCode: 200
-Response Time = 62 ms | ResponseCode: 200
-Response Time = 66 ms | ResponseCode: 200
-Response Time = 74 ms | ResponseCode: 200
-Response Time = 59 ms | ResponseCode: 200
-Response Time = 56 ms | ResponseCode: 200
-Response Time = 56 ms | ResponseCode: 200
-Response Time = 56 ms | ResponseCode: 200
-Response Time = 56 ms | ResponseCode: 200
-Response Time = 56 ms | ResponseCode: 200
-Response Time = 56 ms | ResponseCode: 200
-Response Time = 56 ms | ResponseCode: 200
-Response Time = 57 ms | ResponseCode: 200
-Response Time = 56 ms | ResponseCode: 200
-Response Time = 57 ms | ResponseCode: 200
-Response Time = 55 ms | ResponseCode: 200
-Response Time = 56 ms | ResponseCode: 200
-Response Time = 56 ms | ResponseCode: 200
-Response Time = 55 ms | ResponseCode: 200
-Response Time = 57 ms | ResponseCode: 200
-Response Time = 56 ms | ResponseCode: 200
-Response Time = 57 ms | ResponseCode: 200
-Response Time = 55 ms | ResponseCode: 200
-Response Time = 55 ms | ResponseCode: 200
-Response Time = 55 ms | ResponseCode: 200
 Response Time = 55 ms | ResponseCode: 200
 Response Time = 55 ms | ResponseCode: 200
 Response Time = 56 ms | ResponseCode: 200
+Response Time = 55 ms | ResponseCode: 200
+Response Time = 55 ms | ResponseCode: 200
+Response Time = 56 ms | ResponseCode: 200
+Response Time = 56 ms | ResponseCode: 200
+Response Time = 56 ms | ResponseCode: 200
+Response Time = 56 ms | ResponseCode: 200
+Response Time = 56 ms | ResponseCode: 200
+Response Time = 55 ms | ResponseCode: 200
 Response Time = 58 ms | ResponseCode: 200
-Response Time = 56 ms | ResponseCode: 200
-Response Time = 57 ms | ResponseCode: 200
-Response Time = 58 ms | ResponseCode: 200
-Response Time = 56 ms | ResponseCode: 200
-Response Time = 55 ms | ResponseCode: 200
-Response Time = 56 ms | ResponseCode: 200
-Response Time = 56 ms | ResponseCode: 200
-Response Time = 66 ms | ResponseCode: 200
-Response Time = 57 ms | ResponseCode: 200
-Response Time = 65 ms | ResponseCode: 200
-Response Time = 59 ms | ResponseCode: 200
-Response Time = 66 ms | ResponseCode: 200
-Response Time = 74 ms | ResponseCode: 200
-Response Time = 71 ms | ResponseCode: 200
 Response Time = 63 ms | ResponseCode: 200
-Response Time = 65 ms | ResponseCode: 200
-Response Time = 59 ms | ResponseCode: 200
+Response Time = 63 ms | ResponseCode: 200
 Response Time = 62 ms | ResponseCode: 200
-Response Time = 56 ms | ResponseCode: 200
-Response Time = 55 ms | ResponseCode: 200
-Response Time = 57 ms | ResponseCode: 200
-Response Time = 56 ms | ResponseCode: 200
-Response Time = 55 ms | ResponseCode: 200
-Response Time = 56 ms | ResponseCode: 200
-Response Time = 55 ms | ResponseCode: 200
-Response Time = 57 ms | ResponseCode: 200
-Response Time = 56 ms | ResponseCode: 200
-Response Time = 56 ms | ResponseCode: 200
-Response Time = 56 ms | ResponseCode: 200
-Response Time = 56 ms | ResponseCode: 200
-Response Time = 56 ms | ResponseCode: 200
-Response Time = 54 ms | ResponseCode: 200
-Response Time = 56 ms | ResponseCode: 200
-Response Time = 54 ms | ResponseCode: 200
-Response Time = 55 ms | ResponseCode: 200
-Response Time = 55 ms | ResponseCode: 200
-Response Time = 56 ms | ResponseCode: 200
-Response Time = 55 ms | ResponseCode: 200
-Response Time = 55 ms | ResponseCode: 200
-Response Time = 55 ms | ResponseCode: 200
-Response Time = 56 ms | ResponseCode: 200
-Response Time = 56 ms | ResponseCode: 200
----------------/api/person---------------
-Response Time = 239 ms | ResponseCode: 200
-Response Time = 218 ms | ResponseCode: 200
-Response Time = 408 ms | ResponseCode: 200
-Response Time = 145 ms | ResponseCode: 200
-Response Time = 374 ms | ResponseCode: 200
-Response Time = 211 ms | ResponseCode: 200
-Response Time = 446 ms | ResponseCode: 200
-Response Time = 313 ms | ResponseCode: 200
-Response Time = 141 ms | ResponseCode: 200
-Response Time = 198 ms | ResponseCode: 200
-Response Time = 207 ms | ResponseCode: 200
-Response Time = 195 ms | ResponseCode: 200
-Response Time = 195 ms | ResponseCode: 200
-Response Time = 231 ms | ResponseCode: 200
-Response Time = 265 ms | ResponseCode: 200
-Response Time = 244 ms | ResponseCode: 200
-Response Time = 228 ms | ResponseCode: 200
-Response Time = 212 ms | ResponseCode: 200
-Response Time = 204 ms | ResponseCode: 200
-Response Time = 201 ms | ResponseCode: 200
-Response Time = 214 ms | ResponseCode: 200
-Response Time = 182 ms | ResponseCode: 200
-Response Time = 190 ms | ResponseCode: 200
-Response Time = 229 ms | ResponseCode: 200
-Response Time = 214 ms | ResponseCode: 200
-Response Time = 203 ms | ResponseCode: 200
-Response Time = 203 ms | ResponseCode: 200
-Response Time = 207 ms | ResponseCode: 200
-Response Time = 205 ms | ResponseCode: 200
-Response Time = 194 ms | ResponseCode: 200
-Response Time = 215 ms | ResponseCode: 200
-Response Time = 227 ms | ResponseCode: 200
-Response Time = 205 ms | ResponseCode: 200
-Response Time = 203 ms | ResponseCode: 200
-Response Time = 215 ms | ResponseCode: 200
-Response Time = 205 ms | ResponseCode: 200
-Response Time = 198 ms | ResponseCode: 200
-Response Time = 210 ms | ResponseCode: 200
-Response Time = 206 ms | ResponseCode: 200
-Response Time = 224 ms | ResponseCode: 200
-Response Time = 178 ms | ResponseCode: 200
-Response Time = 210 ms | ResponseCode: 200
-Response Time = 204 ms | ResponseCode: 200
-Response Time = 204 ms | ResponseCode: 200
-Response Time = 204 ms | ResponseCode: 200
-Response Time = 202 ms | ResponseCode: 200
-Response Time = 216 ms | ResponseCode: 200
-Response Time = 224 ms | ResponseCode: 200
-Response Time = 178 ms | ResponseCode: 200
-Response Time = 216 ms | ResponseCode: 200
-Response Time = 198 ms | ResponseCode: 200
-Response Time = 203 ms | ResponseCode: 200
-Response Time = 202 ms | ResponseCode: 200
-Response Time = 208 ms | ResponseCode: 200
-Response Time = 204 ms | ResponseCode: 200
-Response Time = 203 ms | ResponseCode: 200
-Response Time = 210 ms | ResponseCode: 200
-Response Time = 190 ms | ResponseCode: 200
-Response Time = 190 ms | ResponseCode: 200
-Response Time = 209 ms | ResponseCode: 200
-Response Time = 206 ms | ResponseCode: 200
-Response Time = 226 ms | ResponseCode: 200
-Response Time = 211 ms | ResponseCode: 200
-Response Time = 230 ms | ResponseCode: 200
-Response Time = 149 ms | ResponseCode: 200
-Response Time = 187 ms | ResponseCode: 200
-Response Time = 194 ms | ResponseCode: 200
-Response Time = 221 ms | ResponseCode: 200
-Response Time = 229 ms | ResponseCode: 200
-Response Time = 212 ms | ResponseCode: 200
-Response Time = 203 ms | ResponseCode: 200
-Response Time = 209 ms | ResponseCode: 200
-Response Time = 209 ms | ResponseCode: 200
-Response Time = 212 ms | ResponseCode: 200
-Response Time = 128 ms | ResponseCode: 200
-Response Time = 197 ms | ResponseCode: 200
-Response Time = 206 ms | ResponseCode: 200
-Response Time = 193 ms | ResponseCode: 200
-Response Time = 180 ms | ResponseCode: 200
-Response Time = 205 ms | ResponseCode: 200
-Response Time = 195 ms | ResponseCode: 200
-Response Time = 216 ms | ResponseCode: 200
-Response Time = 206 ms | ResponseCode: 200
-Response Time = 211 ms | ResponseCode: 200
-Response Time = 205 ms | ResponseCode: 200
-Response Time = 206 ms | ResponseCode: 200
-Response Time = 204 ms | ResponseCode: 200
-Response Time = 198 ms | ResponseCode: 200
-Response Time = 214 ms | ResponseCode: 200
-Response Time = 120 ms | ResponseCode: 200
-Response Time = 208 ms | ResponseCode: 200
-Response Time = 207 ms | ResponseCode: 200
-Response Time = 198 ms | ResponseCode: 200
-Response Time = 233 ms | ResponseCode: 200
-Response Time = 195 ms | ResponseCode: 200
-Response Time = 200 ms | ResponseCode: 200
-Response Time = 205 ms | ResponseCode: 200
-Response Time = 206 ms | ResponseCode: 200
-Response Time = 213 ms | ResponseCode: 200
-Response Time = 205 ms | ResponseCode: 200
-Response Time = 204 ms | ResponseCode: 200
----------------/api/persons/{pid}/projects/issues---------------
-Response Time = 60 ms | ResponseCode: 200
-Response Time = 58 ms | ResponseCode: 200
-Response Time = 57 ms | ResponseCode: 200
-Response Time = 57 ms | ResponseCode: 200
-Response Time = 57 ms | ResponseCode: 200
-Response Time = 61 ms | ResponseCode: 200
-Response Time = 56 ms | ResponseCode: 200
-Response Time = 58 ms | ResponseCode: 200
-Response Time = 59 ms | ResponseCode: 200
-Response Time = 64 ms | ResponseCode: 200
-Response Time = 61 ms | ResponseCode: 200
 Response Time = 73 ms | ResponseCode: 200
+Response Time = 64 ms | ResponseCode: 200
+Response Time = 55 ms | ResponseCode: 200
+Response Time = 56 ms | ResponseCode: 200
+Response Time = 55 ms | ResponseCode: 200
+Response Time = 56 ms | ResponseCode: 200
+Response Time = 56 ms | ResponseCode: 200
+Response Time = 55 ms | ResponseCode: 200
+Response Time = 54 ms | ResponseCode: 200
+Response Time = 55 ms | ResponseCode: 200
+Response Time = 55 ms | ResponseCode: 200
+Response Time = 55 ms | ResponseCode: 200
+Response Time = 55 ms | ResponseCode: 200
+Response Time = 57 ms | ResponseCode: 200
+Response Time = 57 ms | ResponseCode: 200
+Response Time = 56 ms | ResponseCode: 200
+Response Time = 55 ms | ResponseCode: 200
+Response Time = 56 ms | ResponseCode: 200
+Response Time = 56 ms | ResponseCode: 200
+Response Time = 55 ms | ResponseCode: 200
+Response Time = 56 ms | ResponseCode: 200
+Response Time = 57 ms | ResponseCode: 200
+Response Time = 55 ms | ResponseCode: 200
+Response Time = 55 ms | ResponseCode: 200
+Response Time = 55 ms | ResponseCode: 200
+Response Time = 56 ms | ResponseCode: 200
+Response Time = 56 ms | ResponseCode: 200
+Response Time = 55 ms | ResponseCode: 200
+Response Time = 56 ms | ResponseCode: 200
+Response Time = 55 ms | ResponseCode: 200
+Response Time = 55 ms | ResponseCode: 200
+Response Time = 55 ms | ResponseCode: 200
+Response Time = 55 ms | ResponseCode: 200
+Response Time = 56 ms | ResponseCode: 200
+Response Time = 55 ms | ResponseCode: 200
+Response Time = 56 ms | ResponseCode: 200
+Response Time = 61 ms | ResponseCode: 200
+Response Time = 83 ms | ResponseCode: 200
+Response Time = 76 ms | ResponseCode: 200
+Response Time = 88 ms | ResponseCode: 200
+Response Time = 61 ms | ResponseCode: 200
+Response Time = 63 ms | ResponseCode: 200
+Response Time = 55 ms | ResponseCode: 200
+Response Time = 55 ms | ResponseCode: 200
+Response Time = 55 ms | ResponseCode: 200
+Response Time = 58 ms | ResponseCode: 200
+Response Time = 56 ms | ResponseCode: 200
+Response Time = 58 ms | ResponseCode: 200
+Response Time = 56 ms | ResponseCode: 200
+Response Time = 55 ms | ResponseCode: 200
+Response Time = 55 ms | ResponseCode: 200
+Response Time = 54 ms | ResponseCode: 200
+Response Time = 54 ms | ResponseCode: 200
+Response Time = 55 ms | ResponseCode: 200
+Response Time = 54 ms | ResponseCode: 200
+Response Time = 55 ms | ResponseCode: 200
+Response Time = 56 ms | ResponseCode: 200
+Response Time = 55 ms | ResponseCode: 200
+Response Time = 56 ms | ResponseCode: 200
+Response Time = 59 ms | ResponseCode: 200
+Response Time = 79 ms | ResponseCode: 200
+Response Time = 60 ms | ResponseCode: 200
+Response Time = 56 ms | ResponseCode: 200
 Response Time = 62 ms | ResponseCode: 200
-Response Time = 57 ms | ResponseCode: 200
-Response Time = 57 ms | ResponseCode: 200
-Response Time = 56 ms | ResponseCode: 200
-Response Time = 57 ms | ResponseCode: 200
-Response Time = 56 ms | ResponseCode: 200
-Response Time = 56 ms | ResponseCode: 200
-Response Time = 57 ms | ResponseCode: 200
-Response Time = 57 ms | ResponseCode: 200
-Response Time = 56 ms | ResponseCode: 200
-Response Time = 57 ms | ResponseCode: 200
-Response Time = 56 ms | ResponseCode: 200
-Response Time = 56 ms | ResponseCode: 200
-Response Time = 56 ms | ResponseCode: 200
-Response Time = 58 ms | ResponseCode: 200
-Response Time = 58 ms | ResponseCode: 200
-Response Time = 59 ms | ResponseCode: 200
-Response Time = 57 ms | ResponseCode: 200
-Response Time = 56 ms | ResponseCode: 200
-Response Time = 56 ms | ResponseCode: 200
-Response Time = 56 ms | ResponseCode: 200
-Response Time = 55 ms | ResponseCode: 200
-Response Time = 58 ms | ResponseCode: 200
-Response Time = 64 ms | ResponseCode: 200
-Response Time = 56 ms | ResponseCode: 200
-Response Time = 56 ms | ResponseCode: 200
-Response Time = 57 ms | ResponseCode: 200
-Response Time = 56 ms | ResponseCode: 200
-Response Time = 56 ms | ResponseCode: 200
-Response Time = 57 ms | ResponseCode: 200
+Response Time = 63 ms | ResponseCode: 200
+Response Time = 60 ms | ResponseCode: 200
 Response Time = 56 ms | ResponseCode: 200
 Response Time = 55 ms | ResponseCode: 200
 Response Time = 57 ms | ResponseCode: 200
 Response Time = 56 ms | ResponseCode: 200
 Response Time = 55 ms | ResponseCode: 200
+Response Time = 56 ms | ResponseCode: 200
+Response Time = 54 ms | ResponseCode: 200
 Response Time = 55 ms | ResponseCode: 200
-Response Time = 57 ms | ResponseCode: 200
-Response Time = 56 ms | ResponseCode: 200
-Response Time = 56 ms | ResponseCode: 200
-Response Time = 56 ms | ResponseCode: 200
-Response Time = 57 ms | ResponseCode: 200
-Response Time = 57 ms | ResponseCode: 200
-Response Time = 56 ms | ResponseCode: 200
-Response Time = 56 ms | ResponseCode: 200
+Response Time = 54 ms | ResponseCode: 200
 Response Time = 55 ms | ResponseCode: 200
-Response Time = 64 ms | ResponseCode: 200
-Response Time = 75 ms | ResponseCode: 200
-Response Time = 65 ms | ResponseCode: 200
+Response Time = 55 ms | ResponseCode: 200
+Response Time = 55 ms | ResponseCode: 200
+---------------/api/person---------------
+Response Time = 150 ms | ResponseCode: 200
+Response Time = 309 ms | ResponseCode: 200
+Response Time = 128 ms | ResponseCode: 200
+Response Time = 215 ms | ResponseCode: 200
+Response Time = 174 ms | ResponseCode: 200
+Response Time = 193 ms | ResponseCode: 200
+Response Time = 196 ms | ResponseCode: 200
+Response Time = 200 ms | ResponseCode: 200
+Response Time = 203 ms | ResponseCode: 200
+Response Time = 204 ms | ResponseCode: 200
+Response Time = 168 ms | ResponseCode: 200
+Response Time = 188 ms | ResponseCode: 200
+Response Time = 200 ms | ResponseCode: 200
+Response Time = 192 ms | ResponseCode: 200
+Response Time = 191 ms | ResponseCode: 200
+Response Time = 175 ms | ResponseCode: 200
+Response Time = 183 ms | ResponseCode: 200
+Response Time = 186 ms | ResponseCode: 200
+Response Time = 195 ms | ResponseCode: 200
+Response Time = 190 ms | ResponseCode: 200
+Response Time = 184 ms | ResponseCode: 200
+Response Time = 177 ms | ResponseCode: 200
+Response Time = 183 ms | ResponseCode: 200
+Response Time = 184 ms | ResponseCode: 200
+Response Time = 175 ms | ResponseCode: 200
+Response Time = 198 ms | ResponseCode: 200
+Response Time = 165 ms | ResponseCode: 200
+Response Time = 155 ms | ResponseCode: 200
+Response Time = 203 ms | ResponseCode: 200
+Response Time = 201 ms | ResponseCode: 200
+Response Time = 193 ms | ResponseCode: 200
+Response Time = 184 ms | ResponseCode: 200
+Response Time = 179 ms | ResponseCode: 200
+Response Time = 185 ms | ResponseCode: 200
+Response Time = 175 ms | ResponseCode: 200
+Response Time = 194 ms | ResponseCode: 200
+Response Time = 176 ms | ResponseCode: 200
+Response Time = 242 ms | ResponseCode: 200
+Response Time = 180 ms | ResponseCode: 200
+Response Time = 206 ms | ResponseCode: 200
+Response Time = 200 ms | ResponseCode: 200
+Response Time = 223 ms | ResponseCode: 200
+Response Time = 215 ms | ResponseCode: 200
+Response Time = 243 ms | ResponseCode: 200
+Response Time = 183 ms | ResponseCode: 200
+Response Time = 197 ms | ResponseCode: 200
+Response Time = 204 ms | ResponseCode: 200
+Response Time = 193 ms | ResponseCode: 200
+Response Time = 177 ms | ResponseCode: 200
+Response Time = 187 ms | ResponseCode: 200
+Response Time = 181 ms | ResponseCode: 200
+Response Time = 177 ms | ResponseCode: 200
+Response Time = 196 ms | ResponseCode: 200
+Response Time = 193 ms | ResponseCode: 200
+Response Time = 188 ms | ResponseCode: 200
+Response Time = 185 ms | ResponseCode: 200
+Response Time = 188 ms | ResponseCode: 200
+Response Time = 165 ms | ResponseCode: 200
+Response Time = 176 ms | ResponseCode: 200
+Response Time = 183 ms | ResponseCode: 200
+Response Time = 194 ms | ResponseCode: 200
+Response Time = 209 ms | ResponseCode: 200
+Response Time = 216 ms | ResponseCode: 200
+Response Time = 198 ms | ResponseCode: 200
+Response Time = 197 ms | ResponseCode: 200
+Response Time = 169 ms | ResponseCode: 200
+Response Time = 216 ms | ResponseCode: 200
+Response Time = 194 ms | ResponseCode: 200
+Response Time = 190 ms | ResponseCode: 200
+Response Time = 179 ms | ResponseCode: 200
+Response Time = 188 ms | ResponseCode: 200
+Response Time = 180 ms | ResponseCode: 200
+Response Time = 180 ms | ResponseCode: 200
+Response Time = 185 ms | ResponseCode: 200
+Response Time = 187 ms | ResponseCode: 200
+Response Time = 191 ms | ResponseCode: 200
+Response Time = 195 ms | ResponseCode: 200
+Response Time = 195 ms | ResponseCode: 200
+Response Time = 193 ms | ResponseCode: 200
+Response Time = 189 ms | ResponseCode: 200
+Response Time = 234 ms | ResponseCode: 200
+Response Time = 170 ms | ResponseCode: 200
+Response Time = 194 ms | ResponseCode: 200
+Response Time = 190 ms | ResponseCode: 200
+Response Time = 190 ms | ResponseCode: 200
+Response Time = 169 ms | ResponseCode: 200
+Response Time = 180 ms | ResponseCode: 200
+Response Time = 190 ms | ResponseCode: 200
+Response Time = 189 ms | ResponseCode: 200
+Response Time = 184 ms | ResponseCode: 200
+Response Time = 196 ms | ResponseCode: 200
+Response Time = 192 ms | ResponseCode: 200
+Response Time = 187 ms | ResponseCode: 200
+Response Time = 170 ms | ResponseCode: 200
+Response Time = 205 ms | ResponseCode: 200
+Response Time = 201 ms | ResponseCode: 200
+Response Time = 211 ms | ResponseCode: 200
+Response Time = 205 ms | ResponseCode: 200
+Response Time = 185 ms | ResponseCode: 200
+Response Time = 183 ms | ResponseCode: 200
+Response Time = 185 ms | ResponseCode: 200
+---------------/api/persons/{pid}/projects/issues---------------
+Response Time = 339 ms | ResponseCode: 200
+Response Time = 89 ms | ResponseCode: 200
+Response Time = 89 ms | ResponseCode: 200
+Response Time = 104 ms | ResponseCode: 200
+Response Time = 105 ms | ResponseCode: 200
+Response Time = 102 ms | ResponseCode: 200
+Response Time = 199 ms | ResponseCode: 200
+Response Time = 123 ms | ResponseCode: 200
+Response Time = 180 ms | ResponseCode: 200
+Response Time = 88 ms | ResponseCode: 200
+Response Time = 89 ms | ResponseCode: 200
 Response Time = 85 ms | ResponseCode: 200
-Response Time = 65 ms | ResponseCode: 200
-Response Time = 66 ms | ResponseCode: 200
-Response Time = 65 ms | ResponseCode: 200
-Response Time = 56 ms | ResponseCode: 200
-Response Time = 56 ms | ResponseCode: 200
-Response Time = 56 ms | ResponseCode: 200
-Response Time = 56 ms | ResponseCode: 200
-Response Time = 56 ms | ResponseCode: 200
-Response Time = 56 ms | ResponseCode: 200
-Response Time = 57 ms | ResponseCode: 200
-Response Time = 56 ms | ResponseCode: 200
-Response Time = 56 ms | ResponseCode: 200
-Response Time = 55 ms | ResponseCode: 200
-Response Time = 57 ms | ResponseCode: 200
-Response Time = 56 ms | ResponseCode: 200
-Response Time = 56 ms | ResponseCode: 200
-Response Time = 55 ms | ResponseCode: 200
-Response Time = 56 ms | ResponseCode: 200
-Response Time = 55 ms | ResponseCode: 200
-Response Time = 55 ms | ResponseCode: 200
-Response Time = 56 ms | ResponseCode: 200
-Response Time = 56 ms | ResponseCode: 200
-Response Time = 56 ms | ResponseCode: 200
-Response Time = 55 ms | ResponseCode: 200
-Response Time = 59 ms | ResponseCode: 200
-Response Time = 56 ms | ResponseCode: 200
-Response Time = 56 ms | ResponseCode: 200
-Response Time = 56 ms | ResponseCode: 200
-Response Time = 57 ms | ResponseCode: 200
-Response Time = 56 ms | ResponseCode: 200
-Response Time = 56 ms | ResponseCode: 200
-Response Time = 56 ms | ResponseCode: 200
-Response Time = 56 ms | ResponseCode: 200
-Response Time = 56 ms | ResponseCode: 200
-Response Time = 57 ms | ResponseCode: 200
-Response Time = 56 ms | ResponseCode: 200
-Response Time = 57 ms | ResponseCode: 200
-Response Time = 57 ms | ResponseCode: 200
-Response Time = 56 ms | ResponseCode: 200
-Response Time = 56 ms | ResponseCode: 200
+Response Time = 85 ms | ResponseCode: 200
+Response Time = 177 ms | ResponseCode: 200
+Response Time = 180 ms | ResponseCode: 200
+Response Time = 182 ms | ResponseCode: 200
+Response Time = 85 ms | ResponseCode: 200
+Response Time = 85 ms | ResponseCode: 200
+Response Time = 85 ms | ResponseCode: 200
+Response Time = 85 ms | ResponseCode: 200
+Response Time = 86 ms | ResponseCode: 200
+Response Time = 88 ms | ResponseCode: 200
+Response Time = 85 ms | ResponseCode: 200
+Response Time = 84 ms | ResponseCode: 200
+Response Time = 85 ms | ResponseCode: 200
+Response Time = 92 ms | ResponseCode: 200
+Response Time = 95 ms | ResponseCode: 200
+Response Time = 189 ms | ResponseCode: 200
+Response Time = 97 ms | ResponseCode: 200
+Response Time = 88 ms | ResponseCode: 200
+Response Time = 88 ms | ResponseCode: 200
+Response Time = 84 ms | ResponseCode: 200
+Response Time = 85 ms | ResponseCode: 200
+Response Time = 85 ms | ResponseCode: 200
+Response Time = 86 ms | ResponseCode: 200
+Response Time = 87 ms | ResponseCode: 200
+Response Time = 179 ms | ResponseCode: 200
+Response Time = 85 ms | ResponseCode: 200
+Response Time = 84 ms | ResponseCode: 200
+Response Time = 85 ms | ResponseCode: 200
+Response Time = 83 ms | ResponseCode: 200
+Response Time = 221 ms | ResponseCode: 200
+Response Time = 127 ms | ResponseCode: 200
+Response Time = 102 ms | ResponseCode: 200
+Response Time = 98 ms | ResponseCode: 200
+Response Time = 115 ms | ResponseCode: 200
+Response Time = 220 ms | ResponseCode: 200
+Response Time = 180 ms | ResponseCode: 200
+Response Time = 87 ms | ResponseCode: 200
+Response Time = 85 ms | ResponseCode: 200
+Response Time = 86 ms | ResponseCode: 200
+Response Time = 87 ms | ResponseCode: 200
+Response Time = 181 ms | ResponseCode: 200
+Response Time = 180 ms | ResponseCode: 200
+Response Time = 86 ms | ResponseCode: 200
+Response Time = 87 ms | ResponseCode: 200
+Response Time = 86 ms | ResponseCode: 200
+Response Time = 90 ms | ResponseCode: 200
+Response Time = 89 ms | ResponseCode: 200
+Response Time = 87 ms | ResponseCode: 200
+Response Time = 88 ms | ResponseCode: 200
+Response Time = 194 ms | ResponseCode: 200
+Response Time = 108 ms | ResponseCode: 200
+Response Time = 108 ms | ResponseCode: 200
+Response Time = 341 ms | ResponseCode: 200
+Response Time = 191 ms | ResponseCode: 200
+Response Time = 89 ms | ResponseCode: 200
+Response Time = 90 ms | ResponseCode: 200
+Response Time = 86 ms | ResponseCode: 200
+Response Time = 84 ms | ResponseCode: 200
+Response Time = 84 ms | ResponseCode: 200
+Response Time = 86 ms | ResponseCode: 200
+Response Time = 84 ms | ResponseCode: 200
+Response Time = 84 ms | ResponseCode: 200
+Response Time = 85 ms | ResponseCode: 200
+Response Time = 95 ms | ResponseCode: 200
+Response Time = 83 ms | ResponseCode: 200
+Response Time = 85 ms | ResponseCode: 200
+Response Time = 87 ms | ResponseCode: 200
+Response Time = 178 ms | ResponseCode: 200
+Response Time = 209 ms | ResponseCode: 200
+Response Time = 113 ms | ResponseCode: 200
+Response Time = 177 ms | ResponseCode: 200
+Response Time = 111 ms | ResponseCode: 200
+Response Time = 110 ms | ResponseCode: 200
+Response Time = 113 ms | ResponseCode: 200
+Response Time = 95 ms | ResponseCode: 200
+Response Time = 215 ms | ResponseCode: 200
+Response Time = 282 ms | ResponseCode: 200
+Response Time = 85 ms | ResponseCode: 200
+Response Time = 177 ms | ResponseCode: 200
+Response Time = 84 ms | ResponseCode: 200
+Response Time = 86 ms | ResponseCode: 200
+Response Time = 179 ms | ResponseCode: 200
+Response Time = 85 ms | ResponseCode: 200
+Response Time = 84 ms | ResponseCode: 200
+Response Time = 178 ms | ResponseCode: 200
+Response Time = 87 ms | ResponseCode: 200
+Response Time = 84 ms | ResponseCode: 200
+Response Time = 84 ms | ResponseCode: 200
+Response Time = 84 ms | ResponseCode: 200
 ---------------/api/persons/{pid}/projects/{prid}/issues---------------
 Response Time = 61 ms | ResponseCode: 200
 Response Time = 58 ms | ResponseCode: 200

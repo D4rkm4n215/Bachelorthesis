@@ -3,11 +3,14 @@ package hhn.aib.thesis.neo4graph.persistance;
 import hhn.aib.thesis.neo4graph.model.Issue;
 import hhn.aib.thesis.neo4graph.model.Person;
 import hhn.aib.thesis.neo4graph.model.Project;
+import org.springframework.context.annotation.Lazy;
 import org.springframework.data.neo4j.repository.Neo4jRepository;
 import org.springframework.data.neo4j.repository.query.Query;
 import org.springframework.data.repository.query.Param;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
+import java.util.Optional;
 
 public interface IssueRepository extends Neo4jRepository<Issue,String> {
 
@@ -31,6 +34,4 @@ public interface IssueRepository extends Neo4jRepository<Issue,String> {
 
     @Query("MATCH (i:Issue)-[:BELONGS_TO]->(pr:Project)<-[OWNS]-(p:Person) RETURN i LIMIT $counter")
     List<Issue> findIssueAndProjectAndPersonByCounter(@Param("counter") long counter);
-
-
 }

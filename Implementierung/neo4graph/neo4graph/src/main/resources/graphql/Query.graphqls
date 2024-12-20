@@ -21,8 +21,6 @@ type Issue{
     createdAt : String
     state : String
     stateReason : String
-    assignees : [Person]
-    project : Project
 }
 input IssueInput {
     title: String!
