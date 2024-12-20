@@ -6,6 +6,7 @@ import hhn.aib.thesis.neo4graph.model.Person;
 import hhn.aib.thesis.neo4graph.model.Project;
 import hhn.aib.thesis.neo4graph.persistance.PersonRepository;
 import hhn.aib.thesis.neo4graph.persistance.ProjectRepository;
+import org.springframework.context.annotation.Lazy;
 
 import java.util.List;
 
@@ -20,11 +21,4 @@ public class IssueResolver implements GraphQLResolver<Issue> {
         this.projectRepository = projectRepository;
     }
 
-    public List<Person> assignees(Issue issue) {
-        return personRepository.findByIssuesContains(issue);
-    }
-
-    public Project projects(Issue issue) {
-        return projectRepository.findByIssuesContains(issue);
-    }
 }

@@ -6,6 +6,7 @@ import hhn.aib.thesis.neo4graph.model.Person;
 import hhn.aib.thesis.neo4graph.model.Project;
 import hhn.aib.thesis.neo4graph.persistance.IssueRepository;
 import hhn.aib.thesis.neo4graph.persistance.PersonRepository;
+import org.springframework.context.annotation.Lazy;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
@@ -21,11 +22,11 @@ public class ProjectResolver implements GraphQLResolver<Project> {
         this.personRepository = personRepository;
         this.issueRepository = issueRepository;
     }
-
+    @Lazy
     public List<Person> people(Project project) {
         return personRepository.findByProjectsContains(project);
     }
-
+    @Lazy
     public List<Issue> getIssues(Project project) {
         return issueRepository.findByProject(project);
     }

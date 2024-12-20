@@ -22,14 +22,6 @@ public class Issue {
 
     private String stateReason;
 
-    @Relationship(type = "BELONGS_TO", direction = Relationship.Direction.OUTGOING)
-    @JsonManagedReference
-    private Project project;
-
-    @Relationship(type = "CREATED", direction = Relationship.Direction.INCOMING)
-    @JsonBackReference
-    private Set<Person> assignees;
-
     public long getIid() {
         return Long.parseLong(iid);
     }
@@ -69,18 +61,4 @@ public class Issue {
     public void setStateReason(String stateReason) {
         this.stateReason = stateReason;
     }
-
-    public Project getProject() {
-        return project;
-    }
-
-    public void setProject(Project project) {
-        this.project = project;
-    }
-
-    public void setIid(String iid) {this.iid = iid;}
-
-    public Set<Person> getAssignees() {return assignees;}
-
-    public void setAssignees(Set<Person> assignees) {this.assignees = assignees;}
 }

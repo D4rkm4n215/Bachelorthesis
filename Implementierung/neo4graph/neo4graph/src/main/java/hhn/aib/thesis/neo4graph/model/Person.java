@@ -1,5 +1,6 @@
 package hhn.aib.thesis.neo4graph.model;
 
+import org.springframework.context.annotation.Lazy;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.neo4j.core.schema.Node;
 import org.springframework.data.neo4j.core.schema.Relationship;
@@ -17,10 +18,8 @@ public class Person {
 
     private String email;
 
-    @Relationship(type = "OWNS", direction = Relationship.Direction.OUTGOING)
     private List<Project> projects;
 
-    @Relationship(type = "CREATED", direction = Relationship.Direction.OUTGOING)
     private List<Issue> issues;
 
     public String getPid() {

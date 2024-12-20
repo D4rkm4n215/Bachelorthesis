@@ -1,6 +1,7 @@
 package hhn.aib.thesis.neo4graph.model;
 
 import jakarta.persistence.*;
+import org.springframework.context.annotation.Lazy;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.neo4j.core.schema.Node;
 import org.springframework.data.neo4j.core.schema.Relationship;
@@ -23,12 +24,6 @@ public class Issue {
 
     private String stateReason;
 
-    @Relationship(type = "BELONGS_TO", direction = Relationship.Direction.OUTGOING)
-    private Project project;
-
-    @Relationship(type = "CREATED", direction = Relationship.Direction.INCOMING)
-    private Set<Person> assignees;
-
 
     public String getIid() {
         return iid;
@@ -36,22 +31,6 @@ public class Issue {
 
     public void setIid(String iid) {
         this.iid = iid;
-    }
-
-    public Project getProject() {
-        return project;
-    }
-
-    public void setProject(Project project) {
-        this.project = project;
-    }
-
-    public Set<Person> getAssignees() {
-        return assignees;
-    }
-
-    public void setAssignees(Set<Person> assignees) {
-        this.assignees = assignees;
     }
 
     public String getStateReason() {

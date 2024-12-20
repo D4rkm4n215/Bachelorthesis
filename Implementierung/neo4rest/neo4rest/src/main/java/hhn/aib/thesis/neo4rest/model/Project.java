@@ -16,14 +16,6 @@ public class Project {
 
     private LocalDateTime createdAt;
 
-    @Relationship(type = "OWNS", direction = Relationship.Direction.INCOMING)
-    @JsonBackReference
-    private List<Person> people;
-
-    @Relationship(type = "BELONGS_TO", direction = Relationship.Direction.INCOMING)
-    @JsonBackReference
-    private List<Issue> issues;
-
     public String getPrid() {return prid;}
 
     public void setPrid(String prid) {this.prid = prid;}
@@ -43,12 +35,4 @@ public class Project {
     public void setCreatedAt(LocalDateTime createdAt) {
         this.createdAt = createdAt;
     }
-
-    public List<Person> getPeople() {return people;}
-
-    public void setPeople(List<Person> people) {this.people = people;}
-
-    public List<Issue> getIssues() {return issues;}
-
-    public void setIssues(List<Issue> issues) {this.issues = issues;}
 }

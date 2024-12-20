@@ -1,6 +1,7 @@
 package hhn.aib.thesis.postrest;
 
 import hhn.aib.thesis.postrest.DTO.IssueDTO;
+import hhn.aib.thesis.postrest.DTO.PersonDTO;
 import hhn.aib.thesis.postrest.model.Issue;
 import hhn.aib.thesis.postrest.model.Person;
 import hhn.aib.thesis.postrest.model.Project;
@@ -22,6 +23,7 @@ public class DBService implements IDBService{
 
     private final IssueRepository issueRepository;
 
+
     public DBService(ProjectRepository projectRepository, PersonRepository personRepository, IssueRepository issueRepository){
         this.projectRepository = projectRepository;
         this.personRepository = personRepository;
@@ -32,12 +34,29 @@ public class DBService implements IDBService{
         return personRepository.findById(id).orElse(null);
     }
 
+    public List<Issue> getIssueByCount(long counter) {
+        return issueRepository.findByCounter(counter);
+    }
+
+    public List<Issue> getIssueAndProjectByCount(long counter) {
+        return issueRepository.findIssueAndProjectByCounter(counter);
+    }
+    public List<Issue> issueAndProjectAndPersonIssueCount(long counter) {
+        return issueRepository.findIssueAndProjectAndPersonIssueByCounter(counter);
+    }
+    public List<Issue> issueAndProjectAndPeopleCount(long counter) {
+        return issueRepository.findIssueAndProjectAndPersonByCounter(counter);
+    }
+
+
+
+
     public List<Person> getPerson() {
         return personRepository.findAll();
     }
 
     public List<Issue> getIssueByPersonenIdAndProjectIDAndState(long pid) {
-        return issueRepository.findOpenIssuesByAssigneesAndProject(pid);
+       return issueRepository.findOpenIssuesByAssigneesAndProject(pid);
     }
 
     public Issue postIssue(long pid, long prid, IssueDTO dto) {
@@ -53,11 +72,11 @@ public class DBService implements IDBService{
         issue.setCreatedAt(dto.getCreatedAt());
         issue.setState(dto.getState());
         issue.setStateReason(dto.getStateReason());
-        issue.setProject(project);
-        issue.setAssignees(Collections.singleton(person));
 
         issueRepository.save(issue);
 
         return issue;
     }
+
+
 }
