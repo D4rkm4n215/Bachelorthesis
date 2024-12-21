@@ -17,7 +17,7 @@ public class Project {
     @Column(name = "createdat")
     private LocalDateTime createdAt;
 
-    @ManyToMany
+    @ManyToMany(fetch = FetchType.LAZY)
     @JoinTable(
             name = "person_project",
             joinColumns = @JoinColumn(name = "prid"),
@@ -25,10 +25,8 @@ public class Project {
     )
     private Set<Person> people;
 
-    @OneToMany(mappedBy = "project")
+    @OneToMany(mappedBy = "project", fetch = FetchType.LAZY)
     private Set<Issue> issues;
-
-
 
     public Project() {}
 
@@ -61,19 +59,19 @@ public class Project {
         this.createdAt = createdAt;
     }
 
-    public Set<Person> getPeople() {
-        return people;
-    }
-
-    public void setPeople(Set<Person> people) {
-        this.people = people;
-    }
-
     public Set<Issue> getIssues() {
         return issues;
     }
 
     public void setIssues(Set<Issue> issues) {
         this.issues = issues;
+    }
+
+    public Set<Person> getPeople() {
+        return people;
+    }
+
+    public void setPeople(Set<Person> people) {
+        this.people = people;
     }
 }

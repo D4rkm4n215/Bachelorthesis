@@ -5,12 +5,16 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.Random;
 
 public class DBCreator{
 
     static String user = "postgres";
     static String pw = "1234";
     static String url = "jdbc:postgresql://localhost:5432/bachelorthesis";
+    private static final int PERSON_COUNT = 500000;
+    private static final int PROJECT_COUNT = 500000;
+    private static final int ISSUE_COUNT = 500000;
 
     public static void main(String[] args) throws Exception {
         String s = System.getProperty("user.name");
@@ -28,6 +32,27 @@ public class DBCreator{
                     Statement s = conn.createStatement();
                     while ((zeile = br.readLine()) != null) {
                         s.execute(zeile);
+                    }
+
+                    for(int i = 0; i < PERSON_COUNT; i++)
+                    {
+                        s.execute("insert into person (firstname, lastname, email) values ('Cecilla', 'Beningfield', 'cbeningfield9@wp.com');");
+                    }
+                    for(int i = 0; i < PROJECT_COUNT; i++)
+                    {
+                        s.execute("insert into project (title, createdat) values ('Asoka', '2022-02-17');");
+                    }
+                    for(int i = 0; i < ISSUE_COUNT; i++)
+                    {
+                        s.execute("insert into issue (title, createdat, state, stateReason, prid) values ('Dabfeed', '2023-06-10', 'Open', 'Assigned',"+ (new Random().nextLong(PROJECT_COUNT-1)+1)+");");
+                    }
+                    for(int i = 0; i < PERSON_COUNT; i++)
+                    {
+                        s.execute("insert into person_project (pid, prid) values (" + (i+1) + "," + (new Random().nextLong(PROJECT_COUNT-1)+1) + ");");
+                    }
+                    for(int i = 0; i < PERSON_COUNT; i++)
+                    {
+                        s.execute("insert into person_issue (pid, iid) values (" + (i+1) + "," + (new Random().nextLong(ISSUE_COUNT-1)+1) + ");");
                     }
                     return true;
                 }

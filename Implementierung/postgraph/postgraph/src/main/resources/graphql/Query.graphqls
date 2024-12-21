@@ -3,15 +3,13 @@ type Person{
     firstname : String
     lastname : String
     email : String
-    projects : [Project]
-    issues : [Issue]
+    projects : [Project!]!
 }
 
 type Project{
     prid: ID!
     title : String!
     createdAt : String
-    people : [Person]
     issues : [Issue]
 }
 
@@ -21,8 +19,6 @@ type Issue{
     createdAt : String
     state : String
     stateReason : String
-    assignees : [Person]
-    project : Project
 }
 input IssueInput {
     title: String!
@@ -41,7 +37,8 @@ type Query{
     project(id:ID!) : Project
     issues : [Issue]
     issue(id: String): Issue
-
+    issuesCount(counter: Int!, joins: Int!): [Issue!]!
+    issuesInProjectsByPerson(id:ID!) : [Issue!]!
 }
 
 type Mutation {

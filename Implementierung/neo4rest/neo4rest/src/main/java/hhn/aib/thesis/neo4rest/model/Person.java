@@ -24,16 +24,6 @@ public class Person {
     @JsonView(Views.Basic.class)
     private String email;
 
-    @Relationship(type = "OWNS", direction = Relationship.Direction.OUTGOING)
-    @JsonManagedReference
-    @JsonView(Views.Full.class)
-    private List<Project> projects;
-
-    @Relationship(type = "CREATED", direction = Relationship.Direction.OUTGOING)
-    @JsonManagedReference
-    @JsonView(Views.Full.class)
-    private List<Issue> issues;
-
     public String getPid() {return pid;}
 
     public void setPid(String pid) {this.pid = pid;}
@@ -60,21 +50,5 @@ public class Person {
 
     public void setEmail(String email) {
         this.email = email;
-    }
-
-    public List<Project> getProjects() {
-        return projects;
-    }
-
-    public void setProjects(List<Project> projects) {
-        this.projects = projects;
-    }
-
-    public List<Issue> getIssues() {
-        return issues;
-    }
-
-    public void setIssues(List<Issue> issues) {
-        this.issues = issues;
     }
 }

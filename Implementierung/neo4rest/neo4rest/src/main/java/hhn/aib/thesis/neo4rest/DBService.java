@@ -30,6 +30,19 @@ public class DBService implements IDBService {
         this.issueRepository = issueRepository;
     }
 
+    public List<Issue> getIssueByCount(long counter) {
+        List<Issue> issues = issueRepository.findByCounter(counter);
+        return issues;
+    }
+
+    public List<Issue> getIssueAndProjectByCount(long counter) {
+        return issueRepository.findIssueAndProjectByCounter(counter);
+    }
+    public List<Issue> issueAndProjectAndPeopleCount(long counter) {
+        return issueRepository.findIssueAndProjectAndPersonByCounter(counter);
+    }
+
+
     @Override
     public Person getPerson(String id) {
         return personRepository.findByPid(id);
@@ -51,13 +64,11 @@ public class DBService implements IDBService {
         Person person = personRepository.findByPid(pid);
 
         Issue issue = new Issue();
-        issue.setIid(String.valueOf(new Random().nextLong()));
+        issue.setIid(new Random().nextLong());
         issue.setTitle(dto.getTitle());
         issue.setCreatedAt(dto.getCreatedAt());
         issue.setState(dto.getState());
         issue.setStateReason(dto.getStateReason());
-        issue.setProject(project);
-        issue.setAssignees(Collections.singleton(person));
 
         issueRepository.save(issue);
 

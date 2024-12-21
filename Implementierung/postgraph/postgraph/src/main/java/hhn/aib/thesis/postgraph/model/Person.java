@@ -1,7 +1,11 @@
 package hhn.aib.thesis.postgraph.model;
 
+import jakarta.annotation.Generated;
 import jakarta.persistence.*;
+import org.hibernate.annotations.CollectionType;
+import org.springframework.graphql.data.method.annotation.Argument;
 
+import java.util.List;
 import java.util.Set;
 
 @Entity
@@ -18,11 +22,13 @@ public class Person {
     @Column(name = "email")
     private String email;
 
-    @ManyToMany(mappedBy = "people")
+    @ManyToMany(mappedBy = "people", fetch = FetchType.LAZY)
     private Set<Project> projects;
 
-    @ManyToMany(mappedBy = "assignees")
+    @ManyToMany(mappedBy = "assignees", fetch = FetchType.LAZY)
     private Set<Issue> issues;
+
+
 
     public Person() {}
 

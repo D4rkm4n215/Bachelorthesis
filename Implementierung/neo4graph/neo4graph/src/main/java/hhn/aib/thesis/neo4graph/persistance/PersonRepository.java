@@ -19,7 +19,7 @@ public interface PersonRepository extends Neo4jRepository<Person,String> {
             "RETURN p, pr, pi, r , s , t , i")
     Person findByPid(String pid);
 
-    @Query("MATCH (i:Issue)<-[s:CREATED]-(p:Person)-[r:OWNS]->(pr:Project) RETURN i,s,p,r,pr")
+    @Query("MATCH (i:Issue)<-[s:CREATED]-(p:Person)-[r:OWNS]->(pr:Project) RETURN i,s,p,r,pr LIMIt 5000")
     List<Person> findAll();
 
     List<Person> findByProjectsContains(Project projekt);
