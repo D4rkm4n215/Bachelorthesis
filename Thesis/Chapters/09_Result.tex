@@ -1,4 +1,5 @@
 \chapter{Ergebnisse} % (fold)
+\label{sec:ergebnisse}
 Im Nachfolgenden werden die Ergebnisse der Latenztests der oben eingeführten APIs dargestellt.
 
 \noindent
@@ -6,10 +7,452 @@ Wie in Abbildung 7.1 zusehen ist, hat die PostgreSQL REST-API eine höhere Laten
 \newline
 In Abbildung 7.2 sind die Latenzen für die komplexere Anfrge, die alle Personenobjekte aus der Datenbank zurückliefert dargestellt. Bei den APIs die mit Postgres implementiert sind ist eine deutlich niedrigere Latenz zu sehen, als bei den mit neo4j implementierten. GraphQL hat hierbei sowohl bei der relationalen Datenbank als auch bei der Graphdatenbank im Median eine niedrigere Latenz. REST ist somit in beiden Fällen die unperformantere API.
 \newline
-Wenn nun die Anfragekomplexität steigt, wodurch sich die Abhängigkeit zwischen den Objekten in der Datenbank erhöht, ist deutlich zu sehen, dass die Streuung bei der Postgres REST-API höher ist als bei allen anderen APIs(vgl Abb.7.3). Zudem ist diese API diejenige mit der höchsten Latenz. Allerdings liegt die Neo4j REST-API im Median über den Postgres REST-API. Beide GraphQL APIs weißen erneut eine deutlich niedrigere Latenz auf.
+Wenn nun die Anfragekomplexität steigt, wodurch sich die Abhängigkeit zwischen den Objekten in der Datenbank erhöht, ist deutlich zu sehen, dass die Streuung bei der Postgres REST-API höher ist als bei allen anderen APIs (vgl Abb.7.3). Zudem ist diese API diejenige mit der höchsten Latenz. Allerdings liegt die Neo4j REST-API im Median über den Postgres REST-API. Beide GraphQL APIs weißen erneut eine deutlich niedrigere Latenz auf.
 \newline
 Bei der Speicherung in eine Datenbank ist ein deutlich anderes Bild zu sehen. Wie in Abbildung 7.4 zusehen, ist hierbei die Postgres REST-API diejenige mit der geringsten LAtenz. Dicht gefolgt von der Postgres GraphQL API. Eine deutlich höhere Latenz ist bei den neo4j APIs zu erkennen. Hierbei ist allerdings die GraphQL API die performantere.
-\label{sec:ergebnisse}
+
+
+
+
+\begin{figure}[htbp]
+ \centering
+	\begin{tikzpicture}
+	    \begin{axis}[
+	        boxplot/draw direction=y, 
+	        xlabel={API}, 
+	        ylabel={ms}, 
+	        xtick={1,2,3,4}, 
+	        xticklabels={Post Rest, Post Graph, Neo4 Rest, Neo4 Graph}, 
+	        ymin=50, ymax=65,
+	       ytick distance=1,
+                  width=15cm,
+	       height= 18cm
+	    ]
+	       \addplot+[
+	            boxplot prepared={
+	                median=52,
+	                upper quartile=55,
+	                lower quartile=52, 
+	                upper whisker=59,
+	                lower whisker=51
+	            },
+	            draw=black
+	        ] coordinates {};
+	        \addplot+[
+	            boxplot prepared={
+	                median=53,
+	                upper quartile=53,
+	                lower quartile=53, 
+	                upper whisker=54,
+	                lower whisker=52
+	            },
+	            draw=black
+	        ] coordinates {};
+	         \addplot+[
+	            boxplot prepared={
+	                median=52,
+	                upper quartile=58,
+	                lower quartile=52, 
+	                upper whisker=63,
+	                lower whisker=51
+	            },
+	            draw=black
+	        ] coordinates {};
+	       \addplot+[
+	            boxplot prepared={
+	                median=52,
+	                upper quartile=53,
+	                lower quartile=52, 
+	                upper whisker=54,
+	                lower whisker=51
+	            },
+	            draw=black
+	        ] coordinates {};
+	    \end{axis}
+	\end{tikzpicture}
+\caption{HEAD /api/resource}
+\end{figure}
+
+
+
+
+\begin{figure}
+\centering
+\begin{tikzpicture}[scale=1.9]
+\begin{axis}[
+    axis lines = middle,
+    xlabel = {x},
+    ylabel = {y},
+    zlabel = {z},
+    xmode = log,
+    width=10cm,
+    height=10cm,
+    grid = major,
+    enlarge x limits = true,
+    view={0}{0},
+    ymin=0, ymax=3,  
+]
+% Linie und Punkte für die ersten Punkte (rot)
+\addplot3+[
+    only marks, 
+    mark=*,
+    red,
+    mark options={fill=red} % Innere des Punktes rot färben
+] coordinates {
+    (1, 0, 111)
+    (100, 0, 121)
+    (1000, 0, 135)
+    (10000, 0, 272)
+    (100000, 0, 426.5)
+};
+\addplot3[
+    red, % Linie durch die Punkte
+    mark=none % keine Markierungen an der Linie
+] coordinates {
+    (1, 0, 111)
+    (100, 0, 121)
+    (1000, 0, 135)
+    (10000, 0, 272)
+    (100000, 0, 426.5)
+};
+% Linie und Punkte für die zweiten Punkte (blau)
+\addplot3+[
+    only marks, 
+    mark=square*,
+    blue,
+    mark options={fill=blue} % Innere des Punktes blau färben
+] coordinates {
+    (1, 1, 111)
+    (100, 1, 122)
+    (1000, 1, 134)
+    (10000, 1, 271.5)
+    (100000, 1, 468)
+};
+\addplot3[
+    blue, % Linie durch die Punkte
+    mark=none % keine Markierungen an der Linie
+] coordinates {
+    (1, 1, 111)
+    (100, 1, 122)
+    (1000, 1, 134)
+    (10000, 1, 271.5)
+    (100000, 1, 468)
+};
+% Linie und Punkte für die vierten Punkte (orange)
+\addplot3+[
+    only marks, 
+    mark=diamond*,
+    orange,
+    mark options={fill=orange} % Innere des Punktes orange färben
+] coordinates {
+    (1, 3, 111)
+    (100, 3, 119.5)
+    (1000, 3, 146)
+    (10000, 3, 267)
+    (100000, 3, 492.5)
+};
+\addplot3[
+    orange, % Linie durch die Punkte
+    mark=none % keine Markierungen an der Linie
+] coordinates {
+    (1, 3, 111)
+    (100, 3, 119.5)
+    (1000, 3, 146)
+    (10000, 3, 267)
+    (100000, 3, 492.5)
+};
+\end{axis}
+\end{tikzpicture}
+\caption{PostREST parametriesierte Abfragen}
+\end{figure}
+
+\begin{figure}
+\centering
+\begin{tikzpicture}[scale=1.9]
+\begin{axis}[
+    axis lines = middle,
+    xlabel = {x},
+    ylabel = {y},
+    zlabel = {z},
+    xmode = log,
+    width=10cm,
+    height=10cm,
+    grid = major,
+    enlarge x limits = true,
+    view={0}{0},
+    ymin=0, ymax=3,  
+]
+% Linie und Punkte für die ersten Punkte (rot)
+\addplot3+[
+    only marks, 
+    mark=*,
+    red,
+    mark options={fill=red} % Innere des Punktes rot färben
+] coordinates {
+    (1, 0, 56)
+    (100, 0, 66)
+    (1000, 0, 87.5)
+    (10000, 0, 240.5)
+    (100000, 0, 1815.5)
+};
+\addplot3[
+    red, % Linie durch die Punkte
+    mark=none % keine Markierungen an der Linie
+] coordinates {
+    (1, 0, 56)
+    (100, 0, 66)
+    (1000, 0, 87.5)
+    (10000, 0, 240.5)
+    (100000, 0, 1815.5)
+};
+% Linie und Punkte für die zweiten Punkte (blau)
+\addplot3+[
+    only marks, 
+    mark=square*,
+    blue,
+    mark options={fill=blue} % Innere des Punktes blau färben
+] coordinates {
+    (1, 1, 94)
+    (100, 1, 103)
+    (1000, 1, 129)
+    (10000, 1, 283.5)
+    (100000, 1, 1831.5)
+};
+\addplot3[
+    blue, % Linie durch die Punkte
+    mark=none % keine Markierungen an der Linie
+] coordinates {
+    (1, 1, 94)
+    (100, 1, 103)
+    (1000, 1, 129)
+    (10000, 1, 283.5)
+    (100000, 1, 1831.5)
+};
+% Linie und Punkte für die vierten Punkte (orange)
+\addplot3+[
+    only marks, 
+    mark=diamond*,
+    orange,
+    mark options={fill=orange} % Innere des Punktes orange färben
+] coordinates {
+    (1, 3, 55)
+    (100, 3, 65)
+    (1000, 3, 91.5)
+    (10000, 3, 292)
+    (100000, 3, 1792.5)
+};
+\addplot3[
+    orange, % Linie durch die Punkte
+    mark=none % keine Markierungen an der Linie
+] coordinates {
+    (1, 3, 55)
+    (100, 3, 65)
+    (1000, 3, 91.5)
+    (10000, 3, 292)
+    (100000, 3, 1792.5)
+};
+\end{axis}
+\end{tikzpicture}
+\caption{PostGraph parametriesierte Abfragen}
+\end{figure}
+
+
+
+\begin{figure}
+\centering
+\begin{tikzpicture}[scale=1.9]
+\begin{axis}[
+    axis lines = middle,
+    xlabel = {x},
+    ylabel = {y},
+    zlabel = {z},
+    xmode = log,
+    width=10cm,
+    height=10cm,
+    grid = major,
+    enlarge x limits = true,
+    view={0}{0},
+    ymin=0, ymax=3,  
+]
+% Linie und Punkte für die ersten Punkte (rot)
+\addplot3+[
+    only marks, 
+    mark=*,
+    red,
+    mark options={fill=red} % Innere des Punktes rot färben
+] coordinates {
+    (1, 0, 119)
+    (100, 0, 126)
+    (1000, 0, 147)
+    (10000, 0, 282)
+    (100000, 0, 1673)
+};
+\addplot3[
+    red, % Linie durch die Punkte
+    mark=none % keine Markierungen an der Linie
+] coordinates {
+    (1, 0, 119)
+    (100, 0, 126)
+    (1000, 0, 147)
+    (10000, 0, 282)
+    (100000, 0,1673)
+};
+% Linie und Punkte für die zweiten Punkte (blau)
+\addplot3+[
+    only marks, 
+    mark=square*,
+    blue,
+    mark options={fill=blue} % Innere des Punktes blau färben
+] coordinates {
+    (1, 1, 113.5)
+    (100, 1, 124)
+    (1000, 1, 143.5)
+    (10000, 1, 269)
+    (100000, 1, 1466)
+};
+\addplot3[
+    blue, % Linie durch die Punkte
+    mark=none % keine Markierungen an der Linie
+] coordinates {
+    (1, 1, 113.5)
+    (100, 1, 124)
+    (1000, 1, 143.5)
+    (10000, 1, 269)
+    (100000, 1, 1466)
+};
+% Linie und Punkte für die vierten Punkte (orange)
+\addplot3+[
+    only marks, 
+    mark=diamond*,
+    orange,
+    mark options={fill=orange} % Innere des Punktes orange färben
+] coordinates {
+    (1, 3, 112)
+    (100, 3, 122)
+    (1000, 3, 145)
+    (10000, 3, 269)
+    (100000, 3, 1371)
+};
+\addplot3[
+    orange, % Linie durch die Punkte
+    mark=none % keine Markierungen an der Linie
+] coordinates {
+    (1, 3, 112)
+    (100, 3, 122)
+    (1000, 3, 145)
+    (10000, 3, 269)
+    (100000, 3, 1371)
+};
+\end{axis}
+\end{tikzpicture}
+\caption{Neo4REST parametriesierte Abfragen}
+\end{figure}
+
+
+\begin{figure}
+\centering
+\begin{tikzpicture}[scale=1.9]
+\begin{axis}[
+    axis lines = middle,
+    xlabel = {x},
+    ylabel = {y},
+    zlabel = {z},
+    xmode = log,
+    width=10cm,
+    height=10cm,
+    grid = major,
+    enlarge x limits = true,
+    view={0}{0},
+    ymin=0, ymax=3,  
+]
+% Linie und Punkte für die ersten Punkte (rot)
+\addplot3+[
+    only marks, 
+    mark=*,
+    red,
+    mark options={fill=red} % Innere des Punktes rot färben
+] coordinates {
+    (1, 0, 58)
+    (100, 0, 70)
+    (1000, 0, 105.5)
+    (10000, 0, 391)
+    (100000, 0, 2726.5)
+};
+\addplot3[
+    red, % Linie durch die Punkte
+    mark=none % keine Markierungen an der Linie
+] coordinates {
+    (1, 0, 58)
+    (100, 0, 70)
+    (1000, 0, 105.5)
+    (10000, 0, 391)
+    (100000, 0,2726.5)
+};
+% Linie und Punkte für die zweiten Punkte (blau)
+\addplot3+[
+    only marks, 
+    mark=square*,
+    blue,
+    mark options={fill=blue} % Innere des Punktes blau färben
+] coordinates {
+    (1, 1, 59)
+    (100, 1, 70)
+    (1000, 1, 102.5)
+    (10000, 1, 330)
+    (100000, 1, 2484.5)
+};
+\addplot3[
+    blue, % Linie durch die Punkte
+    mark=none % keine Markierungen an der Linie
+] coordinates {
+    (1, 1, 59)
+    (100, 1, 70)
+    (1000, 1, 102.5)
+    (10000, 1, 330)
+    (100000, 1, 2484.5)
+};
+% Linie und Punkte für die vierten Punkte (orange)
+\addplot3+[
+    only marks, 
+    mark=diamond*,
+    orange,
+    mark options={fill=orange} % Innere des Punktes orange färben
+] coordinates {
+    (1, 3, 57)
+    (100, 3, 69)
+    (1000, 3, 96)
+    (10000, 3, 317)
+    (100000, 3, 2396.5)
+};
+\addplot3[
+    orange, % Linie durch die Punkte
+    mark=none % keine Markierungen an der Linie
+] coordinates {
+    (1, 3, 57)
+    (100, 3, 69)
+    (1000, 3, 96)
+    (10000, 3, 317)
+    (100000, 3, 2396.5)
+};
+\end{axis}
+\end{tikzpicture}
+\caption{Neo4Graph parametriesierte Abfragen}
+\end{figure}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 \begin{figure}[htbp]
  \centering
 	\begin{tikzpicture}

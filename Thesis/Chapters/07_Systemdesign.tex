@@ -2,7 +2,7 @@
 \label{sec:systemdesign}
 Innerhalb dieses Abschnitt sollen die konkreten Technologien beschrieben werden, die gewählt wurden um ein System zu entwickeln welches für Latentztests verwendet werden kann.
 \section{Datenbankdesign} % (fold)
-Für die Durchführung des Experiments werden zwei Datenbanktypen verwendet, welche nachfolgend mit ihrer konkreten Konfiguration beschrieben werden. In jeder Datenbank sind 500.000 Person, Project, als auch Issue Objekte vorhanden, somit enthählt jede Datenbank 1,5 Mio Datensätze.
+Für die Durchführung des Experiments werden zwei Datenbanktypen verwendet, welche nachfolgend mit ihrer konkreten Konfiguration beschrieben werden.
 \label{sec:datenbankdesign}
 \subsection{Relationales Datenbankdesign} % (fold)
 \label{sec:relationalesdatenbankdesign}
@@ -12,7 +12,9 @@ Für die Durchführung des Experiments werden zwei Datenbanktypen verwendet, wel
 	\includegraphics[scale=0.6]{Illustrations/table_diagram.png}
 	\caption{Tabellen Diagramm}
 \end{figure}
-Um eine realtionale Datenbank aus dem gegebenen Datenmodell (Abb. 4.1) zu erstellen muss dieses wie in Abb. 5.1 zu sehen ist angepasst werden, um die Beziehung zwischen Person und Projekt als auch Person und Issue abzubilden. Somit ergeben sich für die relationale Datenbank fünf Tabellen welche in einer PostgreSQL Datenbank realisiert werden. PostgreSQL wird verwendet, da es ein leistungsfähiges, objekt-relationales Datenbanksystem bietet welches Open-Source ist und dadurch kostenfrei zur Verfügung steht. 
+\newpage
+\noindent
+Um eine realtionale Datenbank aus dem gegebenen Datenmodell (Abb. 4.1) zu erstellen muss dieses wie in Abb. 5.1 zu sehen ist angepasst werden, um die Beziehung zwischen Person und Projekt als auch Person und Issue abzubilden. Somit ergeben sich für die relationale Datenbank fünf Tabellen welche in einer PostgreSQL Datenbank realisiert werden. PostgreSQL wird verwendet, da es ein leistungsfähiges, objekt-relationales Datenbanksystem bietet welches Open-Source ist und dadurch kostenfrei zur Verfügung steht. Die Datenbank wurde mit Beispieldaten befüllt, welche in Abbildung 5.2 bis 5.6 beispielhaft zusehen sind. Hierbei wurden 500.000 Personen als auch Projekt und Issue Objekte in die Datenbank eingefügt. Durch die Verwendung von Zwischentabellen, wie person\_issue und person\_project, enthält die relationale Datenbank 2,5 Mio. Tupel, die einen Speicherbedarf von 215MB besitzen.
 
 \begin{figure}[H]
 	\centering
@@ -69,12 +71,13 @@ Um eine realtionale Datenbank aus dem gegebenen Datenmodell (Abb. 4.1) zu erstel
 	\end{tabular}
 	\caption{Tupel der Tabelle Project}
 \end{figure}
+\newpage
 
 
 % subsection relationalesdatenbankdesign (end)
 \subsection{Graphdatenbankdesign} % (fold)
 \label{sec:graphsdatenbankdesign}
-Um eine Graphdatenbank zu erstellen benötigt man keine definierten Tabellen, da diese die Daten schemafrei speichert. Die Nodes werden bei der Erstellung entsprechend der Objekte benannt, ebenso werden die Beziehungen zwischen den Nodes bei der Erstellung benannt. Als Graphdatenbank wird auf neo4j zurückgegriffen. Es ist eine der am weitesten verbreiteten Graphdatenbanken und bietet eine hohe Benutzerfreundlichkeit. In Abbildung 5.2 ist eine Demonstration einer Beziehung zwischen jeweils einem Node zu sehen. Die Kanten sind als gerichtete Kanten abgebildet, dabei hat Person zwei ausgehende Kanten, Projekt zwei eingehende und Issue jeweils eine eingehende als auch eine ausgehende Kante. 
+Um eine Graphdatenbank zu erstellen benötigt man keine definierten Tabellen, da diese die Daten schemafrei speichert. Die Nodes werden bei der Erstellung entsprechend der Objekte benannt, ebenso werden die Beziehungen zwischen den Nodes bei der Erstellung benannt. Als Graphdatenbank wird auf neo4j zurückgegriffen. Es ist eine der am weitesten verbreiteten Graphdatenbanken und bietet eine hohe Benutzerfreundlichkeit. In Abbildung 5.7 ist eine Demonstration einer Beziehung zwischen jeweils einem Node zu sehen. Die Kanten sind als gerichtete Kanten abgebildet, dabei hat Person zwei ausgehende Kanten, Projekt zwei eingehende und Issue jeweils eine eingehende als auch eine ausgehende Kante. Wie in der relationalen Datenbank wurden auch in der Graphdatenbank 500.000 Nodes pro Objekt erstellt. Hierbei werden jedoch keine Zwischentabellen benötigt, um Beziehungen darzustellen, wodurch in der Datenbank 1,5 Mio. Nodes vorhanden sind, die durch 2,01 Mio. Edges verbunden sind. Hieraus ergibt sich eine Gesamtgröße von 197MB.
 
 
 \begin{figure}[H]
@@ -85,7 +88,7 @@ Um eine Graphdatenbank zu erstellen benötigt man keine definierten Tabellen, da
 % subsection graphdatenbankdesign (end)
 
 % section datenbankdesign (end)
-
+\newpage
 \section{Schnittstellendesign} % (fold)
 \label{sec:schnittstellendesign}
 
@@ -257,7 +260,7 @@ query {
 \caption{GraphQL Query equivalent zu GET api/persons}
 \end{figure}
 \noindent
-Abbildung 5.10 zeigt die GraphQL Query, welche dem REST Endpunkt GET api/persons/:pid/projects/issue entspricht. Hierbei werden die im Schema definierten Querys geschachtelt, um eine Abfrage zu erhalten, welche die Abhängigkeiten zwischen den Objekten repräsentiert.
+Abbildung 5.10 zeigt die GraphQL Query, welche dem REST Endpunkt GET api/persons/ :pid/projects/issue entspricht. Hierbei werden die im Schema definierten Querys geschachtelt, um eine Abfrage zu erhalten, welche die Abhängigkeiten zwischen den Objekten repräsentiert.
 \begin{figure}[H]
 \begin{center}
 \begin{BVerbatim}
@@ -306,11 +309,6 @@ mutation{
 
 \label{sec:graphql}
 % section graphql (end)
-
-\subsection{Datenbank}
-\label{sec:datenbank}
-% section datenbank (end)
-
 
 % section schnittstellendesign (end)
 \section{Testumgebung} % (fold)
