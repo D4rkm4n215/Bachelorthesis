@@ -1,6 +1,12 @@
 \chapter{Analyse} % (fold)
 \label{sec:analyse}
 
+Relationale Datenbanken stoßen in mehreren Bereichen an ihre Grenzen. So können Zugriffszeiten bei großen Datenmengen in relationalen Datenbanken stark ansteigen, während sie in Graphdatenbanken nahezu konstant bleiben, da diese Traversal-basierte Abfragen nutzen. Die Komplexität nimmt mit der Anzahl der Relationen ebenfalls zu, da umfangreiche und schwer überschaubare SQL-Statements erforderlich werden, die oft als "Join Pains" bezeichnet werden. Graphdatenbanken bieten hingegen intuitive und kürzere Abfragesprachen. Darüber hinaus eignen sich relationale Datenbanken trotz ihres Namens oft nur bedingt dazu, Beziehungen zwischen Dateneinträgen effizient abzubilden, da diese häufig über Schlüssel und mehrere Tabellen hinweg konstruiert werden müssen. Graphdatenbanken unterstützen solche Verknüpfungen hingegen nativ.
 
+
+
+Ein großer Vorteil relationaler Datenbanken liegt in ihrer Unterstützung der ACID-Prinzipien (Atomicity, Consistency, Isolation, Durability). Diese gewährleisten Stabilität und Sicherheit bei Transaktionen, was sie für viele Anwendungsbereiche geeignet macht. Darüber hinaus bieten sie eine hohe Datenintegrität, reduzieren Redundanz und ermöglichen die einfache Implementierung von Sicherheitsmaßnahmen. Trotz dieser Vorteile stoßen relationale Datenbanken bei bestimmten Anforderungen an ihre Grenzen. Sie sind oft nicht für hohe Skalierbarkeit geeignet und können mit dem exponentiellen Wachstum von Daten schwer umgehen. Die Einrichtung und Wartung solcher Systeme ist häufig kostspielig, und die Verwaltung unstrukturierter Daten wie Multimedia oder Social-Media-Inhalte stellt eine große Herausforderung dar. Zudem erschwert die tabellarische Struktur komplexe Datenverknüpfungen und die Integration mehrerer Datenbanken.
+
+Aufgrund dieser Einschränkungen haben moderne Anwendungen und Big-Data-Anforderungen zur Entwicklung von NoSQL-Datenbanken geführt, die besser auf die Verwaltung unstrukturierter und verteilter Daten ausgelegt sind. Dennoch bleiben relationale Datenbanken aufgrund ihrer Standardisierung, Benutzerfreundlichkeit und breiten Einsatzmöglichkeiten ein wesentlicher Bestandteil der Datenbanktechnologie.
 
 % chapter analyse (end)
