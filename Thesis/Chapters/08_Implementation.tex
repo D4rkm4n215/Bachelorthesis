@@ -123,6 +123,13 @@ Nach der Bearbeitung einer Anfrage liefert die GraphQL-API die Daten im standard
 	\caption{Java Klassen Neo4Graph}
 \end{figure}
 % section neo4graph (end)
-
-
+\section{API-Response Test} % (fold)
+\label{sec:test}
+Eine Anwendung wurde entwickelt, um API-Anfragen von einem entfernten System durchzuführen. Diese Anwendung enthält für jeden Endpunkt eine Methode(vgl. Abb. 6.8), die jeweils 100 Abfragen in einer Schleife ausführt. Falls für eine Abfrage eine ID erforderlich ist, wird diese mithilfe der Klasse Random aus java.util.Random generiert. Die Abfragen für den parametrisierten Endpunkt werden mit den Joins von 0 bis 3 und den Ergebnistupeln 1, 100, 1000, 10.000 und 100.000 durchgeführt. Die Abfragezeit wird ermittelt, indem die aktuelle Systemzeit in Millisekunden unmittelbar vor der Ausführung der Abfrage erfasst und von der Zeit nach Abschluss der Abfrage abgezogen wird.
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.5]{Illustrations/apiresponsetest.png}
+	\caption{Java Klassen Neo4Graph}
+\end{figure}
+% section test (end)
 % chapter implementierung (end)
