@@ -5,7 +5,7 @@
 
 
 
-Dieses Repository enthält den Code und die Ergebnisse meiner Bachelorthesis zum Thema: "Vergleichende Untersuchung von GraphQL und REST im Kontext relationaler und graphbasierter Datenbanken, hinsichtlich Anpassungs- und Leistungsfähigkeit".
+Dieses Repository enthält den Code und die Ergebnisse meiner Bachelorthesis zum Thema: "GraphQL und REST im Kontext relationaler und graphbasierter Datenbanken hinsichtlich Latenz bei unterschiedlichen Anfragekomplexitäten".
 
 
 ## Inhalt
@@ -24,7 +24,7 @@ Im Abschnitt Exposé sind alle TeXwoks Dateien zu finden die zur Erstellung verw
 [Expose_206488_Hefner_Robin_Final.pdf](Expose/Expose_206488_Hefner_Robin_Final.pdf) stellt die finale Version dar, die dem betreuenden Professor zur Anmeldung der Abschlussarbeit vorgelegt wurde.
 
 ## Thesis
-Hier sind die Quelldateien der Thesis zu finden.
+[Hier](Thesis/Thesis_Robin_Hefner_206488.pdf) ist die Thesis, sowie die Quelldaten zu finden.
 
 ## Literatur
 [Hier](Literatur) sind alle Quellen die für die Bearbeitung herangezogen wurden in Form von pdf Dokumenten abgelegt.
