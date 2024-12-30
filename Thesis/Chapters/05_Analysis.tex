@@ -9,7 +9,7 @@ Bei der Bereitstellung von Daten setzt REST auf HTTP-Endpunkte. Diese untestütz
 Bei GraphQL wird dies nativ nicht unterstützt. Hierdurch können wiederkehrende Anfragen nicht gecached werden und müssen jeweils immer vom Server bearbeitet werden, wodurch eine höhere Zugriffszeit entsteht. \citep{graphqlreplacerest}
 
 \noindent
-REST fördert die Zerlegung von Systemen in eine Menge verknüpfter Ressourcen mit einem bestimmten Granularitätsgrad. Dies führt zu schwierigen Abwägungen zwischen Wiederverwendbarkeit und Leistung, die in der allgemeinen Software-Service-Architektur wohlbekannt sind. Weniger granulare und kohäsivere Services werden bevorzugt, da sie lose Kopplung und hohe Wiederverwendbarkeit fördern. Dies kann jedoch zu komplizierten Client-Server-Interaktionen führen, bei denen mehrere aufeinanderfolgende Anfragen notwendig sind, um die benötigten Daten aus dem Ressourcengraphen abzurufen,ein Phänomen, das als „Underfetching“ bekannt ist. Dieses Problem wird auch als n+1-Problem bezeichnet und tritt bei REST auf der Seite des Clients auf. Dieser muss demensprechend weitere Anfragen schicken, bis die benötigte Antwortzeiten führen. Der gegensätzliche Ansatz des „Coarse-Grained Remote Interfaces“-Patterns reduziert die Anzahl der Anfragen und den Netzwerkaufwand, geht jedoch mit einer geringeren Kohäsion und Wiederverwendbarkeit einher.\citep{graphqlhealth} \citep{migrategraphql}
+REST fördert die Zerlegung von Systemen in eine Menge verknüpfter Ressourcen mit einem bestimmten Granularitätsgrad. Dies führt zu schwierigen Abwägungen zwischen Wiederverwendbarkeit und Leistung, die in der allgemeinen Software-Service-Architektur wohlbekannt sind. Weniger granulare und kohäsivere Services werden bevorzugt, da sie lose Kopplung und hohe Wiederverwendbarkeit fördern. Dies kann jedoch zu komplizierten Client-Server-Interaktionen führen, bei denen mehrere aufeinanderfolgende Anfragen notwendig sind, um die benötigten Daten aus dem Ressourcengraphen abzurufen,ein Phänomen, das als „Underfetching“ bekannt ist. Dieses Problem wird auch als n+1-Problem bezeichnet und tritt bei REST auf der Seite des Clients auf. Dieser muss demensprechend weitere Anfragen schicken, bis die benötigte Antwortzeiten führen. \citep{graphqlhealth} \citep{migrategraphql}
 
 \noindent
 Bei GraphQL kann es ebenso zu einem n+1 Problem kommen. Hierbei tritt dieses jedoch nicht auf der Client Seite auf sondern direkt beim Server bei der Verarbeitung der Anfrage. Der GraphQL Server muss dann mehrere Anfragen an die Datenbank schicken, um die benötigten Daten zu erhalten, um sie dann an den Client auszuliefern.
@@ -40,19 +40,20 @@ Somit kann man sagen, dass REST in einem Szenario besser abgeschnitten hat als G
 \citep{graphqlreplacerest}
 \newline
 Andere Studien zeigen, dass GraphQL bei einfachen Abfragen, die nur einen Endpunkt nutzen, etwa 0,02-mal schneller als REST arbeitet. \citep{migrategraphql}
+\newline
 Bei komplexeren Anfragen, die vier Endpunkte umfassen und 1000 Ergebnistupel liefern, verarbeitet eine GraphQL-API die Daten bis zu 16-mal schneller als eine REST-API.\citep{analysegraphql}
+\newline
 Noch anspruchsvollere Anfragen, die fünf oder mehr Endpunkte nutzen, werden von GraphQL sogar bis zu 187-mal schneller bearbeitet.\citep{analysewebgraphql}
+\newline
 Bei steigender Komplexität stellt sich jedoch bei einer Menge von 100.000 Ergebnistupeln heraus, dass eine GraphQL API in diesem Fall 0.36 \citep{analysegraphql} bis 2,5 mal langsamer ist, als eine vergleichbare REST API \citep{restvsgraphql}.
-
-
-
-
 %section ff1 (end)
 \section{FF-2: Wie beeinflussen graph- und relationale Datenbanken die Latenz von REST- und GraphQL-APIs?} % (fold)
 \label{sec:ff2}
+Die Art der Datenbank kann API Anfragen in besonderem Maß beeinflussen. Aufgrund der verschiedenen Möglichkeiten wie Anfragen von der Datenbank bearbeitet werden, wie durch realtionale Algebra oder die Graphentheorie  gibt es Anwendungsfälle für die sie besonders gut oder weniger gut geeignet sind. Relationale Datenbanken kommen somit bei bestimmten Anforderungen an ihre Grenzen. So können Zugriffszeiten bei großen Datenmengen in relationalen Datenbanken stark ansteigen, während sie in Graphdatenbanken nahezu konstant bleiben, da diese Traversal-basierte Abfragen nutzen. Die Komplexität nimmt mit der Anzahl der Relationen ebenfalls zu, da umfangreiche und schwer überschaubare SQL-Statements erforderlich werden, die oft als "Join Pains" bezeichnet werden. Graphdatenbanken bieten hingegen intuitive und kürzere Abfragesprachen. Darüber hinaus eignen sich relationale Datenbanken trotz ihres Namens oft nur bedingt dazu, Beziehungen zwischen Dateneinträgen effizient abzubilden, da diese häufig über Schlüssel und mehrere Tabellen hinweg konstruiert werden müssen. Graphdatenbanken unterstützen solche Verknüpfungen hingegen nativ.
+\citep{9677042} \citep{graphdb} 
+
+
 %section ff2 (end)
-
-
 
 
 
