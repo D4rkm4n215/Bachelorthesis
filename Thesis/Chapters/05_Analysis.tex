@@ -49,14 +49,41 @@ Bei steigender Komplexität stellt sich jedoch bei einer Menge von 100.000 Ergeb
 %section ff1 (end)
 \section{FF-2: Wie beeinflussen graph- und relationale Datenbanken die Latenz von REST- und GraphQL-APIs?} % (fold)
 \label{sec:ff2}
-Die Art der Datenbank kann API Anfragen in besonderem Maß beeinflussen. Aufgrund der verschiedenen Möglichkeiten wie Anfragen von der Datenbank bearbeitet werden, wie durch realtionale Algebra oder die Graphentheorie  gibt es Anwendungsfälle für die sie besonders gut oder weniger gut geeignet sind. Relationale Datenbanken kommen somit bei bestimmten Anforderungen an ihre Grenzen. So können Zugriffszeiten bei großen Datenmengen in relationalen Datenbanken stark ansteigen, während sie in Graphdatenbanken nahezu konstant bleiben, da diese Traversal-basierte Abfragen nutzen. Die Komplexität nimmt mit der Anzahl der Relationen ebenfalls zu, da umfangreiche und schwer überschaubare SQL-Statements erforderlich werden, die oft als "Join Pains" bezeichnet werden. Graphdatenbanken bieten hingegen intuitive und kürzere Abfragesprachen. Darüber hinaus eignen sich relationale Datenbanken trotz ihres Namens oft nur bedingt dazu, Beziehungen zwischen Dateneinträgen effizient abzubilden, da diese häufig über Schlüssel und mehrere Tabellen hinweg konstruiert werden müssen. Graphdatenbanken unterstützen solche Verknüpfungen hingegen nativ.
-\citep{9677042} \citep{graphdb} 
+Da APIs nur eine Schnitstelle zwischen einer Datenbank und der Anwendung darstellt, welche die Daten aus der Datenbank konsumieren möchte hängt die Latenz einer API zwingend mit der Bearbeitungszeit einer Anfrage innerhalb der Datenbank zusammen. Hierbei nutzen verschiedene Datenbanktypen unterschiedlichste Methoden, um die Angefragen Daten aus der Datenbank bereitzustellen. Hierbei wird in dieser Arbeit ein besonderes Aufgebmerk auf die verarbeitung anhand der relationalen Algebra, sowie der Graphentheorie gelegt. Diese Methoden bieten bei verschiedenen Anwendungszenarien Vorteile, als auch Nachteile bei der Effizienten und Zeitsparenden bearbeitung von Anfragen. Hierbei zeigt sich bei realtionalen Datenbanken, dass diese bei steigender Anzahl an Daten, welche gespeichert werden zuhnemend langsamere Performance bieten.
+Wie in Abbildung 3.2 jedoch zusehen ist, steigt die Menge der Daten, welche im Internet verarbeitet werden seit 2010, bis heute, stetig an und die Prognosen bis ins Jahr 2028 sehen hierbei einen deutlichen Trend nach oben. Graphdatenbanken können mit solch ein Wachstum deutlich besser umgehen, da durch die nutzung von Traversal-basierdenden Anfragen die Menge der Daten in der Datenbank nicht so relevant ist wie bei der nutzung der relationalen Algebra.  \citep{9677042} \citep{performancenosql}
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=.4]{Illustrations/growthofdata.png}
+	\caption{Datenmenge Weltweit \citep{statista}}
+\end{figure}
+\noindent
+Ein weiterer Faktor, welcher die Performance einer Datenbank beeinflusst, ist die Verbundenheit der Daten. Abbildung 3.3 zeigt, wie sich die Verbundenheit der Daten im Verlauf verändert hat. Hierbei ist deutlich zu sehen, dass Daten stetig eine größere Verzweigung zueienader aufweißen. 
 
-
+\noindent
+Eine Graphdatenbank kann mit diesem hohen Grad an Verzweigung, durch die Verwendung der Graphentheorie und Traversierung performant umgehen.  Bei relationalen Datenbanken stellt diese hohe verbundenheit der Daten eine performance Einbuße dar.  Da bei der Verbindung der Daten die Relationen zwischen der Tabellen durch Joins realisiert werden und diese aufwendig zu brechnen sind, steigt mit zuhnemender Anzahl der relationen auch die Zeit, welche die Datenbank benötigt um mithilfe der Schlüssel und mehrerer Tabellen die Beziehung zwischen den Dateneinträgen zu konstruieren. \citep{9677042} \citep{graphdb}
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=.45]{Illustrations/informationconnectedness.png}
+	\caption{Informationsverbundenheit \citep{performancenosql}}
+\end{figure}
+\noindent
+Die Universität von Mississippi führte zu den unterschiedlichen Latenzen von relationalen Datenbanken, indiesem Fall einer MySQL Datenbank, sowie Graphdatenbanken, konkret eine Neo4j Datenbank, ein Experiment durch. Hierbei wurden sieben verschiedene Szenarien abgebildet, deren Ergebnisse dokumentiert wurden (vgl. Abb 3.4 \& Abb. 3.5).
+Wie die Datenbank konfiguriert wurde ist in der ersten spalte zu sehen, Hierbei steht die Zahl für die Anzahl der Nodes bzw. Tupel in der Datenbank gefolgt von einem Datentyp, welcher angibt welcher Typ Daten zufällig beim erstellen der Datenbank verwendet wurde. In Abbildung 3.4 sind die Ergebnisse von beiden Datenbanken zu sehen. I1 und I2 stehen hierbei für die verschiedenen Queries die verwendet wurden. I1 beschreibt die Menge der Nodes selektiert wird, deren Payload gleich einer gegeben Zahl ist. I2 hingegen Zählt alle Nodes, deren Payload kleiner ist als ein gegebener Wert. Hierbei fällt auch, dass die Relationale Datenbank eine deutlich geringere Latenz aufweist, als die Graphdatenbank. 
+ \citep{graphrelationaldb}
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=.5]{Illustrations/dbresultsint.png}
+	\caption{Ergebnisse Abfragen durch int in Millisekunden \citep{graphrelationaldb}}
+\end{figure}
+\noindent
+Abbildung 3.5 zeigt nun Abfragen, bei denen anhand eines Strings selektiert wurde. Die Zweite zeile gibt anhand von d an, welche länger der String hatte anhand dessen die selektion vorgenommen wurde. Hierbei wird Menge der Nodes gezählt, welche den String beinhalten. Die Ergebnisse zeigen ein deutlich anderes Bild als die vorherigen Ergebnisse bei denen mithilfe eines Integer selektiert wurde. Durch die Verwendung eines Strings kann die relationale Datenbank die Graphdatenbank lediglich im ersten Szenario übertreffen. Die Graphdatenbank spielt in den komplexeren Fällen ihre Vorteile klar aus und ist bei komplexeren Anfragen in der Spitze um den Faktor 167 schneller. 
+ \citep{graphrelationaldb}
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=.425]{Illustrations/dbresultschar.png}
+	\caption{Ergebnisse Abfragen durch char in Millisekunden \citep{graphrelationaldb}}
+\end{figure}
+\noindent
+Als Ergebniss kann man sagen, das relationale Datenbanken bei der Selektion von Daten anhand eines Integers deutlich schneller Ergebnisse liefern. Bei der Abfrage von Daten anhand eines Strings ist bei kleinen Datenbanken die Performance einer relationalen Datenbank zunächst besser, wird jedoch schnell und dann auch deutlich von der Graphdatenbank überholt.
 %section ff2 (end)
-
-
-
-
-
 % chapter analyse (end)
