@@ -1,0 +1,246 @@
+\chapter*{Appendix} % (fold)
+\addcontentsline{toc}{chapter}{Appendix}
+\label{sec:appendix}
+In diesem Anhang befinden sich die Werte der Grafiken, welche im Ergebnis vorgestellt wurden.
+\newline
+\textbf{HEAD /api/resource}
+\begin{table}[H]
+\begin{tabular}{|l|l|l|l|l|}
+\hline
+               & PostREST & PostGraph & Neo4REST & Neo4Graph \\ \hline
+Upper Whisker  & 59       & 54        & 63       & 54        \\ \hline
+Upper Quartile & 55       & 53        & 58       & 53        \\ \hline
+Median         & 52       & 53        & 52       & 52        \\ \hline
+Lower Quartile & 52       & 53        & 52       & 52        \\ \hline
+Lower Whisker  & 51       & 52        & 51       & 51        \\ \hline
+\end{tabular}
+\end{table}
+\noindent
+\textbf{PostREST parametriesierte Abfragen}
+
+\begin{table}[H]
+\centering
+\begin{subtable}[t]{0.3\textwidth}
+\centering
+\begin{tabular}{|l|l|l|}
+\hline
+Tupel  & Joins & ms    \\ \hline
+1      & 0     & 111   \\ \hline
+100    & 0     & 121   \\ \hline
+1000   & 0     & 135   \\ \hline
+10000  & 0     & 272   \\ \hline
+100000 & 0     & 426,5 \\ \hline
+\end{tabular}
+\end{subtable}%
+\hfill
+\begin{subtable}[t]{0.3\textwidth}
+\centering
+\begin{tabular}{|l|l|l|}
+\hline
+Tupel  & Joins & ms    \\ \hline
+1      & 1     & 111   \\ \hline
+100    & 1     & 122   \\ \hline
+1000   & 1     & 134   \\ \hline
+10000  & 1     & 271,5 \\ \hline
+100000 & 1     & 468   \\ \hline
+\end{tabular}
+\end{subtable}%
+\hfill
+\begin{subtable}[t]{0.3\textwidth}
+\centering
+\begin{tabular}{|l|l|l|}
+\hline
+Tupel  & Joins & ms    \\ \hline
+1      & 2     & 111   \\ \hline
+100    & 2     & 119,5 \\ \hline
+1000   & 2     & 146   \\ \hline
+10000  & 2     & 267   \\ \hline
+100000 & 2     & 492,5 \\ \hline
+\end{tabular}
+\end{subtable}
+\end{table}
+\noindent
+\textbf{PostGraph parametriesierte Abfragen}
+
+\begin{table}[H]
+\centering
+\begin{subtable}[t]{0.3\textwidth}
+\centering
+\begin{tabular}{|l|l|l|}
+\hline
+Tupel  & Joins & ms    \\ \hline
+1      & 0     & 56   \\ \hline
+100    & 0     & 66   \\ \hline
+1000   & 0     & 87,5   \\ \hline
+10000  & 0     & 240,5   \\ \hline
+100000 & 0     &  1815,5\\ \hline
+\end{tabular}
+\end{subtable}%
+\hfill
+\begin{subtable}[t]{0.3\textwidth}
+\centering
+\begin{tabular}{|l|l|l|}
+\hline
+Tupel  & Joins & ms    \\ \hline
+1      & 1     & 94   \\ \hline
+100    & 1     & 103   \\ \hline
+1000   & 1     & 129   \\ \hline
+10000  & 1     & 283,5 \\ \hline
+100000 & 1     & 1831,5   \\ \hline
+\end{tabular}
+\end{subtable}%
+\hfill
+\begin{subtable}[t]{0.3\textwidth}
+\centering
+\begin{tabular}{|l|l|l|}
+\hline
+Tupel  & Joins & ms    \\ \hline
+1      & 2     & 55   \\ \hline
+100    & 2     & 65 \\ \hline
+1000   & 2     & 91,5   \\ \hline
+10000  & 2     & 292   \\ \hline
+100000 & 2     & 1792,5 \\ \hline
+\end{tabular}
+\end{subtable}
+\end{table}
+\noindent
+\textbf{Neo4REST parametriesierte Abfragen}
+\begin{table}[H]
+\centering
+\begin{subtable}[t]{0.3\textwidth}
+\centering
+\begin{tabular}{|l|l|l|}
+\hline
+Tupel  & Joins & ms    \\ \hline
+1      & 0     & 119  \\ \hline
+100    & 0     & 126   \\ \hline
+1000   & 0     & 147   \\ \hline
+10000  & 0     & 282   \\ \hline
+100000 & 0     &  1673\\ \hline
+\end{tabular}
+\end{subtable}%
+\hfill
+\begin{subtable}[t]{0.3\textwidth}
+\centering
+\begin{tabular}{|l|l|l|}
+\hline
+Tupel  & Joins & ms    \\ \hline
+1      & 1     & 113,5   \\ \hline
+100    & 1     & 124   \\ \hline
+1000   & 1     & 143,5   \\ \hline
+10000  & 1     & 269 \\ \hline
+100000 & 1     & 1466   \\ \hline
+\end{tabular}
+\end{subtable}%
+\hfill
+\begin{subtable}[t]{0.3\textwidth}
+\centering
+\begin{tabular}{|l|l|l|}
+\hline
+Tupel  & Joins & ms    \\ \hline
+1      & 2     & 112   \\ \hline
+100    & 2     & 122 \\ \hline
+1000   & 2     & 145   \\ \hline
+10000  & 2     & 269   \\ \hline
+100000 & 2     & 1371 \\ \hline
+\end{tabular}
+\end{subtable}
+\end{table}
+\noindent
+\textbf{Neo4Graph parametriesierte Abfragen}
+\begin{table}[H]
+\centering
+\begin{subtable}[t]{0.3\textwidth}
+\centering
+\begin{tabular}{|l|l|l|}
+\hline
+Tupel  & Joins & ms    \\ \hline
+1      & 0     & 58  \\ \hline
+100    & 0     & 70   \\ \hline
+1000   & 0     & 105,5   \\ \hline
+10000  & 0     & 391   \\ \hline
+100000 & 0     &  2726,5\\ \hline
+\end{tabular}
+\end{subtable}%
+\hfill
+\begin{subtable}[t]{0.3\textwidth}
+\centering
+\begin{tabular}{|l|l|l|}
+\hline
+Tupel  & Joins & ms    \\ \hline
+1      & 1     & 59   \\ \hline
+100    & 1     & 70   \\ \hline
+1000   & 1     & 102,5   \\ \hline
+10000  & 1     & 330 \\ \hline
+100000 & 1     & 2484,5   \\ \hline
+\end{tabular}
+\end{subtable}%
+\hfill
+\begin{subtable}[t]{0.3\textwidth}
+\centering
+\begin{tabular}{|l|l|l|}
+\hline
+Tupel  & Joins & ms    \\ \hline
+1      & 2     & 57   \\ \hline
+100    & 2     & 69 \\ \hline
+1000   & 2     & 96   \\ \hline
+10000  & 2     & 317   \\ \hline
+100000 & 2     & 2396,5 \\ \hline
+\end{tabular}
+\end{subtable}
+\end{table}
+\noindent
+\textbf{GET /api/persons/:pid}
+\begin{table}[H]
+\begin{tabular}{|l|l|l|l|l|}
+\hline
+               & PostREST & PostGraph & Neo4REST & Neo4Graph \\ \hline
+Upper Whisker  & 113      & 60        & 120      & 63        \\ \hline
+Upper Quartile & 110      & 57        & 114      & 60        \\ \hline
+Median         & 109      & 56        & 113      & 59        \\ \hline
+Lower Quartile & 108      & 55        & 110      & 58        \\ \hline
+Lower Whisker  & 106      & 54        & 108      & 57        \\ \hline
+\end{tabular}
+\end{table}
+\noindent
+\textbf{GET /api/persons}
+\begin{table}[H]
+\begin{tabular}{|l|l|l|l|l|}
+\hline
+               & PostREST & PostGraph & Neo4REST & Neo4Graph \\ \hline
+Upper Whisker  & 297      & 216       & 291      & 279       \\ \hline
+Upper Quartile & 278      & 197       & 275      & 267       \\ \hline
+Median         & 268      & 190       & 266      & 261       \\ \hline
+Lower Quartile & 265      & 181       & 259      & 254       \\ \hline
+Lower Whisker  & 250      & 165       & 245      & 241       \\ \hline
+\end{tabular}
+\end{table}
+\noindent
+\textbf{GET /api/persons/:pid/projects/issues}
+\begin{table}[H]
+\begin{tabular}{|l|l|l|l|l|}
+\hline
+               & PostREST & PostGraph & Neo4REST & Neo4Graph \\ \hline
+Upper Whisker  & 148      & 180       & 195      & 62        \\ \hline
+Upper Quartile & 142      & 123       & 184      & 60        \\ \hline
+Median         & 139      & 88        & 178      & 59        \\ \hline
+Lower Quartile & 137      & 85        & 176      & 58        \\ \hline
+Lower Whisker  & 135      & 83        & 173      & 57        \\ \hline
+\end{tabular}
+\end{table}
+\noindent
+\newpage
+\textbf{POST /api/persons/:pid/projects/:prid/issues}
+\begin{table}[H]
+\begin{tabular}{|l|l|l|l|l|}
+\hline
+               & PostREST & PostGraph & Neo4REST & Neo4Graph \\ \hline
+Upper Whisker  & 60       & 62        & 118      & 99        \\ \hline
+Upper Quartile & 57       & 60        & 97       & 87        \\ \hline
+Median         & 56       & 58        & 89       & 82        \\ \hline
+Lower Quartile & 55       & 57        & 83       & 78        \\ \hline
+Lower Whisker  & 54       & 55        & 77       & 73        \\ \hline
+\end{tabular}
+\end{table}
+\noindent
+% chapter appendix (end)

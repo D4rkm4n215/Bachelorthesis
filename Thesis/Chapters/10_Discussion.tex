@@ -1,23 +1,10 @@
 \chapter{Diskussion} % (fold)
 \label{sec:diskussion}
-
-\ldots
+In diesem Kapitel sollen die aus dem empireischen Experiment gewonnen Erkentnisse mit den Ergebnissen der Literaturanalyse vereinigt werden, um die Ergebnisse des Experiments zu überprüfen und somit die Forschungsfragen final zu beantworten.
+\newline
+\noindent
+Innerhalb des Experiments wurde die Erkentnis gewonnen, dass Anfragen einer REST API, unabhängig der Datenbank bei einer Menge von 100.000 Ergebnistupel einen deutlichen Vorteil gegenüber einer GraphQL API bieten. Dies entspricht der Erwartung, da bereits in der Literaturanalyse beschrieben wurde das eine GraphQL API hierbei um einen Faktor von 2.5 langsamer ist\citep{restvsgraphql}.
+Bei einfacheren Anfragen wurde ein Faktor von 0,02 beschrieben \citep{migrategraphql}. Dieser wurde jedoch im Experiment meist deutlich übertroffen. Die parametrisierten Anfragen, welche ohne Joins ausgeführt wurden weißen darauf hin, dass GraphQL um den Faktor 1,9 performanter war als REST.
+Bei einer Komplexen Anfrage (GET /api/persons/:pid/projects/issues) zeigt sich ebenfalls ein ein Vorteil bei der Verwendung. Diese überlegenheit von GraphQL wurde ebenfalls in der Analyse beschrieben. \citep{graphqlreplacerest}
 
 % chapter diskussion (end)
-\chapter{Ausblick} % (fold)
-\label{sec:ausblick}
-Im Rahmen dieser Arbeit wurden GraphQL und REST in Kombination mit relationalen sowie Graphdatenbanken analysiert. Dabei konnten zahlreiche Ansatzpunkte für weiterführende Untersuchungen identifiziert werden, die sowohl technische als auch konzeptionelle Aspekte betreffen.
-
-\noindent
-Ein erster Ansatzpunkt für zukünftige Arbeiten liegt in der Betrachtung der Implementierung von APIs unter Verwendung verschiedener Programmiersprachen. Die in dieser Arbeit analysierten Implementierungen konzentrierten sich auf spezifische Technologien, was die Frage offen lässt, ob andere Programmiersprachen, insbesondere solche mit unterschiedlichen Paradigmen (z. B. funktional oder objektorientiert), ebenfalls einen Einfluss auf die Latenz oder andere Leistungsparameter der APIs haben könnten. Eine vergleichende Analyse könnte hierbei wertvolle Erkenntnisse liefern.
-
-\noindent
-Im Bereich der Datenbanken wäre es ebenfalls lohnenswert, die Untersuchung auf weitere Datenbanktypen auszudehnen. Besonders dokumentenbasierte NoSQL-Datenbanken wie MongoDB oder Couchbase bieten Potenzial für ergänzende Analysen, da diese aufgrund ihrer strukturellen Unterschiede gegenüber relationalen und graphbasierten Datenbanken interessante Alternativen darstellen könnten. Solche Untersuchungen könnten Aufschluss darüber geben, inwiefern dokumentenbasierte Datenbanken spezifische Vorteile oder Herausforderungen für den Einsatz mit REST oder GraphQL bieten.
-
-\noindent
-Darüber hinaus könnte der Einsatz eines komplexeren Datenmodells spannende Erkenntnisse liefern. In dieser Arbeit wurde ein eher moderates Datenmodell genutzt, das nur eine begrenzte Anzahl an Relationen aufwies. Eine Erweiterung des Modells, beispielsweise durch eine höhere Anzahl von Tabellen oder Knoten sowie komplexere Verknüpfungen zwischen diesen, würde die Belastung auf die Datenbank und die API erhöhen. Solche Szenarien könnten dazu beitragen, die Skalierbarkeit und Effizienz der untersuchten Technologien unter realistischeren Bedingungen zu bewerten.
-
-\noindent
-Zusammenfassend bietet diese Arbeit eine solide Grundlage für weiterführende Analysen und stellt mehrere Ansätze für zukünftige Forschungsarbeiten bereit, die sowohl auf theoretischer als auch auf praktischer Ebene die Relevanz und Einsatzmöglichkeiten von GraphQL und REST vertiefen könnten.
-
-% chapter ausblick (end)

@@ -1,17 +1,29 @@
 \chapter{Ergebnisse} % (fold)
 \label{sec:ergebnisse}
-Im Nachfolgenden werden die Ergebnisse der Latenztests der oben eingeführten APIs dargestellt.
+Im Nachfolgenden werden die Ergebnisse der Latenztests der oben eingeführten APIs dargestellt. Die konkreten Zahlen auf denen die Grafiken beruhen sind im Kapitel Appendix zu finden.
 
 \noindent
-Wie in Abbildung 7.1 zusehen ist, hat die PostgreSQL REST-API eine höhere Latenzzeit als die GraphQL PostgeSQL. Dies deutet darauf hin, dass die GraphQL API bei der Abfrage eines spezifischen Personenobjekts, anhand der Personen-ID in kombination mit einer relationalen Datenbank effizientere Abfragen und eine bessere Performance bei der Verarbeitung bietet. Ähnliches zeigt sich bei einer Neo4j Datenbank. Auch hier hat die Neo4j GraphQL API niedrigere Latenzzeiten als die REST-API. Allerdings sind die Latenzen bei Neo4j minimal höher als bei dem realtionalen Pendant. Das deutet darauf hin, dass Postgres bei dieser Anfrage eine performantere Verarbeitung von Abfragen ermöglicht. Zusammenfassend kann man für diese Anfrage sagen, dass GraphQL sowohl in kombination mit einer relationalen, als auch einer Graphdatenbank eine niedrigere Latenz aufweist. Zudem ist Postgres bei dieser Anfrage insgesamt ein wenig performanter als neo4j.
-\newline
-In Abbildung 7.2 sind die Latenzen für die komplexere Anfrge, die alle Personenobjekte aus der Datenbank zurückliefert dargestellt. Bei den APIs die mit Postgres implementiert sind ist eine deutlich niedrigere Latenz zu sehen, als bei den mit neo4j implementierten. GraphQL hat hierbei sowohl bei der relationalen Datenbank als auch bei der Graphdatenbank im Median eine niedrigere Latenz. REST ist somit in beiden Fällen die unperformantere API.
-\newline
-Wenn nun die Anfragekomplexität steigt, wodurch sich die Abhängigkeit zwischen den Objekten in der Datenbank erhöht, ist deutlich zu sehen, dass die Streuung bei der Postgres REST-API höher ist als bei allen anderen APIs (vgl Abb.7.3). Zudem ist diese API diejenige mit der höchsten Latenz. Allerdings liegt die Neo4j REST-API im Median über den Postgres REST-API. Beide GraphQL APIs weißen erneut eine deutlich niedrigere Latenz auf.
-\newline
-Bei der Speicherung in eine Datenbank ist ein deutlich anderes Bild zu sehen. Wie in Abbildung 7.4 zusehen, ist hierbei die Postgres REST-API diejenige mit der geringsten LAtenz. Dicht gefolgt von der Postgres GraphQL API. Eine deutlich höhere Latenz ist bei den neo4j APIs zu erkennen. Hierbei ist allerdings die GraphQL API die performantere.
+Zunächst wurde, wie in Abbildung 7.1 zusehen, mittels HEAD Request ermittelt, ob die API verfügbar ist und welche Latenz zwischen Client und Server entsteht, ohne eine Datenabfrage auszuführen. Hierbei kann man beobachten, dass Die LAtenz von PostGraph und Neo4Graph sehr dich beieinander liegen. REST basierdende APIs hatten in diesem Experiment eine Latenz die deutlich mehr Variation in der Latenz lieferte.
 
-
+\noindent
+Daraufhin wurden die Latenzen des parametrisierten API-Endpunktes ermittel. In den Abbildungen 7.2 bis 7.5 wurden diese Ergebnisse in einem Koordinatensystem dargestellt. Die x-Achse repräsentiert die Menge der Tupel, welche angefordert wurden. Aufgrund der hohen Menge der Ergebnistupel wurde diese Achse logarithmisch Dargestellt. Auf der z-Achse ist die Latenz in Millisekunden zu sehen. Die verschiedenen Graphen innerhalb der Abbildungen beschreiben die Menge der Joins, bei relationalen Datenbanken, oder Edges, bei Graphdatenbanken. Rot (Kreis) steht hierbei für null, Blau(Quadrat) steht für eins und Orange (Diamant) steht hierbei für zwei. 
+\newline
+Bei PostREST (vgl. Abb. 7.2) steigt somit die Latenz mit der Mange der Ergebnistupeln exponentiell an. Zudem ist zu erkennen, dass bei einer MEnge von 100.000 Ergebnistupeln die Menge der Joins deutlich Einfluss auf die Latenz nehmen. Hierbei ist eine Anfrage die weniger Joins verwendet (Rot) mit 426,5 Millisekunden deutlich perfromanter, als eine Abfrage die mehrere Joins (Orange) verwendet, welche 492,5 Millisekunden benötigt. Bei niedrigerer Tupelzahl wirken sich Joins nicht, bzw. nur in sehr geringen Maß auf die Latenz der Anfrage aus.
+\newline
+PostGraph zeigt in Abbildung 7.3 ein ähnliches Bild, jedoch mit einer deutlich hähren Laten bei einer Anfragengröße von 100.000 Tupel. Die GraphQL API ist hier mit 1831 Millisekunden um einen Faktor von 3,7 langsamer als die REST API, welche auf der selben Datenbank basiert.
+\newline
+Bei Verwendung einer Neo4j Datenbank in Komination mit einer REST-API (vgl. Abb. 7.4) fällt auf, dass die Anfragen mit geringer und hoher Komplexität, sowie geringer Tupelzahl eine sehr ähnliche Latenz aufweißen. Bei höherer Tupelzahl liegt die Anfragedauer jedoch deutlich höher, als mit einer realtionalen Datenbank. Hierbei erkennt man jedoch, dass Anfragen welche mehrere Edges nutzen schneller bearbeitet werden können. So benötigt eine Anfrage, welche ohne das Nutzen einer Kante auskommt 1673 Millisekunden. Wenn man nun die Komplexität erhöht und für die Anfrage  zwei Edges verwendet benötigt diese lediglich 1371 Millisekunden.
+ \newline
+Behält man nun die Datenbasis bei und nutzt eine GraphQL API (vgl. Abb. 7.5) fällt auf, dass erneut die Anfragedauer bei hoher Tupelzahl deutlich über der einer REST-API liegt. Ebenfalls ist hier zu beobachten, dass komplexere Anfragen schneller bearbeitet werden, als weniger komplexe.
+\newline
+\noindent
+Wie in Abbildung 7.6 zusehen ist, hat die PostgreSQL REST-API eine höhere Latenzzeit als die GraphQL PostgeSQL. Dies deutet darauf hin, dass die GraphQL API bei der Abfrage eines spezifischen Personenobjekts, anhand der Personen-ID in kombination mit einer relationalen Datenbank effizientere Abfragen und eine bessere Performance bei der Verarbeitung bietet. Ähnliches zeigt sich bei einer Neo4j Datenbank. Auch hier hat die Neo4j GraphQL API niedrigere Latenzzeiten als die REST-API. Allerdings sind die Latenzen bei Neo4j minimal höher als bei dem realtionalen Pendant. Das deutet darauf hin, dass Postgres bei dieser Anfrage eine performantere Verarbeitung von Abfragen ermöglicht. Zusammenfassend kann man für diese Anfrage sagen, dass GraphQL sowohl in kombination mit einer relationalen, als auch einer Graphdatenbank eine niedrigere Latenz aufweist. Zudem ist Postgres bei dieser Anfrage insgesamt ein wenig performanter als neo4j.
+\newline
+In Abbildung 7.7 sind die Latenzen für die komplexere Anfrage, die 5000 Personenobjekte aus der Datenbank zurückliefert dargestellt. GraphQL hat hierbei sowohl bei der relationalen Datenbank als auch bei der Graphdatenbank im Median eine niedrigere Latenz. REST ist somit in beiden Fällen die unperformantere API.
+\newline
+Wenn nun die Anfragekomplexität steigt, wodurch sich die Abhängigkeit zwischen den Objekten in der Datenbank erhöht, ist deutlich zu sehen, dass die Streuung bei der Postgres GraphQL API höher ist als bei allen anderen APIs (vgl Abb.7.8). Der Median liegt jedoch deutlich niedriger. Die Neo4j REST-API liegt in diesem Fall deutlich über allen anderen APIs. Gefolgt von der PortgeSQL REST-API.Beide GraphQL APIs weißen erneut eine deutlich niedrigere Latenz auf.
+\newline
+Bei der Speicherung in eine Datenbank ist ein deutlich anderes Bild zu sehen. Wie in Abbildung 7.9 zusehen, ist hierbei die Postgres REST-API diejenige mit der geringsten Latenz. Dicht gefolgt von der Postgres GraphQL API. Eine deutlich höhere Latenz ist bei den neo4j APIs zu erkennen. Hierbei ist allerdings die GraphQL API die performantere.
 
 
 \begin{figure}[htbp]
@@ -441,18 +453,6 @@ Bei der Speicherung in eine Datenbank ist ein deutlich anderes Bild zu sehen. Wi
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
 \begin{figure}[htbp]
  \centering
 	\begin{tikzpicture}
@@ -473,15 +473,15 @@ Bei der Speicherung in eine Datenbank ist ein deutlich anderes Bild zu sehen. Wi
 	                upper quartile=110,
 	                lower quartile=108, 
 	                upper whisker=113,
-	                lower whisker=107
+	                lower whisker=106
 	            },
 	            draw=black
 	        ] coordinates {};
 	        \addplot+[
 	            boxplot prepared={
 	                median=56,
-	                upper quartile=58,
-	                lower quartile=56, 
+	                upper quartile=57,
+	                lower quartile=55, 
 	                upper whisker=60,
 	                lower whisker=54
 	            },
@@ -490,20 +490,20 @@ Bei der Speicherung in eine Datenbank ist ein deutlich anderes Bild zu sehen. Wi
 	        \addplot+[
 	            boxplot prepared={
 	                median=113,
-	                upper quartile=115,
-	                lower quartile=111, 
-	                upper whisker=119,
-	                lower whisker=110
+	                upper quartile=114,
+	                lower quartile=110, 
+	                upper whisker=120,
+	                lower whisker=108
 	            },
 	            draw=black
 	        ] coordinates {};
 	       \addplot+[
 	            boxplot prepared={
-	                median=58,
-	                upper quartile=59,
-	                lower quartile=57, 
-	                upper whisker=62,
-	                lower whisker=56
+	                median=59,
+	                upper quartile=60,
+	                lower quartile=58, 
+	                upper whisker=63,
+	                lower whisker=57
 	            },
 	            draw=black
 	        ] coordinates {};
@@ -521,48 +521,48 @@ Bei der Speicherung in eine Datenbank ist ein deutlich anderes Bild zu sehen. Wi
 	        ylabel={ms}, 
 	        xtick={1,2,3,4}, 
 	        xticklabels={Post Rest, Post Graph, Neo4 Rest, Neo4 Graph}, 
-	        ymin=50, ymax=590,
+	        ymin=50, ymax=350,
                   ytick distance=20,
                   width=15cm,
 	       height= 18cm
 	    ]
 	        \addplot+[
 	            boxplot prepared={
-	                median=264,
-	                upper quartile=274,
-	                lower quartile=259, 
-	                upper whisker=293,
-	                lower whisker=237
+	                median=268,
+	                upper quartile=278,
+	                lower quartile=265, 
+	                upper whisker=297,
+	                lower whisker=250
 	            },
 	            draw=black
 	        ] coordinates {};
 	        \addplot+[
 	            boxplot prepared={
-	                median=206,
-	                upper quartile=214,
-	                lower quartile=198, 
-	                upper whisker=233,
-	                lower whisker=178
+	                median=190,
+	                upper quartile=197,
+	                lower quartile=181, 
+	                upper whisker=216,
+	                lower whisker=165
 	            },
 	            draw=black
 	        ] coordinates {};
 	         \addplot+[
 	            boxplot prepared={
-	                median=539,
-	                upper quartile=551,
-	                lower quartile=529, 
-	                upper whisker=579,
-	                lower whisker=499
+	                median=266,
+	                upper quartile=275,
+	                lower quartile=259, 
+	                upper whisker=291,
+	                lower whisker=245
 	            },
 	            draw=black
 	        ] coordinates {};
 	       \addplot+[
 	            boxplot prepared={
-	                median=499,
-	                upper quartile=509,
-	                lower quartile=494, 
-	                upper whisker=531,
-	                lower whisker=482
+	                median=261,
+	                upper quartile=267,
+	                lower quartile=254, 
+	                upper whisker=279,
+	                lower whisker=241
 	            },
 	            draw=black
 	        ] coordinates {};
@@ -580,48 +580,48 @@ Bei der Speicherung in eine Datenbank ist ein deutlich anderes Bild zu sehen. Wi
 	        ylabel={ms}, 
 	        xtick={1,2,3,4}, 
 	        xticklabels={Post Rest, Post Graph, Neo4 Rest, Neo4 Graph}, 
-	        ymin=50, ymax=140,
-	        ytick distance=5,
+	        ymin=50, ymax=220,
+	        ytick distance=20,
                   width=15cm,
 	       height= 18cm
 	    ]
 	        \addplot+[
 	            boxplot prepared={
-	                median=111,
-	                upper quartile=119,
-	                lower quartile=109, 
-	                upper whisker=134,
-	                lower whisker=107
+	                median=139,
+	                upper quartile=142,
+	                lower quartile=137, 
+	                upper whisker=148,
+	                lower whisker=135
 	            },
 	            draw=black
 	        ] coordinates {};
 	        \addplot+[
 	            boxplot prepared={
-	                median=56,
-	                upper quartile=57,
-	                lower quartile=56, 
-	                upper whisker=58,
-	                lower whisker=55
+	                median=88,
+	                upper quartile=123,
+	                lower quartile=85, 
+	                upper whisker=180,
+	                lower whisker=83
 	            },
 	            draw=black
 	        ] coordinates {};
 	         \addplot+[
 	            boxplot prepared={
-	                median=115,
-	                upper quartile=117,
-	                lower quartile=113, 
-	                upper whisker=123,
-	                lower whisker=111
+	                median=178,
+	                upper quartile=184,
+	                lower quartile=176, 
+	                upper whisker=195,
+	                lower whisker=173
 	            },
 	            draw=black
 	        ] coordinates {};
 	       \addplot+[
 	            boxplot prepared={
-	                median=57,
-	                upper quartile=58,
-	                lower quartile=56, 
-	                upper whisker=59,
-	                lower whisker=55
+	                median=59,
+	                upper quartile=60,
+	                lower quartile=58, 
+	                upper whisker=62,
+	                lower whisker=57
 	            },
 	            draw=black
 	        ] coordinates {};
