@@ -6,7 +6,7 @@
 %  Copyright (c) 2020 . All rights reserved.
 %
 \documentclass[12pt,toc=bib,toc=listof]{scrreprt}
-\usepackage[ngerman]{babel} 
+\usepackage[ngerman,provide=*]{babel}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage{lmodern}
@@ -16,13 +16,15 @@
 \usepackage[authoryear]{natbib}
 \usepackage{chngcntr}
 \usepackage{float}
+\usepackage{fancyvrb}
+\usepackage{amsmath}
 \counterwithout{footnote}{chapter}
 \counterwithout{figure}{chapter}
 
+\usepackage{subcaption}
 \usepackage{pgfplots}
 \pgfplotsset{compat=1.18}
 \usepgfplotslibrary{statistics}
-
 \usepackage{hyperref}
 \hypersetup{
   ,colorlinks=true
@@ -37,7 +39,7 @@
 \newcommand{\hhnsubjectnum}{SPO1a}
 \newcommand{\hhnlecturer}{Prof. Dr. Fankhauser}
 
-\newcommand{\reprttopic}{GraphQL und REST im Kontext relationaler und graphbasierter Datenbanken hinsichtlich Latenz bei unterschiedlichen Lastbedingungen}
+\newcommand{\reprttopic}{GraphQL und REST im Kontext relationaler und graphbasierter Datenbanken hinsichtlich Latenz bei unterschiedlichen Anfragekomplexitäten}
 \newcommand{\reprtstudentname}{Robin Hefner}
 \newcommand{\reprtstudentid}{206488}
 \urldef{\reprtstudentmail}\url{rohefner@stud.hs-heilbronn.de}
@@ -78,7 +80,7 @@
 \onehalfspacing
 
 % report (begin)
-
+\numberwithin{figure}{chapter}
 \include{Chapters/03_Introduction}
 \include{Chapters/04_Fundamentals}
 \include{Chapters/05_Analysis}
@@ -87,10 +89,12 @@
 \include{Chapters/08_Implementation}
 \include{Chapters/09_Result}
 \include{Chapters/10_Discussion}
+\include{Chapters/12_Outlook}
 \include{Chapters/11_Conclusion}
-\bibliographystyle{dcu}
+\bibliographystyle{plain}
 \bibliography{literatur}
-\include{Chapters/12_Statutory_Declaration}
+\include{Chapters/13_Statutory_Declaration}
+\include{Chapters/14_Appendix}
 
 
 
