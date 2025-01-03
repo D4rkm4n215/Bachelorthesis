@@ -1,21 +1,31 @@
 \addchap{Abstract} % (fold)
 \label{sec:abstract}
-
-% Hier kommt das Abstract hin
-
-
-
-
-
+This thesis analyses the performance of GraphQL and REST in the context of relational and graph-based databases in terms of latency for different query complexities. The aim of the analysis was to evaluate the advantages and disadvantages of both API technologies and to understand the interactions with the underlying database architectures.
+\newline
+\noindent
+The results show that GraphQL offers clear advantages for complex queries, as it reduces the number of API calls through client-driven data queries.
+For bulk queries with large amounts of data, REST was able to achieve better response times, while GraphQL was superior for hierarchical and flexible queries.
+In terms of database technologies, relational databases proved to be efficient with structured data and low branching, while graph databases were particularly convincing with highly networked data and high query complexity thanks to their traversal mechanisms.
+\newline
+\noindent
+The combination of GraphQL and graph databases showed a significant reduction in latency in complex scenarios. For simpler queries, GraphQL was also able to achieve better latencies with a relational database than a comparable REST API. The findings provide practical information for selecting the optimal API and database technology and offer guidance for the development of high-performance and scalable systems.
+\newline
+\noindent
+\textbf{Keywords:} REST, GraphQL, API, relational database, graph database
 % chapter abstract (end)
 \newpage
 \addchap{Zusammenfassung} % (fold)
 \label{sec:zusammenfassung}
-
-% Hier kommt die Zusammenfassung hin
-
+Die vorliegende Arbeit untersucht die Performance von GraphQL und REST im Kontext von relationalen und graphbasierten Datenbanken hinsichtlich der Latenz bei unterschiedlichen Anfragekomplexitäten. Ziel der Analyse war es, die Vor- und Nachteile beider API-Technologien zu bewerten und die Wechselwirkungen mit den zugrunde liegenden Datenbankarchitekturen zu verstehen.
+\newline
+\noindent
+Die Ergebnisse zeigen, dass GraphQL bei komplexen Abfragen deutliche Vorteile bietet, da es durch clientgesteuerte Datenabfragen die Anzahl der API-Aufrufe reduziert.
+Bei Bulk-Abfragen mit großen Datenmengen konnte REST bessere Antwortzeiten erzielen, während GraphQL bei hierarchischen und flexiblen Abfragen überlegen war.
+Hinsichtlich der Datenbanktechnologien erwiesen sich relationale Datenbanken als effizient bei strukturierten Daten und geringen Verzweigungen, während Graphdatenbanken durch ihre Traversal-Mechanismen besonders bei stark vernetzten Daten und hohen Abfragekomplexitäten überzeugten.
+\newline
+\noindent
+Die Kombination aus GraphQL und Graphdatenbanken zeigte eine signifikante Reduzierung der Latenz bei komplexen Szenarien. Bei einfacheren Anfragen konnte GraphQL ebenfalls mit einer relationalen Datenbank bessere LAtenzen erzielen als eine vergleichbare REST API. Die gewonnenen Erkenntnisse liefern praxisrelevante Hinweise für die Auswahl der optimalen API- und Datenbanktechnologie und bieten Orientierungshilfen für die Entwicklung leistungsstarker und skalierbarer Systeme.
+\newline
+\noindent
 \textbf{Stichwörter:} REST, GraphQL, API, relationale Datenbank, Graphdatenbank
-
-
-
 % chapter zusammenfassung (end)

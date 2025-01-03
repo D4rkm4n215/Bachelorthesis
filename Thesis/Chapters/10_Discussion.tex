@@ -1,10 +1,26 @@
 \chapter{Diskussion} % (fold)
 \label{sec:diskussion}
-In diesem Kapitel sollen die aus dem empireischen Experiment gewonnen Erkentnisse mit den Ergebnissen der Literaturanalyse vereinigt werden, um die Ergebnisse des Experiments zu überprüfen und somit die Forschungsfragen final zu beantworten.
+In diesem Kapitel sollen die aus dem empireischen Experiment gewonnen Erkentnisse mit den Ergebnissen der Literaturanalyse vereinigt werden, um die Ergebnisse des Experiments zu überprüfen.
 \newline
 \noindent
-Innerhalb des Experiments wurde die Erkentnis gewonnen, dass Anfragen einer REST API, unabhängig der Datenbank bei einer Menge von 100.000 Ergebnistupel einen deutlichen Vorteil gegenüber einer GraphQL API bieten. Dies entspricht der Erwartung, da bereits in der Literaturanalyse beschrieben wurde das eine GraphQL API hierbei um einen Faktor von 2.5 langsamer ist\citep{restvsgraphql}.
-Bei einfacheren Anfragen wurde ein Faktor von 0,02 beschrieben \citep{migrategraphql}. Dieser wurde jedoch im Experiment meist deutlich übertroffen. Die parametrisierten Anfragen, welche ohne Joins ausgeführt wurden weißen darauf hin, dass GraphQL um den Faktor 1,9 performanter war als REST.
-Bei einer Komplexen Anfrage (GET /api/persons/:pid/projects/issues) zeigt sich ebenfalls ein ein Vorteil bei der Verwendung. Diese überlegenheit von GraphQL wurde ebenfalls in der Analyse beschrieben. \citep{graphqlreplacerest}
+Im Rahmen des Experiments wurde untersucht, wie sich die Latenzzeiten von REST- und GraphQL-APIs unter verschiedenen Anfragenkomplexitäten unterscheiden. Dabei zeigten die Ergebnisse, dass REST bei Anfragen mit hoher Datenlast (100.000 Ergebnistupel) unabhängig von der zugrunde liegenden Datenbank einen deutlichen Vorteil gegenüber GraphQL hat. Dies deckt sich mit der Literatur, in der berichtet wird, dass GraphQL bei solchen Szenarien etwa 2,5-mal langsamer ist \citep{restvsgraphql}.
+\newline
+\noindent
+Für einfache Anfragen wurde in der Literatur ein Geschwindigkeitsfaktor von 0,02 zugunsten von GraphQL genannt \citep{migrategraphql}. Im Experiment konnte dieser Faktor jedoch in vielen Fällen übertroffen werden. Besonders bei parametrisierten Anfragen, die ohne Joins ausgeführt wurden, zeigte GraphQL eine bis zu 1,9-mal bessere Performance als REST. Dies wurde auch bei einem Endpunkt beobachtet, der realen Anwendungen entspricht (z. B. GET /api/persons/:pid).
+\newline
+\noindent
+Komplexere Anfragen, die mehrere Tabellen oder Nodes innerhalb einer Datenbank abfragen (z. B. GET /api/persons/:pid/projects/issues), zeigten ebenfalls einen deutlichen Vorteil für GraphQL. Diese Überlegenheit wurde bereits in der Literatur beschrieben \citep{graphqlreplacerest}. GraphQL kann Anfragen, die eine Aggregation oder den Zugriff auf verschachtelte Daten erfordern, effizienter verarbeiten, was seine Stärke bei solchen Szenarien unterstreicht.
+\newline
+\noindent
+Bei der Erstellung von Daten wurden in der Literatur keine signifikanten Unterschiede in der Effizienz zwischen den beiden Ansätzen festgestellt \citep{graphqlreplacerest}. Diese Beobachtung wurde im Experiment bestätigt: Der Unterschied in der Median-Latenzzeit betrug nicht mehr als 7 Millisekunden.
+\newline
+\noindent
+Ein weiterer Aspekt, welcher Untersucht wurde, war die Auswirkung der Datenbank, konkret einer relationalen oder Graphdatenbank, auf die zuvor genannten APIs. Die parametrisierten Anfragen zeigen, dass die Graphdatenbank und die relationmale Datenbank sich bei der Abfragedauer nicht besonders unterscheiden. Lediglich die Abfrage nach 100.000 Tupeln ruft bei der Graphdatenbank eine enorm Latenz hervor, und dies unabhäng der API. In der Literatur wurde dies so nicht beschrieben \citep{graphrelationaldb}. Hier war die Erwartung, dass die Anfragedauer nahezu gleichbleiben sein sollte. Graphdatenbanken sind für Abfragen mit hoher komplexität optimiert und nicht immer für Bulk-Extraktionen. Außerdem haben Graphdatenbanken potenziell mehr Overhead und benötigen mehr Speicher- sowie CPU-Operationen.
+\newline
+\noindent
+Bei einer Abfrage, welche mehr Beziehungsevalutation benötigt  (GET /api/persons/:pid /projects/issues), ist zu erkennen, dass die Graphentheorie hier einen deutlich Vorteil aufweist. Die GraphQL-API konnte hierbei in Komination mit einer Graphdatenbank die Anfrage 3 mal schneller bearbeiten als eine REST API die mit einer Graphdatenbank operierte. Auf seiten der relationalen Datenbank war ebenfalls ein unterschied zu erkennen. Dieser fiel aber mit einem Faktor von 1,6 deutlich geringer aus.
+\newline
+\noindent
+Bei der Erstellung von Daten auf der Datenbank wurde deutlich Sichtbar, dass eine Graphdatenbank erheblich länger für die Erstellung benötigt. Dies ist dadurch zu begründen, dass bei einer relationalen Datenbank die Tupel lediglich in der Datenbank abgelegt werden, ohne eine beziehung zueinander herzustellen. Eine Graphdatenbank tut dies direkt bei der Erstellung der Daten, wodurch sie mehr Rechenzeit für das Erstellen und die Verbindung der Nodes benötigt. \citep{constantinov2015running}
 
 % chapter diskussion (end)
