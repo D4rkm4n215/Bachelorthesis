@@ -10,11 +10,11 @@ Für die Durchführung des Experiments werden zwei Datenbanktypen verwendet, wel
 \begin{figure}[H]
 	\centering
 	\includegraphics[scale=0.6]{Illustrations/table_diagram.png}
-	\caption{Tabellen Diagramm}
+	\caption{Datenbank Diagramm}
 \end{figure}
 \newpage
 \noindent
-Um eine relationale Datenbank aus dem gegebenen Datenmodell (Abb. 4.1) zu erstellen muss dieses wie in Abb. 5.1 zu sehen ist angepasst werden, um die Beziehung zwischen Person und Projekt als auch Person und Issue abzubilden. Somit ergeben sich für die relationale Datenbank fünf Tabellen welche in einer PostgreSQL Datenbank realisiert werden. PostgreSQL wird verwendet, da es ein leistungsfähiges, objekt-relationales Datenbanksystem bietet welches Open-Source ist und dadurch kostenfrei zur Verfügung steht. Die Datenbank wurde mit Beispieldaten befüllt, welche in Abbildung 5.2 bis 5.6 beispielhaft zusehen sind. Hierbei wurden 500.000 Personen als auch Projekt und Issue Objekte in die Datenbank eingefügt. Durch die Verwendung von Zwischentabellen, wie person\_issue und person\_project, enthält die relationale Datenbank 2,5 Mio. Tupel, die einen Speicherbedarf von 215MB besitzen.
+Um eine relationale Datenbank aus dem gegebenen Datenmodell (Abb. 4.1) zu erstellen muss dieses wie in Abb. 5.1 zu sehen ist angepasst werden, um die Beziehung zwischen \texttt{Person} und \texttt{Project} als auch \texttt{Person} und \texttt{Issue} abzubilden. Somit ergeben sich für die relationale Datenbank fünf Tabellen welche in einer PostgreSQL Datenbank realisiert werden. PostgreSQL wird verwendet, da es ein leistungsfähiges, objekt-relationales Datenbanksystem bietet welches Open-Source ist und kostenfrei zur Verfügung steht. Die Datenbank wurde mit Beispieldaten befüllt, welche in Abbildung 5.2 bis 5.6 beispielhaft zu sehen sind. Hierbei wurden 500.000 \texttt{Person} als auch \texttt{Project} und \texttt{Issue} Objekte in die Datenbank eingefügt. Durch die Verwendung von Zwischentabellen, wie \texttt{Person\_Issue} und \texttt{Person\_Project}, enthält die relationale Datenbank 2,5 Mio. Tupel, die einen Speicherbedarf von 215MB besitzen. 
 
 \begin{figure}[H]
 	\centering
@@ -77,7 +77,7 @@ Um eine relationale Datenbank aus dem gegebenen Datenmodell (Abb. 4.1) zu erstel
 % subsection relationalesdatenbankdesign (end)
 \subsection{Graphdatenbankdesign} % (fold)
 \label{sec:graphsdatenbankdesign}
-Um eine Graphdatenbank zu erstellen benötigt man keine definierten Tabellen, da diese die Daten schemafrei speichert. Die Nodes werden bei der Erstellung entsprechend der Objekte benannt, ebenso werden die Beziehungen zwischen den Nodes bei der Erstellung benannt. Als Graphdatenbank wird auf Neo4j zurückgegriffen. Es ist eine der am weitesten verbreiteten Graphdatenbanken und bietet eine hohe Benutzerfreundlichkeit. In Abbildung 5.7 ist eine Demonstration einer Beziehung zwischen jeweils einem Node zu sehen. Die Kanten sind als gerichtete Kanten abgebildet, dabei hat Person zwei ausgehende Kanten, Projekt zwei eingehende und Issue jeweils eine eingehende als auch eine ausgehende Kante. Wie in der relationalen Datenbank wurden auch in der Graphdatenbank 500.000 Nodes pro Objekt erstellt. Hierbei werden jedoch keine Zwischentabellen benötigt, um Beziehungen darzustellen, wodurch in der Datenbank 1,5 Mio. Nodes vorhanden sind, die durch 2,01 Mio. Edges verbunden sind. Hieraus ergibt sich eine Gesamtgröße von 197MB.
+Um eine Graphdatenbank zu erstellen benötigt man keine definierten Tabellen, da diese die Daten schemafrei speichert. Die Nodes werden bei der Erstellung entsprechend der Objekte benannt, ebenso werden die Beziehungen zwischen den Knoten bei der Erstellung benannt. Als Graphdatenbank wird auf Neo4j zurückgegriffen. Es ist eine der am weitesten verbreiteten Graphdatenbanken und bietet eine hohe Benutzerfreundlichkeit. In Abbildung 5.7 ist eine Demonstration einer Beziehung zwischen jeweils einem Knoten zu sehen. Die Kanten sind als gerichtete Kanten abgebildet, dabei hat \texttt{Person} zwei ausgehende Kanten, \texttt{Project} zwei eingehende und \texttt{Issue} jeweils eine eingehende als auch eine ausgehende Kante. Wie in der relationalen Datenbank wurden auch in der Graphdatenbank 500.000 Knoten pro Objekt erstellt. Hierbei werden jedoch keine Zwischentabellen benötigt, um Beziehungen darzustellen, wodurch in der Datenbank 1,5 Mio. Knoten vorhanden sind, die durch 2,01 Mio. Kanten verbunden sind. Hieraus ergibt sich eine Gesamtgröße von 197MB.
 
 
 \begin{figure}[H]
@@ -97,17 +97,18 @@ Um eine Graphdatenbank zu erstellen benötigt man keine definierten Tabellen, da
 Bei REST wird für jedes Testszenario ein seperater Endpunkt benötigt. Hierbei wurden sechs verschiedene Endpunkte mit unterschiedlichen Komplexität entworfen.
 
 \begin{itemize}
-\item \textbf{HEAD api/resource} wird verwendet, um einen Head-Request durchzuführen um die Latenz der API zu bestimmen.
-\item \textbf{GET api/issues?counter=x\&?joins=y}: Hierbei kann die Menge der Ergebnistupel(x) und die Anzahl der Joins(y) die auf der Datenbank durchgeführt werden bei der Anfrage bestimmt werden. Die in Abbildung 5.8 dargestellte Antwort wird hierbei erwartet.
+\item \colorbox{gray!20}{\textbf{HEAD api/resource}} wird verwendet, um einen Head-Request durchzuführen um die Latenz der API zu bestimmen.
+\item \colorbox{gray!20}{\textbf{GET api/issues?counter=x\&?joins=y}}: Hierbei kann die Menge der Ergebnistupel(x) und die Anzahl der Joins(y) die auf der Datenbank durchgeführt werden bei der Anfrage bestimmt werden. Die in Abbildung 5.8 dargestellte Antwort wird hierbei erwartet.
 \begin{figure}[H]
 \begin{center}
 \begin{BVerbatim}
-{
-    "pid": 10,
-    "firstname": "Cecilla",
-    "lastname": "Beningfield",
-    "email": "cbeningfield9@wp.com"
-}
+   {
+        "iid": 1,
+        "title": "Pixope",
+        "createdAt": "2024-07-23 00:00:00",
+        "state": "Closed"
+        "stateReason": "Cancelled"
+    },
 [...]
 \end{BVerbatim}
 \end{center}
@@ -115,7 +116,7 @@ Bei REST wird für jedes Testszenario ein seperater Endpunkt benötigt. Hierbei 
 \end{figure}
 
 
-\item \textbf{GET api/persons/:pid}: Dieser Endpunkt ermöglicht das Abrufen einer bestimmten Person anhand ihrer ID. Die API liefert dabei ein JSON-Objekt zurück, dass die Person mit den Attributen Vorname, Nachname und E-Mail-Adresse beschreibt.(Abb. 5.9)
+\item \colorbox{gray!20}{\textbf{GET api/persons/:pid}}: Dieser Endpunkt ermöglicht das Abrufen einer bestimmten \texttt{Person} anhand ihrer \texttt{ID}. Die API liefert dabei ein JSON-Objekt zurück, dass die \texttt{Person} mit den Attributen \texttt{Firstname, Lastname} und \texttt{E-Mail} beschreibt.(Abb. 5.9)
 \begin{figure}[H]
 \begin{center}
 \begin{BVerbatim}
@@ -130,7 +131,7 @@ Bei REST wird für jedes Testszenario ein seperater Endpunkt benötigt. Hierbei 
 \caption{GET api/persons/:pid Response}
 \end{figure}
 
-\item Mit dem Endpunkt  \textbf{GET api/persons} können alle in der Datenbank gespeicherten Personen abgerufen werden. Die Antwort umfasst 5000 Personenobjekte im JSON-Format.(Abb. 5.10)
+\item Mit dem Endpunkt  \colorbox{gray!20}{\textbf{GET api/persons}} können alle in der Datenbank gespeicherten \texttt{Person} Objekte abgerufen werden. Die Antwort umfasst 5000 \texttt{Project} Objekte im JSON-Format.(Abb. 5.10)
 
 \begin{figure}[H]
 \begin{center}
@@ -155,7 +156,7 @@ Bei REST wird für jedes Testszenario ein seperater Endpunkt benötigt. Hierbei 
 \caption{GET api/persons Response}
 \end{figure}
 
-\item Der Endpunkt \textbf{GET api/persons/:pid/projects/issue} erhöht die Komplexität, da hier nicht nur auf ein einzelnes Objekt zugegriffen wird. Stattdessen erfordert die Abfrage mehrere Objekte, die miteinander in Abhängigkeit stehen, um die Anfrage zu bearbeiten. Die Antwort umfasst alle Issues die in Projekten vorhanden sind in der eine Person mitwirkt.(Abb. 5.11)
+\item Der Endpunkt \colorbox{gray!20}{\textbf{GET api/persons/:pid/projects/issue}} erhöht die Komplexität, da hier nicht nur auf ein einzelnes Objekt zugegriffen wird. Stattdessen erfordert die Abfrage mehrere Objekte, die miteinander in Abhängigkeit stehen, um die Anfrage zu bearbeiten. Die Antwort umfasst alle  \texttt{Issue} Objekte die in  \texttt{Project} Objekten vorhanden sind in der eine  \texttt{Person} mitwirkt.(Abb. 5.11)
 \begin{figure}[H]
 \begin{center}
 \begin{BVerbatim}
@@ -180,7 +181,7 @@ Bei REST wird für jedes Testszenario ein seperater Endpunkt benötigt. Hierbei 
 \caption{GET api/persons/:pid/projects/issue Response}
 \end{figure}
 
-\item \textbf{POST api/persons/:pid/projects/:prid/issues}: Dieser Endpunkt ermöglicht das Erstellen eines neuen Issues in der Datenbank, um nicht nur Abfragen zu testen, sondern auch das Hinzufügen von Daten. Im Body der Anfrage wird ein Issue-Objekt im JSON-Format übergeben.(Abb. 5.12) 
+\item \colorbox{gray!20}{\textbf{POST api/persons/:pid/projects/:prid/issues}}: Dieser Endpunkt ermöglicht das Erstellen eines neuen  \texttt{Issue} in der Datenbank, um nicht nur Abfragen zu testen, sondern auch das Hinzufügen von Daten. Im Body der Anfrage wird ein  \texttt{Issue} Objekt im JSON-Format übergeben.(Abb. 5.12) 
 \newline
 \begin{figure}[H]
 \begin{center}
@@ -195,7 +196,7 @@ Bei REST wird für jedes Testszenario ein seperater Endpunkt benötigt. Hierbei 
 \end{center}
 \caption{POST api/persons/:pid/projects/:prid/issues Body}
 \end{figure}
-Die Antwort enthält das erstellte Issue-Objekt, das eine gültige ID sowie Verknüpfungen zu dem zugehörigen Projekt und der Person beinhaltet.(Abb. 5.13)
+Die Antwort enthält das erstellte \texttt{Issue}, das eine gültige  \texttt{ID}, sowie Verknüpfungen zu dem zugehörigen  \texttt{Project} und der  \texttt{Person} beinhaltet.(Abb. 5.13)
 \begin{figure}[H]
 \begin{center}
 \begin{BVerbatim}
@@ -226,8 +227,8 @@ Die Antwort enthält das erstellte Issue-Objekt, das eine gültige ID sowie Verk
 % section rest (end)
 
 \subsection{GraphQL}
-GraphQL unterscheidet sich bei der Art der Anfragen sehr stark zu REST. Es wird nur über den Endpunkt POST api/graphql angesprochen. Hierüber werden sowohl Querys als auch Mutations abgedeckt. Die Anfragen werden im Body mithilfe der GraphQL Query Language definiert, welche JSON sehr ähnlich ist. Die in 5.2.1 definierten REST Endpunkte wurden in GraphQL nachgebildet, sodass sie die selbe Antwort liefern. Für einen HEAD Request bietet GraphQL nativ jedoch keine Lösung, weshalb in GraphQL APIs der HEAD Request identisch wie in den REST APIs implementiert wurde.
-Der parametrisierte Endpunkt aus der REST-API wurde in GraphQL wie in Abb. 5.14 dargestellt umgesetzt. Hierbei sind bei Counter Werte zwischen 0 und 1,5 Mio und bei Joins werte zwischen 0 und 3 möglich.
+GraphQL unterscheidet sich bei der Art der Anfragen sehr stark zu REST. Es wird nur über den Endpunkt \colorbox{gray!20}{POST api/graphql} angesprochen. Hierüber werden sowohl Querys als auch Mutations abgedeckt. Die Anfragen werden im Body mithilfe der GraphQL Query Language definiert, welche JSON sehr ähnlich ist. Die in 5.2.1 definierten REST Endpunkte wurden in GraphQL nachgebildet, sodass sie die selbe Antwort liefern. Für einen HEAD Request bietet GraphQL nativ jedoch keine Lösung, weshalb in GraphQL APIs der HEAD Request identisch wie in den REST APIs implementiert wurde.
+Der parametrisierte Endpunkt aus der REST-API wurde in GraphQL wie in Abb. 5.14 dargestellt umgesetzt. Hierbei sind bei  \texttt{Counter} Werte zwischen 0 und 1,5 Mio und bei  \texttt{Joins} werte zwischen 0 und 3 möglich.
 
 \begin{figure}[H]
 \begin{center}
@@ -246,7 +247,7 @@ query{
 \caption{GraphQL Query GET api/issues?counter=x\&?joins=y}
 \end{figure}
 \noindent
-Die in Abbildung 5.15 dargestellte Query ist dem REST Enpunkt GET api/persons/:pid eqivalent. Hierbei wird ebenfalls eine ID übergeben, allerdings können die Felder die in der Antwort enthalten sind explizit gewählt werden. Hierbei wurden die Personen ID, Vorname, Nachname als auch die Email gewählt, um die selbe Antwort wie der REST Endpunkt zu erhalten. 
+Die in Abbildung 5.15 dargestellte Query ist dem REST Enpunkt \colorbox{gray!20}{GET api/persons/:pid} eqivalent. Hierbei wird ebenfalls eine  \texttt{ID} übergeben, allerdings können die Felder die in der Antwort enthalten sind explizit gewählt werden. In diesem Beispiel wurden die  \texttt{PID},  \texttt{Firstname},  \texttt{Lastname} als auch die  \texttt{E-Mail} gewählt, um die selbe Antwort wie der REST Endpunkt zu erhalten. 
 \begin{figure}[H]
 \begin{center}
 \begin{BVerbatim}
@@ -263,7 +264,7 @@ query{
 \caption{GraphQL Query equivalent zu GET api/persons/:pid}
 \end{figure}
 \noindent
-Der REST Endpunkt GET api/persons wird von der GraphQL Query in Abbildung 5.16 repräsentiert. Hierbei werden die selben Felder selektiert wie in der vorherigen Abfrage, jedoch wird hierbei die Query persons angesprochen, wodurch alle Personen der Datenbank abgerufen werden.
+Der REST Endpunkt \colorbox{gray!20}{GET api/persons} wird von der GraphQL Query in Abbildung 5.16 repräsentiert. Hierbei werden die selben Felder selektiert wie in der vorherigen Abfrage, jedoch wird hierbei die Query \colorbox{gray!20}{persons} angesprochen, wodurch alle  \texttt{Person} Objekte der Datenbank abgerufen werden.
 \begin{figure}[H]
 \begin{center}
 \begin{BVerbatim}
@@ -280,7 +281,7 @@ query {
 \caption{GraphQL Query equivalent zu GET api/persons}
 \end{figure}
 \noindent
-Abbildung 5.17 zeigt die GraphQL Query, welche dem REST Endpunkt GET api/persons/ :pid/projects/issue entspricht. Hierbei werden die im Schema definierten Querys geschachtelt, um eine Abfrage zu erhalten, welche die Abhängigkeiten zwischen den Objekten repräsentiert.
+Abbildung 5.17 zeigt die GraphQL Query, welche dem REST Endpunkt \colorbox{gray!20}{GET api/persons/} \colorbox{gray!20}{:pid/projects/issue} entspricht. Hierbei werden die im Schema definierten Querys geschachtelt, um eine Abfrage zu erhalten, welche die Abhängigkeiten zwischen den Objekten repräsentiert.
 \begin{figure}[H]
 \begin{center}
 \begin{BVerbatim}
@@ -302,7 +303,7 @@ query{
 \caption{GraphQL Query equivalent zu GET api/persons/:pid/projects/issue}
 \end{figure}
 \noindent
-Um den REST Endpunkt POST api/persons/:pid/projects/:prid/issues nachzubilden wurde die in Abb. 5.18 dargestellte Mutation entwickelt. Hierbei wird ein Input Objekt definiert, welches die Attribute beinhaltet, die zur Erstellung des Issues benötigt werden. Danach kann, wie auch in den zuvor beschriebenen Querys, selektiert werden, welche Felder in der Antwort enthalten sind.
+Um den REST Endpunkt \colorbox{gray!20}{POST api/persons/:pid/projects/:prid/issues} nachzubilden wurde die in Abb. 5.18 dargestellte Mutation entwickelt. Hierbei wird ein Input Objekt definiert, welches die Attribute beinhaltet, die zur Erstellung des Issues benötigt werden. Danach kann, wie auch in den zuvor beschriebenen Querys, selektiert werden, welche Felder in der Antwort enthalten sind.
 \begin{figure}[H]
 \begin{center}
 \begin{BVerbatim}
