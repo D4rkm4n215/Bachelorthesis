@@ -1,25 +1,23 @@
-\chapter{Analyse} % (fold)
+\chapter{Literaturanalyse} % (fold)
 \label{sec:analyse}
-In diesem Kapitel sollen die in der Einleitung definierten Forschungsfragen untersucht werden. Um diese Fragen zu beantworten, wird eine Literaturanalyse durchgeführt, die bestehende Studien, Bücher und wissenschaftliche Artikel betrachtet. Ziel ist es, aus der vorhandenen Literatur systematisch Erkenntnisse abzuleiten, die die Performance der Ansätze in verschiedenen Szenarien beleuchten.
+In diesem Kapitel werden die in der Einleitung definierten Forschungsfragen untersucht, wofür eine Literaturanalyse erfolgt, die bestehende Studien, Bücher und wissenschaftliche Artikel betrachtet. Ziel ist es, aus der vorhandenen Literatur systematisch Erkenntnisse abzuleiten, die die Performance in verschiedenen Szenarien beleuchten.
 
-\section{FF-1: Wie unterscheiden sich GraphQL und REST hinsichtlich der Latenzzeit bei unterschiedlichen Anfragenkomplexitäten?} % (fold)
+\section{Latenzzeit von GraphQL und REST bei unterschiedlichen Anfragenkomplexitäten} % (fold)
 \label{sec:ff1}
-Um zu untersuchen, wie GraphQL und REST sich im Bezug auf Latenz bei verschiedenen Anfragekomplexität auswirkt, muss zunächst darauf eingegangen werden, welche Faktoren oder Spezifikationen, die die APIs nutzen sich auf die Latenz auswirken.
-Bei der Bereitstellung von Daten setzt REST auf HTTP-Endpunkte. Diese unterstützen nativ HTTP-Caching,  wodurch Ressourcen in einem Cache zwischengespeichert werden können um unnötige Datenübertragungen und Serveranfragen zu vermeiden und somit die Zugriffszeiten zu verringern.
-Bei GraphQL wird dies nativ nicht unterstützt. Hierdurch können wiederkehrende Anfragen nicht gecached werden und müssen jeweils immer vom Server bearbeitet werden, was zu höheren Zugriffszeiten führt. \citep{graphqlreplacerest}
+Um zu untersuchen, wie sich GraphQL und REST in Bezug auf die Latenz bei verschiedenen Anfragekomplexitäten verhalten, ist zunächst darauf einzugehen, welche von den APIs genutzten Faktoren oder Spezifikationen sich auf die Latenz auswirken. Bei der Bereitstellung von Daten setzt REST auf HTTP-Endpunkte, die nativ HTTP-Caching unterstützen, wodurch Ressourcen in einem Cache zwischengespeichert werden können, um unnötige Datenübertragungen sowie Serveranfragen zu vermeiden und somit die Zugriffszeiten zu verringern. Bei GraphQL wird dies nativ nicht unterstützt, wodurch wiederkehrende Anfragen nicht gecacht werden, sondern jeweils vom Server bearbeitet werden müssen, was zu höheren Zugriffszeiten führt.  \citep{graphqlreplacerest}
 
 \noindent
-REST fördert die Zerlegung von Systemen in eine Menge verknüpfter Ressourcen mit einem bestimmten Granularitätsgrad. Dies führt zu Abwägungen zwischen Wiederverwendbarkeit und Leistung, die in der allgemeinen Software-Service-Architektur wohlbekannt sind. Weniger granulare und kohäsivere Services werden bevorzugt, da sie lose Kopplung und hohe Wiederverwendbarkeit fördern. Dies kann jedoch zu Client-Server-Interaktionen führen, bei denen mehrere aufeinanderfolgende Anfragen notwendig sind, um die benötigten Daten aus dem Ressourcengraphen abzurufen, ein Phänomen, das als „Underfetching“ bekannt ist. Dieses Problem wird auch als n+1-Problem bezeichnet und tritt bei REST auf der Seite des Clients auf. Dieser muss dementsprechend weitere Anfragen schicken, bis die benötigten Daten vollständig beim Client verfügbar sind. \citep{graphqlhealth} \citep{migrategraphql}
+Bei REST wird die Zerlegung von Systemen in eine Menge verknüpfter Ressourcen mit einem bestimmten Granularitätsgrad gefördert, was zu Abwägungen zwischen Wiederverwendbarkeit und Leistung führt, die in der allgemeinen Software-Service-Architektur weitverbreitet sind. Weniger granulare und kohäsivere Services werden bevorzugt, weil sie lose Kopplung und hohe Wiederverwendbarkeit fördern. Dies kann jedoch zu Client-Server-Interaktionen führen, bei denen mehrere aufeinanderfolgende Anfragen notwendig sind, um die benötigten Daten aus dem Ressourcengraphen abzurufen. Dieses Phänomen ist als ‚Underfetching‘ oder ‚n+1-Problem‘ bekannt und tritt bei REST auf der Seite des Clients auf. Dieser muss dementsprechend weitere Anfragen schicken, bis die benötigten Daten vollständig bei ihm verfügbar sind.  \citep{graphqlhealth} \citep{migrategraphql}
 
 \noindent
-Bei GraphQL kann es ebenso zu einem n+1 Problem kommen. Hierbei tritt dieses jedoch nicht auf der Client Seite auf, sondern direkt beim Server bei der Verarbeitung der Anfrage. Der GraphQL Server muss dann mehrere Anfragen an die Datenbank schicken, um die benötigten Daten zu erhalten, um sie an den Client auszuliefern.
+Bei GraphQL kann es ebenso zu einem n+1-Problem kommen, wobei dieses jedoch nicht auf der Clientseite auftritt, sondern beim Server im Rahmen der Verarbeitung der Anfrage. Der GraphQL-Server muss mehrere Anfragen an die Datenbank schicken, um die benötigten Daten zu erhalten und, an den Client auszuliefern. 
 \citep{graphqlsemantics}
 
 \noindent
-Hierfür bietet GraphQL einen sogenannten Dataloader, der die Anfragen, die zur Bearbeitung eines Requests benötigt werden bündelt und als eine einzelne, optimierte, Datenbankabfrage ausführt. \citep{nordstrom2022graphql}
-\newline
+Hierfür bietet GraphQL einen sogenannten Dataloader, der die zur Bearbeitung eines Requests benötigten Anfragen bündelt und als eine einzelne, optimierte, Datenbankabfrage ausführt. \citep{nordstrom2022graphql}
+\newpage
 \noindent
-Zudem spielt bei der Latenz einer API die Anfragekomplexität eine entscheidende Rolle. In Abbildung 3.1 sind vergleichend die Ausführungszeiten von vier unterschiedlichen API-Abfragen, die sowohl mit REST als auch mit GraphQL durchgeführt wurden, zu sehen. Die Abfragen wurden auf den öffentlich zugänglichen GitHub REST- und GraphQL-APIs durchgeführt, da beide dieselben Ressourcen bereitstellen. Performance wird hierbei in Millisekunden gemessen und gibt Aufschluss darüber, wie sich beide Technologien je nach Art der Anfrage verhalten. 
+Zudem spielt bei der Latenz einer API die Anfragekomplexität eine entscheidende Rolle. In Abbildung 3.1 sind vergleichend die Ausführungszeiten vier unterschiedlicher API-Abfragen dargestellt, die sowohl mit REST als auch mit GraphQL auf den öffentlich zugänglichen GitHub-REST- und GraphQL-APIs durchgeführt wurden. Die Performance wurde hierbei in Millisekunden gemessen und gibt Aufschluss darüber, wie sich beide Technologien je nach Art der Anfrage verhalten.
 \begin{figure}[H]
 	\centering
 	\includegraphics[scale=.5]{Illustrations/cangraphqlreplacerest.png}
@@ -29,54 +27,50 @@ Query 2: POST /repos/:owner/:repo/issues/:issue_number/comments
 Query 3: GET/repos/:owner/:repo/issues/:issue_number
 Query 4: GET/repos/:owner/:repo/stargazers
 \end{BVerbatim}
-	\caption{Latenz GraphQL vs. REST \citep{graphqlreplacerest}}
+	\caption{Latenz bei GraphQL vs. REST \citep{graphqlreplacerest}}
 \end{figure}
 \noindent
-Die erste Abfrage (GET/user) zeigt, dass sich die Latenz zwischen REST und GraphQL nicht signifikant unterscheiden. REST benötigt für diese Anfrage 171,16 Millisekunde, während GraphQL mit 176,96 Millisekunden nur geringfügig langsamer ist. Dies lässt darauf schließen, dass bei einfachen Anfragen, die keine komplexe Datenstruktur beinhalten, sich die Ergebnisse nicht gravierend unterscheiden und als nahezu identisch bezeichnet werden können.
-Die zweite Abfrage (POST /repos/:owner/:repo/issues/:issue\_number/comments), eine Schreiboperation, zeigt ein ähnliches Ergebnis. Hierbei ist GraphQL mit 606,34 Millisekunden leicht schneller als REST mit 627 Millisekunden. Da der Unterschied sehr gering ist, deutet dies darauf hin, dass Schreiboperationen in beiden Technologien ähnlich effizient verarbeitet werden.
-Eine deutlich Differenz zeigt sich bei der dritten Abfrage (GET/repos/:owner/ :repo/issues/:issue\_number). REST benötigt hierfür 225,44 Millisekunden, während GraphQL mit nur 144,88 Millisekunden deutlich schneller ist. Dies demonstriert die Überlegenheit von GraphQL bei komplexeren Datenanforderungen. Da GraphQL in der Lage ist, mehrere Datenpunkte in einem einzelnen Aufruf zu bündeln, kann es die Anzahl der API-Aufrufe reduzieren und so effizienter arbeiten.
-Die vierte Abfrage (GET/repos/:owner/:repo/stargazers) zeigt ein gegensätzliches Bild. Hier ist REST mit 338,16 Millisekunden schneller als GraphQL, welches 388,46 Millisekunden benötigt. Dies liegt daran, dass die Abfrage keine komplexe Aggregation von Daten erfordert und der Overhead von GraphQL die Performance negativ beeinflusst.
-Somit kann gesagt werden, dass REST in einem Szenario besser abgeschnitten hat als GraphQL, GraphQL in einem anderen Szenario besser abschneidet als REST und beide Technologien in zwei Szenarien ähnlich abgeschnitten haben.
+Die erste Abfrage (GET/user) zeigt, dass sich die Latenz zwischen REST und GraphQL nicht signifikant unterscheidet: Für diese Anfrage benötigt REST 171,16 Millisekunde, während GraphQL mit 176,96 Millisekunden nur geringfügig langsamer ist. Dies lässt darauf schließen, dass die Ergebnisse bei einfachen Anfragen ohne komplexe Datenstruktur als nahezu identisch bezeichnet werden können. Die zweite Abfrage (POST /repos/:owner/:repo/issues/:issue\_number/comments), eine Schreiboperation, zeigt ein ähnliches Ergebnis, wobei GraphQL mit 606,34 Millisekunden leicht schneller arbeitet als REST mit 627 Millisekunden. Weil der Unterschied gering ist, deutet dies darauf hin, dass Schreiboperationen in beiden Technologien ähnlich effizient verarbeitet werden. 
+Eine deutliche Differenz ergibt sich bei der dritten Abfrage (GET/repos/:owner/:repo/issues/:issue\_number), wofür REST 225,44 Millisekunden benötigt, während sich GraphQL mit nur 144,88 Millisekunden als deutlich schneller erweist. Dies demonstriert die Überlegenheit von GraphQL bei komplexeren Datenanforderungen. Weil GraphQL in der Lage ist, mehrere Datenpunkte in einem einzelnen Aufruf zu bündeln, reduziert es die Anzahl der API-Aufrufe und arbeitet so effizienter. Die vierte Abfrage (GET/repos/:owner/:repo/stargazers) zeigt ein gegensätzliches Bild: Hier ist REST mit 338,16 Millisekunden schneller als GraphQL, das 388,46 Millisekunden benötigt. Dies liegt daran, dass die Abfrage keine komplexe Aggregation von Daten erfordert und der Overhead von GraphQL die Performance negativ beeinflusst. Somit kann festgehalten werden, dass REST in einem Szenario positivere Ergebnisse aufwies als GraphQL, in einem Szenario das Gegenteil der Fall war und beide Technologien in zwei Szenarien ähnliche Resultate erzielten. 
 \citep{graphqlreplacerest}
-\newline
-Weitere Studien zeigen, dass GraphQL bei einfachen Abfragen, die nur einen Endpunkt nutzen, etwa 0,02-mal schneller als REST arbeitet. \citep{migrategraphql}
+\newpage
+\noindent
+Weitere Studien zeigen, dass GraphQL bei einfachen Abfragen, die nur einen Endpunkt nutzen, etwa 0,02-mal schneller als REST arbeitet.  \citep{migrategraphql}
 \newline
 Bei komplexeren Anfragen, die vier Endpunkte umfassen und 1000 Ergebnistupel liefern, verarbeitet eine GraphQL-API die Daten bis zu 16-mal schneller als eine REST-API.\citep{analysegraphql}
 \newline
-Noch anspruchsvollere Anfragen, die fünf oder mehr Endpunkte nutzen, werden von GraphQL sogar bis zu 187-mal schneller bearbeitet.\citep{analysewebgraphql}
+Anspruchsvollere Anfragen mit fünf oder mehr Endpunkten werden von GraphQL bis zu 187-mal schneller erfüllt.\citep{analysewebgraphql}
 \newline
-Bei steigender Komplexität stellt sich jedoch bei einer Menge von 100.000 Ergebnistupeln heraus, dass eine GraphQL API in diesem Fall 0.36 \citep{analysegraphql} bis 2,5 mal langsamer ist, als eine vergleichbare REST API \citep{restvsgraphql}.
+Bei steigender Komplexität stellt sich jedoch bei einer Menge von 100 000 Ergebnistupeln heraus, dass eine GraphQL-API in diesem Fall 0,36-\citep{analysegraphql} bis 2,5-mal langsamer arbeitet als eine vergleichbare REST-API \citep{restvsgraphql}.
 %section ff1 (end)
-\section{FF-2: Wie beeinflussen graph- und relationale Datenbanken die Latenz von REST- und GraphQL-APIs?} % (fold)
+\section{Latenz von REST- und GraphQL-APIs bei Graph- und relationalen Datenbanken} % (fold)
 \label{sec:ff2}
-Da APIs nur eine Schnittstelle zwischen einer Datenbank und der Anwendung darstellt, welche die Daten aus der Datenbank konsumieren möchte, ist die Latenz einer API zwingend von der Bearbeitungszeit einer Anfrage innerhalb der Datenbank abhängig. Hierbei nutzen verschiedene Datenbanktypen unterschiedlichste Methoden, um die angefragten Daten aus der Datenbank bereitzustellen. In dieser Arbeit wird ein besonderes Augenmerk auf die Verarbeitung anhand der relationalen Algebra, sowie der Graphentheorie gelegt. Diese Methoden bieten bei der Verwendung in Anwendungsszenarien Vorteile, aber führen zu Nachteilen bei der effizienten und zeitsparenden Bearbeitung von Anfragen. Hierbei zeigt sich bei relationalen Datenbanken, dass diese bei steigender Anzahl an Daten, welche gespeichert werden, zunehmend langsamere Performance bieten.
-Wie in Abbildung 3.2 jedoch zu sehen ist steigt die Menge der Daten, welche im Internet verarbeitet werden, seit 2010 bis heute stetig an und die Prognosen bis ins Jahr 2028 deuten auf einen Trend zu erheblich mehr Daten an. Graphdatenbanken können mit solch einem Wachstum deutlich besser umgehen, da durch die Nutzung von Traversal-basierten Anfragen, welche für diese  Art von Abfragen optimiert sind, die Menge der Daten innerhalb der Datenbank eine untergeordnete Rolle spielt. \citep{9677042} \citep{performancenosql}
+Weil APIs eine Schnittstelle zwischen einer Datenbank und der Anwendung darstellen, die die Daten aus der Datenbank konsumieren soll, ist die Latenz einer API zwingend von der Bearbeitungszeit einer Anfrage innerhalb der Datenbank abhängig. Hierbei nutzen verschiedene Datenbanktypen jeweilige Methoden, um die angefragten Daten aus der Datenbank bereitzustellen. In dieser Arbeit wird ein besonderer Schwerpunkt auf die Verarbeitung anhand der relationalen Algebra, sowie der Graphentheorie gelegt. Diese Methoden bieten bei der Verwendung in Anwendungsszenarien Vorteile, führen aber zu Nachteilen hinsichtlich der Effizienz und Zeitersparnis bei der Anfragenbearbeitung. Hierbei zeigt sich bei relationalen Datenbanken, dass diese bei steigender Anzahl an gespeicherten Daten zunehmend langsamere Performance bieten. Wie in Abbildung 3.2 jedoch zu sehen ist, stieg die Menge der im Internet verarbeiteten Daten seit 2010 stetig an; die Prognosen bis ins Jahr 2028 deuten auf einen Trend zu erheblich mehr Daten. Graphdatenbanken können mit solch einem Wachstum effektiver umgehen, weil durch die Nutzung Traversal-basierter Anfragen, die für diese Art von Abfragen optimiert sind, die Menge der Daten innerhalb der Datenbank eine untergeordnete Rolle spielt.  \citep{9677042} \citep{performancenosql}
 \begin{figure}[H]
 	\centering
 	\includegraphics[scale=.4]{Illustrations/growthofdata.png}
-	\caption{Datenmenge Weltweit \citep{statista}}
+	\caption{Datenmenge weltweit \citep{statista}}
 \end{figure}
 \noindent
-Ein weiterer Faktor, welcher die Performance einer Datenbank beeinflusst, ist die Verbundenheit, also die Relationen, der Daten. Abbildung 3.3 zeigt, wie sich die Verbundenheit der Daten im Verlauf verändert hat. Hierbei ist deutlich zu sehen, dass Daten stetig eine größere Verzweigung zueinander aufweisen. 
+Einen weiteren Faktor, der die Performance einer Datenbank beeinflusst, beschreibt die Verbundenheit, also die Relation, der Daten. Abbildung 3.3 zeigt, wie sich diese im Verlauf veränderte. Hierbei ist deutlich zu sehen, dass Daten stetig eine größere Verzweigung zueinander aufweisen.
 
 \noindent
-Eine Graphdatenbank kann mit diesem hohen Grad an Verzweigung, durch die Verwendung der Graphentheorie und Traversierung performant umgehen.  Bei relationalen Datenbanken stellt dieser hohe Grad der Relationen eine Performanceeinbuße dar.  Da bei der Verbindung der Daten die Relationen zwischen den Tabellen durch Joins realisiert werden und diese komplexer zu berechnen sind, steigt mit zunehmender Anzahl der Relationen auch die Zeit, welche die Datenbank benötigt um mithilfe der Schlüssel und mehrerer Tabellen die Beziehung zwischen den Dateneinträgen zu konstruieren. \citep{9677042} \citep{graphdb}
+Eine Graphdatenbank kann mit diesem hohen Grad an Verzweigung durch die Verwendung der Graphentheorie und Traversierung performant umgehen, während bei relationalen Datenbanken dieser hohe Grad der Relationen eine Performanceeinbuße bewirkt. Weil bei der Verbindung der Daten die Relationen zwischen den Tabellen durch Joins realisiert werden und diese komplexer zu berechnen sind, steigt mit zunehmender Anzahl der Relationen die Zeit, welche die Datenbank benötigt, um mithilfe der Schlüssel und mehrerer Tabellen die Beziehung zwischen den Dateneinträgen zu konstruieren.  \citep{9677042} \citep{graphdb}
 \begin{figure}[H]
 	\centering
 	\includegraphics[scale=.45]{Illustrations/informationconnectedness.png}
 	\caption{Informationsverbundenheit \citep{performancenosql}}
 \end{figure}
 \noindent
-Die Universität von Mississippi führte ein Experiment durch, um die Latenzunterschiede zwischen einer relationalen MySQL-Datenbank und einer Graphdatenbank, konkret Neo4j, zu untersuchen. Dabei wurden sieben unterschiedliche Szenarien simuliert, deren Ergebnisse in den Abbildungen 3.4 und 3.5 dokumentiert sind. In der ersten Spalte der Tabellen wird die Konfiguration der Datenbank dargestellt. Hierbei gibt die Zahl die Anzahl der Nodes oder Tupel in der Datenbank an, gefolgt von einem Datentyp, der beschreibt, welche Art von Daten bei der Erstellung der Datenbank zufällig verwendet wurde.
-Die Ergebnisse beider Datenbanken sind in Abbildung 3.4 zu sehen, wobei die Abfragen I1 und I2 unterschiedliche Szenarien repräsentieren. Die Abfrage I1 selektiert alle Knoten, deren Payload einem bestimmten Wert entspricht, während I2 die Knoten zählt, deren Payload kleiner ist als ein gegebener Wert. Beide Szenarien nutzen den Datentyp Integer, um die Daten anzufordern. Aus den experimentellen Daten wird deutlich, dass die relationale MySQL-Datenbank im Vergleich zur Graphdatenbank Neo4j eine deutlich geringere Latenz in jedem getesteten  Fall aufweist.
+Die Universität von Mississippi führte ein Experiment durch, um die Latenzunterschiede zwischen einer relationalen MySQL- und einer Graphdatenbank (Neo4j) zu untersuchen. Dabei wurden sieben Szenarien simuliert, deren Ergebnisse in den Abbildungen 3.4 und 3.5 dokumentiert sind. In der ersten Spalte der Tabellen wird die Konfiguration der Datenbank dargestellt, wobei die Zahl die Menge der Nodes oder Tupel in der Datenbank angibt, gefolgt von einem Datentyp, der beschreibt, welche Art von Daten bei der Erstellung der Datenbank zufällig verwendet wurde. Die Ergebnisse beider Datenbanken sind in Abbildung 3.4 dargestellt, wobei die Abfragen I1 und I2 unterschiedliche Szenarien repräsentieren: Abfrage I1 selektiert alle Nodes, deren Payload einem bestimmten Wert entspricht, während I2 die Nodes zählt, deren Payload kleiner ist als ein gegebener Wert. Beide Szenarien nutzen den Datentyp Integer, um die Daten anzufordern. Anhand der experimentellen Daten wird deutlich, dass die relationale MySQL-Datenbank im Vergleich zur Graphdatenbank Neo4j in jedem getesteten Fall eine deutlich geringere Latenz aufweist. 
  \citep{graphrelationaldb}
 \begin{figure}[H]
 	\centering
 	\includegraphics[scale=.5]{Illustrations/dbresultsint.png}
-	\caption{Ergebnisse Abfragen durch Integer in Millisekunden \citep{graphrelationaldb}}
+	\caption{Ergebnisse der Abfragen durch Integer in Millisekunden \citep{graphrelationaldb}}
 \end{figure}
 \noindent
-Abbildung 3.5 zeigt Abfragen, bei denen anhand eines Strings selektiert wurde. Die zweite Zeile gibt dabei an, welche Länge der String hatte, auf dessen Basis die Selektion vorgenommen wurde. Hierbei wird die Menge der Nodes gezählt, die den String enthalten. Die Ergebnisse zeigen ein deutlich anderes Bild im Vergleich zu den vorherigen Resultaten, bei denen mithilfe eines Integer selektiert wurde. Durch die Verwendung eines Strings kann die relationale Datenbank die Graphdatenbank lediglich im ersten Szenario übertreffen. In den komplexeren Fällen spielt die Graphdatenbank ihre Vorteile jedoch klar aus und ist bei anspruchsvolleren Anfragen in der Spitze um den Faktor 167 schneller.
+Abbildung 3.5 zeigt Abfragen auf, bei denen anhand eines Strings selektiert wurde, wobei die zweite Zeile angibt, welche Länge der String hatte, auf dessen Basis die Selektion vorgenommen wurde. Hierbei wird die Menge der Nodes gezählt, die den String enthalten. Die Ergebnisse weichen deutlich von den vorherigen Resultaten ab, bei denen mithilfe eines Integer selektiert wurde: Durch die Verwendung eines Strings übertrifft die relationale Datenbank die Graphdatenbank lediglich im ersten Szenario; in den komplexeren Fällen weist die Letztere klare Vorteile auf und ist bei anspruchsvolleren Anfragen in der Spitze um den Faktor 167 schneller. 
  \citep{graphrelationaldb}
 \begin{figure}[H]
 	\centering
@@ -84,6 +78,6 @@ Abbildung 3.5 zeigt Abfragen, bei denen anhand eines Strings selektiert wurde. D
 	\caption{Ergebnisse Abfragen durch Character  in Millisekunden \citep{graphrelationaldb}}
 \end{figure}
 \noindent
-Zusammenfassend lässt sich feststellen, dass relationale Datenbanken bei der Selektion von Daten anhand eines Integer deutlich schnellere Ergebnisse liefern. Bei der Abfrage von Daten anhand eines Strings zeigt sich zunächst, dass relationale Datenbanken bei kleinen Datenmengen besser performen. Mit zunehmender Datenmenge wird jedoch die Graphdatenbank zunehmend effizienter und übertrifft schließlich die Performance der relationalen Datenbank deutlich.
+Zusammenfassend lässt sich feststellen, dass relationale Datenbanken bei der Selektion von Daten anhand eines Integer deutlich schnellere Ergebnisse liefern. Bei der Abfrage von Daten anhand eines Strings zeigt sich zunächst, dass relationale Datenbanken bei kleinen Daten- mengen effektiver performen, mit zunehmender Datenmenge wird jedoch die Graphdatenbank zunehmend effizienter und übertrifft schließlich die Performance der relationalen Datenbank deutlich.
 %section ff2 (end)
 % chapter analyse (end)
