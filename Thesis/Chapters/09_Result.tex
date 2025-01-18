@@ -1,34 +1,12 @@
 \chapter{Ergebnisse} % (fold)
 \label{sec:ergebnisse}
-Im Nachfolgenden werden die Ergebnisse der Latenztests der oben eingeführten APIs dargestellt. Die konkreten Zahlen, auf denen die Grafiken beruhen sind im Kapitel Appendix zu finden.
+Im Nachfolgenden werden die Ergebnisse der Latenztests der in Kapitel 6 eingeführten APIs dargestellt, wobei die konkreten Zahlen, auf denen die Grafiken beruhen, im Kapitel Appendix zu finden sind.
 
 \noindent
-Zunächst wurde, wie in Abbildung 7.1 zu sehen, mittels HEAD Request ermittelt, ob die API verfügbar ist und welche Latenz zwischen Client und Server entsteht, ohne eine Datenabfrage auszuführen. Hierbei kann man beobachten, dass die Latenz von PostGraph und Neo4Graph sehr dicht beieinander liegen. REST basierte APIs hatten in diesem Experiment eine Latenz die deutlich variierte.
-
-\noindent
-Daraufhin wurden die Latenzen des parametrisierten API-Endpunktes ermittelt. In den Abbildungen 7.2 bis 7.5 wurden diese Ergebnisse in einem Koordinatensystem dargestellt. Die x-Achse repräsentiert die Menge der Tupel, welche angefordert wurden. Aufgrund der hohen Menge der Ergebnistupel wurde diese Achse logarithmisch dargestellt. Auf der z-Achse ist die Latenz in Millisekunden zu sehen. Die verschiedenen Graphen innerhalb der Abbildungen beschreiben die Menge der Joins, bei relationalen Datenbanken, oder Kanten, bei Graphdatenbanken. Rot (Kreis) steht hierbei für null, Blau (Quadrat) steht für eins und Orange (Diamant) steht hierbei für zwei. 
-\newline
-Bei PostREST (vgl. Abb. 7.2) steigt somit die Latenz mit der Menge der Ergebnistupeln exponentiell an. Zudem ist zu erkennen, dass bei einer Menge von 100.000 Ergebnistupeln die Menge der Joins deutlich Einfluss auf die Latenz nehmen. Hierbei ist eine Anfrage die weniger Joins verwendet (Rot) mit 426,5 Millisekunden deutlich performanter, als eine Abfrage die mehrere Joins (Orange) verwendet, welche 492,5 Millisekunden benötigt. Bei niedrigerer Tupelzahl wirken sich Joins nicht, bzw. nur in sehr geringen Maß auf die Latenz der Anfrage aus.
-\newline
-PostGraph zeigt in Abbildung 7.3 ein ähnliches Bild, jedoch mit einer deutlich höheren Latenz bei einer Anfragengröße von 100.000 Tupel. Die GraphQL API ist hier mit 1831 Millisekunden um einen Faktor von 3,7 langsamer als die REST API, welche auf derselben Datenbank basiert.
-\newline
-Bei Verwendung einer Neo4j Datenbank in Kombination mit einer REST-API (vgl. Abb. 7.4) fällt auf, dass die Anfragen mit geringer Tupelzahl eine sehr ähnliche Latenz aufweisen. Bei höherer Tupelzahl liegt die Anfragedauer jedoch deutlich höher als mit einer relationalen Datenbank. Hierbei erkennt man jedoch, dass Anfragen, welche mehrere Kanten nutzen schneller bearbeitet werden können. So benötigt eine Anfrage, welche ohne das Nutzen einer Kante auskommt, 1673 Millisekunden. Wenn man nun die Komplexität erhöht und für die Anfrage zwei Kanten verwendet, benötigt diese lediglich 1371 Millisekunden.
- \newline
-Behält man nun die Datenbasis bei und nutzt eine GraphQL API (vgl. Abb. 7.5) fällt auf, dass erneut die Anfragedauer bei hoher Tupelzahl deutlich über der einer REST-API liegt. Ebenfalls ist hier zu beobachten, dass komplexere Anfragen schneller bearbeitet werden als weniger komplexe.
-\newline
-\noindent
-Wie in Abbildung 7.6 zu sehen ist, hat die PostgreSQL REST-API eine höhere Latenzzeit als die GraphQL PostgeSQL. Dies deutet darauf hin, dass die GraphQL API bei der Abfrage eines spezifischen \texttt{Person} Objekts, anhand der \texttt{Person}-ID in Kombination mit einer relationalen Datenbank effizientere Abfragen und eine bessere Performance bei der Verarbeitung bietet. Ähnliches zeigt sich bei einer Neo4j Datenbank. Auch hier hat die Neo4j GraphQL API niedrigere Latenzzeiten als die REST-API. Allerdings sind die Latenzen bei Neo4j minimal höher als bei dem relationalen Pendant. Das deutet darauf hin, dass Postgres bei dieser Anfrage eine performantere Verarbeitung von Abfragen ermöglicht. Zusammenfassend kann man für diese Anfrage sagen, dass GraphQL sowohl in Kombination mit einer relationalen als auch einer Graphdatenbank eine niedrigere Latenz aufweist. Zudem ist Postgres bei dieser Anfrage insgesamt minimal performanter als Neo4j.
-\newline
-In Abbildung 7.7 sind die Latenzen für die komplexere Anfrage, die 5000 \texttt{Person} Objekte aus der Datenbank zurückliefert dargestellt. GraphQL hat hierbei sowohl bei der relationalen Datenbank als auch bei der Graphdatenbank im Median eine niedrigere Latenz. REST ist somit in beiden Fällen die weniger performantere API.
-\newline
-Wenn nun die Anfragekomplexität steigt, wodurch sich die Abhängigkeit zwischen den Objekten in der Datenbank erhöht, ist deutlich zu sehen, dass die Streuung bei der Postgres GraphQL API höher ist als bei allen anderen APIs (vgl. Abb.7.8). Der Median liegt jedoch deutlich niedriger. Die Neo4j REST-API liegt in diesem Fall deutlich über allen anderen APIs. Gefolgt von der PortgeSQL REST-API. Beide GraphQL APIs weißen erneut eine deutlich niedrigere Latenz auf.
-\newline
-Bei der Speicherung in eine Datenbank ist ein deutlich anderes Bild zu sehen. Wie in Abbildung 7.9 zusehen, ist hierbei die Postgres REST-API diejenige mit der geringsten Latenz. Dicht gefolgt von der Postgres GraphQL API. Eine deutlich höhere Latenz ist bei den Neo4j APIs zu erkennen. Hierbei ist allerdings die GraphQL API die performantere.
-
-
-\begin{figure}[htbp]
+Zunächst wurde, wie in Abbildung 7.1 zu sehen, mittels HEAD- Request ermittelt, ob die API verfügbar war sowie welche Latenz zwischen Client und Server ohne Ausführung einer Datenabfrage entstand. Hierbei wurde beobachtet, dass die Latenzen von PostGraph und Neo4Graph dicht beieinander lagen, wobei die Latenz REST-basierter APIs in diesem Experiment deutlich variierte.
+\begin{figure}[H]
  \centering
-	\begin{tikzpicture}
+	\begin{tikzpicture}[scale=.9]
 	    \begin{axis}[
 	        boxplot/draw direction=y, 
 	        xlabel={API}, 
@@ -85,12 +63,14 @@ Bei der Speicherung in eine Datenbank ist ein deutlich anderes Bild zu sehen. Wi
 \caption{HEAD /api/resource}
 \end{figure}
 
-
-
-
-\begin{figure}
+\noindent
+Daraufhin wurden die Latenzen des parametrisierten API-Endpunktes ermittelt. In den Abbildungen 7.2 bis 7.5 wurden diese Ergebnisse in einem Koordinatensystem dargestellt, wobei die x-Achse die Menge der angeforderten Tupel repräsentiert; aufgrund der hohen Menge der Ergebnistupel wurde diese Achse logarithmisch abgebildet. Auf der z-Achse ist die Latenz in Millisekunden zu sehen. Die verschiedenen Graphen innerhalb der Abbildungen beschreiben die Menge der Joins bei relationalen Datenbanken oder Kanten bei Graphdatenbanken. Rot (Kreis) steht hierbei für null, Blau (Quadrat) für eins und Orange (Diamant) für zwei.
+\newline
+Bei PostREST (vgl. Abb. 7.2) steigt demnach die Latenz mit der Menge der Ergebnistupel exponentiell an, wobei zu erkennen ist, dass bei einer Anzahl von 100 000 Ergebnistupeln die Menge der Joins deutlich Einfluss auf die Latenz nimmt: Hierbei ist eine Anfrage mit weniger Joins (rot) mit 426,5 Millisekunden deutlich performanter als mit mehreren Joins (orange), die 492,5 Millisekunden benötigt. Bei niedrigerer Tupelzahl wirken sich Joins nicht bzw. nur in geringem Maß auf die Latenz der Anfrage aus.
+\newline
+\begin{figure}[H]
 \centering
-\begin{tikzpicture}[scale=1.9]
+\begin{tikzpicture}[scale=1.5]
 \begin{axis}[
     axis lines = middle,
     xlabel = {x},
@@ -177,8 +157,11 @@ Bei der Speicherung in eine Datenbank ist ein deutlich anderes Bild zu sehen. Wi
 \end{tikzpicture}
 \caption{PostREST parametriesierte Abfragen}
 \end{figure}
-
-\begin{figure}
+\newpage
+\noindent
+PostGraph zeigt in Abbildung 7.3 ähnliche Resultate, jedoch mit einer deutlich höheren Latenz bei einer Anfragengröße von 100 000 Tupeln. Die GraphQL-API ist hier mit 1831 Millisekunden um einen Faktor von 3,7 langsamer als die REST-API, die auf derselben Datenbank basiert.
+\newline
+\begin{figure}[H]
 \centering
 \begin{tikzpicture}[scale=1.9]
 \begin{axis}[
@@ -267,12 +250,13 @@ Bei der Speicherung in eine Datenbank ist ein deutlich anderes Bild zu sehen. Wi
 \end{tikzpicture}
 \caption{PostGraph parametriesierte Abfragen}
 \end{figure}
-
-
-
-\begin{figure}
+\newpage
+\noindent
+Bei Verwendung einer Neo4j-Datenbank in Kombination mit einer REST-API (vgl. Abb. 7.4) fällt auf, dass die Anfragen mit geringer Tupelzahl eine ähnliche Latenz aufweisen, während bei höherer Tupelzahl die Anfragedauer deutlich höher liegt als bei einer relationalen Datenbank. Hierbei ist jedoch erkennbar, dass Anfragen mit mehreren Kanten schneller bearbeitet werden; so benötigt eine Anfrage ohne das Nutzen einer Kante 1673 Millisekunden. Wenn nun die Komplexität erhöht und für die Anfrage zwei Kanten verwendet werden, benötigt diese lediglich 1371 Millisekunden.
+ \newline
+\begin{figure}[H]
 \centering
-\begin{tikzpicture}[scale=1.9]
+\begin{tikzpicture}[scale=1.8]
 \begin{axis}[
     axis lines = middle,
     xlabel = {x},
@@ -359,11 +343,13 @@ Bei der Speicherung in eine Datenbank ist ein deutlich anderes Bild zu sehen. Wi
 \end{tikzpicture}
 \caption{Neo4REST parametriesierte Abfragen}
 \end{figure}
-
-
-\begin{figure}
+\newpage
+\noindent
+Bei gleicher Datenbasis und Nutzung einer GraphQL-API (vgl. Abb. 7.5) fällt auf, dass erneut die Anfragedauer bei hoher Tupelzahl deutlich über der einer REST-API liegt. Ebenfalls ist hier zu beobachten, dass komplexere Anfragen schneller bearbeitet werden als weniger komplexe.
+\newline
+\begin{figure}[H]
 \centering
-\begin{tikzpicture}[scale=1.9]
+\begin{tikzpicture}[scale=1.8]
 \begin{axis}[
     axis lines = middle,
     xlabel = {x},
@@ -450,12 +436,13 @@ Bei der Speicherung in eine Datenbank ist ein deutlich anderes Bild zu sehen. Wi
 \end{tikzpicture}
 \caption{Neo4Graph parametriesierte Abfragen}
 \end{figure}
-
-
-
-\begin{figure}[htbp]
+\newpage
+\noindent
+Wie in Abbildung 7.6 zu sehen ist, weist die PostgreSQL REST-API eine höhere Latenzzeit als die GraphQL-PostgreSQL auf. Dies deutet darauf hin, dass die GraphQL- API bei der Abfrage eines spezifischen \texttt{Person} Objekts, anhand der \texttt{Person}-ID in Kombination mit einer relationalen Datenbank effizientere Abfragen und eine höhere Performance bei der Verarbeitung bietet. Ähnliches zeigt sich bei einer Neo4j-Datenbank: Auch hier besitzt die Neo4j-GraphQL-API niedrigere Latenzzeiten als die REST-API. Allerdings liegen die Latenzen bei Neo4j minimal höher als beim relationalen Pendant, was darauf hindeutet, dass PostgreSQL bei dieser Anfrage eine performantere Verarbeitung von Abfragen ermöglicht. Zusammenfassend ist für diese Anfrage festzuhalten, dass GraphQL in Kombination sowohl mit einer relationalen als auch mit einer Graphdatenbank eine niedrigere Latenz aufweist, worüber hinaus sich Postgres bei dieser Anfrage insgesamt als minimal performanter erweist als Neo4j.
+\newline
+\begin{figure}[H]
  \centering
-	\begin{tikzpicture}
+	\begin{tikzpicture}[scale=0.85]
 	    \begin{axis}[
 	        boxplot/draw direction=y, 
 	        xlabel={API}, 
@@ -511,7 +498,9 @@ Bei der Speicherung in eine Datenbank ist ein deutlich anderes Bild zu sehen. Wi
 	\end{tikzpicture}
 \caption{GET /api/persons/:pid}
 \end{figure}
-
+\noindent
+In Abbildung 7.7 sind die Latenzen für die komplexere Anfrage dargestellt, die 5000 \texttt{Person}-Objekte aus der Datenbank zurückliefert. GraphQL zeigt hierbei sowohl bei der relationalen als auch bei der Graphdatenbank im Median eine niedrigere Latenz, womit REST in beiden Fällen der weniger performanten API entspricht.
+\newline
 \begin{figure}[htbp]
  \centering
 	\begin{tikzpicture}
@@ -570,8 +559,11 @@ Bei der Speicherung in eine Datenbank ist ein deutlich anderes Bild zu sehen. Wi
 	\end{tikzpicture}
 \caption{GET /api/persons}
 \end{figure}
-
-\begin{figure}[htbp]
+\newpage
+\noindent
+Wenn die Anfragekomplexität steigt, wodurch sich die Abhängigkeit zwischen den Objekten in der Datenbank erhöht, ist deutlich zu sehen, dass die Streuung bei der Postgres-GraphQL-API höher ausfällt als bei allen anderen APIs (vgl. Abb.7.8), wobei der Median jedoch wesentlich niedriger liegt. Die Neo4j REST-API befindet sich in diesem Fall deutlich über allen anderen APIs, gefolgt von der PostgreSQL-REST-API. Beide GraphQL-APIs weisen erneut eine wesentlich niedrigere Latenz auf.
+\newline
+\begin{figure}[H]
  \centering
 	\begin{tikzpicture}
 	    \begin{axis}[
@@ -629,8 +621,10 @@ Bei der Speicherung in eine Datenbank ist ein deutlich anderes Bild zu sehen. Wi
 	\end{tikzpicture}
 \caption{GET /api/persons/:pid/projects/issues}
 \end{figure}
-
-\begin{figure}[htbp]
+\newpage
+\noindent
+Bei der Speicherung in eine Datenbank sind andere Resultate zu erkennen: Wie in Abbildung 7.9 veranschaulicht, erweist sich hierbei die Postgres-REST-API als diejenige mit der geringsten Latenz, dicht gefolgt von der Postgres-GraphQL-API. Eine deutlich höhere Latenz ist bei den Neo4j- APIs zu erkennen, wobei allerdings die GraphQL-API die performantere darstellt.
+\begin{figure}[H]
  \centering
 	\begin{tikzpicture}
 	    \begin{axis}[
