@@ -1,14 +1,12 @@
 \addchap{Abstract} % (fold)
 \label{sec:abstract}
-This thesis analyses the performance of GraphQL and REST in the context of relational and graph-based databases in terms of latency for different query complexities. The aim of the analysis was to evaluate the advantages and disadvantages of both API technologies and to understand the interactions with the underlying database architectures.
+This thesis analyses the performance of GraphQL and REST in the context of relational and graph-based databases in terms of latency for different query complexities. The aim of the analysis was to evaluate the advantages and disadvantages of both API technologies and to analyse the interactions with the underlying database architectures.
 \newline
 \noindent
-The results show that GraphQL offers clear advantages for complex queries, as it reduces the number of API calls through client-driven data queries.
-For bulk queries with large amounts of data, REST was able to achieve better response times, while GraphQL was superior for hierarchical and flexible queries.
-In terms of database technologies, relational databases proved to be efficient with structured data and low branching, while graph databases were particularly convincing with highly networked data and high query complexity thanks to their traversal mechanisms.
+According to the results, GraphQL offers clear advantages for complex queries because client-driven data queries reduce the number of API calls. For bulk queries with large amounts of data, REST achieves faster response times, while GraphQL is superior for hierarchical and flexible queries. In terms of database technologies, relational databases proved to be more efficient with structured data and low branching, while graph databases are more powerful due to their traversal mechanisms, especially with highly networked data and high query complexity.
 \newline
 \noindent
-The combination of GraphQL and graph databases showed a significant reduction in latency in complex scenarios. For simpler queries, GraphQL was also able to achieve better latencies with a relational database than a comparable REST API. The findings provide practical information for selecting the optimal API and database technology and offer guidance for the development of high-performance and scalable systems.
+The combination of GraphQL and graph databases showed a significant reduction in latency in complex scenarios, with GraphQL also achieving lower latencies for simpler queries with a relational database than a comparable REST API. The findings provide practical information for selecting the optimal API and database technology and offer guidance for the development of high-performance and scalable systems.
 \newline
 \noindent
 \textbf{Keywords:} REST, GraphQL, API, relational database, graph database
@@ -16,15 +14,13 @@ The combination of GraphQL and graph databases showed a significant reduction in
 \newpage
 \addchap{Zusammenfassung} % (fold)
 \label{sec:zusammenfassung}
-Die vorliegende Arbeit untersucht die Performance von GraphQL und REST im Kontext von relationalen und graphbasierten Datenbanken hinsichtlich der Latenz bei unterschiedlichen Anfragekomplexitäten. Ziel der Analyse war es, die Vor- und Nachteile beider API-Technologien zu bewerten und die Wechselwirkungen mit den zugrunde liegenden Datenbankarchitekturen zu verstehen.
+Die vorliegende Arbeit untersucht die Performance von GraphQL und REST im Kontext relationaler und graphbasierter Datenbanken hinsichtlich der Latenz bei unterschiedlichen Anfragekomplexitäten. Ziel der Analyse war es, die Vor- und Nachteile beider API-Technologien zu bewerten sowie die Wechselwirkungen mit den zugrunde liegenden Datenbankarchitekturen zu analysieren.
 \newline
 \noindent
-Die Ergebnisse zeigen, dass GraphQL bei komplexen Abfragen deutliche Vorteile bietet, da durch clientgesteuerte Datenabfragen die Anzahl der API-Aufrufe reduziert wird.
-Bei Bulk-Abfragen mit großen Datenmengen konnte REST bessere Antwortzeiten erzielen, während GraphQL bei hierarchischen und flexiblen Abfragen überlegen war.
-Hinsichtlich der Datenbanktechnologien erwiesen sich relationale Datenbanken als effizienter bei strukturierten Daten und geringen Verzweigungen, während Graphdatenbanken durch ihre Traversal-Mechanismen besonders bei stark vernetzten Daten und hohen Abfragekomplexitäten überzeugten.
+Gemäß den Ergebnissen bietet GraphQL bei komplexen Abfragen deutliche Vorteile, weil clientgesteuerte Datenabfragen die Anzahl der API-Aufrufe reduzieren. Bei Bulk-Abfragen mit großen Datenmengen erzielt REST schnellere Antwortzeiten, während GraphQL bei hierarchischen und flexiblen Abfragen überlegen ist. Hinsichtlich der Datenbanktechnologien erwiesen sich relationale Datenbanken als effizienter bei strukturierten Daten und geringen Verzweigungen, während Graphdatenbanken durch ihre Traversal-Mechanismen besonders bei stark vernetzten Daten und hohen Abfragekomplexitäten leistungsstärker sind.
 \newline
 \noindent
-Die Kombination aus GraphQL und Graphdatenbanken zeigte eine signifikante Reduzierung der Latenz bei komplexen Szenarien. Bei einfacheren Anfragen konnte GraphQL ebenfalls mit einer relationalen Datenbank bessere Latenzen erzielen als eine vergleichbare REST API. Die gewonnenen Erkenntnisse liefern praxisrelevante Hinweise für die Auswahl der optimalen API- und Datenbanktechnologie und bieten Orientierungshilfen für die Entwicklung leistungsstarker und skalierbarer Systeme.
+Die Kombination aus GraphQL und Graphdatenbanken zeigte eine signifikante Reduzierung der Latenz bei komplexen Szenarien, wobei GraphQL bei einfacheren Anfragen ebenfalls mit einer relationalen Datenbank niedrigere Latenzen erzielte als eine vergleichbare REST-API. Die gewonnenen Erkenntnisse liefern praxisrelevante Hinweise für die Auswahl der optimalen API- sowie Datenbanktechnologie und bieten Orientierungshilfen für die Entwicklung leistungsstarker und skalierbarer Systeme.
 \newline
 \noindent
 \textbf{Stichwörter:} REST, GraphQL, API, relationale Datenbank, Graphdatenbank
