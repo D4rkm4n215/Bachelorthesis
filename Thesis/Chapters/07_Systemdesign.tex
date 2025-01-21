@@ -129,7 +129,7 @@ Bei REST wird für jedes Testszenario ein separater Endpunkt benötigt, wobei se
 \end{center}
 \caption{‚GET api/persons/:pid‘-Response}
 \end{figure}
-
+\newpage
 \item Mit dem Endpunkt  \colorbox{gray!20}{\textbf{GET api/persons}} können alle in der Datenbank gespeicherten Person- Objekte abgerufen werden, wobei die Antwort 5000  \texttt{Project}-Objekte im JSON-Format umfasst. (Abb. 5.10)
 \begin{figure}[H]
 \begin{center}
@@ -194,6 +194,8 @@ Bei REST wird für jedes Testszenario ein separater Endpunkt benötigt, wobei se
 \end{center}
 \caption{‚POST api/persons/:pid/projects/:prid/issues‘-Body}
 \end{figure}
+\newpage
+\noindent
 Die Antwort enthält das erstellte \texttt{Issue}, das eine gültige  \texttt{ID} sowie Verknüpfungen zu dem zugehörigen  \texttt{Project} und der  \texttt{Person} umfassen. (Abb. 5.13)
 \begin{figure}[H]
 \begin{center}
@@ -223,7 +225,7 @@ Die Antwort enthält das erstellte \texttt{Issue}, das eine gültige  \texttt{ID
 \end{itemize}
 
 % section rest (end)
-
+\newpage
 \subsection{GraphQL}
 Hinsichtlich der Art der Anfragen unterscheidet sich GraphQL stark von REST, denn es wird nur über den Endpunkt \colorbox{gray!20}{POST api/graphql}angesprochen, worüber sowohl Querys als auch Mutations abgedeckt werden. Die Anfragen werden im Body mithilfe der GraphQL-Query- Language definiert, die JSON ähnelt. Die in 5.2.1 definierten REST-Endpunkte wurden in GraphQL nachgebildet, sodass sie dieselbe Antwort liefern. Für einen HEAD-Request bietet GraphQL nativ jedoch keine Lösung, weshalb in GraphQL APIs der HEAD-Request identisch wie in den REST-APIs implementiert wurde. Der parametrisierte Endpunkt aus der REST-API wurde in GraphQL entsprechend der Darstellung in Abb. 5.14 umgesetzt, wobei bei \texttt{Counter} Werte zwischen 0 und 1,5 Mio sowie bei  \texttt{Joins} Werte zwischen 0 und 3 möglich sind.
 
@@ -299,6 +301,7 @@ query{
 \end{center}
 \caption{GraphQL-Query-Äquivalent zu GET api/persons/:pid/projects/issue}
 \end{figure}
+\newpage
 \noindent
 Um den REST-Endpunkt \colorbox{gray!20}{POST api/persons/:pid/projects/:prid/issues} nachzubilden wurde die in Abb. 5.18 dargestellte Mutation entwickelt. Hierbei wird ein Input-Objekt definiert, das die zur Erstellung des Issue benötigten Attribute beinhaltet. Danach kann selektiert werden, welche Felder in der Antwort enthalten sind.
 \begin{figure}[H]
@@ -318,6 +321,17 @@ mutation{
 	state
 	stateReason
 	createdAt
+	project{
+	   prid
+	   title
+	   createdAt
+	}
+	assignee{
+	   pid
+	   firstname
+	   lastname
+	   email
+	}
     }
 }
 \end{BVerbatim}
@@ -329,6 +343,7 @@ mutation{
 % section graphql (end)
 
 % section schnittstellendesign (end)
+\newpage
 \section{Testumgebung} % (fold)
 \label{sec:testumgebung}
 Zur Ermittlung der Latenzzeiten wurden API-Abfragen durchgeführt, wobei die Antwortzeiten in Millisekunden protokolliert wurden. Dafür wurde eine Testumgebung mit zwei unterschiedlichen Endgeräten benötigt, um die Last auf mehrere Geräte zu verteilen. Die APIs liefen auf einem Server in Frankfurt, der mit vier Kernen, 24 GB Arbeitsspeicher, einer 1 Gbit-Internetverbindung und Ubuntu 22.04 als Betriebssystem ausgestattet ist.
